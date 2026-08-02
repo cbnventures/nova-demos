@@ -1,0 +1,26 @@
+{
+  "name": "nova-demos-tool-testkit",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check": "nova utility run-scripts --sequential 'check:*'",
+    "check:lint": "eslint ./ --max-warnings=0",
+    "check:types-tests": "nova utility type-check --project tsconfig.tests.json",
+    "check:types-config": "nova utility type-check --project tsconfig.config.json",
+    "check:test": "vitest run"
+  },
+  "engines": {
+    "node": "^22 || ^24"
+  },
+  "devDependencies": {
+    "@cbnventures/docusaurus-preset-nova": "0.21.0",
+    "@cbnventures/nova": "0.21.0",
+    "@types/node": "24.9.1",
+    "eslint": "9.39.3",
+    "glob": "13.0.6",
+    "typescript": "5.9.3",
+    "vitest": "4.1.3"
+  }
+}
