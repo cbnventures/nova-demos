@@ -56,7 +56,7 @@ export const LIB_REGEX_QUOTED_STRING = /'([^']+)'/;
  *
  * @since UNRELEASED
  */
-export const LIB_REGEX_THEME_CONFIG_OBJECT_TYPE = /export type (NovaThemeConfig\w*) = \{([\s\S]*?)\n\};/;
+export const LIB_REGEX_THEME_CONFIG_OBJECT_TYPE = /export type (NovaThemeConfig\w*) = \{([\s\S]*?)\n\}[^;\n]*;/;
 
 /**
  * Lib - Regex - Theme Config Type Reference.

@@ -19,7 +19,7 @@ import Showcase from '@theme/Showcase';
  * Renders the block showcase page, demonstrating every block from
  * docusaurus-preset-nova with Lantern-world sample data across each variant.
  *
- * @returns {JSX.Element}
+ * @constructor
  *
  * @since UNRELEASED
  */
@@ -611,6 +611,30 @@ function ShowcasePage() {
       </Showcase.Item>
 
       <Showcase.Item title={translate({
+        id: 'showcase.item.spotlightAlt.title',
+        message: 'Spotlight (alt surface)',
+        description: 'Showcase item title for Spotlight (alt surface variant)',
+      })}
+      >
+        <Spotlight
+          surface="alt"
+          heading={translate({
+            id: 'showcase.spotlightAlt.heading',
+            message: 'Why Lantern',
+            description: 'Showcase Spotlight (alt surface) section heading',
+          })}
+        >
+          <p className="nova-section-description">
+            {translate({
+              id: 'showcase.spotlightAlt.description',
+              message: 'Smart home sensors generate noise. Lantern turns that noise into zone-aware state that persists across reboots, power cycles, and firmware updates.',
+              description: 'Showcase Spotlight (alt surface) description paragraph',
+            })}
+          </p>
+        </Spotlight>
+      </Showcase.Item>
+
+      <Showcase.Item title={translate({
         id: 'showcase.item.blogPreviewWithDesc.title',
         message: 'BlogPreview (with description)',
         description: 'Showcase item title for BlogPreview (with description variant)',
@@ -698,7 +722,7 @@ function ShowcasePage() {
               message: 'Lens now renders the household zone graph onto a floor plan, and Beacon supports incremental runs that re-evaluate only the sensors that changed.',
               description: 'Showcase BlogPreview (no description) sample post description',
             }),
-            permalink: '/blog/2026/04/10/perimeter-history/',
+            permalink: '/blog/2026/04/28/lens-floor-plan-overlay-and-beacon-incremental-runs/',
           }]}
         />
       </Showcase.Item>

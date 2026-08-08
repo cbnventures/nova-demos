@@ -18,7 +18,7 @@ import Layout from '@theme/Layout';
  * Renders the Lantern front page, composing the hero, install strip,
  * feature grid, stats, spotlight, app market download, and blog preview blocks.
  *
- * @returns {JSX.Element}
+ * @constructor
  *
  * @since UNRELEASED
  */

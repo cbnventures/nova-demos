@@ -541,6 +541,9 @@
       },
       "./apps/demo-signal": {
         "prefix": "SIGNAL_"
+      },
+      "./packages/demos-testkit": {
+        "prefix": "TESTKIT_"
       }
     },
     "workflows": {

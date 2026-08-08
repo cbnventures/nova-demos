@@ -12,11 +12,12 @@ import type {
   Tests_StructureParity_StructureParity_BlogFiles,
   Tests_StructureParity_StructureParity_BlogPosts,
   Tests_StructureParity_StructureParity_Categories,
+  Tests_StructureParity_StructureParity_CurrentUniversalDoc,
   Tests_StructureParity_StructureParity_DocFiles,
   Tests_StructureParity_StructureParity_Message,
   Tests_StructureParity_StructureParity_Missing,
   Tests_StructureParity_StructureParity_Pages,
-  Tests_StructureParity_StructureParity_UniversalDoc,
+  Tests_StructureParity_StructureParity_UniversalDocFiles,
   Tests_StructureParity_StructureParity_Versions,
   Tests_StructureParity_StructureParity_VersionsPath,
   Tests_StructureParity_StructureParity_VersionsText,
@@ -96,13 +97,13 @@ describe('structure parity', () => {
     });
 
     it(`'${demoName}' ships every universal doc`, async () => {
-      const docFiles: Tests_StructureParity_StructureParity_DocFiles = await listFiles(resolve(getDemoRoot(demoName), 'docs'));
+      const universalDocFiles: Tests_StructureParity_StructureParity_UniversalDocFiles = await listFiles(resolve(getDemoRoot(demoName), 'docs'));
       const missing: Tests_StructureParity_StructureParity_Missing = [];
 
       for (const universalDoc of universalDocs) {
-        const currentUniversalDoc: Tests_StructureParity_StructureParity_UniversalDoc = universalDoc;
+        const currentUniversalDoc: Tests_StructureParity_StructureParity_CurrentUniversalDoc = universalDoc;
 
-        if (docFiles.includes(currentUniversalDoc) === false) {
+        if (universalDocFiles.includes(currentUniversalDoc) === false) {
           missing.push(`  - docs/${currentUniversalDoc}`);
         }
       }

@@ -4,9 +4,9 @@ import * as vitest from 'vitest';
 /**
  * Tests - Markdown Table.
  *
- * This app self-checks its documentation tables THROUGH the published kit. The
+ * This site self-checks its documentation tables THROUGH the published kit. The
  * suite logic lives in @cbnventures/nova/rules/vitest; this wrapper supplies
- * the configuration that reproduces this app's conventions.
+ * the configuration that reproduces this site's conventions.
  *
  * @since 0.20.0
  */

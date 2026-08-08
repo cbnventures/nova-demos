@@ -16,6 +16,7 @@ import type {
   Lib_Demos_ExtractBlockUsageText_Character,
   Lib_Demos_ExtractBlockUsageText_Depth,
   Lib_Demos_ExtractBlockUsageText_Index,
+  Lib_Demos_ExtractBlockUsageText_InQuote,
   Lib_Demos_ExtractBlockUsageText_Marker,
   Lib_Demos_ExtractBlockUsageText_Parts,
   Lib_Demos_ExtractBlockUsageText_Returns,
@@ -190,11 +191,22 @@ export function extractBlockUsageText(source: Lib_Demos_ExtractBlockUsageText_So
 
     let depth: Lib_Demos_ExtractBlockUsageText_Depth = 0;
     let index: Lib_Demos_ExtractBlockUsageText_Index = startIndex + marker.length;
+    let inQuote: Lib_Demos_ExtractBlockUsageText_InQuote = '';
 
     while (index < source.length) {
       const character: Lib_Demos_ExtractBlockUsageText_Character = source.charAt(index);
 
-      if (character === '{' || character === '[') {
+      if (inQuote !== '') {
+        if (character === inQuote) {
+          inQuote = '';
+        }
+      } else if (
+        character === '\''
+        || character === '"'
+        || character === '`'
+      ) {
+        inQuote = character;
+      } else if (character === '{' || character === '[') {
         depth += 1;
       } else if (character === '}' || character === ']') {
         depth -= 1;

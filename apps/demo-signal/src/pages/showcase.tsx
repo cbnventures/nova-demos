@@ -19,7 +19,7 @@ import Showcase from '@theme/Showcase';
  * Renders the block showcase page with every block from the Signal preset,
  * each demonstrated with sample data across its supported variants.
  *
- * @returns {JSX.Element}
+ * @constructor
  *
  * @since UNRELEASED
  */
@@ -611,6 +611,30 @@ function ShowcasePage() {
       </Showcase.Item>
 
       <Showcase.Item title={translate({
+        id: 'showcase.item.spotlightAlt.title',
+        message: 'Spotlight (alt surface)',
+        description: 'Showcase item title for Spotlight (alt surface variant)',
+      })}
+      >
+        <Spotlight
+          surface="alt"
+          heading={translate({
+            id: 'showcase.spotlightAlt.heading',
+            message: 'Why Signal',
+            description: 'Showcase Spotlight (alt surface) section heading',
+          })}
+        >
+          <p className="nova-section-description">
+            {translate({
+              id: 'showcase.spotlightAlt.description',
+              message: 'Attribution breaks when it depends on query parameters that get stripped or referrer headers that disappear. Signal embeds the metadata in the link itself — no tracking pixels, no page-side scripts.',
+              description: 'Showcase Spotlight (alt surface) description paragraph',
+            })}
+          </p>
+        </Spotlight>
+      </Showcase.Item>
+
+      <Showcase.Item title={translate({
         id: 'showcase.item.blogPreviewWithDesc.title',
         message: 'BlogPreview (with description)',
         description: 'Showcase item title for BlogPreview (with description variant)',
@@ -698,7 +722,7 @@ function ShowcasePage() {
               message: 'Resonance now visualizes audience overlap across unlimited segments, and Flare supports bulk QR generation from CSV.',
               description: 'Showcase BlogPreview (no description) sample post description',
             }),
-            permalink: '/blog/2025/02/20/tuesday-newsletter/',
+            permalink: '/blog/2025/09/15/resonance-overlap-maps-and-flare-bulk-generation/',
           }]}
         />
       </Showcase.Item>

@@ -34,14 +34,16 @@ export type Tests_StructureParity_StructureParity_DocFiles = string[];
 
 export type Tests_StructureParity_StructureParity_Categories = string[];
 
+export type Tests_StructureParity_StructureParity_UniversalDocFiles = string[];
+
 export type Tests_StructureParity_StructureParity_Missing = string[];
 
+export type Tests_StructureParity_StructureParity_CurrentUniversalDoc = string;
+
 export type Tests_StructureParity_StructureParity_Message = string;
+
+export type Tests_StructureParity_StructureParity_VersionsPath = string;
 
 export type Tests_StructureParity_StructureParity_VersionsText = string;
 
 export type Tests_StructureParity_StructureParity_Versions = string[];
-
-export type Tests_StructureParity_StructureParity_VersionsPath = string;
-
-export type Tests_StructureParity_StructureParity_UniversalDoc = string;

@@ -17,15 +17,17 @@ import type {
   Tests_PropCoverage_BlockNames,
   Tests_PropCoverage_DemoNames,
   Tests_PropCoverage_Descriptors,
+  Tests_PropCoverage_PropCoverage_CurrentPropName,
+  Tests_PropCoverage_PropCoverage_CurrentSharedPropName,
+  Tests_PropCoverage_PropCoverage_CurrentSurface,
+  Tests_PropCoverage_PropCoverage_CurrentVariantValue,
+  Tests_PropCoverage_PropCoverage_DerivedAtLeastOneVariantValueAcrossTheBlockSurface_TotalPoints,
   Tests_PropCoverage_PropCoverage_Message,
   Tests_PropCoverage_PropCoverage_Missing,
-  Tests_PropCoverage_PropCoverage_PropName,
   Tests_PropCoverage_PropCoverage_ScopedSource,
   Tests_PropCoverage_PropCoverage_Source,
-  Tests_PropCoverage_PropCoverage_Surface,
-  Tests_PropCoverage_PropCoverage_TotalPoints,
-  Tests_PropCoverage_PropCoverage_VariantValue,
   Tests_PropCoverage_PropNames,
+  Tests_PropCoverage_SharedPropNames,
   Tests_PropCoverage_SourceByDemo,
   Tests_PropCoverage_Surfaces,
 } from '../types/tests/prop-coverage.test.d.ts';
@@ -38,7 +40,7 @@ const sourceByDemo: Tests_PropCoverage_SourceByDemo = new Map();
 for (const blockName of blockNames) {
   const descriptors: Tests_PropCoverage_Descriptors = await readBlockPropSurface(blockName);
   const propNames: Tests_PropCoverage_PropNames = descriptors.filter((descriptor) => descriptor['shared'] === false).map((descriptor) => descriptor['name']);
-  const sharedPropNames: Tests_PropCoverage_PropNames = descriptors.filter((descriptor) => descriptor['shared'] === true).map((descriptor) => descriptor['name']);
+  const sharedPropNames: Tests_PropCoverage_SharedPropNames = descriptors.filter((descriptor) => descriptor['shared'] === true).map((descriptor) => descriptor['name']);
 
   surfaces.push({
     name: blockName,
@@ -69,7 +71,7 @@ describe('prop coverage', () => {
   });
 
   it('derived at least one variant value across the block surface', () => {
-    const totalPoints: Tests_PropCoverage_PropCoverage_TotalPoints = surfaces.reduce((count, surface) => count + surface['variants'].length, 0);
+    const totalPoints: Tests_PropCoverage_PropCoverage_DerivedAtLeastOneVariantValueAcrossTheBlockSurface_TotalPoints = surfaces.reduce((count, surface) => count + surface['variants'].length, 0);
 
     strictEqual(totalPoints > 0, true, 'No string-literal variant values were derived from the preset.');
 
@@ -78,7 +80,7 @@ describe('prop coverage', () => {
 
   for (const demoName of demoNames) {
     for (const surface of surfaces) {
-      const currentSurface: Tests_PropCoverage_PropCoverage_Surface = surface;
+      const currentSurface: Tests_PropCoverage_PropCoverage_CurrentSurface = surface;
 
       it(`'${demoName}' exercises every prop and variant of <${currentSurface['name']}>`, () => {
         const source: Tests_PropCoverage_PropCoverage_Source = sourceByDemo.get(demoName) ?? '';
@@ -86,7 +88,7 @@ describe('prop coverage', () => {
         const missing: Tests_PropCoverage_PropCoverage_Missing = [];
 
         for (const propName of currentSurface['props']) {
-          const currentPropName: Tests_PropCoverage_PropCoverage_PropName = propName;
+          const currentPropName: Tests_PropCoverage_PropCoverage_CurrentPropName = propName;
 
           if (
             scopedSource.includes(`${currentPropName}=`) === false
@@ -97,7 +99,7 @@ describe('prop coverage', () => {
         }
 
         for (const sharedPropName of currentSurface['sharedProps']) {
-          const currentSharedPropName: Tests_PropCoverage_PropCoverage_PropName = sharedPropName;
+          const currentSharedPropName: Tests_PropCoverage_PropCoverage_CurrentSharedPropName = sharedPropName;
 
           if (source.includes(`${currentSharedPropName}=`) === false) {
             missing.push(`  - shared prop '${currentSharedPropName}' is never set anywhere in the demo`);
@@ -105,7 +107,7 @@ describe('prop coverage', () => {
         }
 
         for (const variantValue of currentSurface['variants']) {
-          const currentVariantValue: Tests_PropCoverage_PropCoverage_VariantValue = variantValue;
+          const currentVariantValue: Tests_PropCoverage_PropCoverage_CurrentVariantValue = variantValue;
 
           if (scopedSource.includes(`'${currentVariantValue}'`) === false && scopedSource.includes(`"${currentVariantValue}"`) === false) {
             missing.push(`  - variant value '${currentVariantValue}' is never shown`);

@@ -18,6 +18,11 @@ registerFrontmatterSuite({
     'description',
     'tags',
   ],
+  requiredBlogFields: [
+    'title',
+    'authors',
+    'tags',
+  ],
   indexSlug: 'overview',
   placeholderSentinel: 'x',
   placeholderBodyPrefix: 'Coming soon',

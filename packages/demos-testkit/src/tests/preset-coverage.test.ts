@@ -14,7 +14,7 @@ import type {
   Tests_PresetCoverage_DemoNames,
   Tests_PresetCoverage_LeafPaths,
   Tests_PresetCoverage_PresetCoverage_Config,
-  Tests_PresetCoverage_PresetCoverage_LeafPath,
+  Tests_PresetCoverage_PresetCoverage_CurrentLeafPath,
   Tests_PresetCoverage_PresetCoverage_Message,
   Tests_PresetCoverage_PresetCoverage_MissAt,
   Tests_PresetCoverage_PresetCoverage_Misses,
@@ -50,7 +50,7 @@ describe('preset coverage', () => {
       const misses: Tests_PresetCoverage_PresetCoverage_Misses = [];
 
       for (const leafPath of leafPaths) {
-        const currentLeafPath: Tests_PresetCoverage_PresetCoverage_LeafPath = leafPath;
+        const currentLeafPath: Tests_PresetCoverage_PresetCoverage_CurrentLeafPath = leafPath;
         const missAt: Tests_PresetCoverage_PresetCoverage_MissAt = resolveLeaf(config, currentLeafPath);
 
         if (missAt !== null) {

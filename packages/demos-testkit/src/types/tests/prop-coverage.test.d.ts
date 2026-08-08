@@ -3,11 +3,19 @@
  *
  * @since UNRELEASED
  */
+export type Tests_PropCoverage_BlockSurface_Name = string;
+
+export type Tests_PropCoverage_BlockSurface_Props = string[];
+
+export type Tests_PropCoverage_BlockSurface_SharedProps = string[];
+
+export type Tests_PropCoverage_BlockSurface_Variants = string[];
+
 export type Tests_PropCoverage_BlockSurface = {
-  name: string;
-  props: string[];
-  sharedProps: string[];
-  variants: string[];
+  name: Tests_PropCoverage_BlockSurface_Name;
+  props: Tests_PropCoverage_BlockSurface_Props;
+  sharedProps: Tests_PropCoverage_BlockSurface_SharedProps;
+  variants: Tests_PropCoverage_BlockSurface_Variants;
 };
 
 /**
@@ -43,11 +51,19 @@ export type Tests_PropCoverage_SourceByDemo = Map<string, string>;
  *
  * @since UNRELEASED
  */
+export type Tests_PropCoverage_Descriptors_Name = string;
+
+export type Tests_PropCoverage_Descriptors_Optional = boolean;
+
+export type Tests_PropCoverage_Descriptors_Shared = boolean;
+
+export type Tests_PropCoverage_Descriptors_Variants = string[];
+
 export type Tests_PropCoverage_Descriptors = {
-  name: string;
-  optional: boolean;
-  shared: boolean;
-  variants: string[];
+  name: Tests_PropCoverage_Descriptors_Name;
+  optional: Tests_PropCoverage_Descriptors_Optional;
+  shared: Tests_PropCoverage_Descriptors_Shared;
+  variants: Tests_PropCoverage_Descriptors_Variants;
 }[];
 
 /**
@@ -58,22 +74,56 @@ export type Tests_PropCoverage_Descriptors = {
 export type Tests_PropCoverage_PropNames = string[];
 
 /**
+ * Tests - Prop Coverage - Shared Prop Names.
+ *
+ * @since UNRELEASED
+ */
+export type Tests_PropCoverage_SharedPropNames = string[];
+
+/**
  * Tests - Prop Coverage - Prop Coverage.
  *
  * @since UNRELEASED
  */
+export type Tests_PropCoverage_PropCoverage_CurrentSurface_Name = string;
+
+export type Tests_PropCoverage_PropCoverage_CurrentSurface_Props = string[];
+
+export type Tests_PropCoverage_PropCoverage_CurrentSurface_SharedProps = string[];
+
+export type Tests_PropCoverage_PropCoverage_CurrentSurface_Variants = string[];
+
+export type Tests_PropCoverage_PropCoverage_CurrentSurface = {
+  name: Tests_PropCoverage_PropCoverage_CurrentSurface_Name;
+  props: Tests_PropCoverage_PropCoverage_CurrentSurface_Props;
+  sharedProps: Tests_PropCoverage_PropCoverage_CurrentSurface_SharedProps;
+  variants: Tests_PropCoverage_PropCoverage_CurrentSurface_Variants;
+};
+
 export type Tests_PropCoverage_PropCoverage_Source = string;
 
 export type Tests_PropCoverage_PropCoverage_ScopedSource = string;
 
 export type Tests_PropCoverage_PropCoverage_Missing = string[];
 
+export type Tests_PropCoverage_PropCoverage_CurrentPropName = string;
+
+export type Tests_PropCoverage_PropCoverage_CurrentSharedPropName = string;
+
+export type Tests_PropCoverage_PropCoverage_CurrentVariantValue = string;
+
 export type Tests_PropCoverage_PropCoverage_Message = string;
 
-export type Tests_PropCoverage_PropCoverage_Surface = Tests_PropCoverage_BlockSurface;
+/**
+ * Tests - Prop Coverage - Prop Coverage - Derived A Prop Surface For Every Exported Block.
+ *
+ * @since UNRELEASED
+ */
+export type Tests_PropCoverage_PropCoverage_DerivedAPropSurfaceForEveryExportedBlock_Returns = void;
 
-export type Tests_PropCoverage_PropCoverage_PropName = string;
-
-export type Tests_PropCoverage_PropCoverage_VariantValue = string;
-
-export type Tests_PropCoverage_PropCoverage_TotalPoints = number;
+/**
+ * Tests - Prop Coverage - Prop Coverage - Derived At Least One Variant Value Across The Block Surface.
+ *
+ * @since UNRELEASED
+ */
+export type Tests_PropCoverage_PropCoverage_DerivedAtLeastOneVariantValueAcrossTheBlockSurface_TotalPoints = number;

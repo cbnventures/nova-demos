@@ -611,6 +611,30 @@ function ShowcasePage() {
       </Showcase.Item>
 
       <Showcase.Item title={translate({
+        id: 'showcase.item.spotlightAlt.title',
+        message: 'Spotlight (alt surface)',
+        description: 'Showcase item title for Spotlight (alt surface variant)',
+      })}
+      >
+        <Spotlight
+          surface="alt"
+          heading={translate({
+            id: 'showcase.spotlightAlt.heading',
+            message: 'Why Foundry',
+            description: 'Showcase Spotlight (alt surface) section heading',
+          })}
+        >
+          <p className="nova-section-description">
+            {translate({
+              id: 'showcase.spotlightAlt.description',
+              message: 'Configuration files multiply. Foundry replaces them with a single manifest that generates every artifact deterministically. Same input, same output, every time.',
+              description: 'Showcase Spotlight (alt surface) description paragraph',
+            })}
+          </p>
+        </Spotlight>
+      </Showcase.Item>
+
+      <Showcase.Item title={translate({
         id: 'showcase.item.blogPreviewWithDesc.title',
         message: 'BlogPreview (with description)',
         description: 'Showcase item title for BlogPreview (with description variant)',
@@ -698,7 +722,7 @@ function ShowcasePage() {
               message: 'Crucible now regenerates test scaffolds automatically on every forge, and Slag detects unused dependencies across the full workspace graph.',
               description: 'Showcase BlogPreview (no description) sample post description',
             }),
-            permalink: '/blog/2025/03/15/configuration-files/',
+            permalink: '/blog/2025/10/01/crucible-auto-mode-and-slag-detection/',
           }]}
         />
       </Showcase.Item>

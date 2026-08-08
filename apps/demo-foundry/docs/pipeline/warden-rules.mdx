@@ -7,6 +7,8 @@ tags:
   - "linting"
 ---
 
+import Details from '@theme/Details';
+
 # Warden Rules
 
 Warden is Foundry's linting engine. It ships 380+ rules across six categories, all enabled by default when you declare `warden = ["strict"]` in your manifest. No configuration file. No decision fatigue. One preset, all rules.
@@ -107,7 +109,7 @@ export function formatDate(timestamp: Numeric): Text {
 
 The `warden/require-explicit-return` rule has an auto-fix that infers the return type from the function body and adds it to the signature.
 
-<details>
+<Details>
 <summary>Full rule list by category</summary>
 
 **Conventions (68 rules)**
@@ -141,7 +143,7 @@ The `warden/require-explicit-return` rule has an auto-fix that infers the return
 | `no-unnecessary-generics` | No      | Bans generic parameters that can be inferred. |
 | ...                       |         | *76 additional rules in this category.*       |
 
-</details>
+</Details>
 
 ## Running Warden
 

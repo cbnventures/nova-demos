@@ -612,6 +612,30 @@ function ShowcasePage() {
       </Showcase.Item>
 
       <Showcase.Item title={translate({
+        id: 'showcase.item.spotlightAlt.title',
+        message: 'Spotlight (alt surface)',
+        description: 'Showcase item title for Spotlight (alt surface variant)',
+      })}
+      >
+        <Spotlight
+          surface="alt"
+          heading={translate({
+            id: 'showcase.spotlightAlt.heading',
+            message: 'Why Sentinel',
+            description: 'Showcase Spotlight (alt surface) section heading',
+          })}
+        >
+          <p className="nova-section-description">
+            {translate({
+              id: 'showcase.spotlightAlt.description',
+              message: 'Perimeter security assumes a boundary exists. Sentinel evaluates trust continuously — every device, every session, every 90 seconds — and revokes access the moment posture drops.',
+              description: 'Showcase Spotlight (alt surface) description paragraph',
+            })}
+          </p>
+        </Spotlight>
+      </Showcase.Item>
+
+      <Showcase.Item title={translate({
         id: 'showcase.item.blogPreviewWithDesc.title',
         message: 'BlogPreview (with description)',
         description: 'Showcase item title for BlogPreview (with description variant)',
@@ -699,7 +723,7 @@ function ShowcasePage() {
               message: 'Parapet now supports full traffic replay against draft policies, and Rampart can automatically quarantine devices that fail posture checks.',
               description: 'Showcase BlogPreview (no description) sample post description',
             }),
-            permalink: '/blog/2025/04/01/trusting-the-network/',
+            permalink: '/blog/2025/10/01/parapet-traffic-replay-and-rampart-zone-quarantine/',
           }]}
         />
       </Showcase.Item>

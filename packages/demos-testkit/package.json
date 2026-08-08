@@ -15,8 +15,8 @@
     "node": "^22 || ^24"
   },
   "devDependencies": {
-    "@cbnventures/docusaurus-preset-nova": "0.21.0",
-    "@cbnventures/nova": "0.21.0",
+    "@cbnventures/docusaurus-preset-nova": "0.22.1",
+    "@cbnventures/nova": "0.22.1",
     "@types/node": "24.9.1",
     "eslint": "9.39.3",
     "glob": "13.0.6",

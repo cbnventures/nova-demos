@@ -18,7 +18,7 @@ import Layout from '@theme/Layout';
  * Renders the Signal front page with the hero, install strip, features,
  * stats, spotlight, app market download, and blog preview blocks.
  *
- * @returns {JSX.Element}
+ * @constructor
  *
  * @since UNRELEASED
  */

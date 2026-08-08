@@ -1,26 +1,26 @@
 {
-  "item.0.label": {
+  "item.label.Docs": {
     "message": "Docs",
-    "description": "Label of navbar item 1"
+    "description": "Navbar item with label \"Docs\""
   },
-  "item.1.label": {
+  "item.label.Showcase": {
     "message": "Showcase",
-    "description": "Label of navbar item 2"
+    "description": "Navbar item with label \"Showcase\""
   },
-  "item.2.label": {
+  "item.label.Features": {
     "message": "Features",
-    "description": "Label of navbar item 3"
+    "description": "Navbar item with label \"Features\""
   },
-  "item.3.label": {
+  "item.label.Blog": {
     "message": "Blog",
-    "description": "Label of navbar item 4"
+    "description": "Navbar item with label \"Blog\""
   },
-  "item.4.label": {
+  "item.label.Manifesto": {
     "message": "Manifesto",
-    "description": "Label of navbar item 5"
+    "description": "Navbar item with label \"Manifesto\""
   },
-  "item.6.label": {
+  "item.label.GitHub": {
     "message": "GitHub",
-    "description": "Label of navbar item 7"
+    "description": "Navbar item with label \"GitHub\""
   }
 }

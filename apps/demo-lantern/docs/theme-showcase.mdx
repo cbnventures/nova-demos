@@ -151,7 +151,7 @@ CSS with line numbers:
 
 Zone-map configuration:
 
-```text title="zone-map.yml"
+```text title="zone-map.grain"
 workspace "my-home" {
   lang    = "alloy"
   target  = "arcline"
@@ -365,7 +365,7 @@ Mermaid diagrams render directly from fenced code blocks. The preset applies the
 flowchart TD
     subgraph Pipeline["Watch Pipeline"]
         direction LR
-        Q["Queue<br/>(Cache)"] --> B["Beacon<br/>(Runner)"] --> C["Dryrun<br/>(Replay)"]
+        Q["Queue<br/>(Cache)"] --> B["Sweep<br/>(Runner)"] --> C["Dryrun<br/>(Replay)"]
     end
 
     L["Lens<br/>(Resolver)"] --> Pipeline

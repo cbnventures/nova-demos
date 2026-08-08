@@ -1,29 +1,33 @@
 ---
 title: "Manifesto"
-description: "How Sentinel thinks about monitoring — observation over interpretation."
+description: "How Sentinel thinks about security — trust is a vulnerability, not an asset."
 keywords:
   - "sentinel"
   - "manifesto"
-  - "monitoring"
-  - "alerting"
+  - "zero-trust"
+  - "security"
 ---
 
 # Manifesto
 
-Sentinel exists because the gap between a system being broken and a human knowing it is broken is where real damage compounds. We believe in monitoring as observation, not interpretation. The probe's job is to report what it sees; the alert's job is to wake the right person. Both should be boring.
+Sentinel exists because the perimeter died and nobody updated the assumptions. We believe trust is a vulnerability, not an asset. Every granted session is a liability. Every static rule is a blind spot. Security is not a gate you pass through once — it is a continuous evaluation that never concludes.
 
-## Observation, Not Interpretation
+## Trust as Liability
 
-The probe sees something. The alert reports something. Neither one decides what it means. Interpretation is a person's job, and a person needs unambiguous input — not pre-chewed conclusions that hide the underlying signal.
+The traditional model grants trust at the door and never revisits the decision. That model assumes the world inside is safe. It is not. Conditions change between the moment access is granted and the moment it is used. The device drifts. The network shifts. The session ages. A system that does not re-evaluate is a system that remembers a past that no longer exists.
 
-## The Calibration Discipline
+## Verification Over Permission
 
-Most bad alerts trace to one of two failure modes: too loud or too quiet. The first gets muted, the second gets missed. Both cost the same outage. Calibration is the ongoing work of moving every alert toward the narrow middle where it actually wakes the right person at the right time.
+Permission is a snapshot. Verification is a discipline. We verify posture, identity, context, and behavior — not once, but continuously. The access decision made ninety seconds ago is not the access decision now. We make it again, because the inputs have changed and the answer might have changed with them.
 
-## Earning the Page
+## Walls Within Walls
 
-A page is a debt to the on-call engineer. We optimize for usefulness per page, not pages per hour. The goal is fewer pages, each one earning its disturbance.
+A single breach should not grant the run of the house. We segment by default, so that a compromised workload reaches only itself. Lateral movement is the attacker's payoff for a single mistake. We eliminate the payoff.
 
-### Why fewer pages is the goal
+### Why simulation precedes enforcement
 
-The system that pages constantly trains its operators to ignore pages. That training is permanent. We would rather miss a soft anomaly than burn the threshold of the next real one.
+A policy that surprises the people it governs is a policy that gets bypassed. We test every rule against real traffic before it touches production, because the cost of a misconfigured policy is indistinguishable from the cost of no policy at all.
+
+## The Ledger That Cannot Lie
+
+Every access decision, every policy evaluation, every connection is recorded. An immutable audit trail is not a compliance checkbox — it is the mechanism that makes continuous verification accountable. When a session is reconstructed months later, the record must say exactly what happened, not what the system wishes had happened. Trust decisions that cannot be audited are trust decisions that cannot be challenged.

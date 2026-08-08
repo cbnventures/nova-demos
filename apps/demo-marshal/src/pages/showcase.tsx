@@ -611,6 +611,30 @@ function ShowcasePage() {
       </Showcase.Item>
 
       <Showcase.Item title={translate({
+        id: 'showcase.item.spotlightAlt.title',
+        message: 'Spotlight (alt surface)',
+        description: 'Showcase item title for Spotlight (alt surface variant)',
+      })}
+      >
+        <Spotlight
+          surface="alt"
+          heading={translate({
+            id: 'showcase.spotlightAlt.heading',
+            message: 'Why Marshal',
+            description: 'Showcase Spotlight (alt surface) section heading',
+          })}
+        >
+          <p className="nova-section-description">
+            {translate({
+              id: 'showcase.spotlightAlt.description',
+              message: 'Community governance runs on trust and transparency. Marshal replaces ad-hoc moderation with a policy file that stamps every action into an append-only docket.',
+              description: 'Showcase Spotlight (alt surface) description paragraph',
+            })}
+          </p>
+        </Spotlight>
+      </Showcase.Item>
+
+      <Showcase.Item title={translate({
         id: 'showcase.item.blogPreviewWithDesc.title',
         message: 'BlogPreview (with description)',
         description: 'Showcase item title for BlogPreview (with description variant)',
@@ -698,7 +722,7 @@ function ShowcasePage() {
               message: 'Auditor now applies automatic fixes across the conventions and formatting tiers, and Clerk renders a dependency graph across all dockets in the workspace.',
               description: 'Showcase BlogPreview (no description) sample post description',
             }),
-            permalink: '/blog/2026/04/12/stale-thread-archival/',
+            permalink: '/blog/2026/04/29/auditor-auto-fix-tiers-and-clerk-dependency-graphs/',
           }]}
         />
       </Showcase.Item>

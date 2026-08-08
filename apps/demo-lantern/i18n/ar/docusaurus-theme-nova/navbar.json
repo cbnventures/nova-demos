@@ -1,22 +1,22 @@
 {
-  "item.0.label": {
-    "message": "الوثائق",
-    "description": "Label of navbar item 1"
+  "item.label.Docs": {
+    "message": "التوثيق",
+    "description": "Navbar item with label \"Docs\""
   },
-  "item.1.label": {
-    "message": "العرض",
-    "description": "Label of navbar item 2"
+  "item.label.Showcase": {
+    "message": "العرض التوضيحي",
+    "description": "Navbar item with label \"Showcase\""
   },
-  "item.2.label": {
+  "item.label.Integrations": {
     "message": "التكاملات",
-    "description": "Label of navbar item 3"
+    "description": "Navbar item with label \"Integrations\""
   },
-  "item.3.label": {
-    "message": "المدونة",
-    "description": "Label of navbar item 4"
+  "item.label.Blog": {
+    "message": "المدوّنة",
+    "description": "Navbar item with label \"Blog\""
   },
-  "item.4.label": {
+  "item.label.Manifesto": {
     "message": "البيان",
-    "description": "Label of navbar item 5"
+    "description": "Navbar item with label \"Manifesto\""
   }
 }

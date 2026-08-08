@@ -611,6 +611,30 @@ function ShowcasePage() {
       </Showcase.Item>
 
       <Showcase.Item title={translate({
+        id: 'showcase.item.spotlightAlt.title',
+        message: 'Spotlight (alt surface)',
+        description: 'Showcase item title for Spotlight (alt surface variant)',
+      })}
+      >
+        <Spotlight
+          surface="alt"
+          heading={translate({
+            id: 'showcase.spotlightAlt.heading',
+            message: 'Why Envoy',
+            description: 'Showcase Spotlight (alt surface) section heading',
+          })}
+        >
+          <p className="nova-section-description">
+            {translate({
+              id: 'showcase.spotlightAlt.description',
+              message: 'Every integration layer starts the same way — a script that calls an endpoint. Envoy replaces that pattern with a relay manifest that is version-controlled, auditable, and replayable. No more invisible glue code.',
+              description: 'Showcase Spotlight (alt surface) description paragraph',
+            })}
+          </p>
+        </Spotlight>
+      </Showcase.Item>
+
+      <Showcase.Item title={translate({
         id: 'showcase.item.blogPreviewWithDesc.title',
         message: 'BlogPreview (with description)',
         description: 'Showcase item title for BlogPreview (with description variant)',
@@ -698,7 +722,7 @@ function ShowcasePage() {
               message: 'Dispatch now supports fanout to multiple destinations from a single relay. Ledger entries are exportable to any Spoke endpoint on a configurable schedule.',
               description: 'Showcase BlogPreview (no description) sample post description',
             }),
-            permalink: '/blog/2025/03/01/webhook-fails-at-3am/',
+            permalink: '/blog/2025/10/15/fanout-routing-and-ledger-export/',
           }]}
         />
       </Showcase.Item>

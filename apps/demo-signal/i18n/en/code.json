@@ -598,5 +598,53 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min read",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (newest first)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Latest Dispatches",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (oldest first)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "From the Archive",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (colored and linked)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "A term can also carry the accent color and link straight to its reference page. Every campaign is measured through its ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "branded attribution link",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.beacon.label": {
+    "message": "Beacon",
+    "description": "Showcase Terminology displayed text for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", so a click can be traced to its source long after the campaign has ended.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alt surface)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Why Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Attribution breaks when it depends on query parameters that get stripped or referrer headers that disappear. Signal embeds the metadata in the link itself — no tracking pixels, no page-side scripts.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
   }
 }

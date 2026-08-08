@@ -1,3 +1,5 @@
+import type { Stats } from 'node:fs';
+
 /**
  * Tests - Logo Override - Demo Names.
  *
@@ -16,7 +18,7 @@ export type Tests_LogoOverride_LogoOverride_PresetLogoPath = string;
 
 export type Tests_LogoOverride_LogoOverride_DemoLogoPath = string;
 
-export type Tests_LogoOverride_LogoOverride_PresetStats = import('node:fs').Stats;
+export type Tests_LogoOverride_LogoOverride_PresetStats = Stats;
 
 export type Tests_LogoOverride_LogoOverride_PresetBytes = Buffer;
 

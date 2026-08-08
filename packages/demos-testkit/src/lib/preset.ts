@@ -40,13 +40,20 @@ import type {
   Lib_Preset_ReadBlockPropSurface_Returns,
   Lib_Preset_ReadBlockPropSurface_TypeFilePath,
   Lib_Preset_ReadBlockVariantValues_AliasBody,
-  Lib_Preset_ReadBlockVariantValues_AliasEntry,
   Lib_Preset_ReadBlockVariantValues_Aliases,
   Lib_Preset_ReadBlockVariantValues_AliasName,
   Lib_Preset_ReadBlockVariantValues_BlockName,
+  Lib_Preset_ReadBlockVariantValues_BodyParts,
+  Lib_Preset_ReadBlockVariantValues_CurrentAliasEntry,
   Lib_Preset_ReadBlockVariantValues_FileText,
   Lib_Preset_ReadBlockVariantValues_Members,
+  Lib_Preset_ReadBlockVariantValues_ResolvedBody,
+  Lib_Preset_ReadBlockVariantValues_ResolvedParts,
   Lib_Preset_ReadBlockVariantValues_Returns,
+  Lib_Preset_ReadBlockVariantValues_SharedAliases,
+  Lib_Preset_ReadBlockVariantValues_SharedFilePath,
+  Lib_Preset_ReadBlockVariantValues_SharedFileText,
+  Lib_Preset_ReadBlockVariantValues_TrimmedPart,
   Lib_Preset_ReadBlockVariantValues_TypeFilePath,
   Lib_Preset_ReadBlockVariantValues_Values,
   Lib_Preset_ReadThemeConfigLeafPaths_BlockBody,
@@ -300,10 +307,13 @@ export async function readBlockVariantValues(blockName: Lib_Preset_ReadBlockVari
   const typeFilePath: Lib_Preset_ReadBlockVariantValues_TypeFilePath = resolve(getPresetRoot(), 'build', 'src', 'types', 'blocks', toKebabCase(blockName), 'index.d.ts');
   const fileText: Lib_Preset_ReadBlockVariantValues_FileText = await readFile(typeFilePath, 'utf-8');
   const aliases: Lib_Preset_ReadBlockVariantValues_Aliases = readTypeAliases(fileText);
+  const sharedFilePath: Lib_Preset_ReadBlockVariantValues_SharedFilePath = resolve(getPresetRoot(), 'build', 'src', 'types', 'shared.d.ts');
+  const sharedFileText: Lib_Preset_ReadBlockVariantValues_SharedFileText = await readFile(sharedFilePath, 'utf-8');
+  const sharedAliases: Lib_Preset_ReadBlockVariantValues_SharedAliases = readTypeAliases(sharedFileText);
   const values: Lib_Preset_ReadBlockVariantValues_Values = [];
 
   for (const aliasEntry of aliases) {
-    const currentAliasEntry: Lib_Preset_ReadBlockVariantValues_AliasEntry = aliasEntry;
+    const currentAliasEntry: Lib_Preset_ReadBlockVariantValues_CurrentAliasEntry = aliasEntry;
     const aliasName: Lib_Preset_ReadBlockVariantValues_AliasName = currentAliasEntry[0];
     const aliasBody: Lib_Preset_ReadBlockVariantValues_AliasBody = currentAliasEntry[1];
 
@@ -311,7 +321,21 @@ export async function readBlockVariantValues(blockName: Lib_Preset_ReadBlockVari
       continue;
     }
 
-    const members: Lib_Preset_ReadBlockVariantValues_Members = readVariants(aliasBody, new Map());
+    const bodyParts: Lib_Preset_ReadBlockVariantValues_BodyParts = aliasBody.split('|');
+    const resolvedParts: Lib_Preset_ReadBlockVariantValues_ResolvedParts = [];
+
+    for (const bodyPart of bodyParts) {
+      const trimmedPart: Lib_Preset_ReadBlockVariantValues_TrimmedPart = bodyPart.trim();
+
+      if (sharedAliases.has(trimmedPart) === true) {
+        continue;
+      }
+
+      resolvedParts.push(trimmedPart);
+    }
+
+    const resolvedBody: Lib_Preset_ReadBlockVariantValues_ResolvedBody = resolvedParts.join(' | ');
+    const members: Lib_Preset_ReadBlockVariantValues_Members = readVariants(resolvedBody, aliases);
 
     for (const member of members) {
       if (values.includes(member) === false) {

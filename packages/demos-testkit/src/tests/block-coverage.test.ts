@@ -6,7 +6,8 @@ import { discoverDemoNames, readShowcaseSource } from '../lib/demos.js';
 import { readBlockNames } from '../lib/preset.js';
 
 import type {
-  Tests_BlockCoverage_BlockCoverage_BlockName,
+  Tests_BlockCoverage_BlockCoverage_BlockPattern,
+  Tests_BlockCoverage_BlockCoverage_CurrentBlockName,
   Tests_BlockCoverage_BlockCoverage_Message,
   Tests_BlockCoverage_BlockCoverage_Missing,
   Tests_BlockCoverage_BlockCoverage_Source,
@@ -51,9 +52,10 @@ describe('block coverage', () => {
       const missing: Tests_BlockCoverage_BlockCoverage_Missing = [];
 
       for (const blockName of blockNames) {
-        const currentBlockName: Tests_BlockCoverage_BlockCoverage_BlockName = blockName;
+        const currentBlockName: Tests_BlockCoverage_BlockCoverage_CurrentBlockName = blockName;
+        const blockPattern: Tests_BlockCoverage_BlockCoverage_BlockPattern = new RegExp(`<${currentBlockName}(?![A-Za-z0-9_])`);
 
-        if (source.includes(`<${currentBlockName}`) === false) {
+        if (blockPattern.test(source) === false) {
           missing.push(`  - ${currentBlockName}`);
         }
       }
