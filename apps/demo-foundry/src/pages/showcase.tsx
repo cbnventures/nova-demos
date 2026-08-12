@@ -21,7 +21,7 @@ import Showcase from '@theme/Showcase';
  *
  * @constructor
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 function ShowcasePage() {
   return (

@@ -1,28 +1,28 @@
 /**
  * Tests - Structure Parity - Demo Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_StructureParity_DemoNames = string[];
 
 /**
  * Tests - Structure Parity - Expected Pages.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_StructureParity_ExpectedPages = string[];
 
 /**
  * Tests - Structure Parity - Universal Docs.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_StructureParity_UniversalDocs = string[];
 
 /**
  * Tests - Structure Parity - Structure Parity.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_StructureParity_StructureParity_Pages = string[];
 

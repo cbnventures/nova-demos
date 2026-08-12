@@ -1,6 +1,6 @@
 {
   "name": "demo-signal",
-  "version": "0.0.0",
+  "version": "2026.8.0",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "build": "nova utility run-scripts --sequential 'build:*'",
     "build:build": "docusaurus build",
     "build:transpile-app": "nova utility transpile --project tsconfig.app.json",
+    "build:cleanup": "shx rm -rf ./node_modules/.cache",
     "build:fix-markdown-tables": "node ../../scripts/fix-markdown-tables.mjs",
     "i18n": "theme-nova i18n sync",
     "i18n:check": "theme-nova i18n check",
@@ -29,8 +30,8 @@
     "node": "^22 || ^24"
   },
   "dependencies": {
-    "@cbnventures/docusaurus-preset-nova": "0.22.1",
-    "@cbnventures/nova": "0.22.1",
+    "@cbnventures/docusaurus-preset-nova": "0.23.0",
+    "@cbnventures/nova": "0.23.0",
     "@docusaurus/core": "3.10.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"

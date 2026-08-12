@@ -1,0 +1,110 @@
+---
+title: "Envoy 2.2: Fanout Routing and Ledger Export"
+description: "Dispatch now supports fanout to multiple destinations from a single relay. Ledger entries are exportable to any Spoke endpoint on a configurable schedule."
+authors:
+  - "tomas"
+keywords:
+  - "nova demos"
+  - "envoy"
+  - "dispatch"
+  - "fanout"
+  - "ledger"
+  - "release"
+tags:
+  - "release"
+  - "dispatch"
+  - "ledger"
+  - "routing"
+date: "2025-10-15"
+---
+
+Envoy 2.2 adds two features that change how teams build relay pipelines: Dispatch fanout routing, which sends a single incoming message to multiple destinations simultaneously, and Ledger export, which ships audit trail entries to any Spoke endpoint on a schedule you control. Both are available today.
+
+{/* truncate */}
+
+## Dispatch Fanout Routing
+
+Until now, Dispatch followed a first-match model. An incoming message matched one route and was delivered to one destination. If you needed the same message in three places, you wrote three relays.
+
+Fanout changes that. A single relay can now declare multiple Spoke destinations. When a message matches the route, Dispatch delivers it to every declared Spoke in parallel.
+
+```text title="Fanout relay manifest"
+relay "order-events" {
+  source "shopfront-webhook" {
+    cipher = "hmac-sha256"
+  }
+
+  dispatch {
+    mode = "fanout"
+
+    spoke "warehouse-api" {
+      parcel = "json-to-xml"
+    }
+
+    spoke "analytics-pipeline" {
+      parcel = "json-to-json"
+    }
+
+    spoke "slack-alerts" {
+      parcel = "json-to-plaintext"
+      filter = "$.event.type == 'order.cancelled'"
+    }
+  }
+}
+```
+
+Each Spoke in a fanout relay gets its own Parcel transformation and optional filter. The warehouse receives XML, the analytics pipeline receives JSON, and Slack only receives cancellation events as plaintext. One incoming webhook powers all three.
+
+### Delivery Semantics
+
+Fanout delivery is independent per Spoke. If the warehouse API returns a 500, Courier retries that delivery without affecting the other two. Ledger records each Spoke delivery as a separate transaction, so you can trace the status of each destination independently.
+
+### Performance
+
+Fanout adds no measurable latency. Dispatch resolves all Spoke destinations at route match time and hands them to Courier as parallel delivery tasks. A relay with five Spoke destinations delivers in the same p99 window as a relay with one.
+
+## Ledger Export
+
+Ledger has always recorded every message received, transformed, routed, and delivered. Until now, the only way to access that data was through the Ledger API or the Glassboard dashboard.
+
+Ledger export changes that. You can now configure Ledger to ship entries to any Spoke endpoint on a schedule. Compliance teams get audit data in their SIEM. Analytics teams get delivery metrics in their data warehouse. Operations teams get failure reports in their incident management tool.
+
+```text title="Ledger export configuration"
+ledger {
+  retention = "90d"
+
+  export "compliance-siem" {
+    spoke    = "siem-ingest"
+    schedule = "every 1h"
+    filter   = "status IN ('failed', 'dead-letter')"
+    format   = "json-lines"
+  }
+
+  export "analytics-warehouse" {
+    spoke    = "bigquery-ingest"
+    schedule = "every 6h"
+    filter   = "*"
+    format   = "parquet"
+  }
+}
+```
+
+Each export declaration specifies a destination Spoke, a schedule, an optional filter, and an output format. Supported formats are JSON Lines, CSV, and Parquet. Exports are incremental: each run ships only the entries that were recorded since the previous run.
+
+### Backfill
+
+For existing deployments, Ledger export supports a one-time backfill command that exports historical entries up to the configured retention window:
+
+```text title="Backfill command"
+envoy ledger export --backfill --target compliance-siem
+```
+
+## Upgrading
+
+Envoy 2.2 is backward compatible. Existing relay manifests continue to work without changes. Fanout mode is opt-in per relay. Ledger export is opt-in per deployment.
+
+```text title="Upgrade"
+vial pull envoy:2.2
+envoy --version
+# envoy 2.2.0
+```

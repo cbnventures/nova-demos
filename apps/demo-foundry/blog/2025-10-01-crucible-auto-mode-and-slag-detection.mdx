@@ -1,0 +1,83 @@
+---
+title: "Foundry 2.4: Crucible Auto-Mode and Slag Detection"
+description: "Crucible now regenerates test scaffolds automatically on every forge, and Slag detects unused dependencies across the full workspace graph."
+authors:
+  - "elena"
+keywords:
+  - "nova demos"
+  - "foundry"
+  - "crucible"
+  - "slag"
+  - "release"
+tags:
+  - "release"
+  - "crucible"
+  - "slag"
+  - "dependencies"
+date: "2025-10-01"
+---
+
+Foundry 2.4 ships two features that close long-standing gaps in the build pipeline: Crucible auto-mode, which regenerates test scaffolds on every forge without a manual step, and Slag detection, which finds unused dependencies across the full workspace graph. Both are available today.
+
+{/* truncate */}
+
+## Crucible Auto-Mode
+
+Crucible generates test scaffolds from your source files. Until now, you ran `foundry crucible generate` manually whenever a module changed. If you forgot, the scaffolds drifted from the source, and tests started failing for the wrong reasons.
+
+Auto-mode removes the manual step. When enabled, Crucible hooks into the forge pipeline and regenerates scaffolds for every module that changed since the last build. The regeneration happens before the test phase, so tests always run against current scaffolds.
+
+```text title="Enable auto-mode in foundry.config"
+crucible {
+  auto = true
+  scope = "changed"   # only regenerate for changed modules
+  strategy = "merge"  # preserve custom test logic, update scaffolds
+}
+```
+
+The `merge` strategy is the default. It updates the generated portions of the scaffold while preserving any custom test logic you added between the generation markers. If you prefer a clean regeneration every time, set `strategy = "overwrite"`.
+
+### Performance
+
+Auto-mode adds negligible time to the forge pipeline. Crucible only regenerates scaffolds for modules that changed, and scaffold generation is fast — typically under 200ms per module. In a workspace with 90 packages where 5 changed, auto-mode adds about 1 second to the build.
+
+## Slag Detection
+
+Every monorepo accumulates unused dependencies. A package was added during a spike, the code was deleted, and the dependency stayed in the manifest. Multiply that by 90 packages and you have a meaningful amount of dead weight in your install step.
+
+Slag scans the full workspace dependency graph and reports every dependency that is declared but never imported. It checks both `dependencies` and `devDependencies`, and it understands re-exports — a dependency that is only consumed through a barrel file is not flagged as unused.
+
+```text title="Run Slag"
+foundry slag detect
+```
+
+```text title="Sample output"
+demo-api
+  lodash.merge     declared in dependencies, never imported
+  @types/express   declared in devDependencies, never imported
+
+demo-web
+  chalk            declared in dependencies, never imported
+
+3 unused dependencies across 2 packages
+```
+
+### Auto-remove
+
+Slag can remove unused dependencies automatically with the `--fix` flag. It updates the manifest and runs the lockfile resolution in a single step:
+
+```text title="Auto-remove"
+foundry slag detect --fix
+```
+
+Slag does not touch peer dependencies. A peer dependency may be consumed by a downstream package, and removing it could break the resolution graph in ways that are not visible locally.
+
+## Upgrading
+
+Foundry 2.4 is backward compatible. Crucible auto-mode is opt-in via the config file. Slag is a new command with no impact on existing workflows.
+
+```text title="Upgrade"
+spark upgrade foundry-cli
+foundry --version
+# foundry-cli 2.4.0
+```

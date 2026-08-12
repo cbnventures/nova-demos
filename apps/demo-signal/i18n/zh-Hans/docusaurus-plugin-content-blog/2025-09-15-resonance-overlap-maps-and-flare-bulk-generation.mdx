@@ -1,0 +1,73 @@
+---
+title: "Signal 2.1：Resonance 重叠图谱与 Flare 批量生成"
+authors:
+  - "suki"
+tags:
+  - "release"
+  - "resonance"
+  - "flare"
+  - "audience"
+date: "2025-09-15"
+---
+
+Signal 2.1 发布了团队自 Resonance 和 Flare 上线以来一直在等的两项功能：受众分群的可视化重叠图谱，以及从 CSV 文件批量生成 QR 码。两者即日可用。
+
+{/* truncate */}
+
+## Resonance 重叠图谱
+
+Resonance 此前已经能检测受众重叠。它会告诉你两个分群共享了 14% 的成员。它不会告诉你的是：具体是哪些成员、重叠集中在哪里、重叠是否在增长。
+
+重叠图谱解决了这个问题。每份 Resonance 报告现在都包含一张可视化图谱，将分群交集渲染为比例区域。将鼠标悬停在任意交集上可查看成员数、重叠百分比以及过去 30 天的趋势方向。
+
+```json title="Resonance 重叠查询"
+{
+  "segments": [
+    "high-intent-evaluators",
+    "newsletter-subscribers",
+    "pricing-page-visitors",
+    "demo-requesters"
+  ],
+  "period": "30d",
+  "includeMap": true
+}
+```
+
+图谱可扩展到不限数量的分群。两到三个分群时，可视化呈现为经典的韦恩图。四个及以上时切换为矩阵布局，每个单元格代表一对分群的交集，颜色深浅编码重叠密度。
+
+### 为什么这很重要
+
+重叠的受众浪费预算。如果你的付费推广和邮件培育序列触达的是同一批人，你就是在为同一条转化路径付了两次钱。Resonance 重叠图谱让这种浪费一目了然，让你能在营销活动结束前及时调整，而不是在复盘中才发现重叠。
+
+## Flare 批量生成
+
+Flare 此前一直是逐个生成 QR 码的。对于一张活动海报或一个产品页面来说够用了。对于一次 10,000 个唯一 URL 的直邮活动来说则不行。
+
+Flare 现在接受 CSV 文件作为输入。每一行会生成一个 QR 码，带有各自的 Beacon 链接、营销活动标签和归因元数据。输出是一个 ZIP 压缩包，其中包含以行标识符命名的 PNG 文件。
+
+```text title="示例 CSV 输入"
+row_id,url,campaign,medium
+mailer-001,https://example.com/offer-a,spring-mailer,print
+mailer-002,https://example.com/offer-b,spring-mailer,print
+mailer-003,https://example.com/offer-c,spring-mailer,print
+```
+
+```text title="CLI 用法"
+signal flare generate --input mailer-batch.csv --output ./qr-codes/
+```
+
+每个 QR 码都是一条完整归因的 Beacon 链接。当有人扫描它时，点击会和其他任何 Beacon 交互一样流经 Pulse 进入 Prism。从物理到数字的归因链条完整无断。
+
+### 限制与性能
+
+批量生成每批最多支持 50,000 行。一份 10,000 行的 CSV 在 8 秒内完成。每个 QR 码默认以 300 DPI 渲染，尺寸可配置，从 128px 到 2048px。
+
+## 升级
+
+Signal 2.1 向后兼容。现有的 Resonance 报告会自动获得重叠图谱。Flare 批量生成是一个新的 CLI 命令和 API 端点，不影响现有的单个生成工作流。
+
+```text title="升级"
+spark upgrade signal-cli
+signal --version
+# signal-cli 2.1.0
+```

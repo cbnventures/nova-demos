@@ -31,7 +31,7 @@ for (const demoName of demoNames) {
  * roster is read from the installed preset's blocks barrel rather than
  * hardcoded, so publishing a new block turns every demo red until it is shown.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 describe('block coverage', () => {
   it('preset exports at least one block', () => {

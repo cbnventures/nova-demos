@@ -1,0 +1,74 @@
+---
+title: "Lantern 2.4: Lens Floor-Plan Overlay and Beacon Incremental Runs"
+description: "Lens now renders the household zone graph onto a floor plan, and Beacon supports incremental runs that re-evaluate only the sensors that changed."
+authors:
+  - "noor"
+keywords:
+  - "nova demos"
+  - "lantern"
+  - "lens"
+  - "beacon"
+  - "release"
+tags:
+  - "release"
+  - "lens"
+  - "beacon"
+  - "zones"
+date: "2026-04-28"
+---
+
+Lantern 2.4 ships two features that make the household easier to understand and faster to evaluate: Lens floor-plan overlays, which render the zone graph onto an actual floor plan, and Beacon incremental runs, which re-evaluate only the sensors that changed. Both are available today.
+
+{/* truncate */}
+
+## Lens Floor-Plan Overlay
+
+Lens has always built a zone graph — the logical map of how the household is divided into regions, which sensors watch which zones, and how presence flows between them. Until now, that graph lived as a list of zone names and edges. Useful, but abstract.
+
+Floor-plan overlay makes the zone graph physical. Upload a floor plan image, mark the corners of each zone, and Lens renders the zone graph directly onto the plan. Sensor coverage areas become shaded regions. Presence transitions become visible arrows. Dead zones — areas no sensor covers — are highlighted automatically.
+
+```json title="Floor plan configuration"
+{
+  "floorPlan": {
+    "image": "/plans/main-floor.png",
+    "zones": {
+      "kitchen": { "corners": [[120, 40], [320, 40], [320, 200], [120, 200]] },
+      "hallway": { "corners": [[320, 80], [400, 80], [400, 160], [320, 160]] },
+      "porch":   { "corners": [[400, 60], [520, 60], [520, 180], [400, 180]] }
+    }
+  }
+}
+```
+
+The overlay updates in real time. When a sensor fires, its zone lights up on the plan. When presence transitions from one zone to another, the arrow pulses. The household becomes something you can watch, not just something you read about in logs.
+
+### Dead Zone Detection
+
+The most immediately useful part of the overlay is dead zone detection. Any area of the floor plan that falls outside every sensor's coverage polygon is shaded in a warning color. These are the gaps in the household's awareness — the spots where someone can move without Lantern noticing.
+
+## Beacon Incremental Runs
+
+Beacon evaluates sensor state across the household and determines the overall security posture. Until now, every evaluation was a full run — every sensor re-read, every zone re-scored, every transition re-checked. For a household with 40 sensors, a full run takes about 3 seconds. That is fine on a schedule. It is slow on a change.
+
+Incremental runs fix that. When a single sensor fires, Beacon re-evaluates only the zone that sensor belongs to and the zones directly connected to it. Everything else is carried forward from the previous run.
+
+```text title="Incremental run timing (40-sensor household)"
+Full run:        3.1s   (40 sensors, 12 zones)
+Incremental run: 0.2s   (3 sensors, 2 zones)
+```
+
+The result is the same — a complete posture snapshot — but the path is shorter. The porch motion sensor fires, and Beacon updates the porch zone and the hallway zone in 200 milliseconds instead of re-reading the kitchen, the bedroom, and every other sensor that did not change.
+
+### When Full Runs Still Happen
+
+Incremental runs do not replace full runs. Beacon still performs a full run on a configurable schedule (default: every 5 minutes) to catch drift — a sensor that stopped reporting, a battery that dropped below threshold, a zone whose score decayed because nothing happened in it. The incremental run handles the fast path. The full run handles the complete path.
+
+## Upgrading
+
+Lantern 2.4 is backward compatible. Lens floor-plan overlay is opt-in — households without a floor plan image continue to use the list view. Beacon incremental runs are enabled by default for all households.
+
+```text title="Upgrade"
+lantern update
+lantern --version
+# lantern 2.4.0
+```

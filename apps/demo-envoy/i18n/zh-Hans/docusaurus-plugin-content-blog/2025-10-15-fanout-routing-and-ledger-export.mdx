@@ -1,0 +1,102 @@
+---
+title: "Envoy 2.2：扇出路由与 Ledger 导出"
+authors:
+  - "tomas"
+tags:
+  - "release"
+  - "dispatch"
+  - "ledger"
+  - "routing"
+date: "2025-10-15"
+---
+
+Envoy 2.2 新增了两项改变团队构建中继管道方式的功能：Dispatch 扇出路由——将单条入站消息同时发送到多个目的地，以及 Ledger 导出——按你设定的计划将审计日志条目发送到任意 Spoke 端点。两者即日可用。
+
+{/* truncate */}
+
+## Dispatch 扇出路由
+
+此前，Dispatch 遵循首条匹配模型。一条入站消息匹配一条路由，被投递到一个目的地。如果你需要同一条消息到达三个地方，就得写三个中继。
+
+扇出改变了这一点。一个中继现在可以声明多个 Spoke 目的地。当消息匹配路由时，Dispatch 会并行投递到每一个声明的 Spoke。
+
+```text title="扇出中继清单"
+relay "order-events" {
+  source "shopfront-webhook" {
+    cipher = "hmac-sha256"
+  }
+
+  dispatch {
+    mode = "fanout"
+
+    spoke "warehouse-api" {
+      parcel = "json-to-xml"
+    }
+
+    spoke "analytics-pipeline" {
+      parcel = "json-to-json"
+    }
+
+    spoke "slack-alerts" {
+      parcel = "json-to-plaintext"
+      filter = "$.event.type == 'order.cancelled'"
+    }
+  }
+}
+```
+
+扇出中继中的每个 Spoke 都有自己的 Parcel 转换和可选过滤器。仓库接收 XML，分析管道接收 JSON，Slack 只接收纯文本格式的取消事件。一个入站 webhook 驱动全部三个。
+
+### 投递语义
+
+扇出投递在每个 Spoke 之间是独立的。如果仓库 API 返回 500，Courier 会重试该投递而不影响其他两个。Ledger 将每个 Spoke 投递记录为独立事务，因此你可以独立追踪每个目的地的状态。
+
+### 性能
+
+扇出不增加可度量的延迟。Dispatch 在路由匹配时解析所有 Spoke 目的地，并将它们作为并行投递任务交给 Courier。一个有五个 Spoke 目的地的中继和只有一个目的地的中继在同一个 p99 窗口内完成投递。
+
+## Ledger 导出
+
+Ledger 一直记录着每条消息的接收、转换、路由和投递。但此前访问这些数据的唯一方式是通过 Ledger API 或 Glassboard 仪表盘。
+
+Ledger 导出改变了这一点。你现在可以配置 Ledger 按计划将条目发送到任意 Spoke 端点。合规团队在他们的 SIEM 中获得审计数据。分析团队在数据仓库中获得投递指标。运维团队在事故管理工具中获得故障报告。
+
+```text title="Ledger 导出配置"
+ledger {
+  retention = "90d"
+
+  export "compliance-siem" {
+    spoke    = "siem-ingest"
+    schedule = "every 1h"
+    filter   = "status IN ('failed', 'dead-letter')"
+    format   = "json-lines"
+  }
+
+  export "analytics-warehouse" {
+    spoke    = "bigquery-ingest"
+    schedule = "every 6h"
+    filter   = "*"
+    format   = "parquet"
+  }
+}
+```
+
+每条导出声明指定一个目标 Spoke、一个计划、一个可选过滤器和一种输出格式。支持的格式包括 JSON Lines、CSV 和 Parquet。导出是增量的：每次运行只发送上次运行以来记录的条目。
+
+### 回填
+
+对于现有部署，Ledger 导出支持一次性回填命令，可导出配置的保留窗口内的历史条目：
+
+```text title="回填命令"
+envoy ledger export --backfill --target compliance-siem
+```
+
+## 升级
+
+Envoy 2.2 向后兼容。现有的中继清单无需修改即可继续工作。扇出模式按中继选择启用。Ledger 导出按部署选择启用。
+
+```text title="升级"
+vial pull envoy:2.2
+envoy --version
+# envoy 2.2.0
+```

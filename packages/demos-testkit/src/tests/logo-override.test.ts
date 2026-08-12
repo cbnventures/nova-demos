@@ -32,7 +32,7 @@ const demoNames: Tests_LogoOverride_DemoNames = await discoverDemoNames();
  * must exist and be non-empty, each demo's override must match it byte for byte,
  * and the config must actually wire the override through to a runtime URL.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 describe('logo override', () => {
   for (const demoName of demoNames) {

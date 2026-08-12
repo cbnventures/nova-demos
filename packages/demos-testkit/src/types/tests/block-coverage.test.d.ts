@@ -1,28 +1,28 @@
 /**
  * Tests - Block Coverage - Demo Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_BlockCoverage_DemoNames = string[];
 
 /**
  * Tests - Block Coverage - Block Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_BlockCoverage_BlockNames = string[];
 
 /**
  * Tests - Block Coverage - Source By Demo.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_BlockCoverage_SourceByDemo = Map<string, string>;
 
 /**
  * Tests - Block Coverage - Block Coverage.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_BlockCoverage_BlockCoverage_Source = string;
 
@@ -37,13 +37,13 @@ export type Tests_BlockCoverage_BlockCoverage_Message = string;
 /**
  * Tests - Block Coverage - Block Coverage - Every Demo Was Discovered With Readable Showcase Source.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_BlockCoverage_BlockCoverage_EveryDemoWasDiscoveredWithReadableShowcaseSource_Returns = void;
 
 /**
  * Tests - Block Coverage - Block Coverage - Preset Exports At Least One Block.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_BlockCoverage_BlockCoverage_PresetExportsAtLeastOneBlock_Returns = void;

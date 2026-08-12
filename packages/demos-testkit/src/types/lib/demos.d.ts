@@ -1,14 +1,14 @@
 /**
  * Lib - Demos - Demo Record.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Demos_DemoRecord = Record<string, unknown>;
 
 /**
  * Lib - Demos - Discover Demo Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Demos_DiscoverDemoNames_Returns = Promise<string[]>;
 
@@ -21,7 +21,7 @@ export type Lib_Demos_DiscoverDemoNames_Names = string[];
 /**
  * Lib - Demos - Extract Block Usage Text.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Demos_ExtractBlockUsageText_Source = string;
 
@@ -48,7 +48,7 @@ export type Lib_Demos_ExtractBlockUsageText_Character = string;
 /**
  * Lib - Demos - Get Demo Root.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Demos_GetDemoRoot_DemoName = string;
 
@@ -57,7 +57,7 @@ export type Lib_Demos_GetDemoRoot_Returns = string;
 /**
  * Lib - Demos - List Files.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Demos_ListFiles_Directory = string;
 
@@ -68,7 +68,7 @@ export type Lib_Demos_ListFiles_Entries = string[];
 /**
  * Lib - Demos - Load Demo Config.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Demos_LoadDemoConfig_DemoName = string;
 
@@ -81,7 +81,7 @@ export type Lib_Demos_LoadDemoConfig_ModuleNamespace = Record<string, unknown>;
 /**
  * Lib - Demos - Read Showcase Source.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Demos_ReadShowcaseSource_DemoName = string;
 
@@ -98,7 +98,7 @@ export type Lib_Demos_ReadShowcaseSource_FileText = string;
 /**
  * Lib - Demos - Resolve Leaf.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Demos_ResolveLeaf_Config = unknown;
 

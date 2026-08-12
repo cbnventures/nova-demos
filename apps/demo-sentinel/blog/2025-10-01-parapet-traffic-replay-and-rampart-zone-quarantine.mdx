@@ -1,0 +1,93 @@
+---
+title: "Sentinel 3.4: Parapet Traffic Replay and Rampart Zone Quarantine"
+description: "Parapet now supports full traffic replay against draft policies, and Rampart can automatically quarantine devices that fail posture checks."
+authors:
+  - "james"
+keywords:
+  - "nova demos"
+  - "sentinel"
+  - "parapet"
+  - "rampart"
+  - "release"
+tags:
+  - "release"
+  - "parapet"
+  - "rampart"
+  - "policy"
+date: "2025-10-01"
+---
+
+Sentinel 3.4 ships two features that reduce the risk of policy changes and accelerate incident response: Parapet traffic replay, which lets you test draft policies against real historical traffic before deploying them, and Rampart zone quarantine, which automatically isolates devices that fail posture checks. Both are available today.
+
+{/* truncate */}
+
+## Parapet Traffic Replay
+
+Parapet enforces network access policies. A new policy blocks traffic that the old policy allowed. If the new policy is wrong, legitimate traffic gets dropped and teams start filing tickets at the same time the security team is trying to figure out what broke.
+
+Traffic replay eliminates that risk. Before deploying a new policy, you can replay the last 24 hours of recorded traffic through the draft policy and see exactly what would be allowed, what would be blocked, and what would change compared to the current policy.
+
+```text title="Replay traffic against a draft policy"
+sentinel parapet replay \
+  --policy draft-v2.sentinel \
+  --period 24h \
+  --compare current
+```
+
+```text title="Sample output"
+Replayed 2,847,312 requests against draft-v2.sentinel
+
+  Allowed (unchanged):  2,841,006  (99.78%)
+  Blocked (unchanged):      4,891  ( 0.17%)
+  Newly blocked:            1,212  ( 0.04%)
+  Newly allowed:              203  ( 0.01%)
+
+Newly blocked breakdown:
+  internal-api → monitoring-service:9090    847 requests
+  build-agent → artifact-store:443          312 requests
+  dev-laptop → staging-db:5432               53 requests
+```
+
+The breakdown shows exactly which source-destination pairs would be affected. In this example, the draft policy would block build agents from reaching the artifact store — likely unintentional. Fix the rule, replay again, deploy with confidence.
+
+### Replay Window
+
+Parapet stores traffic metadata (source, destination, port, protocol, decision) for a configurable retention period. The default is 7 days. Traffic payloads are never stored — replay operates on connection metadata only.
+
+## Rampart Zone Quarantine
+
+Rampart organizes the network into zones with controlled boundaries. Devices are assigned to zones based on identity, role, and posture. Until now, a device that failed a posture check was flagged in Spyglass but remained in its assigned zone. The alert was visible; the risk was not contained.
+
+Zone quarantine changes that. When a device fails a posture check, Rampart automatically moves it to a quarantine zone with restricted access. The device can still reach the remediation portal — where it can download updates, rotate credentials, or re-enroll — but it cannot reach production resources until posture is restored.
+
+```text title="Quarantine zone configuration"
+zone "quarantine" {
+  access = [
+    "remediation-portal:443",
+    "identity-provider:443",
+    "dns:53"
+  ]
+  deny_all_other = true
+
+  exit_condition {
+    posture_check = "pass"
+    re_evaluation = "every 5m"
+  }
+}
+```
+
+The quarantine is automatic and immediate. From the moment a posture check fails to the moment the device lands in the quarantine zone, the typical delay is under 2 seconds. The device's user sees a browser redirect to the remediation portal with a clear explanation of what failed and what to do about it.
+
+### Automatic Re-evaluation
+
+Quarantined devices are not stuck. Rampart re-evaluates posture on a configurable interval (default: every 5 minutes). When the device passes — because the user installed the update, rotated the credential, or re-enrolled the certificate — Rampart moves it back to its original zone automatically. No ticket required.
+
+## Upgrading
+
+Sentinel 3.4 is backward compatible. Parapet traffic replay is a new command. Rampart zone quarantine is opt-in per zone — add a quarantine zone to your Rampart configuration to enable it.
+
+```text title="Upgrade"
+sentinel update
+sentinel --version
+# sentinel 3.4.0
+```

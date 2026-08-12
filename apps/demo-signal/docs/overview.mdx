@@ -1,7 +1,7 @@
 ---
 title: "Overview"
 sidebar_position: 1
-description: "Signal is an attribution engine for the attention economy. Beacon links carry embedded metadata that survives URL shortening, messaging apps, and cross-device handoffs."
+description: "Signal is an attribution engine whose Beacon links carry embedded metadata that survives URL shortening, messaging apps, and cross-device handoffs."
 tags:
   - "overview"
   - "signal"
@@ -34,7 +34,7 @@ Signal operates at the link level. Other attribution platforms bolt tracking ont
 
 A Beacon link is not just a redirect. It encodes the campaign, the channel, the variant, and a unique trace identifier. When the link is clicked, Pulse captures the interaction in real time. When the user eventually converts, Prism walks the full attribution path backward and distributes credit across every touchpoint.
 
-```
+```text
 Beacon mints link → User clicks → Pulse captures event
   → User clicks again from a different channel → Pulse captures
     → User converts → Prism reconstructs the full path

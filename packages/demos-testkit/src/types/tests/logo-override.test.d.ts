@@ -3,14 +3,14 @@ import type { Stats } from 'node:fs';
 /**
  * Tests - Logo Override - Demo Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LogoOverride_DemoNames = string[];
 
 /**
  * Tests - Logo Override - Logo Override.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LogoOverride_LogoOverride_PresetName = string;
 

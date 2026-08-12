@@ -116,37 +116,37 @@
     },
     "./apps/demo-envoy": {
       "role": "template",
-      "policy": "freezable",
+      "policy": "trackable",
       "name": "demo-envoy"
     },
     "./apps/demo-foundry": {
       "role": "template",
-      "policy": "freezable",
+      "policy": "trackable",
       "name": "demo-foundry"
     },
     "./apps/demo-lantern": {
       "role": "template",
-      "policy": "freezable",
+      "policy": "trackable",
       "name": "demo-lantern"
     },
     "./apps/demo-marshal": {
       "role": "template",
-      "policy": "freezable",
+      "policy": "trackable",
       "name": "demo-marshal"
     },
     "./apps/demo-sentinel": {
       "role": "template",
-      "policy": "freezable",
+      "policy": "trackable",
       "name": "demo-sentinel"
     },
     "./apps/demo-signal": {
       "role": "template",
-      "policy": "freezable",
+      "policy": "trackable",
       "name": "demo-signal"
     },
     "./packages/demos-testkit": {
       "role": "tool",
-      "policy": "freezable",
+      "policy": "trackable",
       "name": "nova-demos-tool-testkit"
     }
   },
@@ -553,6 +553,7 @@
     }
   },
   "settings": {
-    "lockStepVersioning": true
+    "lockStepVersioning": true,
+    "versionStrategy": "calver"
   }
 }

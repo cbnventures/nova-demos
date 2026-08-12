@@ -54,7 +54,7 @@ import type {
  *
  * @returns {Lib_Demos_DiscoverDemoNames_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export async function discoverDemoNames(): Lib_Demos_DiscoverDemoNames_Returns {
   const appsDirectory: Lib_Demos_DiscoverDemoNames_AppsDirectory = resolve(getRepoRoot(), 'apps');
@@ -74,7 +74,7 @@ export async function discoverDemoNames(): Lib_Demos_DiscoverDemoNames_Returns {
  *
  * @returns {Lib_Demos_GetDemoRoot_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export function getDemoRoot(demoName: Lib_Demos_GetDemoRoot_DemoName): Lib_Demos_GetDemoRoot_Returns {
   return resolve(getRepoRoot(), 'apps', demoName);
@@ -91,7 +91,7 @@ export function getDemoRoot(demoName: Lib_Demos_GetDemoRoot_DemoName): Lib_Demos
  *
  * @returns {Lib_Demos_LoadDemoConfig_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export async function loadDemoConfig(demoName: Lib_Demos_LoadDemoConfig_DemoName): Lib_Demos_LoadDemoConfig_Returns {
   const configUrl: Lib_Demos_LoadDemoConfig_ConfigUrl = pathToFileURL(resolve(getDemoRoot(demoName), 'docusaurus.config.ts')).href;
@@ -110,7 +110,7 @@ export async function loadDemoConfig(demoName: Lib_Demos_LoadDemoConfig_DemoName
  *
  * @returns {Lib_Demos_ListFiles_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export async function listFiles(directory: Lib_Demos_ListFiles_Directory): Lib_Demos_ListFiles_Returns {
   try {
@@ -133,7 +133,7 @@ export async function listFiles(directory: Lib_Demos_ListFiles_Directory): Lib_D
  *
  * @returns {Lib_Demos_ReadShowcaseSource_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export async function readShowcaseSource(demoName: Lib_Demos_ReadShowcaseSource_DemoName): Lib_Demos_ReadShowcaseSource_Returns {
   const directories: Lib_Demos_ReadShowcaseSource_Directories = [
@@ -172,7 +172,7 @@ export async function readShowcaseSource(demoName: Lib_Demos_ReadShowcaseSource_
  *
  * @returns {Lib_Demos_ExtractBlockUsageText_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export function extractBlockUsageText(source: Lib_Demos_ExtractBlockUsageText_Source, blockName: Lib_Demos_ExtractBlockUsageText_BlockName): Lib_Demos_ExtractBlockUsageText_Returns {
   const marker: Lib_Demos_ExtractBlockUsageText_Marker = `<${blockName}`;
@@ -237,7 +237,7 @@ export function extractBlockUsageText(source: Lib_Demos_ExtractBlockUsageText_So
  *
  * @returns {Lib_Demos_ResolveLeaf_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export function resolveLeaf(config: Lib_Demos_ResolveLeaf_Config, path: Lib_Demos_ResolveLeaf_Path): Lib_Demos_ResolveLeaf_Returns {
   const segments: Lib_Demos_ResolveLeaf_Segments = path.split('.');

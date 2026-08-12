@@ -1,0 +1,86 @@
+---
+title: "Sentinel 3.4：Parapet 流量回放与 Rampart 区域隔离"
+authors:
+  - "james"
+tags:
+  - "release"
+  - "parapet"
+  - "rampart"
+  - "policy"
+date: "2025-10-01"
+---
+
+Sentinel 3.4 发布了两项降低策略变更风险和加速事件响应的功能：Parapet 流量回放——让你在部署前针对真实历史流量测试草案策略，以及 Rampart 区域隔离——自动隔离未通过态势检查的设备。两者即日可用。
+
+{/* truncate */}
+
+## Parapet 流量回放
+
+Parapet 执行网络访问策略。新策略会阻止旧策略允许的流量。如果新策略有误，合法流量会被丢弃，团队开始提工单的同时安全团队还在试图弄清楚到底哪里坏了。
+
+流量回放消除了这种风险。在部署新策略之前，你可以将过去 24 小时的记录流量通过草案策略回放，准确查看哪些会被允许、哪些会被阻止、与当前策略相比有什么变化。
+
+```text title="针对草案策略回放流量"
+sentinel parapet replay \
+  --policy draft-v2.sentinel \
+  --period 24h \
+  --compare current
+```
+
+```text title="示例输出"
+针对 draft-v2.sentinel 回放了 2,847,312 个请求
+
+  允许（未变）:  2,841,006  (99.78%)
+  阻止（未变）:      4,891  ( 0.17%)
+  新阻止:            1,212  ( 0.04%)
+  新允许:              203  ( 0.01%)
+
+新阻止明细:
+  internal-api → monitoring-service:9090    847 个请求
+  build-agent → artifact-store:443          312 个请求
+  dev-laptop → staging-db:5432               53 个请求
+```
+
+明细显示了确切会受影响的源-目标对。在这个例子中，草案策略会阻止构建代理访问制品库——很可能是无意的。修复规则，再次回放，然后放心部署。
+
+### 回放窗口
+
+Parapet 存储流量元数据（源、目标、端口、协议、决策）的可配置保留期。默认为 7 天。流量负载永远不会被存储——回放仅基于连接元数据运行。
+
+## Rampart 区域隔离
+
+Rampart 将网络组织成有受控边界的区域。设备根据身份、角色和态势被分配到区域。此前，未通过态势检查的设备会在 Spyglass 中被标记，但仍留在其分配的区域内。警报是可见的，但风险未被遏制。
+
+区域隔离改变了这一点。当设备未通过态势检查时，Rampart 会自动将其移至具有受限访问权限的隔离区域。设备仍可访问修复门户——在那里可以下载更新、轮换凭证或重新注册——但在态势恢复之前无法访问生产资源。
+
+```text title="隔离区域配置"
+zone "quarantine" {
+  access = [
+    "remediation-portal:443",
+    "identity-provider:443",
+    "dns:53"
+  ]
+  deny_all_other = true
+
+  exit_condition {
+    posture_check = "pass"
+    re_evaluation = "every 5m"
+  }
+}
+```
+
+隔离是自动和即时的。从态势检查失败到设备进入隔离区域，典型延迟不到 2 秒。设备用户会看到浏览器重定向到修复门户，并清楚说明什么失败了以及该怎么做。
+
+### 自动重新评估
+
+被隔离的设备不会卡住。Rampart 按可配置的间隔（默认：每 5 分钟）重新评估态势。当设备通过——因为用户安装了更新、轮换了凭证或重新注册了证书——Rampart 会自动将其移回原始区域。无需工单。
+
+## 升级
+
+Sentinel 3.4 向后兼容。Parapet 流量回放是一个新命令。Rampart 区域隔离按区域选择启用——在你的 Rampart 配置中添加隔离区域即可启用。
+
+```text title="升级"
+sentinel update
+sentinel --version
+# sentinel 3.4.0
+```

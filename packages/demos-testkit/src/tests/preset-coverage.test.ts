@@ -35,7 +35,7 @@ for (const demoName of demoNames) {
  * catalogue is walked out of the preset's shipped nova-config.d.ts, so a new
  * config field becomes a demo obligation with no registry to hand-maintain.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 describe('preset coverage', () => {
   it('derived a non-empty leaf catalogue from the installed preset', () => {

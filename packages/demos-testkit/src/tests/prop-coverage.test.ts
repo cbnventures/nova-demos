@@ -61,7 +61,7 @@ for (const demoName of demoNames) {
  * every string-literal variant value must be exercised in each demo, with props
  * matched inside their own block's tags so one block cannot mask another.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 describe('prop coverage', () => {
   it('derived a prop surface for every exported block', () => {

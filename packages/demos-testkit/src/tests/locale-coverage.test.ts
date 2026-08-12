@@ -67,7 +67,7 @@ for (const demoName of demoNames) {
  * is right-to-left and one is CJK, so the preset's bidirectional and wide-glyph
  * rendering paths both stay exercised.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 const deepLocales: Tests_LocaleCoverage_DeepLocales = [
   'ar',
@@ -80,7 +80,7 @@ const deepLocales: Tests_LocaleCoverage_DeepLocales = [
  * The theme translation files a fully localized locale must carry, one per
  * translatable surface the preset renders chrome for.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 const themeBundleFiles: Tests_LocaleCoverage_ThemeBundleFiles = [
   'announcementBar.json',
@@ -97,7 +97,7 @@ const themeBundleFiles: Tests_LocaleCoverage_ThemeBundleFiles = [
  * locales must exist on disk with translations, be described in localeConfigs,
  * and stay identical across demos so no demo silently drops a language.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 describe('locale coverage', () => {
   for (const demoName of demoNames) {

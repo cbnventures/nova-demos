@@ -33,7 +33,7 @@ const demoNames: Tests_StructureParity_DemoNames = await discoverDemoNames();
  * showcase is the exhaustive block and variant matrix, and manifesto proves an
  * MDX page renders through the preset.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 const expectedPages: Tests_StructureParity_ExpectedPages = [
   'index.tsx',
@@ -48,7 +48,7 @@ const expectedPages: Tests_StructureParity_ExpectedPages = [
  * path rather than product content: the landing page, the theme matrix, and the
  * bare, draft, and unlisted visibility states.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 const universalDocs: Tests_StructureParity_UniversalDocs = [
   'bare-sample.mdx',
@@ -65,7 +65,7 @@ const universalDocs: Tests_StructureParity_UniversalDocs = [
  * deliberately free to differ in volume, so doc counts are not asserted; what is
  * locked is the scaffolding every demo needs to exercise the same preset paths.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 describe('structure parity', () => {
   for (const demoName of demoNames) {
@@ -77,11 +77,11 @@ describe('structure parity', () => {
       return;
     });
 
-    it(`'${demoName}' ships 15 blog posts plus an authors file`, async () => {
+    it(`'${demoName}' ships 16 blog posts plus an authors file`, async () => {
       const blogFiles: Tests_StructureParity_StructureParity_BlogFiles = await listFiles(resolve(getDemoRoot(demoName), 'blog'));
       const blogPosts: Tests_StructureParity_StructureParity_BlogPosts = blogFiles.filter((file) => file.endsWith('.mdx') === true);
 
-      strictEqual(blogPosts.length, 15, `'${demoName}' has ${blogPosts.length} blog posts, expected 15.`);
+      strictEqual(blogPosts.length, 16, `'${demoName}' has ${blogPosts.length} blog posts, expected 16.`);
       strictEqual(blogFiles.includes('authors.yml'), true, `'${demoName}' is missing blog/authors.yml.`);
 
       return;

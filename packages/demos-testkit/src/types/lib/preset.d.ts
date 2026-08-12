@@ -1,7 +1,7 @@
 /**
  * Lib - Preset - Prop Descriptor.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_PropDescriptor_Name = string;
 
@@ -21,14 +21,14 @@ export type Lib_Preset_PropDescriptor = {
 /**
  * Lib - Preset - Get Preset Root.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_GetPresetRoot_Returns = string;
 
 /**
  * Lib - Preset - Get Repo Root.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_GetRepoRoot_Returns = string;
 
@@ -39,7 +39,7 @@ export type Lib_Preset_GetRepoRoot_CurrentFileDirectory = string;
 /**
  * Lib - Preset - Read Block Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_ReadBlockNames_Returns = Promise<string[]>;
 
@@ -56,7 +56,7 @@ export type Lib_Preset_ReadBlockNames_Match = RegExpExecArray | null;
 /**
  * Lib - Preset - Read Block Prop Surface.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_ReadBlockPropSurface_BlockName = string;
 
@@ -106,7 +106,7 @@ export type Lib_Preset_ReadBlockPropSurface_FieldShared = boolean;
 /**
  * Lib - Preset - Read Block Variant Values.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_ReadBlockVariantValues_BlockName = string;
 
@@ -145,7 +145,7 @@ export type Lib_Preset_ReadBlockVariantValues_Members = string[];
 /**
  * Lib - Preset - Read Theme Config Leaf Paths.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_ReadThemeConfigLeafPaths_Returns = Promise<string[]>;
 
@@ -203,7 +203,7 @@ export type Lib_Preset_ReadThemeConfigLeafPaths_WalkFieldType = string;
 /**
  * Lib - Preset - Read Type Aliases.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_ReadTypeAliases_FileText = string;
 
@@ -222,7 +222,7 @@ export type Lib_Preset_ReadTypeAliases_AliasBody = string;
 /**
  * Lib - Preset - Read Variants.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_ReadVariants_Expression = string;
 
@@ -241,7 +241,7 @@ export type Lib_Preset_ReadVariants_Match = RegExpExecArray | null;
 /**
  * Lib - Preset - To Kebab Case.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Lib_Preset_ToKebabCase_Value = string;
 

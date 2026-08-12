@@ -11,7 +11,7 @@ import * as vitest from 'vitest';
  * double-quote rule lives in @cbnventures/nova/rules/vitest; this wrapper supplies the
  * configuration that points at this site's own .env files.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 registerDotenvSuite({
   vitest,

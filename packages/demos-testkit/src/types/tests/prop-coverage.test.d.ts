@@ -1,7 +1,7 @@
 /**
  * Tests - Prop Coverage - Block Surface.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_BlockSurface_Name = string;
 
@@ -21,35 +21,35 @@ export type Tests_PropCoverage_BlockSurface = {
 /**
  * Tests - Prop Coverage - Demo Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_DemoNames = string[];
 
 /**
  * Tests - Prop Coverage - Block Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_BlockNames = string[];
 
 /**
  * Tests - Prop Coverage - Surfaces.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_Surfaces = Tests_PropCoverage_BlockSurface[];
 
 /**
  * Tests - Prop Coverage - Source By Demo.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_SourceByDemo = Map<string, string>;
 
 /**
  * Tests - Prop Coverage - Descriptors.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_Descriptors_Name = string;
 
@@ -69,21 +69,21 @@ export type Tests_PropCoverage_Descriptors = {
 /**
  * Tests - Prop Coverage - Prop Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_PropNames = string[];
 
 /**
  * Tests - Prop Coverage - Shared Prop Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_SharedPropNames = string[];
 
 /**
  * Tests - Prop Coverage - Prop Coverage.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_PropCoverage_CurrentSurface_Name = string;
 
@@ -117,13 +117,13 @@ export type Tests_PropCoverage_PropCoverage_Message = string;
 /**
  * Tests - Prop Coverage - Prop Coverage - Derived A Prop Surface For Every Exported Block.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_PropCoverage_DerivedAPropSurfaceForEveryExportedBlock_Returns = void;
 
 /**
  * Tests - Prop Coverage - Prop Coverage - Derived At Least One Variant Value Across The Block Surface.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_PropCoverage_PropCoverage_DerivedAtLeastOneVariantValueAcrossTheBlockSurface_TotalPoints = number;

@@ -1,0 +1,80 @@
+---
+title: "Signal 2.1: Resonance Overlap Maps and Flare Bulk Generation"
+description: "Resonance now visualizes audience overlap across unlimited segments, and Flare supports bulk QR generation from CSV."
+authors:
+  - "suki"
+keywords:
+  - "nova demos"
+  - "signal"
+  - "resonance"
+  - "flare"
+  - "release"
+tags:
+  - "release"
+  - "resonance"
+  - "flare"
+  - "audience"
+date: "2025-09-15"
+---
+
+Signal 2.1 ships two features that teams have been asking for since Resonance and Flare launched: visual overlap maps for audience segments, and bulk QR code generation from CSV files. Both are available today.
+
+{/* truncate */}
+
+## Resonance Overlap Maps
+
+Resonance already detected audience overlap. It told you that two segments shared 14% of their members. What it did not tell you was which members, where the overlap concentrated, or whether the overlap was growing.
+
+Overlap maps fix that. Every Resonance report now includes a visual map that renders segment intersections as proportional regions. Hover any intersection to see the member count, the overlap percentage, and the trend direction over the last 30 days.
+
+```json title="Resonance overlap query"
+{
+  "segments": [
+    "high-intent-evaluators",
+    "newsletter-subscribers",
+    "pricing-page-visitors",
+    "demo-requesters"
+  ],
+  "period": "30d",
+  "includeMap": true
+}
+```
+
+The map scales to unlimited segments. At two or three segments the visualization is a classic Venn diagram. At four or more it switches to a matrix layout where each cell represents a pairwise intersection and color intensity encodes overlap density.
+
+### Why This Matters
+
+Overlapping audiences waste budget. If your paid campaign and your email nurture sequence are reaching the same people, you are paying twice for the same conversion path. Resonance overlap maps make that waste visible at a glance, so you can reallocate before the campaign ends rather than discovering the overlap in the post-mortem.
+
+## Flare Bulk Generation
+
+Flare has always generated QR codes one at a time. For a single event poster or a product page, that is fine. For a direct mail campaign with 10,000 unique URLs, it is not.
+
+Flare now accepts a CSV file as input. Each row produces one QR code with its own Beacon link, campaign tag, and attribution metadata. The output is a ZIP archive containing individual PNG files named by row identifier.
+
+```text title="Example CSV input"
+row_id,url,campaign,medium
+mailer-001,https://example.com/offer-a,spring-mailer,print
+mailer-002,https://example.com/offer-b,spring-mailer,print
+mailer-003,https://example.com/offer-c,spring-mailer,print
+```
+
+```text title="CLI usage"
+signal flare generate --input mailer-batch.csv --output ./qr-codes/
+```
+
+Each QR code is a fully attributed Beacon link. When someone scans it, the click flows through Pulse and into Prism like any other Beacon interaction. The physical-to-digital attribution chain is unbroken.
+
+### Limits and Performance
+
+Bulk generation processes up to 50,000 rows per batch. A 10,000-row CSV completes in under 8 seconds. Each QR code is rendered at 300 DPI by default, with configurable sizes from 128px to 2048px.
+
+## Upgrading
+
+Signal 2.1 is backward compatible. Existing Resonance reports gain the overlap map automatically. Flare bulk generation is a new CLI command and API endpoint with no changes to existing single-generation workflows.
+
+```text title="Upgrade"
+spark upgrade signal-cli
+signal --version
+# signal-cli 2.1.0
+```

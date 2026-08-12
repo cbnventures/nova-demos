@@ -4,7 +4,7 @@
  * Captures the exported block name from a re-export line in the preset's
  * blocks barrel file, such as "export { default as Hero }".
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export const LIB_REGEX_BLOCK_EXPORT = /export\s*\{\s*default\s+as\s+(\w+)\s*\}/;
 
@@ -14,7 +14,7 @@ export const LIB_REGEX_BLOCK_EXPORT = /export\s*\{\s*default\s+as\s+(\w+)\s*\}/;
  * Captures the body of a block's exported Props object type so its individual
  * fields can be enumerated by the props-coverage suite.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export const LIB_REGEX_PROPS_OBJECT = /export type \w*_Props = \{([\s\S]*?)\n\};/;
 
@@ -24,7 +24,7 @@ export const LIB_REGEX_PROPS_OBJECT = /export type \w*_Props = \{([\s\S]*?)\n\};
  * Captures the field name, its optional marker, and its type expression from a
  * single line inside a Props object body.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export const LIB_REGEX_PROPS_FIELD = /^\s*(\w+)(\??):\s*([^;]+);/;
 
@@ -34,7 +34,7 @@ export const LIB_REGEX_PROPS_FIELD = /^\s*(\w+)(\??):\s*([^;]+);/;
  * Captures the name and right-hand side of a block's per-prop type alias so
  * string-literal unions can be expanded into their individual variant values.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export const LIB_REGEX_PROPS_TYPE_ALIAS = /export type (\w+) = ([^;]+);/;
 
@@ -44,7 +44,7 @@ export const LIB_REGEX_PROPS_TYPE_ALIAS = /export type (\w+) = ([^;]+);/;
  * Captures each single-quoted value, used to read union variant members and
  * locale codes out of a captured source fragment.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export const LIB_REGEX_QUOTED_STRING = /'([^']+)'/;
 
@@ -54,7 +54,7 @@ export const LIB_REGEX_QUOTED_STRING = /'([^']+)'/;
  * Captures the name and body of each NovaThemeConfig object type alias so the
  * full leaf-path catalogue can be walked.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export const LIB_REGEX_THEME_CONFIG_OBJECT_TYPE = /export type (NovaThemeConfig\w*) = \{([\s\S]*?)\n\}[^;\n]*;/;
 
@@ -64,7 +64,7 @@ export const LIB_REGEX_THEME_CONFIG_OBJECT_TYPE = /export type (NovaThemeConfig\
  * Captures a referenced NovaThemeConfig type alias from a field's type
  * expression so the leaf walk can recurse into nested objects.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export const LIB_REGEX_THEME_CONFIG_TYPE_REFERENCE = /(NovaThemeConfig\w*)/;
 
@@ -74,7 +74,7 @@ export const LIB_REGEX_THEME_CONFIG_TYPE_REFERENCE = /(NovaThemeConfig\w*)/;
  * Matches a single identifier character, used to confirm a block tag match ends
  * at a real boundary so "<Stats" does not also match "<StatsPanel".
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export const LIB_REGEX_IDENTIFIER_CHAR = /[A-Za-z0-9_]/;
 
@@ -84,6 +84,6 @@ export const LIB_REGEX_IDENTIFIER_CHAR = /[A-Za-z0-9_]/;
  * Captures the seam between a lowercase or digit character and an uppercase
  * character, used to convert a PascalCase block name into its kebab-case directory.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export const LIB_REGEX_PASCAL_BOUNDARY = /([a-z0-9])([A-Z])/;

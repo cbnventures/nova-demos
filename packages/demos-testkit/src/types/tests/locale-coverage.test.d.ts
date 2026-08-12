@@ -1,63 +1,63 @@
 /**
  * Tests - Locale Coverage - Demo Names.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LocaleCoverage_DemoNames = string[];
 
 /**
  * Tests - Locale Coverage - Declared By Demo.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LocaleCoverage_DeclaredByDemo = Map<string, string[]>;
 
 /**
  * Tests - Locale Coverage - Locale Configs By Demo.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LocaleCoverage_LocaleConfigsByDemo = Map<string, Record<string, unknown>>;
 
 /**
  * Tests - Locale Coverage - Default Locale By Demo.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LocaleCoverage_DefaultLocaleByDemo = Map<string, string>;
 
 /**
  * Tests - Locale Coverage - Config.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LocaleCoverage_Config = Record<string, unknown>;
 
 /**
  * Tests - Locale Coverage - I18n.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LocaleCoverage_I18n = Record<string, unknown>;
 
 /**
  * Tests - Locale Coverage - Deep Locales.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LocaleCoverage_DeepLocales = string[];
 
 /**
  * Tests - Locale Coverage - Theme Bundle Files.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LocaleCoverage_ThemeBundleFiles = string[];
 
 /**
  * Tests - Locale Coverage - Locale Coverage.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export type Tests_LocaleCoverage_LocaleCoverage_Declared = string[];
 

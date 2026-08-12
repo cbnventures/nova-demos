@@ -7,7 +7,7 @@ import * as vitest from 'vitest';
 /**
  * Tests - Dotenv.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 registerDotenvSuite({
   vitest,

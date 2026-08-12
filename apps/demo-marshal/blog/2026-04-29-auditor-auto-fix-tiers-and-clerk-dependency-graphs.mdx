@@ -1,0 +1,86 @@
+---
+title: "Marshal 2.4: Auditor Auto-fix Tiers and Clerk Dependency Graphs"
+description: "Auditor now applies automatic fixes across the conventions and formatting tiers, and Clerk renders a dependency graph across all dockets in the workspace."
+authors:
+  - "cordelia"
+keywords:
+  - "nova demos"
+  - "marshal"
+  - "auditor"
+  - "clerk"
+  - "release"
+tags:
+  - "release"
+  - "auditor"
+  - "clerk"
+  - "dockets"
+date: "2026-04-29"
+---
+
+Marshal 2.4 ships two features that reduce manual work in the filing pipeline: Auditor auto-fix tiers, which apply automatic corrections across conventions and formatting without touching sealed content, and Clerk dependency graphs, which visualize how dockets reference each other across the full workspace. Both are available today.
+
+{/* truncate */}
+
+## Auditor Auto-fix Tiers
+
+Auditor enforces filing conventions. It checks naming patterns, metadata completeness, cross-reference integrity, and formatting rules. Until now, every violation required a manual fix. For a workspace with 200 dockets and a new convention, that meant hundreds of edits by hand.
+
+Auto-fix changes that. Auditor now classifies every rule into one of three tiers:
+
+| Tier        | Scope                   | Auto-fixable | Example                              |
+|-------------|-------------------------|--------------|--------------------------------------|
+| Formatting  | Whitespace, punctuation | Yes          | Trailing whitespace in description   |
+| Conventions | Naming, metadata shape  | Yes          | Missing `category` field in manifest |
+| Structural  | Cross-references, seals | No           | Broken reference to sealed docket    |
+
+Formatting and convention violations are auto-fixable. Structural violations are not — they require human judgment because they may affect the integrity of sealed records.
+
+```text title="Run Auditor with auto-fix"
+marshal auditor check --fix
+```
+
+```text title="Sample output"
+Fixed 47 formatting violations across 23 dockets
+Fixed 12 convention violations across 8 dockets
+Skipped 3 structural violations (manual review required)
+
+  docket/2026-Q1/intake-117: broken reference to sealed docket intake-089
+  docket/2026-Q1/intake-134: category mismatch with parent filing
+  docket/2026-Q1/intake-201: seal timestamp predates filing timestamp
+```
+
+Auto-fix never touches content that has been sealed. A sealed docket is immutable. If a formatting violation exists inside a sealed record, Auditor reports it but does not fix it — the seal takes precedence.
+
+### Dry Run
+
+Auto-fix supports a `--dry-run` flag that reports what would be fixed without writing any changes. For teams adopting new conventions, this is the safe way to preview the impact before committing.
+
+## Clerk Dependency Graphs
+
+Dockets reference each other. An intake references its parent filing. A filing references its policy. A policy references its authority. These references form a graph, and until now, the only way to see that graph was to trace references manually.
+
+Clerk now renders the dependency graph across all dockets in the workspace. Every reference becomes an edge. Every docket becomes a node. Orphaned dockets — records that nothing references and that reference nothing — are highlighted.
+
+```text title="Generate the graph"
+marshal clerk graph --output workspace-graph.svg
+```
+
+The graph supports filtering by filing type, date range, and seal status:
+
+```text title="Filter to unsealed dockets from Q1"
+marshal clerk graph --filter "sealed=false AND filed >= 2026-01-01" --output q1-open.svg
+```
+
+### Circular Reference Detection
+
+The most immediately useful feature of the dependency graph is circular reference detection. If docket A references docket B, and docket B references docket A, the graph highlights the cycle. Circular references are not always errors — mutual references between a filing and its amendment are expected — but unexpected cycles usually indicate a misfiled record.
+
+## Upgrading
+
+Marshal 2.4 is backward compatible. Auditor auto-fix is opt-in via the `--fix` flag. Clerk dependency graphs are a new command with no impact on existing workflows.
+
+```text title="Upgrade"
+marshal update
+marshal --version
+# marshal 2.4.0
+```

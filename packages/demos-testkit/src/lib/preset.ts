@@ -104,7 +104,7 @@ import type {
  *
  * @returns {Lib_Preset_GetRepoRoot_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export function getRepoRoot(): Lib_Preset_GetRepoRoot_Returns {
   const currentFilePath: Lib_Preset_GetRepoRoot_CurrentFilePath = fileURLToPath(import.meta.url);
@@ -121,7 +121,7 @@ export function getRepoRoot(): Lib_Preset_GetRepoRoot_Returns {
  *
  * @returns {Lib_Preset_GetPresetRoot_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export function getPresetRoot(): Lib_Preset_GetPresetRoot_Returns {
   return resolve(getRepoRoot(), 'node_modules', '@cbnventures', 'docusaurus-preset-nova');
@@ -137,7 +137,7 @@ export function getPresetRoot(): Lib_Preset_GetPresetRoot_Returns {
  *
  * @returns {Lib_Preset_ToKebabCase_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export function toKebabCase(value: Lib_Preset_ToKebabCase_Value): Lib_Preset_ToKebabCase_Returns {
   return value.replace(new RegExp(LIB_REGEX_PASCAL_BOUNDARY, 'g'), '$1-$2').toLowerCase();
@@ -152,7 +152,7 @@ export function toKebabCase(value: Lib_Preset_ToKebabCase_Value): Lib_Preset_ToK
  *
  * @returns {Lib_Preset_ReadBlockNames_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export async function readBlockNames(): Lib_Preset_ReadBlockNames_Returns {
   const barrelPath: Lib_Preset_ReadBlockNames_BarrelPath = resolve(getPresetRoot(), 'build', 'src', 'blocks', 'index.js');
@@ -181,7 +181,7 @@ export async function readBlockNames(): Lib_Preset_ReadBlockNames_Returns {
  *
  * @returns {Lib_Preset_ReadTypeAliases_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export function readTypeAliases(fileText: Lib_Preset_ReadTypeAliases_FileText): Lib_Preset_ReadTypeAliases_Returns {
   const aliases: Lib_Preset_ReadTypeAliases_Aliases = new Map();
@@ -212,7 +212,7 @@ export function readTypeAliases(fileText: Lib_Preset_ReadTypeAliases_FileText): 
  *
  * @returns {Lib_Preset_ReadVariants_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export function readVariants(expression: Lib_Preset_ReadVariants_Expression, aliases: Lib_Preset_ReadVariants_Aliases): Lib_Preset_ReadVariants_Returns {
   const resolved: Lib_Preset_ReadVariants_Resolved = aliases.get(expression.trim()) ?? expression;
@@ -241,7 +241,7 @@ export function readVariants(expression: Lib_Preset_ReadVariants_Expression, ali
  *
  * @returns {Lib_Preset_ReadBlockPropSurface_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export async function readBlockPropSurface(blockName: Lib_Preset_ReadBlockPropSurface_BlockName): Lib_Preset_ReadBlockPropSurface_Returns {
   const typeFilePath: Lib_Preset_ReadBlockPropSurface_TypeFilePath = resolve(getPresetRoot(), 'build', 'src', 'types', 'blocks', toKebabCase(blockName), 'index.d.ts');
@@ -301,7 +301,7 @@ export async function readBlockPropSurface(blockName: Lib_Preset_ReadBlockPropSu
  *
  * @returns {Lib_Preset_ReadBlockVariantValues_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export async function readBlockVariantValues(blockName: Lib_Preset_ReadBlockVariantValues_BlockName): Lib_Preset_ReadBlockVariantValues_Returns {
   const typeFilePath: Lib_Preset_ReadBlockVariantValues_TypeFilePath = resolve(getPresetRoot(), 'build', 'src', 'types', 'blocks', toKebabCase(blockName), 'index.d.ts');
@@ -356,7 +356,7 @@ export async function readBlockVariantValues(blockName: Lib_Preset_ReadBlockVari
  *
  * @returns {Lib_Preset_ReadThemeConfigLeafPaths_Returns}
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 export async function readThemeConfigLeafPaths(): Lib_Preset_ReadThemeConfigLeafPaths_Returns {
   const typeFilePath: Lib_Preset_ReadThemeConfigLeafPaths_TypeFilePath = resolve(getPresetRoot(), 'nova-config.d.ts');

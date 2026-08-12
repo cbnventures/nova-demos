@@ -10,7 +10,7 @@ import * as vitest from 'vitest';
  * Covers the monorepo root .env files from this workspace's vitest runner.
  * The root workspace has no vitest of its own, so demo-envoy hosts the suite.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 registerDotenvSuite({
   vitest,

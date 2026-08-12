@@ -20,7 +20,7 @@ import Layout from '@theme/Layout';
  *
  * @constructor
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 function Home() {
   return (

@@ -4,7 +4,7 @@ import * as vitest from 'vitest';
 /**
  * Tests - Type Declarations.
  *
- * @since UNRELEASED
+ * @since 2026.8.0
  */
 registerTypeDeclarationSuite({
   vitest,
