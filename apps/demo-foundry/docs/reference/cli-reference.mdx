@@ -1,17 +1,18 @@
 ---
 title: "CLI Reference"
 sidebar_position: 2
-description: "Foundry CLI reference with six core sub-tool commands plus top-level workspace forging and deployment commands with full option details."
+description: "Documents the Foundry CLI's six core sub-tool commands plus top-level workspace forging and deployment commands with full option details."
 tags:
   - "reference"
   - "cli"
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # CLI Reference
 
-The Foundry CLI provides six core commands — one for each sub-tool — plus top-level commands for forging and deploying workspaces.
+The Foundry CLI provides six core commands — one for each sub-tool — plus top-level commands for <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forging</Terminology> and deploying <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspaces</Terminology>.
 
 ## Usage
 
@@ -21,20 +22,20 @@ foundry <command> [options]
 
 ## Top-Level Commands
 
-| Command            | Description                                      |
-|--------------------|--------------------------------------------------|
-| `foundry ignite`   | Forge the workspace from the `.grain` manifest.  |
-| `foundry deploy`   | Ship packages to a deployment target.            |
-| `foundry tongs`    | Resolve and visualize the dependency graph.      |
-| `foundry quench`   | Manage the incremental build cache.              |
-| `foundry bellows`  | Run tasks in parallel across workspace packages. |
-| `foundry crucible` | Generate and run test scaffolds.                 |
-| `foundry slag`     | Detect dead code and unused dependencies.        |
-| `foundry warden`   | Run the linting engine.                          |
+| Command            | Description                                                                                                                                                                                                                                                                                                                                                                                                              |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `foundry ignite`   | <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">Forge</Terminology> the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> from the <Terminology title="Single source of truth for a Foundry workspace" to="/docs/terminology#grain-manifest">`.grain` manifest</Terminology>. |
+| `foundry deploy`   | Ship packages to a deployment target.                                                                                                                                                                                                                                                                                                                                                                                    |
+| `foundry tongs`    | Resolve and visualize the dependency graph.                                                                                                                                                                                                                                                                                                                                                                              |
+| `foundry quench`   | Manage the incremental build cache.                                                                                                                                                                                                                                                                                                                                                                                      |
+| `foundry bellows`  | Run tasks in parallel across <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> packages.                                                                                                                                                                                                                                                       |
+| `foundry crucible` | Generate and run test scaffolds.                                                                                                                                                                                                                                                                                                                                                                                         |
+| `foundry slag`     | Detect dead code and unused dependencies.                                                                                                                                                                                                                                                                                                                                                                                |
+| `foundry warden`   | Run the linting engine.                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ## foundry ignite
 
-Reads the `.grain` manifest and generates all workspace artifacts — directory structure, configuration files, Warden rules, and Crucible test scaffolds.
+Reads the <Terminology title="Single source of truth for a Foundry workspace" to="/docs/terminology#grain-manifest">`.grain` manifest</Terminology> and generates all <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> artifacts — directory structure, configuration files, <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> rules, and <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> test scaffolds.
 
 ```bash title="Forge the workspace"
 foundry ignite
@@ -90,7 +91,7 @@ foundry quench <subcommand>
 
 ## foundry bellows
 
-Runs tasks in parallel across workspace packages, respecting the Tongs dependency graph.
+Runs tasks in parallel across <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> packages, respecting the <Terminology title="Resolves the dependency graph with query tools" to="/docs/terminology#tongs">Tongs</Terminology> dependency graph.
 
 ```bash
 foundry bellows <task> [options]
@@ -127,21 +128,21 @@ foundry crucible <subcommand>
 
 ## foundry slag
 
-Scans the workspace for dead code, unused exports, and orphaned dependencies.
+Scans the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> for dead code, unused exports, and orphaned dependencies.
 
 ```bash
 foundry slag <subcommand>
 ```
 
-| Subcommand    | Description                                                    |
-|---------------|----------------------------------------------------------------|
-| `slag scan`   | Scan the workspace and report unused code.                     |
-| `slag clean`  | Remove detected dead code (requires `--confirm`).              |
-| `slag report` | Generate a JSON report of all unused exports and dependencies. |
+| Subcommand    | Description                                                                                                                                                  |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `slag scan`   | Scan the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> and report unused code. |
+| `slag clean`  | Remove detected dead code (requires `--confirm`).                                                                                                            |
+| `slag report` | Generate a JSON report of all unused exports and dependencies.                                                                                               |
 
 ## foundry warden
 
-Runs the linting engine against the workspace.
+Runs the linting engine against the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology>.
 
 ```bash
 foundry warden <subcommand>
@@ -156,7 +157,7 @@ foundry warden <subcommand>
 
 ## foundry deploy
 
-Ships workspace packages to a deployment target.
+Ships <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> packages to a deployment target.
 
 ```bash
 foundry deploy --target <target> [options]

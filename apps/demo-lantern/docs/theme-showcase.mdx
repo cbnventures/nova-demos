@@ -1,6 +1,6 @@
 ---
 title: "Theme Showcase"
-description: "Theme component showcase covering admonitions, tabs, code blocks, tables, details, and every other Docusaurus preset element."
+description: "Showcases the theme component library, covering admonitions, tabs, code blocks, tables, details, and every other Docusaurus preset element."
 sidebar_label: "Theme Showcase"
 sidebar_position: 7
 tags:
@@ -11,6 +11,7 @@ tags:
 import Details from '@theme/Details';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Theme Showcase
 
@@ -58,29 +59,29 @@ External links point to resources outside the site:
 
 ### Unordered List
 
-- Sentry rules enforce consistent watch patterns across every zone.
+- Sentry rules enforce consistent <Terminology title="General term for an active monitoring session" to="/docs/terminology#watch">watch</Terminology> patterns across every <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology>.
 - Alloy settings eliminate config drift between sensor groups.
 - Zone maps replace dozens of configuration files with a single source of truth.
-- Dryrun scaffolds give new zones a test baseline from day one.
+- Dryrun scaffolds give new <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology> a test baseline from day one.
 
 ### Ordered List
 
-1. Install the CLI with npm.
+1. Install the CLI with <Terminology title="CLI package manager used to install Lantern" to="/docs/terminology#spark">Spark</Terminology>.
 2. Write a `.yml` zone-map describing your perimeter.
 3. Run `lantern arm` to activate the monitoring environment.
-4. Run `lantern sentry check` to verify all watch rules pass.
+4. Run `lantern sentry check` to verify all <Terminology title="General term for an active monitoring session" to="/docs/terminology#watch">watch</Terminology> rules pass.
 5. Run `lantern dryrun run` to replay a simulated event sweep.
 
 ### Nested Lists
 
 - **CLI Commands**
-  - Arm
+  - <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">Arm</Terminology>
     - `lantern arm` — activate the full perimeter from the zone-map.
     - `lantern arm --dry-run` — preview output without writing any files.
-    - `lantern arm --incremental` — re-arm only changed zones.
+    - `lantern arm --incremental` — re-<Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">arm</Terminology> only changed <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology>.
   - Analysis
-    - `lantern prune scan` — detect dormant sensors and unused zones.
-    - `lantern lens graph` — render the zone dependency graph.
+    - `lantern prune scan` — detect dormant sensors and unused <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology>.
+    - `lantern lens graph` — render the <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology> dependency graph.
 - **Sentry Categories**
   - Conventions — naming, exports, and structural rules.
   - Formatting — whitespace, comments, and visual consistency.
@@ -90,13 +91,13 @@ External links point to resources outside the site:
 
 ## Blockquotes
 
-> A perimeter without shared tooling is just a collection of sensors pretending to be a watch.
+> A perimeter without shared tooling is just a collection of sensors pretending to be a <Terminology title="General term for an active monitoring session" to="/docs/terminology#watch">watch</Terminology>.
 
 Nested blockquotes work for attributions or follow-up commentary:
 
 > The best tooling is the tooling that already works when you arrive.
 >
-> > That is why Lantern discovers everything from a zone-map — it removes the configuration problem before it starts.
+> > That is why <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> discovers everything from a zone-map — it removes the configuration problem before it starts.
 
 ---
 
@@ -165,11 +166,11 @@ workspace "my-home" {
 }
 ```
 
-Lantern commands:
+<Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> commands:
 
 ```bash
 # Install Lantern and arm the perimeter
-npm install lantern
+spark install lantern
 lantern arm
 
 # Verify everything passes before committing
@@ -228,19 +229,19 @@ Notes provide supplementary context that is helpful but not essential. The reade
 :::
 
 :::tip
-Tips share best practices or shortcuts that save time. For example, run `lantern arm --dry-run` to preview what Lantern will activate without writing any files to disk.
+Tips share best practices or shortcuts that save time. For example, run `lantern arm --dry-run` to preview what <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> will activate without writing any files to disk.
 :::
 
 :::info
-Info blocks highlight background details that aid understanding. The sentry preset system uses a layered composition model — each preset is a named collection of watch rules that you stack in your zone-map.
+Info blocks highlight background details that aid understanding. The sentry preset system uses a layered composition model — each preset is a named collection of <Terminology title="General term for an active monitoring session" to="/docs/terminology#watch">watch</Terminology> rules that you stack in your zone-map.
 :::
 
 :::warning
-Warnings flag potential pitfalls. Changing the `lang` directive in a zone-map after the initial arm will re-discover all configuration files. Run with `--dry-run` first to see the impact.
+Warnings flag potential pitfalls. Changing the `lang` directive in a zone-map after the initial <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">arm</Terminology> will re-discover all configuration files. Run with `--dry-run` first to see the impact.
 :::
 
 :::danger
-Danger blocks mark actions that can cause data loss or breaking changes. Running `lantern prune clean --confirm` permanently removes detected dormant zones with no recovery path.
+Danger blocks mark actions that can cause data loss or breaking changes. Running `lantern prune clean --confirm` permanently removes detected dormant <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology> with no recovery path.
 :::
 
 :::tip[Custom Title]
@@ -254,7 +255,7 @@ Admonitions accept a custom title in brackets after the keyword. Use this to mak
 <Details>
 <summary>What Alloy versions are supported?</summary>
 
-Lantern 2.x requires Alloy 5.0 or later. This is enforced during the `lantern arm` zone-map parsing phase. Earlier Alloy versions do not support the type introspection API that dryrun uses to generate event replay scaffolds.
+<Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> 2.x requires Alloy 5.0 or later. This is enforced during the `lantern arm` zone-map parsing phase. Earlier Alloy versions do not support the type introspection API that dryrun uses to generate event replay scaffolds.
 
 </Details>
 
@@ -278,10 +279,10 @@ Order matters — later presets override earlier ones. Place `formatting` last s
 ## Tabs
 
 <Tabs>
-<TabItem value="npm" label="npm" default>
+<TabItem value="spark" label="Spark" default>
 
 ```bash
-npm install lantern
+spark install lantern
 ```
 
 </TabItem>
@@ -326,14 +327,14 @@ fn greet(name: &str) -> String {
 
 ## Tables
 
-| Zone Category | Sensor Count | Auto-arm | Description                                      |
-|---------------|--------------|----------|--------------------------------------------------|
-| Perimeter     | 68           | 12       | Exterior doors, windows, gates, and entry paths. |
-| Interior      | 55           | 55       | Hallways, stairwells, and common living areas.   |
-| Watch         | 72           | 8        | Sleeping areas and late-night monitoring zones.  |
-| Quiet         | 45           | 0        | Bedrooms and bathrooms — armed on travel mode.   |
-| Motion        | 60           | 15       | Directional sensors with confidence bands.       |
-| Contact       | 80           | 24       | Door and window open, close, and hold events.    |
+| Zone Category                                                                                                         | Sensor Count | Auto-arm | Description                                                                                                                                                                                                                                                                        |
+|-----------------------------------------------------------------------------------------------------------------------|--------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Perimeter                                                                                                             | 68           | 12       | Exterior doors, windows, gates, and entry paths.                                                                                                                                                                                                                                   |
+| Interior                                                                                                              | 55           | 55       | Hallways, stairwells, and common living areas.                                                                                                                                                                                                                                     |
+| <Terminology title="Default zone covering sleeping areas after dark" to="/docs/terminology#watch">Watch</Terminology> | 72           | 8        | Sleeping areas and late-night monitoring <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology>.                                                                                                              |
+| Quiet                                                                                                                 | 45           | 0        | Bedrooms and bathrooms — <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">armed</Terminology> on <Terminology title="Tightened rule set entered for a fixed date range" to="/docs/terminology#travel-mode">travel mode</Terminology>. |
+| Motion                                                                                                                | 60           | 15       | Directional sensors with <Terminology title="Directional certainty attached to a motion event" to="/docs/terminology#confidence-band">confidence bands</Terminology>.                                                                                                              |
+| Contact                                                                                                               | 80           | 24       | Door and window open, close, and hold events.                                                                                                                                                                                                                                      |
 
 A minimal two-column table:
 

@@ -1,8 +1,7 @@
 ---
 title: "Theme Showcase"
-description: "Theme component showcase covering admonitions, tabs, code blocks, tables, details, and every other Docusaurus preset element."
-sidebar_label: "Theme Showcase"
 sidebar_position: 7
+description: "Showcases every theme component in the Docusaurus preset, covering admonitions, tabs, code blocks, tables, details, and more."
 tags:
   - "theme"
   - "showcase"
@@ -11,6 +10,7 @@ tags:
 import Details from '@theme/Details';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Theme Showcase
 
@@ -49,8 +49,8 @@ Internal links point to other pages within this documentation site:
 
 External links point to resources outside the site:
 
-- [Alloy Language Reference](https://nova.cbnventures.io) — official Alloy documentation.
-- [Loom Registry](https://nova.cbnventures.io) — the package registry for Alloy and Ferric packages.
+- [Alloy Language Reference](https://nova.cbnventures.io) — official <Terminology title="Scripting language for custom attribution-weighting functions" to="/docs/terminology#alloy">Alloy</Terminology> documentation.
+- [Loom Registry](https://nova.cbnventures.io) — the package registry for <Terminology title="Scripting language for custom attribution-weighting functions" to="/docs/terminology#alloy">Alloy</Terminology> and Ferric packages.
 
 ---
 
@@ -58,32 +58,32 @@ External links point to resources outside the site:
 
 ### Unordered List
 
-- Beacon links embed attribution metadata that survives URL copying and messaging apps.
-- Prism traces multi-touch conversion paths across channels.
-- Pulse streams click events in real time with geo and device data.
-- Flare bridges physical and digital attribution with QR codes and deep links.
+- <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links embed attribution metadata that survives URL copying and messaging apps.
+- <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> traces multi-touch conversion paths across channels.
+- <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> streams click events in real time with geo and device data.
+- <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology> bridges physical and digital attribution with QR codes and deep links.
 
 ### Ordered List
 
-1. Install the CLI with Spark.
+1. Install the CLI with <Terminology title="Runtime used to install the Signal CLI" to="/docs/terminology#spark">Spark</Terminology>.
 2. Authenticate with your Signal API key.
-3. Mint a Beacon link with campaign metadata.
-4. Open Pulse to watch clicks arrive in real time.
-5. Query Prism for the full attribution path after conversion.
+3. Mint a <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link with campaign metadata.
+4. Open <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> to watch clicks arrive in real time.
+5. Query <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> for the full attribution path after conversion.
 
 ### Nested Lists
 
 - **CLI Commands**
-  - Beacon
-    - `signal beacon create` — mint a new Beacon link with attribution metadata.
+  - <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology>
+    - `signal beacon create` — mint a new <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link with attribution metadata.
     - `signal beacon batch import` — import links in bulk from CSV.
     - `signal beacon domain add` — register a branded domain.
   - Analysis
-    - `signal prism path` — query an attribution path by trace ID.
-    - `signal resonance overlap` — measure audience overlap between segments.
+    - `signal prism path` — query an attribution path by <Terminology title="Unique identifier tying touchpoints into one path" to="/docs/terminology#trace">trace</Terminology> ID.
+    - `signal resonance overlap` — measure audience overlap between <Terminology title="Named audience defined by conditions on click data" to="/docs/terminology#segment">segments</Terminology>.
 - **Attribution Models**
-  - Linear — equal credit to every touchpoint.
-  - Decay — more credit to recent touchpoints.
+  - Linear — equal credit to every <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology>.
+  - Decay — more credit to recent <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology>.
   - Position — weighted split favoring first and last touch.
 
 ---
@@ -96,7 +96,7 @@ Nested blockquotes work for attributions or follow-up commentary:
 
 > The best attribution data is the data that already exists when you need it.
 >
-> > That is why Beacon embeds metadata in the link itself — it removes the dependency on referrer headers and UTM parameters before they can fail.
+> > That is why <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> embeds metadata in the link itself — it removes the dependency on referrer headers and UTM parameters before they can fail.
 
 ---
 
@@ -104,7 +104,7 @@ Nested blockquotes work for attributions or follow-up commentary:
 
 ### Syntax Highlighting
 
-Alloy with a title bar:
+<Terminology title="Scripting language for custom attribution-weighting functions" to="/docs/terminology#alloy">Alloy</Terminology> with a title bar:
 
 ```alloy title="src/lib/attribution.al"
 interface TouchPoint {
@@ -159,7 +159,7 @@ JSON configuration:
 }
 ```
 
-Spark commands:
+<Terminology title="Runtime used to install the Signal CLI" to="/docs/terminology#spark">Spark</Terminology> commands:
 
 ```bash
 # Install Signal and mint a Beacon link
@@ -221,19 +221,19 @@ Notes provide supplementary context that is helpful but not essential. The reade
 :::
 
 :::tip
-Tips share best practices or shortcuts that save time. For example, run `signal pulse watch --campaign launch` to see clicks arrive in real time before querying Prism for the full attribution path.
+Tips share best practices or shortcuts that save time. For example, run `signal pulse watch --campaign launch` to see clicks arrive in real time before querying <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> for the full attribution path.
 :::
 
 :::info
-Info blocks highlight background details that aid understanding. Beacon links embed attribution metadata in the redirect itself — not in query parameters — so data survives URL copying and messaging apps.
+Info blocks highlight background details that aid understanding. <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links embed attribution metadata in the redirect itself — not in query parameters — so data survives URL copying and messaging apps.
 :::
 
 :::warning
-Warnings flag potential pitfalls. Changing a Beacon link's destination after it has been shared will not update attribution metadata for clicks that already occurred. Historical Prism paths are immutable.
+Warnings flag potential pitfalls. Changing a <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link's destination after it has been shared will not update attribution metadata for clicks that already occurred. Historical <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> paths are immutable.
 :::
 
 :::danger
-Danger blocks mark actions that can cause data loss or breaking changes. Running `signal beacon batch delete --campaign launch --confirm` permanently removes all Beacon links and their click data with no recovery path.
+Danger blocks mark actions that can cause data loss or breaking changes. Running `signal beacon batch delete --campaign launch --confirm` permanently removes all <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links and their click data with no recovery path.
 :::
 
 :::tip[Custom Title]
@@ -247,14 +247,14 @@ Admonitions accept a custom title in brackets after the keyword. Use this to mak
 <Details>
 <summary>What attribution models does Prism support?</summary>
 
-Prism supports four attribution models: linear (equal credit), decay (recent touchpoints weighted higher), position (40/20/40 split for first/middle/last), and custom (write your own weighting function in Alloy). The model is configured per campaign and can be changed retroactively — Prism re-calculates historical paths with the new model.
+<Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> supports four attribution models: linear (equal credit), decay (recent <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology> weighted higher), position (40/20/40 split for first/middle/last), and custom (write your own weighting function in <Terminology title="Scripting language for custom attribution-weighting functions" to="/docs/terminology#alloy">Alloy</Terminology>). The model is configured per campaign and can be changed retroactively — <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> re-calculates historical paths with the new model.
 
 </Details>
 
 <Details>
 <summary>How does Beacon metadata survive messaging apps?</summary>
 
-Messaging apps strip referrer headers and sometimes remove query parameters. Beacon links store attribution data server-side, not in the URL. When the link is clicked, the redirect resolves the metadata from Signal's edge before forwarding to the destination:
+Messaging apps strip referrer headers and sometimes remove query parameters. <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links store attribution data server-side, not in the URL. When the link is clicked, the redirect resolves the metadata from Signal's edge before forwarding to the destination:
 
 ```json title="Beacon redirect resolution"
 {
@@ -328,20 +328,20 @@ fn weight_touchpoints(points: &[TouchPoint]) -> Vec<TouchPoint> {
 
 ## Tables
 
-| Attribution Model | Credit Distribution    | Best For                       |
-|-------------------|------------------------|--------------------------------|
-| Linear            | Equal across all       | Simple campaigns, baselines.   |
-| Decay             | Weighted toward recent | Long sales cycles.             |
-| Position          | 40% first, 40% last    | Brand + conversion campaigns.  |
-| Custom            | User-defined in Alloy  | Complex multi-channel funnels. |
+| Attribution Model | Credit Distribution                                                                                                                                 | Best For                       |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| **Linear**        | Equal across all                                                                                                                                    | Simple campaigns, baselines.   |
+| **Decay**         | Weighted toward recent                                                                                                                              | Long sales cycles.             |
+| **Position**      | 40% first, 40% last                                                                                                                                 | Brand + conversion campaigns.  |
+| **Custom**        | User-defined in <Terminology title="Scripting language for custom attribution-weighting functions" to="/docs/terminology#alloy">Alloy</Terminology> | Complex multi-channel funnels. |
 
 A minimal two-column table:
 
-| Shortcut                                          | Action                       |
-|---------------------------------------------------|------------------------------|
-| <kbd>Ctrl</kbd> + <kbd>C</kbd>                    | Cancel current operation.    |
-| <kbd>Ctrl</kbd> + <kbd>L</kbd>                    | Clear the Pulse live stream. |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> | Export current view to CSV.  |
+| Shortcut                                          | Action                                                                                                                                              |
+|---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| <kbd>Ctrl</kbd> + <kbd>C</kbd>                    | Cancel current operation.                                                                                                                           |
+| <kbd>Ctrl</kbd> + <kbd>L</kbd>                    | Clear the <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> live stream. |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> | Export current view to CSV.                                                                                                                         |
 
 ---
 

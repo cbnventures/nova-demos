@@ -1,15 +1,17 @@
 ---
 title: "Multi-Repository"
 sidebar_position: 2
-description: "A single Marshal instance can supervise dozens of repositories. Each keeps its own docket. Policies file once, apply everywhere valid."
+description: "Details how a single Marshal instance supervises dozens of repositories, each with its own docket, while policies file once and apply everywhere."
 tags:
   - "stewardship"
   - "multi-repo"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Multi-Repository
 
-A single Marshal instance can supervise dozens of repositories. Each repository keeps its own docket. Policies file once and apply everywhere they are valid.
+This is <Terminology title="Single Marshal instance supervising many repositories at once" to="/docs/terminology#multi-repository">multi-repository</Terminology> supervision: a single <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> instance across dozens of repositories, each keeping its own <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>. <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">Policies</Terminology> <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">file</Terminology> once and apply everywhere they are valid.
 
 ## Filing across repositories
 
@@ -22,18 +24,18 @@ condition:
 action: seal
 ```
 
-The `repositories` field accepts wildcards. Marshal expands the list at filing time and stamps the policy into each docket separately.
+The `repositories` field accepts wildcards. <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> expands the list at <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filing</Terminology> time and <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamps</Terminology> the <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> into each <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> separately.
 
 ## Per-repository overrides
 
-A repository can file an override that supersedes the org-wide policy:
+A repository can <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">file</Terminology> an <Terminology title="Per-repository exception that supersedes an org-wide policy" to="/docs/terminology#override">override</Terminology> that supersedes the org-wide <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology>:
 
 ```yaml title="repos/org/critical-service/policies/no-archival.yml"
 override: thread-archival
 reason: "Long-running design discussions are normal here."
 ```
 
-Marshal reads the override, files it under the repository's docket, and stops applying the parent rule for that repo.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> reads the <Terminology title="Per-repository exception that supersedes an org-wide policy" to="/docs/terminology#override">override</Terminology>, <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">files</Terminology> it under the repository's <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>, and stops applying the parent rule for that repo.
 
 ## Reading the org-wide ledger
 
@@ -41,10 +43,10 @@ Marshal reads the override, files it under the repository's docket, and stops ap
 marshal docket list --org acme --since 30d
 ```
 
-Marshal joins every repository docket into a single ordered ledger. Filed in triplicate, even when there are forty repositories.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> joins every repository <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> into a single ordered <Terminology title="Org-wide record joining every repository's docket" to="/docs/terminology#ledger">ledger</Terminology>. <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">Filed</Terminology> in triplicate, even when there are forty repositories.
 
 ## Next Steps
 
-- [Policies](/docs/filings/policies/) — Filing a policy across repositories.
+- [Policies](/docs/filings/policies/) — <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">Filing</Terminology> a <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> across repositories.
 - [Audit Trail](/docs/dockets/audit-trail/) — Joined audit across repos.
 - [API Reference](/docs/reference/api-reference/) — Multi-repo queries.

@@ -9,18 +9,19 @@ tags:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Access Control
 
-Drawbridge is Sentinel's adaptive access gateway. It evaluates trust policies in real time and translates the result into a concrete access decision — grant, narrow, or revoke. Every Filament tunnel, every resource request, and every zone crossing passes through Drawbridge.
+<Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> is Sentinel's adaptive access gateway. It evaluates trust policies in real time and translates the result into a concrete access decision — grant, narrow, or revoke. Every <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> tunnel, every resource request, and every <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology> crossing passes through <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology>.
 
 ## How Drawbridge Decides
 
-Drawbridge receives a trust evaluation from Watchtower and maps it to one of three outcomes:
+<Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> receives a trust evaluation from <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> and maps it to one of three outcomes:
 
-1. **Grant** — All policy conditions are met. The Filament tunnel to the requested resource is opened or maintained.
-2. **Narrow** — Some conditions are met but the trust score is borderline. Access is granted with restrictions (read-only, time-limited, or scoped to a subset of the resource).
-3. **Revoke** — One or more conditions have failed. The Filament tunnel is closed immediately. The user must remediate and re-authenticate.
+1. **Grant** — All policy conditions are met. The <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> tunnel to the requested resource is opened or maintained.
+2. **Narrow** — Some conditions are met but the <Terminology title="Watchtower's composite evaluation of session trustworthiness" to="/docs/terminology#trust-score">trust score</Terminology> is borderline. Access is granted with restrictions (read-only, time-limited, or scoped to a subset of the resource).
+3. **Revoke** — One or more conditions have failed. The <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> tunnel is closed immediately. The user must remediate and re-authenticate.
 
 ```text title="Drawbridge decision flow"
 Watchtower evaluation → trust score 92, all conditions pass
@@ -60,7 +61,7 @@ policy "engineering-access" {
 }
 ```
 
-When all conditions pass, Drawbridge grants full access. The Filament tunnel remains open until the next Watchtower evaluation. If any condition fails at the next 90-second check, access is revoked.
+When all conditions pass, <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> grants full access. The <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> tunnel remains open until the next <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> evaluation. If any condition fails at the next 90-second check, access is revoked.
 
 </TabItem>
 <TabItem value="emergency" label="Emergency Access">
@@ -95,18 +96,18 @@ policy "emergency-access" {
 }
 ```
 
-Emergency access bypasses normal zone restrictions but requires an incident commander role, active MFA, and an explicit emergency flag. Sessions are limited to 30 minutes. Every action is logged at the critical audit level and the executive team is notified.
+Emergency access bypasses normal <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology> restrictions but requires an incident commander role, active MFA, and an explicit emergency flag. Sessions are limited to 30 minutes. Every action is logged at the critical audit level and the executive team is notified.
 
 </TabItem>
 </Tabs>
 
 :::danger Emergency Access Audit
-Every emergency access session is reconstructed by Spyglass and flagged for mandatory review. Emergency access is not a bypass — it is a carefully audited exception. Abuse triggers automatic role revocation.
+Every emergency access session is reconstructed by <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> and flagged for mandatory review. Emergency access is not a bypass — it is a carefully audited exception. Abuse triggers automatic role revocation.
 :::
 
 ## Time-Bound Access
 
-Access can be scoped to a specific time window. Outside the window, the policy evaluates as failed and Drawbridge revokes access:
+Access can be scoped to a specific time window. Outside the window, the policy evaluates as failed and <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> revokes access:
 
 ```text title="policies/maintenance-window.grain"
 policy "maintenance-access" {
@@ -127,23 +128,23 @@ policy "maintenance-access" {
 }
 ```
 
-This policy grants database access only to DBAs, only on Saturdays between 02:00 and 04:00, and only when their device posture score is 90 or above. At 04:01, Drawbridge closes the tunnel regardless of what the DBA is doing.
+This policy grants database access only to DBAs, only on Saturdays between 02:00 and 04:00, and only when their device <Terminology title="Garrison's composite 0-100 measure of device health" to="/docs/terminology#posture-score">posture score</Terminology> is 90 or above. At 04:01, <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> closes the tunnel regardless of what the DBA is doing.
 
 ## Revocation Triggers
 
-Drawbridge revokes access immediately when any of the following occurs:
+<Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> revokes access immediately when any of the following occurs:
 
-| Trigger                             | Source     | Response                                    |
-|-------------------------------------|------------|---------------------------------------------|
-| Posture score drops below threshold | Watchtower | Tunnel closed, re-authentication required   |
-| MFA session expires                 | Watchtower | Step-up MFA prompt, tunnel suspended        |
-| Network location changes            | Watchtower | Policy re-evaluated with new location data  |
-| Device goes offline                 | Garrison   | Tunnel closed after 120s timeout            |
-| Emergency flag cleared              | Admin      | Emergency sessions terminated immediately   |
-| Session age exceeded                | Watchtower | Forced re-authentication                    |
-| Manual revocation                   | Admin API  | Immediate tunnel closure for specified user |
+| Trigger                                                                                                                                                         | Source                                                                                                                                         | Response                                    |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|
+| <Terminology title="Garrison's composite 0-100 measure of device health" to="/docs/terminology#posture-score">Posture score</Terminology> drops below threshold | <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> | Tunnel closed, re-authentication required   |
+| MFA session expires                                                                                                                                             | <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> | Step-up MFA prompt, tunnel suspended        |
+| Network location changes                                                                                                                                        | <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> | Policy re-evaluated with new location data  |
+| Device goes offline                                                                                                                                             | <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> | Tunnel closed after 120s timeout            |
+| Emergency flag cleared                                                                                                                                          | Admin                                                                                                                                          | Emergency sessions terminated immediately   |
+| Session age exceeded                                                                                                                                            | <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> | Forced re-authentication                    |
+| Manual revocation                                                                                                                                               | Admin API                                                                                                                                      | Immediate tunnel closure for specified user |
 
-Revocation is not graceful. When Drawbridge revokes access, the Filament tunnel is terminated immediately. In-flight requests to the protected resource will fail. This is intentional — a revoked session must not be allowed to complete any pending operations.
+Revocation is not graceful. When <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> revokes access, the <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> tunnel is terminated immediately. In-flight requests to the protected resource will fail. This is intentional — a revoked session must not be allowed to complete any pending operations.
 
 :::note Narrow Before Revoke
 For non-critical resources, configure the `on_failure` handler to narrow access before revoking. This gives users a grace period to save work: `action = "narrow"` restricts to read-only for 5 minutes before escalating to full revocation.
@@ -151,7 +152,7 @@ For non-critical resources, configure the `on_failure` handler to narrow access 
 
 ## Monitoring Access Decisions
 
-Query Drawbridge decisions in real time:
+Query <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> decisions in real time:
 
 ```bash title="Watch access decisions"
 sentinel drawbridge watch --resource engineering-services
@@ -168,6 +169,6 @@ Drawbridge — engineering-services
 
 ## Next Steps
 
-- [Micro-Segmentation](/docs/operations/micro-segmentation/) — How Rampart zones scope the access that Drawbridge grants.
+- [Micro-Segmentation](/docs/operations/micro-segmentation/) — How <Terminology title="Micro-segmentation layer isolating workloads into zones" to="/docs/terminology#rampart">Rampart</Terminology> <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zones</Terminology> scope the access that <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> grants.
 - [Audit & Forensics](/docs/operations/audit-forensics/) — Full session reconstruction of access decisions.
-- [Trust Policies](/docs/trust/trust-policies/) — The policy grammar that drives Drawbridge decisions.
+- [Trust Policies](/docs/trust/trust-policies/) — The policy grammar that drives <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> decisions.

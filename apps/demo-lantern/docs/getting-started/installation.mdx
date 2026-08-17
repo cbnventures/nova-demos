@@ -7,14 +7,16 @@ tags:
   - "installation"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Installation
 
-Lantern installs from the Loom Registry or as a Vial container. Pick the path your hub already trusts.
+<Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> installs from the <Terminology title="Package registry Lantern can be installed from" to="/docs/terminology#loom-registry">Loom Registry</Terminology> or as a <Terminology title="Container image format Lantern ships as" to="/docs/terminology#vial">Vial</Terminology> container. Pick the path your hub already trusts.
 
 ## Prerequisites
 
-- A HomeKit Home Hub on the network
-- Spark 3.0 or later (for CLI installation)
+- A <Terminology title="Apple hub Lantern pairs with during setup" to="/docs/terminology#homekit-home-hub">HomeKit Home Hub</Terminology> on the network
+- <Terminology title="CLI package manager used to install Lantern" to="/docs/terminology#spark">Spark</Terminology> 3.0 or later (for CLI installation)
 - A quiet ten minutes — most installs finish before the kettle does
 
 ## Install via Spark
@@ -35,9 +37,9 @@ lantern --version
 vial pull lantern/cli:latest
 ```
 
-Run inside the home network's container plane. Lantern keeps to its own room.
+Run inside the home network's container plane. <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> keeps to its own room.
 
 ## What Comes Next
 
-- [Your First Watch](/docs/getting-started/first-watch/) — Arm a single zone before bedtime.
+- [Your First Watch](/docs/getting-started/first-watch/) — <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">Arm</Terminology> a single <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology> before bedtime.
 - [Zones](/docs/zones/overview/) — Group sensors by where they live.

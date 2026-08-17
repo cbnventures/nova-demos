@@ -13,4 +13,6 @@ import * as vitest from 'vitest';
 registerTerminologySuite({
   vitest,
   enable: 'all',
+  terminologyPath: 'docs/terminology.mdx',
+  expectedBase: '/docs/terminology',
 });

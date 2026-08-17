@@ -1,0 +1,255 @@
+/**
+ * Pages - Home - Hero.
+ *
+ * Centered stage with 3 metric badges floating asymmetrically around the
+ * heading, echoing the preset's hand-thrown identity. Badges collapse into
+ * a static horizontal row below the heading on mobile and pick up
+ * hand-placed absolute offsets from 768px up.
+ */
+
+.heroSection {
+  margin-block: 0;
+}
+
+/**
+ * ============================
+ * 1. Hero stage
+ * ============================
+ */
+
+.hero {
+  position: relative;
+
+  padding-block: 3rem 0;
+
+  text-align: center;
+
+  background-image: radial-gradient(circle, var(--nova-color-border) 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: 4rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: 5rem 0;
+  }
+}
+
+/**
+ * ============================
+ * 2. Content column
+ * ============================
+ */
+
+.heroInner {
+  position: relative;
+
+  max-width: var(--nova-grid-container-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .heroInner {
+    padding-inline: 2rem;
+  }
+}
+
+/**
+ * ============================
+ * 3. Eyebrow
+ * ============================
+ */
+
+.heroEyebrow {
+  margin: 0 0 1.25rem;
+
+  font-family: var(--nova-font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--nova-color-primary-700);
+}
+
+[data-theme="dark"] .heroEyebrow {
+  color: var(--nova-color-primary-300);
+}
+
+/**
+ * ============================
+ * 4. Heading + floating badges
+ * ============================
+ */
+
+.heroHeadingWrap {
+  position: relative;
+
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.heroHeading {
+  margin: 0;
+
+  font-family: var(--nova-font-display);
+  font-size: clamp(1.75rem, 5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.1;
+  text-wrap: pretty;
+  color: var(--nova-color-text);
+}
+
+.heroBadges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .heroBadges {
+    margin-top: 0;
+  }
+}
+
+.heroBadge {
+  --hero-badge-rotate: 0deg;
+
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+
+  font-family: var(--nova-font-code);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--nova-color-primary-700);
+
+  background-color: var(--nova-color-background);
+  border: 1px solid var(--nova-color-border);
+  border-radius: var(--nova-lantern-radius-card);
+  box-shadow: var(--nova-lantern-hover-glow);
+
+  transition: box-shadow var(--nova-lantern-transition), transform var(--nova-lantern-transition);
+  transform: rotate(var(--hero-badge-rotate));
+
+  &:hover {
+    box-shadow: var(--nova-lantern-hover-glow-strong);
+    transform: rotate(var(--hero-badge-rotate)) translateY(-0.125rem);
+  }
+}
+
+[data-theme="dark"] .heroBadge {
+  color: var(--nova-color-primary-300);
+}
+
+@media (min-width: 768px) {
+  .heroBadgeUptime {
+    position: absolute;
+    top: -2.25rem;
+    left: -1.5rem;
+
+    --hero-badge-rotate: -4deg;
+  }
+
+  .heroBadgeLatency {
+    position: absolute;
+    top: 38%;
+    right: -3rem;
+
+    --hero-badge-rotate: 3deg;
+  }
+
+  .heroBadgeBlindSpots {
+    position: absolute;
+    right: 2%;
+    bottom: -2.5rem;
+
+    --hero-badge-rotate: -2deg;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroBadgeUptime {
+    top: -2.5rem;
+    left: -3.5rem;
+  }
+
+  .heroBadgeLatency {
+    right: -5rem;
+  }
+
+  .heroBadgeBlindSpots {
+    right: 6%;
+    bottom: -2.75rem;
+  }
+}
+
+/**
+ * ============================
+ * 5. Tagline
+ * ============================
+ */
+
+.heroTagline {
+  max-width: 40ch;
+  margin: 2rem auto 0;
+
+  font-family: var(--nova-font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--nova-color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .heroTagline {
+    font-size: 1.15rem;
+  }
+}
+
+/**
+ * ============================
+ * 6. Actions
+ * ============================
+ */
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .heroActions {
+    gap: 1rem;
+  }
+}
+
+.heroInstallStrip {
+  margin-block: 0;
+  padding-block: var(--nova-section-gap);
+}
+
+.canvasShowcase {
+  padding: 3rem 0;
+
+  text-align: center;
+}
+
+.canvasShowcaseDescription {
+  max-width: 40rem;
+  margin: 1rem auto 0;
+
+  line-height: 1.7;
+}

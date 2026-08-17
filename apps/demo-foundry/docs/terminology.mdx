@@ -1,0 +1,100 @@
+---
+id: "terminology"
+title: "Terminology"
+sidebar_position: 9
+description: "Defines the Anvil, Tongs, Quench, Bellows, Crucible, and Slag sub-tools plus the .grain manifest and Warden concepts used throughout these docs."
+keywords:
+  - "foundry"
+  - "terminology"
+  - "glossary"
+  - "concepts"
+  - "workspace compiler"
+  - "build tooling"
+tags:
+  - "reference"
+  - "terminology"
+---
+
+# Terminology
+
+Definitions for the terms and concepts used throughout this documentation.
+
+## Alloy
+
+Alloy is the primary language for a Foundry workspace, declared with the `lang` directive and required for type-aware Warden rules and Crucible test generation.
+
+## Anvil
+
+Anvil is Foundry's core CLI. It reads the `.grain` manifest and forges the workspace — directory structure, dependency graph, build pipeline, and test scaffolds.
+
+## Arcline
+
+Arcline is a deployment target for `foundry deploy`, alongside Vial and Trellis, configured through the manifest's `target` directive and `deploy` block.
+
+## Bellows
+
+Bellows is the parallel task runner. It reads the Tongs dependency graph, groups packages into waves, and runs independent packages simultaneously.
+
+## Conduit
+
+Conduit is the CI environment Foundry integrates with, producing structured JSON output and disabling interactive prompts when a forge runs with `--ci`.
+
+## Crucible
+
+Crucible generates test scaffolds from exported type signatures, pairing an assertion template and fixture data with a snapshot test for each function.
+
+## Ferric
+
+Ferric is an optional secondary language runtime, needed only when a workspace declares a Ferric build target alongside the primary Alloy language.
+
+## Forge / Ignite
+
+To forge a workspace is to run `foundry ignite`, the command that reads the manifest and generates every configuration artifact the packages need.
+
+## `.grain` Manifest
+
+The `.grain` manifest is the single source of truth for a Foundry workspace — its packages, dependencies, Warden presets, and deployment targets.
+
+## Loom
+
+Loom Registry is an alternate package source for installing Foundry as a pinned, per-workspace dev dependency instead of a global Spark install.
+
+## Quench
+
+Quench is the content-addressable build cache. It hashes source content, dependency versions, and manifest directives to skip compiling unchanged packages.
+
+## Slag
+
+Slag scans the workspace for dead code, unused exports, and orphaned dependencies, and can remove what it finds when run with `--confirm`.
+
+## Smelter
+
+Smelter is the compiler that turns each package's source files into build output during the compile stage, configured through the manifest's `smelter` directive.
+
+## Spark
+
+Spark is the CLI runtime that distributes the Foundry CLI and its sub-tools — Anvil, Tongs, Quench, Bellows, Crucible, and Slag — as a single global install.
+
+## Tongs
+
+Tongs resolves the dependency graph from the manifest and provides query and visualization tools, including cycle detection and build-order queries.
+
+## Trellis
+
+Trellis is a deployment target for `foundry deploy`, alongside Arcline and Vial, selected with the `--target` flag.
+
+## Vial
+
+Vial is the container runtime for a reproducible Foundry environment, packaging Spark, Alloy, and Foundry together for Conduit pipelines.
+
+## Warden
+
+Warden is Foundry's linting engine. It ships 380+ rules across six categories, enabled by stacking named presets like `strict` in the manifest.
+
+## Wave
+
+A wave is a group of packages that Bellows can build in parallel because none of them depend on another package in the same wave.
+
+## Workspace
+
+A workspace is a Foundry project declared in a `.grain` manifest, containing one or more packages of type library, service, app, or binary.

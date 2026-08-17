@@ -1,15 +1,17 @@
 ---
 title: "API Reference"
 sidebar_position: 1
-description: "Lantern Spoke API for listing zones, arming and disarming, replaying events, and reading sensor history, kept intentionally small."
+description: "Documents the Lantern Spoke API for listing zones, arming and disarming, replaying events, and reading sensor history, kept intentionally small."
 tags:
   - "reference"
   - "api"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # API Reference
 
-The Lantern Spoke API is small on purpose. Most households never need it.
+The <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> <Terminology title="Small HTTP API Lantern exposes for zones and events" to="/docs/terminology#spoke">Spoke</Terminology> API is small on purpose. Most households never need it.
 
 ## Base URL
 
@@ -19,15 +21,15 @@ https://lantern.local/api
 
 ## Endpoints
 
-| Method | Path                      | Description                          |
-|--------|---------------------------|--------------------------------------|
-| `GET`  | `/api/zones`              | List every zone Lantern is watching. |
-| `POST` | `/api/zones/:name/arm`    | Arm a zone by name.                  |
-| `POST` | `/api/zones/:name/disarm` | Disarm a zone by name.               |
-| `GET`  | `/api/events`             | Replay the event stream.             |
-| `GET`  | `/api/history`            | Read the sensor history ledger.      |
-| `GET`  | `/api/mode`               | Get the current household mode.      |
-| `POST` | `/api/mode`               | Set travel, bedtime, or normal mode. |
+| Method | Path                      | Description                                                                                                                                                                                                                                                                                                                                                                                         |
+|--------|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `GET`  | `/api/zones`              | List every <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology> <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> is <Terminology title="General term for an active monitoring session" to="/docs/terminology#watch">watching</Terminology>. |
+| `POST` | `/api/zones/:name/arm`    | <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">Arm</Terminology> a <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology> by name.                                                                                                                                               |
+| `POST` | `/api/zones/:name/disarm` | <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">Disarm</Terminology> a <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology> by name.                                                                                                                                            |
+| `GET`  | `/api/events`             | Replay the <Terminology title="Record every motion and arm/disarm change passes through" to="/docs/terminology#event-stream">event stream</Terminology>.                                                                                                                                                                                                                                            |
+| `GET`  | `/api/history`            | Read the <Terminology title="Queryable ledger of every recorded motion and change" to="/docs/terminology#sensor-history">sensor history</Terminology> ledger.                                                                                                                                                                                                                                       |
+| `GET`  | `/api/mode`               | Get the current household mode.                                                                                                                                                                                                                                                                                                                                                                     |
+| `POST` | `/api/mode`               | Set <Terminology title="Tightened rule set entered for a fixed date range" to="/docs/terminology#travel-mode">travel</Terminology>, bedtime, or normal mode.                                                                                                                                                                                                                                        |
 
 ## Example
 
@@ -36,10 +38,10 @@ curl https://lantern.local/api/zones \
   -H "Authorization: Bearer $LANTERN_TOKEN"
 ```
 
-The response lists every zone, its devices, and whether it is currently armed. Nothing more, nothing louder.
+The response lists every <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology>, its devices, and whether it is currently <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">armed</Terminology>. Nothing more, nothing louder.
 
 ## Next Steps
 
 - [Events](/docs/events/overview/) — The stream the API replays.
 - [Sensor History](/docs/events/sensor-history/) — The ledger the API reads from.
-- [Integrations](/docs/zones/integrations/) — Custom integrations using the Spoke API.
+- [Integrations](/docs/zones/integrations/) — Custom integrations using the <Terminology title="Small HTTP API Lantern exposes for zones and events" to="/docs/terminology#spoke">Spoke</Terminology> API.

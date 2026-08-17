@@ -1,0 +1,100 @@
+---
+id: "terminology"
+title: "Terminology"
+sidebar_position: 9
+description: "Defines the Beacon, Prism, Pulse, Aperture, Resonance, and Flare tools plus the multi-touch attribution and dark traffic concepts used throughout these docs."
+keywords:
+  - "signal"
+  - "terminology"
+  - "glossary"
+  - "concepts"
+  - "link attribution"
+  - "analytics"
+tags:
+  - "reference"
+  - "terminology"
+---
+
+# Terminology
+
+Definitions for the terms and concepts used throughout this documentation.
+
+## Alloy
+
+Alloy is the scripting language used to write custom attribution-weighting functions for Prism when the built-in linear, decay, and position models do not fit.
+
+## Aperture
+
+Aperture captures point-in-time snapshots of campaign performance and compares them across time windows to show exactly what changed and when.
+
+## Arcline
+
+Arcline Cloud is the deployment platform for a self-hosted Signal instance, used by teams that need to keep attribution data on their own infrastructure.
+
+## Beacon
+
+A Beacon is a short link minted by Signal that carries embedded attribution metadata — campaign, channel, variant, and trace — through redirects, messaging apps, and device handoffs.
+
+## Conduit
+
+Conduit is the CI/CD pipeline environment Signal integrates with, reading the `SIGNAL_API_KEY` environment variable in place of an interactive login.
+
+## Dark Traffic
+
+Dark traffic is a click that arrives with no referrer or UTM data, common for QR codes and printed links until Flare gives it a traceable Beacon identity.
+
+## Decay Model
+
+The decay model is an attribution model that assigns more credit to touchpoints closer to the conversion, with a configurable half-life controlling how quickly earlier credit fades.
+
+## Flare
+
+Flare generates QR codes and deep links that carry a Beacon's full attribution chain, bridging a physical scan or app open back to the same trace as a digital click.
+
+## Ironclad
+
+Ironclad is the certificate authority Signal uses to provision and auto-renew TLS certificates for every branded domain, with no manual certificate management.
+
+## Loom
+
+Loom Registry is an alternate package source for installing the Signal CLI, resolving dependencies and linking the `signal` binary to your path.
+
+## Multi-Touch Attribution
+
+Multi-touch attribution credits every touchpoint in a conversion path rather than only the first or last click, distributing weight across the full journey.
+
+## Prism
+
+Prism is Signal's multi-touch attribution engine. It traces the full conversion path across channels and assigns weighted credit to every touchpoint.
+
+## Pulse
+
+Pulse is the real-time click stream. It captures each interaction — geo, device, and referrer — the instant a Beacon or Flare link is clicked or scanned.
+
+## Resonance
+
+Resonance detects where audiences bleed into each other, measuring the overlap between segments so overlapping ad spend becomes visible.
+
+## Segment
+
+A segment is a named audience defined by a set of conditions — channel, click count, recency — evaluated against Beacon click data in real time.
+
+## Spark
+
+Spark is the CLI runtime used to install the Signal CLI and its sub-tools with a single global install command.
+
+## Spoke API
+
+The Spoke API is Signal's REST API, exposing every CLI feature — Beacon links, Prism attribution, Pulse streams, Aperture snapshots, Resonance audiences — programmatically.
+
+## Touchpoint
+
+A touchpoint is a single tracked interaction within an attribution path, such as a social post click or an email link click, each carrying its own channel and variant.
+
+## Trace
+
+A trace is the unique identifier embedded in a Beacon or Flare link that ties every touchpoint from first click to conversion into one attribution path.
+
+## Vial
+
+Vial is the container runtime for running the Signal CLI, or a full self-hosted Signal deployment, without installing dependencies on the host.

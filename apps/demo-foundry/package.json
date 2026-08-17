@@ -1,11 +1,11 @@
 {
   "name": "demo-foundry",
-  "version": "2026.8.0",
+  "version": "2026.8.1",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "nova utility run-scripts --parallel 'dev:*'",
-    "dev:start": "PORTLESS_PORT=3000 portless dev-nova-demo-foundry docusaurus start --host 0.0.0.0 --no-open",
+    "dev:start": "trap 'rm -rf ./node_modules/.cache' EXIT; PORTLESS_PORT=3000 portless dev-nova-demo-foundry docusaurus start --host 0.0.0.0 --no-open",
     "prod": "nova utility run-scripts --sequential 'prod:*'",
     "prod:serve": "PORTLESS_PORT=3000 portless prod-nova-demo-foundry docusaurus serve --host 0.0.0.0 --no-open",
     "build": "nova utility run-scripts --sequential 'build:*'",
@@ -30,8 +30,8 @@
     "node": "^22 || ^24"
   },
   "dependencies": {
-    "@cbnventures/docusaurus-preset-nova": "0.23.0",
-    "@cbnventures/nova": "0.23.0",
+    "@cbnventures/docusaurus-preset-nova": "0.24.0",
+    "@cbnventures/nova": "0.24.0",
     "@docusaurus/core": "3.10.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -42,7 +42,7 @@
     "@types/node": "24.9.1",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "portless": "0.10.1",
+    "portless": "0.15.5",
     "eslint": "9.39.3",
     "glob": "13.0.6",
     "shx": "0.4.0",

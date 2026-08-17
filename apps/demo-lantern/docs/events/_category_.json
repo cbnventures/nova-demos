@@ -5,6 +5,6 @@
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "description": "Every motion, contact, and arm/disarm passes through Lantern's event stream. Replay the day, filter by zone, hand off to a hub, or read the sensor history at noon."
+    "description": "Streaming every motion, contact, and arm/disarm through Lantern's event stream — replay the day, filter by zone, or read the sensor history at noon."
   }
 }

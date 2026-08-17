@@ -1,14 +1,16 @@
 ---
 title: "Travel Mode"
 sidebar_position: 1
-description: "Travel mode tightens the rules. Quiet zones become Watch zones. Bedtime windows close. The porch learns to be more suspicious."
+description: "Tightens the rules for a fixed date range: Quiet zones become Watch zones, bedtime windows close, and the porch light gets a little more suspicious."
 tags:
   - "modes"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Travel Mode
 
-Travel mode tightens the rules. Quiet zones become Watch zones. Bedtime windows close. The porch light learns to be a little more suspicious for a few days.
+<Terminology title="Tightened rule set entered for a fixed date range" to="/docs/terminology#travel-mode">Travel mode</Terminology> tightens the rules. Quiet <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology> become <Terminology title="Default zone covering sleeping areas after dark" to="/docs/terminology#watch">Watch</Terminology> <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology>. Bedtime windows close. The porch light learns to be a little more suspicious for a few days.
 
 ## Entering travel mode
 
@@ -16,21 +18,21 @@ Travel mode tightens the rules. Quiet zones become Watch zones. Bedtime windows 
 lantern mode travel --until 2026-05-01
 ```
 
-The end date is mandatory. Lantern will not stay watchful longer than you ask.
+The end date is mandatory. <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> will not stay watchful longer than you ask.
 
 ## What changes
 
-- **Quiet zones** are armed continuously
-- **Confidence bands** narrow — small movements count
-- **Handoffs** require an explicit passphrase
+- **Quiet <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology>** are <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">armed</Terminology> continuously
+- **<Terminology title="Directional certainty attached to a motion event" to="/docs/terminology#confidence-band">Confidence bands</Terminology>** narrow — small movements count
+- **<Terminology title="Lets a trusted person disarm without your phone" to="/docs/terminology#handoff">Handoffs</Terminology>** require an explicit passphrase
 - **Notifications** route to a single trusted hub
 
 ## Returning home
 
-Travel mode ends on the date you set, or sooner if you arm `home` on a recognized device. Lantern softens automatically.
+<Terminology title="Tightened rule set entered for a fixed date range" to="/docs/terminology#travel-mode">Travel mode</Terminology> ends on the date you set, or sooner if you <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">arm</Terminology> `home` on a recognized device. <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> softens automatically.
 
 ## Next Steps
 
-- [Zones](/docs/zones/overview/) — How Quiet zones become Watch zones during travel.
-- [Handoffs](/docs/zones/handoffs/) — Handoff rules tighten on travel.
+- [Zones](/docs/zones/overview/) — How Quiet <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology> become <Terminology title="Default zone covering sleeping areas after dark" to="/docs/terminology#watch">Watch</Terminology> <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology> during travel.
+- [Handoffs](/docs/zones/handoffs/) — <Terminology title="Lets a trusted person disarm without your phone" to="/docs/terminology#handoff">Handoff</Terminology> rules tighten on travel.
 - [Integrations](/docs/zones/integrations/) — Routing trusted alerts while away.

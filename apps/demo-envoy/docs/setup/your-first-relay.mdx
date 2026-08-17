@@ -1,21 +1,22 @@
 ---
 title: "Your First Relay"
 sidebar_position: 2
-description: "Receive a Threadbare webhook, transform it with Parcel, and deliver it to Canary. A step-by-step walkthrough from zero to working relay."
+description: "Receive a Threadbare webhook, transform it with Parcel, and deliver it to Canary in a step-by-step walkthrough from zero to a working relay."
 tags:
   - "setup"
   - "tutorial"
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Your First Relay
 
-This walkthrough takes you from a fresh Envoy install to a working relay that receives a Threadbare code push webhook, transforms it into a readable notification, and delivers it to Canary.
+This walkthrough takes you from a fresh <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> install to a working <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> that receives a <Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology> code push webhook, transforms it into a readable notification, and delivers it to <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology>.
 
 ## Step 1: Write the Relay Manifest
 
-Create a `relay.grain` file in your working directory. This manifest defines one relay: Threadbare push events routed to a Canary topic.
+Create a `relay.grain` file in your working directory. This <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">manifest</Terminology> defines one <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology>: <Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology> push events routed to a <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology> topic.
 
 ```text title="relay.grain"
 relay "threadbare-pushes" {
@@ -41,30 +42,30 @@ relay "threadbare-pushes" {
 }
 ```
 
-The `cipher` directive tells Envoy to validate the incoming webhook using HMAC-SHA256 signatures. Threadbare signs every webhook payload with the secret you configure on their side.
+The `cipher` directive tells <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> to validate the incoming webhook using HMAC-SHA256 signatures. <Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology> signs every webhook payload with the secret you configure on their side.
 
 ## Step 2: Start the Relay
 
-Start Envoy with the manifest:
+Start <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> with the <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">manifest</Terminology>:
 
 ```bash title="Start Envoy"
 envoy start --config relay.grain --port 8090
 ```
 
-Envoy reads the manifest, initializes Cipher with the HMAC verification mode, compiles the Parcel transformation template, and registers the Dispatch route.
+<Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> reads the <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">manifest</Terminology>, initializes <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> with the HMAC verification mode, compiles the <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> transformation template, and registers the <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> route.
 
 ## Step 3: Configure the Source
 
-In your Threadbare repository settings, add a webhook:
+In your <Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology> repository settings, add a webhook:
 
 - **Payload URL:** `https://your-envoy-host:8090/relay/threadbare`
 - **Content type:** `application/json`
-- **Secret:** The same secret Envoy uses for HMAC validation
+- **Secret:** The same secret <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> uses for HMAC validation
 - **Events:** Select "Just the push event"
 
 ## Step 4: Push a Commit
 
-Push a commit to the repository. Threadbare fires the webhook. Envoy receives it:
+Push a commit to the repository. <Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology> fires the webhook. <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> receives it:
 
 ```json title="Incoming Threadbare payload"
 {
@@ -78,7 +79,7 @@ Push a commit to the repository. Threadbare fires the webhook. Envoy receives it
 }
 ```
 
-Parcel transforms it into the Canary format:
+<Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> transforms it into the <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology> format:
 
 ```json title="Transformed Canary notification"
 {
@@ -89,7 +90,7 @@ Parcel transforms it into the Canary format:
 }
 ```
 
-Courier delivers it to the `ci-builds` Canary topic and records a delivery receipt in Ledger.
+<Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> delivers it to the `ci-builds` <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology> topic and records a delivery receipt in <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology>.
 
 <Details>
 <summary>Full relay log for this transaction</summary>
@@ -107,7 +108,7 @@ Courier delivers it to the `ci-builds` Canary topic and records a delivery recei
 
 ## Step 5: Verify in Ledger
 
-Query the Ledger to confirm the delivery:
+Query the <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> to confirm the delivery:
 
 ```bash title="Query Ledger"
 curl http://localhost:8090/api/deliveries?relay=threadbare-pushes&limit=1
@@ -129,11 +130,11 @@ curl http://localhost:8090/api/deliveries?relay=threadbare-pushes&limit=1
 ```
 
 :::tip
-Run `envoy status` from the CLI to see a live summary of all active relays, their delivery rates, and any messages currently in retry or dead-letter state.
+Run `envoy status` from the CLI to see a live summary of all active <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relays</Terminology>, their delivery rates, and any messages currently in retry or <Terminology title="Terminal state after Courier's retries are exhausted" to="/docs/terminology#dead-letter">dead-letter</Terminology> state.
 :::
 
 ## Next Steps
 
-- [Configuration](/docs/setup/configuration/) — Full `.grain` relay manifest reference with all directives.
-- [Protocol Translation](/docs/core/protocol-translation/) — Deep dive into Parcel transformation pipelines.
-- [Routing & Dispatch](/docs/core/routing-dispatch/) — Content-based routing, severity escalation, and topic fanout.
+- [Configuration](/docs/setup/configuration/) — Full `.grain` <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">relay manifest</Terminology> reference with all directives.
+- [Protocol Translation](/docs/core/protocol-translation/) — <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology>'s transformation pipeline, from field mapping to lossy versus lossless output.
+- [Routing & Dispatch](/docs/core/routing-dispatch/) — Content-based routing, severity escalation, and topic <Terminology title="Delivering one message to multiple destinations at once" to="/docs/terminology#fanout">fanout</Terminology>.

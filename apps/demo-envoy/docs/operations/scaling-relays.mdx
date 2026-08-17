@@ -1,7 +1,7 @@
 ---
 title: "Scaling Relays"
 sidebar_position: 2
-description: "Horizontal scaling, sharding by topic, tuning Courier's retry budget, Cipher rate-limit configuration, and multi-region failover for Envoy."
+description: "Covers horizontal scaling, sharding by topic, tuning Courier's retry budget, Cipher rate-limit configuration, and multi-region failover for Envoy."
 tags:
   - "operations"
   - "scaling"
@@ -10,15 +10,17 @@ tags:
   - "failover"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Scaling Relays
 
-A single Envoy Vial handles thousands of messages per second on commodity hardware. The interesting failures begin somewhere past that — when one region goes dark, when one destination starts rate-limiting, or when one topic suddenly receives a hundred times the traffic of the other ninety-nine. This page covers how to size, shard, and replicate Envoy so the cluster outlives any single component.
+A single <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> <Terminology title="Container image format Envoy ships as" to="/docs/terminology#vial">Vial</Terminology> handles thousands of messages per second on commodity hardware. The interesting failures begin somewhere past that — when one region goes dark, when one destination starts rate-limiting, or when one topic suddenly receives a hundred times the traffic of the other ninety-nine. This page covers how to size, shard, and replicate <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> so the cluster outlives any single component.
 
 > Scale is not a target. It is a consequence of correct sharding.
 
 ## Horizontal Topology
 
-Envoy scales horizontally by adding instances behind a load balancer. Every instance is stateless except for the Ledger, which is shared. Trellis orchestrates instance lifecycle, while Spark deploys identical configurations to every node.
+<Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> scales horizontally by adding instances behind a load balancer. Every instance is stateless except for the <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology>, which is shared. <Terminology title="Orchestrated cluster deployment target for Envoy" to="/docs/terminology#trellis">Trellis</Terminology> orchestrates instance lifecycle, while <Terminology title="CLI used to install and run Envoy" to="/docs/terminology#spark">Spark</Terminology> deploys identical configurations to every node.
 
 ```mermaid
 flowchart TB
@@ -61,10 +63,10 @@ flowchart TB
     E4 --> DEST
 ```
 
-Every instance authenticates, transforms, routes, and delivers independently. Ledger writes are append-only — no contention, no coordination.
+Every instance authenticates, transforms, routes, and delivers independently. <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> writes are append-only — no contention, no coordination.
 
 :::info
-Embassy must front the entire fleet. Putting Embassy behind the load balancer instead of in front of it would expose internal IPs in failure responses. The order matters.
+<Terminology title="Envoy's origin-masking reverse proxy exposed publicly" to="/docs/terminology#embassy">Embassy</Terminology> must front the entire fleet. Putting <Terminology title="Envoy's origin-masking reverse proxy exposed publicly" to="/docs/terminology#embassy">Embassy</Terminology> behind the load balancer instead of in front of it would expose internal IPs in failure responses. The order matters.
 :::
 
 ## Sharding by Topic
@@ -94,11 +96,11 @@ sharding {
 | Consistent-hash | Large fleets, frequent membership changes | Slight imbalance under skew.                         |
 | Manual          | Hot-topic isolation, regulatory pinning   | Operator must update assignments when traffic moves. |
 
-Trellis handles rebalancing during membership changes — when an instance joins or leaves the fleet, Trellis recomputes assignments and pushes updated `.grain` snippets through Spark.
+<Terminology title="Orchestrated cluster deployment target for Envoy" to="/docs/terminology#trellis">Trellis</Terminology> handles rebalancing during membership changes — when an instance joins or leaves the fleet, <Terminology title="Orchestrated cluster deployment target for Envoy" to="/docs/terminology#trellis">Trellis</Terminology> recomputes assignments and pushes updated `.grain` snippets through <Terminology title="CLI used to install and run Envoy" to="/docs/terminology#spark">Spark</Terminology>.
 
 ## Tuning Courier's Retry Budget
 
-Courier's retry budget is the policy that decides when to keep trying and when to give up. The defaults are conservative — they assume an HTTP destination that occasionally times out. Aggressive destinations (rate-limited APIs, paging services with strict SLAs) need a tighter budget.
+<Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology>'s retry budget is the policy that decides when to keep trying and when to give up. The defaults are conservative — they assume an HTTP destination that occasionally times out. Aggressive destinations (rate-limited APIs, paging services with strict SLAs) need a tighter budget.
 
 ```text title="relay.grain — Courier retry budget"
 courier {
@@ -119,15 +121,15 @@ courier {
 }
 ```
 
-| Knob                  | Default | When to Lower                           | When to Raise                               |
-|-----------------------|---------|-----------------------------------------|---------------------------------------------|
-| `max_attempts`        | 5       | Destination has strict SLA on freshness | Destination is flaky but eventually healthy |
-| `initial_backoff`     | 1s      | High-priority alerts, p99 sensitive     | Destination publishes a Retry-After         |
-| `max_backoff`         | 60s     | Destination recovers fast               | Destination recovers in minutes             |
-| `per_destination/min` | 100     | Rate-limited downstream API             | High-volume relay to local destination      |
+| Knob                  | Default | When to Lower                           | When to Raise                                                                                                                                                 |
+|-----------------------|---------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `max_attempts`        | `5`     | Destination has strict SLA on freshness | Destination is flaky but eventually healthy                                                                                                                   |
+| `initial_backoff`     | `1s`    | High-priority alerts, p99 sensitive     | Destination publishes a Retry-After                                                                                                                           |
+| `max_backoff`         | `60s`   | Destination recovers fast               | Destination recovers in minutes                                                                                                                               |
+| `per_destination/min` | `100`   | Rate-limited downstream API             | High-volume <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> to local destination |
 
 :::warning
-A retry budget that is too generous will keep a sick destination sick. If Canary returns 503 a hundred times in a minute and Courier retries each one five times, the destination receives five hundred extra requests during the worst possible moment. Always cap `per_destination_per_minute`.
+A retry budget that is too generous will keep a sick destination sick. If <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology> returns 503 a hundred times in a minute and <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> retries each one five times, the destination receives five hundred extra requests during the worst possible moment. Always cap `per_destination_per_minute`.
 :::
 
 ```mermaid
@@ -143,11 +145,11 @@ flowchart LR
     I --> J["Dead-letter"]
 ```
 
-Exponential backoff with jitter — five attempts cover roughly 15 seconds of wall-clock time. After that, the message goes to the dead-letter queue and Courier emits the Ledger event configured under [Monitoring Relays](/docs/operations/monitoring-relays/).
+Exponential backoff with jitter — five attempts cover roughly 15 seconds of wall-clock time. After that, the message goes to the <Terminology title="Terminal state after Courier's retries are exhausted" to="/docs/terminology#dead-letter">dead-letter</Terminology> queue and <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> emits the <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> event configured under [Monitoring Relays](/docs/operations/monitoring-relays/).
 
 ## Cipher Rate-Limit Configuration
 
-Cipher is Envoy's first line of defense against a misbehaving source. A leaky webhook secret, a runaway upstream, or a deliberate flood — all three look the same from the inside, and all three need the same answer: rejection at the edge, before Parcel and Dispatch are involved.
+<Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> is <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology>'s first line of defense against a misbehaving source. A leaky webhook secret, a runaway upstream, or a deliberate flood — all three look the same from the inside, and all three need the same answer: rejection at the edge, before <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> and <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> are involved.
 
 ```text title="relay.grain — Cipher rate limits"
 cipher {
@@ -175,15 +177,15 @@ cipher {
 | `burst`                 | Allowance for short spikes — covers normal webhook clustering.        |
 | `on_exceed.action`      | `reject` returns 429, `defer` queues briefly, `quarantine` blocks 5m. |
 
-The `log_to = "ledger"` line is the important one. A rejected request leaves a Ledger entry — a forensic record of what was attempted, by whom, when. The body is discarded. The metadata stays.
+The `log_to = "ledger"` line is the important one. A rejected request leaves a <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> entry — a forensic record of what was attempted, by whom, when. The body is discarded. The metadata stays.
 
 :::tip
-Set per-source limits well below the destination's known capacity. The math is simple: if Canary accepts 200 RPS and you have four upstreams sharing the relay, no single upstream should exceed 50 RPS at Cipher. Backpressure belongs at the edge, not the destination.
+Set per-source limits well below the destination's known capacity. The math is simple: if <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology> accepts 200 RPS and you have four upstreams sharing the <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology>, no single upstream should exceed 50 RPS at <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology>. Backpressure belongs at the edge, not the destination.
 :::
 
 ## Multi-Region Failover
 
-A single-region Envoy cluster is one cable cut away from a full outage. Multi-region Envoy keeps relays alive across regional failure — at the cost of higher tail latency and a more involved configuration.
+A single-region <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> cluster is one cable cut away from a full outage. Multi-region <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> keeps <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relays</Terminology> alive across regional failure — at the cost of higher tail latency and a more involved configuration.
 
 ```mermaid
 flowchart LR
@@ -196,7 +198,7 @@ flowchart LR
     E3A -. replicate .-> E1A
 ```
 
-Trellis runs an active-active topology: every region accepts traffic, every region delivers locally, and the Ledger replicates asynchronously between regions. A regional failure shifts GeoDNS to the surviving regions; the messages in flight at the moment of failure replay from the surviving Ledger replicas.
+<Terminology title="Orchestrated cluster deployment target for Envoy" to="/docs/terminology#trellis">Trellis</Terminology> runs an active-active topology: every region accepts traffic, every region delivers locally, and the <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> replicates asynchronously between regions. A regional failure shifts GeoDNS to the surviving regions; the messages in flight at the moment of failure replay from the surviving <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> replicas.
 
 ```text title=".grain — multi-region block"
 multi_region {
@@ -215,20 +217,20 @@ multi_region {
 }
 ```
 
-| Parameter        | Effect                                                                         |
-|------------------|--------------------------------------------------------------------------------|
-| `active_active`  | All regions accept and deliver. Disabled means cold-standby with longer RTO.   |
-| `weight`         | GeoDNS traffic share when all regions are healthy.                             |
-| `replay_window`  | How far back to replay Ledger entries from the failed region.                  |
-| `on_region_loss` | `rebalance` shifts weight, `drain` finishes in-flight only, `halt` stops cold. |
+| Parameter        | Effect                                                                                                                                                                        |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `active_active`  | All regions accept and deliver. Disabled means cold-standby with longer RTO.                                                                                                  |
+| `weight`         | GeoDNS traffic share when all regions are healthy.                                                                                                                            |
+| `replay_window`  | How far back to replay <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> entries from the failed region. |
+| `on_region_loss` | `rebalance` shifts weight, `drain` finishes in-flight only, `halt` stops cold.                                                                                                |
 
 :::warning
-Active-active multi-region means a message might be transformed under one regional Parcel ruleset and audited in the Ledger of another. Keep the `.grain` manifest in lockstep across regions — Spark's deploy pipeline rejects drift automatically, but only if you point all regions at the same source of truth.
+Active-active multi-region means a message might be transformed under one regional <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> ruleset and audited in the <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> of another. Keep the `.grain` <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">manifest</Terminology> in lockstep across regions — <Terminology title="CLI used to install and run Envoy" to="/docs/terminology#spark">Spark</Terminology>'s deploy pipeline rejects drift automatically, but only if you point all regions at the same source of truth.
 :::
 
 ## Capacity Reference
 
-Conservative numbers, measured on a 2-vCPU, 4GB Vial. Real fleets typically exceed these by a comfortable margin.
+Conservative numbers, measured on a 2-vCPU, 4GB <Terminology title="Container image format Envoy ships as" to="/docs/terminology#vial">Vial</Terminology>. Real fleets typically exceed these by a comfortable margin.
 
 | Workload                           | Single Instance | Four-Instance Fleet |
 |------------------------------------|-----------------|---------------------|
@@ -243,6 +245,6 @@ If you exceed these numbers and the dashboards still look healthy, the dashboard
 
 ## Next Steps
 
-- [Monitoring Relays](/docs/operations/monitoring-relays/) — Ledger queries, dashboards, retry-exhaustion alerts.
-- [Architecture](/docs/advanced/architecture/) — Embassy, Courier state machine, and Ledger storage.
-- [API Reference](/docs/reference/api-reference/) — Spoke endpoints for relay administration.
+- [Monitoring Relays](/docs/operations/monitoring-relays/) — <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> queries, dashboards, retry-exhaustion alerts.
+- [Architecture](/docs/advanced/architecture/) — <Terminology title="Envoy's origin-masking reverse proxy exposed publicly" to="/docs/terminology#embassy">Embassy</Terminology>, <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> state machine, and <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> storage.
+- [API Reference](/docs/reference/api-reference/) — <Terminology title="HTTP API Envoy exposes for relay management" to="/docs/terminology#spoke">Spoke</Terminology> endpoints for <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> administration.

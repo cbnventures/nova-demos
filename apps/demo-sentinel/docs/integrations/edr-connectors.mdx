@@ -1,7 +1,7 @@
 ---
 title: "EDR Connectors"
 sidebar_position: 2
-description: "Ingesting device posture signals from EDR platforms — CrowdStrike, Microsoft Defender, JAMF — into Watchtower, with downstream Drawbridge enforcement."
+description: "EDR connectors ingest device posture signals from platforms — CrowdStrike, Microsoft Defender, JAMF — into Watchtower, with Drawbridge enforcement."
 tags:
   - "integrations"
   - "edr"
@@ -9,16 +9,17 @@ tags:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # EDR Connectors
 
-Garrison gathers posture from the Filament agent on every enrolled device. EDR connectors extend this picture by ingesting signals from the dedicated endpoint detection and response platforms already deployed across the fleet. The agent sees what the device knows about itself; the EDR sees what the device cannot — kernel-level telemetry, behavioral anomalies, malware verdicts.
+<Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> gathers posture from the <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> agent on every enrolled device. EDR connectors extend this picture by ingesting signals from the dedicated endpoint detection and response platforms already deployed across the fleet. The agent sees what the device knows about itself; the EDR sees what the device cannot — kernel-level telemetry, behavioral anomalies, malware verdicts.
 
-The connector layer normalizes EDR signals into the same posture vocabulary Watchtower already evaluates. A CrowdStrike critical-severity detection and a JAMF non-compliance event both feed into the same trust score calculation. Drawbridge responds to either with the same revocation primitive.
+The connector layer normalizes EDR signals into the same posture vocabulary <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> already evaluates. A CrowdStrike critical-severity detection and a JAMF non-compliance event both feed into the same <Terminology title="Watchtower's composite evaluation of session trustworthiness" to="/docs/terminology#trust-score">trust score</Terminology> calculation. <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> responds to either with the same revocation primitive.
 
 ## Signal Flow
 
-EDR events arrive asynchronously. The connector subscribes to the vendor's event stream, normalizes the payload, and pushes the normalized signal into the Watchtower evaluation pipeline:
+EDR events arrive asynchronously. The connector subscribes to the vendor's event stream, normalizes the payload, and pushes the normalized signal into the <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> evaluation pipeline:
 
 ```mermaid
 graph LR
@@ -29,7 +30,7 @@ graph LR
     D --> AE(["access enforcement"]):::muted --> R[Rampart]
 ```
 
-Crucially, EDR signals never replace Garrison's agent posture — they augment it. A device with a healthy Garrison posture but a critical EDR detection still loses access. A device flagged by a low-severity EDR rule but otherwise compliant may simply see its trust score adjusted downward.
+Crucially, EDR signals never replace <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology>'s agent posture — they augment it. A device with a healthy <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> posture but a critical EDR detection still loses access. A device flagged by a low-severity EDR rule but otherwise compliant may simply see its <Terminology title="Watchtower's composite evaluation of session trustworthiness" to="/docs/terminology#trust-score">trust score</Terminology> adjusted downward.
 
 ## Supported Connectors
 
@@ -45,7 +46,7 @@ The generic webhook connector accepts any vendor-emitted JSON payload and maps f
 
 ## Normalized Signal Schema
 
-Every EDR signal — regardless of source — is normalized to a single schema before Watchtower consumes it:
+Every EDR signal — regardless of source — is normalized to a single schema before <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> consumes it:
 
 ```json title="Normalized EDR signal"
 {
@@ -70,7 +71,7 @@ Every EDR signal — regardless of source — is normalized to a single schema b
 }
 ```
 
-Watchtower evaluates the `posture_impact` block. The `score_delta` is applied to the device's composite posture for the duration specified by `expires_at`. A high-severity detection produces a delta large enough to force the device below every policy threshold; a low-severity informational signal may apply a small delta or none at all.
+<Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> evaluates the `posture_impact` block. The `score_delta` is applied to the device's composite posture for the duration specified by `expires_at`. A high-severity detection produces a delta large enough to force the device below every policy threshold; a low-severity informational signal may apply a small delta or none at all.
 
 ## Configuring a Connector
 
@@ -104,7 +105,7 @@ edr_connector "crowdstrike-prod" {
 }
 ```
 
-The `device_correlation` block tells the connector how to map a CrowdStrike event back to a Sentinel-enrolled device. Hostname is the default; if hostnames collide across the fleet, fall back to the CrowdStrike sensor agent ID — which Garrison records at enrollment if the CrowdStrike sensor is present.
+The `device_correlation` block tells the connector how to map a CrowdStrike event back to a Sentinel-enrolled device. Hostname is the default; if hostnames collide across the fleet, fall back to the CrowdStrike sensor agent ID — which <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> records at enrollment if the CrowdStrike sensor is present.
 
 </TabItem>
 <TabItem value="defender" label="Microsoft Defender">
@@ -201,7 +202,7 @@ The generic connector accepts arbitrary JSON via webhook and uses JSONPath expre
 
 ## Posture Impact and Drawbridge
 
-When Watchtower receives an EDR signal, it applies the `score_delta` to the device's posture score for the signal's lifetime. The next policy evaluation cycle reflects the adjusted score:
+When <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> receives an EDR signal, it applies the `score_delta` to the device's <Terminology title="Garrison's composite 0-100 measure of device health" to="/docs/terminology#posture-score">posture score</Terminology> for the signal's lifetime. The next policy evaluation cycle reflects the adjusted score:
 
 ```text title="Drawbridge response to EDR signal"
 [14:22:46] WATCHTOWER evaluation: policy api-access → PASS (score 92)
@@ -213,10 +214,10 @@ When Watchtower receives an EDR signal, it applies the `score_delta` to the devi
 [14:22:48] NOTIFICATION sent to security-ops
 ```
 
-The revocation happens in the same evaluation cycle as the signal arrival — under one second from CrowdStrike's detection emission to Drawbridge tunnel closure. The device must remediate the underlying issue (the EDR must clear the detection) before its posture score recovers.
+The revocation happens in the same evaluation cycle as the signal arrival — under one second from CrowdStrike's detection emission to <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> tunnel closure. The device must remediate the underlying issue (the EDR must clear the detection) before its <Terminology title="Garrison's composite 0-100 measure of device health" to="/docs/terminology#posture-score">posture score</Terminology> recovers.
 
 :::warning Severity Mapping Is Policy
-The `score_delta` values in the connector configuration are policy decisions, not technical defaults. A `-50` delta on a critical detection assumes a baseline posture threshold of 80; in environments with looser baselines, the delta may need to be larger to force a revocation. Tune the mapping with Parapet replay before deployment.
+The `score_delta` values in the connector configuration are policy decisions, not technical defaults. A `-50` delta on a critical detection assumes a baseline posture threshold of 80; in environments with looser baselines, the delta may need to be larger to force a revocation. Tune the mapping with <Terminology title="Policy simulation sandbox testing rules before enforcement" to="/docs/terminology#parapet">Parapet</Terminology> replay before deployment.
 :::
 
 ## Policies That Reference EDR Signals
@@ -249,7 +250,7 @@ The `edr.critical_events` condition counts active critical-severity signals acro
 
 ## Spyglass Correlation
 
-Every EDR signal is recorded by Spyglass alongside the Drawbridge decisions it triggers. Forensic reconstruction shows the full chain — vendor event, normalized signal, posture impact, and access enforcement:
+Every EDR signal is recorded by <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> alongside the <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> decisions it triggers. Forensic reconstruction shows the full chain — vendor event, normalized signal, posture impact, and access enforcement:
 
 ```bash title="Query EDR-triggered revocations"
 sentinel spyglass query \
@@ -271,10 +272,10 @@ Mean time from detection to revocation: 612ms
 Mean time to posture recovery:          18m 47s
 ```
 
-The chain is end-to-end — the original vendor event ID is preserved in every Spyglass record, so investigators can correlate Sentinel revocations back to the EDR console without manual joining.
+The chain is end-to-end — the original vendor event ID is preserved in every <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> record, so investigators can correlate Sentinel revocations back to the EDR console without manual joining.
 
 ## Next Steps
 
-- [Identity Providers](/docs/integrations/identity-providers/) — Identity signals that combine with EDR posture signals to produce the full trust score.
-- [Audit & Forensics](/docs/operations/audit-forensics/) — How Spyglass records and correlates EDR-triggered access decisions.
+- [Identity Providers](/docs/integrations/identity-providers/) — Identity signals that combine with EDR posture signals to produce the full <Terminology title="Watchtower's composite evaluation of session trustworthiness" to="/docs/terminology#trust-score">trust score</Terminology>.
+- [Audit & Forensics](/docs/operations/audit-forensics/) — How <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> records and correlates EDR-triggered access decisions.
 - [Trust Policies](/docs/trust/trust-policies/) — Policy conditions that reference EDR signals through the `edr` namespace.

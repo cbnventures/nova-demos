@@ -1,26 +1,28 @@
 ---
 title: "Dockets"
 sidebar_position: 1
-description: "Dockets are append-only public records of every closure, approval, and scheduled rollover Marshal has performed on a repository."
+description: "Defines dockets, the append-only public records of every closure, approval, and scheduled rollover Marshal has performed on a repository."
 tags:
   - "dockets"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Dockets
 
-A docket is the public record of every action Marshal has taken on a repository. Every closed thread, every stamped approval, every scheduled rollover writes a line here.
+A <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> is the public record of every action <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> has taken on a repository. Every closed thread, every <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamped</Terminology> approval, every scheduled rollover writes a line here.
 
 ## Docket entries
 
-- **FILED** — a workflow was queued for execution
-- **STAMPED** — Marshal acted, and the result is now part of the record
+- **<Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">FILED</Terminology>** — a workflow was queued for execution
+- **<Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">STAMPED</Terminology>** — <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> acted, and the result is now part of the record
 - **RECEIVED** — incoming work, awaiting tier classification
-- **ARCHIVED** — a thread was sealed; the case is closed
+- **ARCHIVED** — a thread was <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">sealed</Terminology>; the case is closed
 
-The docket is append-only. Marshal does not retract. Marshal amends only by filing a new entry.
+The <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> is append-only. <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> does not retract. <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> amends only by <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filing</Terminology> a new entry.
 
 ## Next Steps
 
-- [Policies](/docs/filings/policies/) — What gets stamped into the docket.
-- [Audit Trail](/docs/dockets/audit-trail/) — Reading the docket end to end.
-- [API Reference](/docs/reference/api-reference/) — Query the docket programmatically.
+- [Policies](/docs/filings/policies/) — What gets <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamped</Terminology> into the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>.
+- [Audit Trail](/docs/dockets/audit-trail/) — Reading the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> end to end.
+- [API Reference](/docs/reference/api-reference/) — Query the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> programmatically.

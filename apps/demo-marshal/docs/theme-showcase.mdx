@@ -1,6 +1,6 @@
 ---
 title: "Theme Showcase"
-description: "Theme component showcase covering admonitions, tabs, code blocks, tables, details, and every other Docusaurus preset element."
+description: "Showcases every theme component in the Docusaurus preset, covering admonitions, tabs, code blocks, tables, details, and other preset elements."
 sidebar_label: "Theme Showcase"
 sidebar_position: 7
 tags:
@@ -11,6 +11,7 @@ tags:
 import Details from '@theme/Details';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Theme Showcase
 
@@ -58,29 +59,29 @@ External links point to resources outside the site:
 
 ### Unordered List
 
-- Auditor rules enforce consistent policy patterns across every repository.
-- Alloy settings eliminate config drift between dockets.
-- Policy files replace dozens of configuration files with a single source of truth.
+- Auditor rules enforce consistent <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> patterns across every repository.
+- Alloy settings eliminate config drift between <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">dockets</Terminology>.
+- <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">Policy</Terminology> files replace dozens of configuration files with a single source of truth.
 - Proof scaffolds give new repositories a compliance baseline from day one.
 
 ### Ordered List
 
 1. Install the CLI with npm.
-2. Write a `policy.yml` docket describing your repository stewardship.
-3. Run `marshal file` to register the policy with the environment.
-4. Run `marshal auditor check` to verify all policy rules pass.
-5. Run `marshal proof run` to execute a dry-run against the current docket.
+2. Write a `policy.yml` <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> describing your repository <Terminology title="Marshal's scheduled maintenance run without manual work" to="/docs/terminology#stewardship">stewardship</Terminology>.
+3. Run `marshal file` to register the <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> with the environment.
+4. Run `marshal auditor check` to verify all <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> rules pass.
+5. Run `marshal proof run` to execute a dry-run against the current <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>.
 
 ### Nested Lists
 
 - **CLI Commands**
   - Register
-    - `marshal file` — register the full docket from the policy file.
+    - `marshal file` — register the full <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> from the <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> file.
     - `marshal file --dry-run` — preview output without writing any files.
-    - `marshal file --incremental` — re-register only changed policies.
+    - `marshal file --incremental` — re-register only changed <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policies</Terminology>.
   - Analysis
-    - `marshal archive scan` — detect stale threads and overdue dockets.
-    - `marshal clerk graph` — render the policy dependency graph.
+    - `marshal archive scan` — detect stale threads and overdue <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">dockets</Terminology>.
+    - `marshal clerk graph` — render the <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> dependency graph.
 - **Auditor Categories**
   - Conventions — naming, exports, and structural rules.
   - Formatting — whitespace, comments, and visual consistency.
@@ -90,13 +91,13 @@ External links point to resources outside the site:
 
 ## Blockquotes
 
-> A repository without shared policy is just a directory of issues pretending to be governed.
+> A repository without shared <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> is just a directory of issues pretending to be governed.
 
 Nested blockquotes work for attributions or follow-up commentary:
 
 > The best tooling is the tooling that already works when you arrive.
 >
-> > That is why Marshal registers everything from a policy file — it removes the governance problem before it starts.
+> > That is why <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> registers everything from a <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> file — it removes the governance problem before it starts.
 
 ---
 
@@ -149,7 +150,7 @@ CSS with line numbers:
 }
 ```
 
-Policy configuration:
+<Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">Policy</Terminology> configuration:
 
 ```text title="policy.grain"
 workspace "my-repo" {
@@ -165,7 +166,7 @@ workspace "my-repo" {
 }
 ```
 
-Marshal commands:
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> commands:
 
 ```bash
 # Install Marshal and register the policy
@@ -228,19 +229,19 @@ Notes provide supplementary context that is helpful but not essential. The reade
 :::
 
 :::tip
-Tips share best practices or shortcuts that save time. For example, run `marshal file --dry-run` to preview what Marshal will register without writing any files to disk.
+Tips share best practices or shortcuts that save time. For example, run `marshal file --dry-run` to preview what <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> will register without writing any files to disk.
 :::
 
 :::info
-Info blocks highlight background details that aid understanding. The auditor preset system uses a layered composition model — each preset is a named collection of policy rules that you stack in your docket.
+Info blocks highlight background details that aid understanding. The auditor preset system uses a layered composition model — each preset is a named collection of <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> rules that you stack in your <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>.
 :::
 
 :::warning
-Warnings flag potential pitfalls. Changing the `lang` directive in a policy file after the initial registration will re-file all configuration entries. Run with `--dry-run` first to see the impact.
+Warnings flag potential pitfalls. Changing the `lang` directive in a <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> file after the initial registration will re-file all configuration entries. Run with `--dry-run` first to see the impact.
 :::
 
 :::danger
-Danger blocks mark actions that can cause data loss or breaking changes. Running `marshal archive clean --confirm` permanently seals detected stale dockets with no recovery path.
+Danger blocks mark actions that can cause data loss or breaking changes. Running `marshal archive clean --confirm` permanently <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">seals</Terminology> detected stale <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">dockets</Terminology> with no recovery path.
 :::
 
 :::tip[Custom Title]
@@ -254,14 +255,14 @@ Admonitions accept a custom title in brackets after the keyword. Use this to mak
 <Details>
 <summary>What Alloy versions are supported?</summary>
 
-Marshal 2.x requires Alloy 5.0 or later. This is enforced during the `marshal file` policy parsing phase. Earlier Alloy versions do not support the type introspection API that proof uses to generate compliance scaffolds.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> 2.x requires Alloy 5.0 or later. This is enforced during the `marshal file` <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> parsing phase. Earlier Alloy versions do not support the type introspection API that proof uses to generate compliance scaffolds.
 
 </Details>
 
 <Details>
 <summary>How do auditor preset layers compose?</summary>
 
-Each preset is a named rule collection. You list multiple presets in your policy file, and later presets override earlier ones when rules conflict:
+Each preset is a named rule collection. You list multiple presets in your <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> file, and later presets override earlier ones when rules conflict:
 
 ```text title="policy.yml"
 workspace "my-repo" {

@@ -1,23 +1,27 @@
 ---
 title: "QR & Deep Links"
 sidebar_position: 2
-description: "Flare generates QR codes and deep links that bridge physical and digital attribution. Every scan carries the full attribution chain."
+description: "Explains how Flare generates QR codes and deep links that bridge physical and digital attribution, with every scan carrying the full chain."
 tags:
   - "beacons"
   - "qr-codes"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # QR & Deep Links
 
-Flare generates QR codes and deep links that bridge physical and digital attribution. Every scan carries the full attribution chain — campaign, channel, variant, and trace — from a printed poster to a conversion event.
+<Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology> generates QR codes and deep links that bridge physical and digital attribution. Every scan carries the full attribution chain — campaign, channel, variant, and <Terminology title="Unique identifier tying touchpoints into one path" to="/docs/terminology#trace">trace</Terminology> — from a printed poster to a conversion event.
 
 ## Why Flare
 
-A QR code on a conference banner is a click that starts in the physical world. Without Flare, that click is dark traffic — no referrer, no UTM parameters, no attribution. With Flare, the QR code is a Beacon link in visual form. It carries every piece of metadata a digital Beacon link carries.
+A QR code on a conference banner is a click that starts in the physical world. Without <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology>, that click is <Terminology title="Clicks arriving with no referrer or UTM data" to="/docs/terminology#dark-traffic">dark traffic</Terminology> — no referrer, no UTM parameters, no attribution.
+
+With <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology>, the QR code is a <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link in visual form. It carries every piece of metadata a digital <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link carries.
 
 ## Generating a Flare QR Code
 
-Create a Flare link and generate the QR code in one step:
+Create a <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology> link and generate the QR code in one step:
 
 ```bash title="Generate a Flare QR code"
 signal flare create \
@@ -46,15 +50,15 @@ signal flare create \
 }
 ```
 
-The SVG file is ready for print at any resolution. The embedded Beacon link includes full attribution metadata.
+The SVG file is ready for print at any resolution. The embedded <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link includes full attribution metadata.
 
 :::info[Print Resolution]
-For print materials, generate at 1024px or higher. Flare QR codes use error correction level H (high), which means up to 30% of the code can be obscured or damaged and still scan correctly. For billboards and large-format prints, use `--size 2048`.
+For print materials, generate at 1024px or higher. <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology> QR codes use error correction level H (high), which means up to 30% of the code can be obscured or damaged and still scan correctly. For billboards and large-format prints, use `--size 2048`.
 :::
 
 ## Deep Links
 
-Flare also generates deep links for mobile apps. When a user scans a Flare QR code or taps a deep link, the app opens directly to the target screen with attribution metadata passed as parameters:
+<Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology> also generates deep links for mobile apps. When a user scans a <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology> QR code or taps a deep link, the app opens directly to the target screen with attribution metadata passed as parameters:
 
 ```bash title="Generate a deep link"
 signal flare create \
@@ -80,18 +84,18 @@ signal flare create \
 }
 ```
 
-If the app is installed, the deep link opens it. If not, the user is redirected to the fallback URL. Attribution is preserved in both paths.
+If the app is installed, the deep link opens it; if not, the user is redirected to the fallback URL. Attribution is preserved in both paths.
 
 ## Scan Attribution
 
-When a Flare QR code is scanned, the attribution chain works identically to a digital Beacon click:
+When a <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology> QR code is scanned, the attribution chain works identically to a digital <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> click:
 
 1. User scans the QR code.
-2. The Beacon redirect fires (2ms latency).
-3. Pulse captures the click event with geo, device, and referrer data.
-4. The trace ID links this scan to any future touchpoints and conversions.
+2. The <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> redirect fires (2ms latency).
+3. <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> captures the click event with geo, device, and referrer data.
+4. The <Terminology title="Unique identifier tying touchpoints into one path" to="/docs/terminology#trace">trace</Terminology> ID links this scan to any future <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology> and conversions.
 
-Query scan data the same way you query any Beacon click:
+Query scan data the same way you query any <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> click:
 
 ```bash title="Query Flare scans"
 signal pulse events --campaign "conf-2025" --channel "event"
@@ -109,9 +113,9 @@ signal flare batch \
   --output-dir ./qr-codes/
 ```
 
-The CSV maps destinations to campaign metadata. Flare generates one QR code per row with unique Beacon links and trace IDs.
+The CSV maps destinations to campaign metadata. <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology> generates one QR code per row with unique <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links and <Terminology title="Unique identifier tying touchpoints into one path" to="/docs/terminology#trace">trace</Terminology> IDs.
 
 ## Next Steps
 
-- [Batch Operations](/docs/beacons/batch-operations/) — Import links in bulk via CSV or Spoke API.
-- [Click Attribution](/docs/attribution/click-attribution/) — See how Flare scans contribute to Prism attribution paths.
+- [Batch Operations](/docs/beacons/batch-operations/) — Import links in bulk via CSV or <Terminology title="Signal's REST API exposing every CLI feature" to="/docs/terminology#spoke-api">Spoke API</Terminology>.
+- [Click Attribution](/docs/attribution/click-attribution/) — See how <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology> scans contribute to <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> attribution paths.

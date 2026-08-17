@@ -1,23 +1,25 @@
 ---
 title: "Authentication"
 sidebar_position: 3
-description: "Cipher authenticates every incoming request before the pipeline starts, supporting HMAC-SHA256 signatures, bearer tokens, IP allowlists, and rotation."
+description: "Cipher authenticates every incoming request using HMAC-SHA256 signatures, bearer tokens, or IP allowlists, with zero-downtime secret rotation."
 tags:
   - "core"
   - "authentication"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Authentication
 
-Cipher is Envoy's authentication gateway. Every incoming request passes through Cipher before reaching Parcel or Dispatch. If Cipher rejects the request, the pipeline stops. Nothing is transformed. Nothing is routed. Nothing is delivered.
+<Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> is <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology>'s authentication gateway. Every incoming request passes through <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> before reaching <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> or <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology>. If <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> rejects the request, the pipeline stops. Nothing is transformed. Nothing is routed. Nothing is delivered.
 
 ## Verification Modes
 
-Cipher supports three verification modes. They can be used independently or combined.
+<Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> supports three verification modes. They can be used independently or combined.
 
 ### HMAC-SHA256 Signatures
 
-The most common mode for webhook sources. The sender computes `HMAC-SHA256(shared_secret, request_body)` and includes the result in a header. Cipher recomputes the hash and compares.
+The most common mode for webhook sources. The sender computes `HMAC-SHA256(shared_secret, request_body)` and includes the result in a header. <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> recomputes the hash and compares.
 
 ```text title="relay.grain — HMAC verification"
 relay "threadbare-pushes" {
@@ -34,7 +36,7 @@ relay "threadbare-pushes" {
 }
 ```
 
-Cipher reads the `X-Threadbare-Signature-256` header, computes the expected hash using the shared secret, and rejects the request if they do not match. The comparison is constant-time to prevent timing attacks.
+<Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> reads the `X-Threadbare-Signature-256` header, computes the expected hash using the shared secret, and rejects the request if they do not match. The comparison is constant-time to prevent timing attacks.
 
 ### Bearer Tokens
 
@@ -56,7 +58,7 @@ relay "custom-integration" {
 
 ### IP Allowlists
 
-Restrict relay access to specific IP addresses or CIDR ranges. Useful as a secondary layer alongside HMAC or bearer verification.
+Restrict <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> access to specific IP addresses or CIDR ranges. Useful as a secondary layer alongside HMAC or bearer verification.
 
 ```text title="relay.grain — IP allowlist"
 relay "internal-only" {
@@ -77,12 +79,12 @@ relay "internal-only" {
 ```
 
 :::warning
-IP allowlists are fragile in dynamic environments where source IPs change frequently (e.g., serverless platforms, auto-scaling groups, Trellis pod rescheduling). Use HMAC or bearer tokens as the primary verification mode and IP allowlists as a supplementary check.
+IP allowlists are fragile in dynamic environments where source IPs change frequently (e.g., serverless platforms, auto-scaling groups, <Terminology title="Orchestrated cluster deployment target for Envoy" to="/docs/terminology#trellis">Trellis</Terminology> pod rescheduling). Use HMAC or bearer tokens as the primary verification mode and IP allowlists as a supplementary check.
 :::
 
 ## Combining Modes
 
-When multiple Cipher modes are configured on the same relay, Envoy accepts the request if **any** mode succeeds. This allows different source types to coexist on the same endpoint.
+When multiple <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> modes are configured on the same <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology>, <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> accepts the request if **any** mode succeeds. This allows different source types to coexist on the same endpoint.
 
 ```text title="relay.grain — combined modes"
 relay "multi-source" {
@@ -102,7 +104,7 @@ relay "multi-source" {
 
 ## Token Rotation
 
-Cipher supports zero-downtime token rotation. Declare a primary and a secondary secret. Envoy validates against both during the rotation window.
+<Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> supports zero-downtime token rotation. Declare a primary and a secondary secret. <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> validates against both during the rotation window.
 
 ```text title="relay.grain — token rotation"
 cipher_config {
@@ -113,15 +115,15 @@ cipher_config {
 }
 ```
 
-During the rotation window, Cipher accepts requests signed with either secret. After the window expires, only the primary secret is valid. Ledger records which secret was used for each request, so you can verify that all sources have migrated before removing the old secret.
+During the rotation window, <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> accepts requests signed with either secret. After the window expires, only the primary secret is valid. <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> records which secret was used for each request, so you can verify that all sources have migrated before removing the old secret.
 
 :::danger Running Without Authentication
-Envoy allows `cipher = "none"` for development and testing. Never deploy a relay to production without authentication. An unauthenticated relay endpoint is an open door for payload injection — any system on the network can send arbitrary messages to your destinations.
+<Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> allows `cipher = "none"` for development and testing. Never deploy a <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> to production without authentication. An unauthenticated <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> endpoint is an open door for payload injection — any system on the network can send arbitrary messages to your destinations.
 :::
 
 ## Cipher Logging
 
-Every authentication decision is recorded in Ledger:
+Every authentication decision is recorded in <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology>:
 
 ```text title="Cipher log entries"
 [cipher] threadbare-pushes  HMAC-SHA256 valid   (source: 203.0.113.42)
@@ -129,10 +131,10 @@ Every authentication decision is recorded in Ledger:
 [cipher] unknown-source      REJECTED — no matching mode (source: 198.51.100.7)
 ```
 
-Failed authentication attempts include the source IP, the attempted mode, and the reason for rejection. This data is queryable via the Spoke API for security auditing.
+Failed authentication attempts include the source IP, the attempted mode, and the reason for rejection. This data is queryable via the <Terminology title="HTTP API Envoy exposes for relay management" to="/docs/terminology#spoke">Spoke</Terminology> API for security auditing.
 
 ## Next Steps
 
-- [Integrations](/docs/advanced/integrations/) — How Cipher is configured for each built-in integration.
-- [Architecture](/docs/advanced/architecture/) — Where Cipher sits in the full request lifecycle.
-- [API Reference](/docs/reference/api-reference/) — Cipher status and audit endpoints.
+- [Integrations](/docs/advanced/integrations/) — How <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> is configured for each built-in integration.
+- [Architecture](/docs/advanced/architecture/) — Where <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> sits in the full request lifecycle.
+- [API Reference](/docs/reference/api-reference/) — <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> status and audit endpoints.

@@ -1,7 +1,7 @@
 ---
 title: "Deployment"
 sidebar_position: 1
-description: "Foundry ships workspaces to Arcline Cloud, Vial containers, or Trellis orchestration, each configured in the manifest and executed with one command."
+description: "Explains how Foundry ships workspaces to Arcline Cloud, Vial containers, or Trellis orchestration, each configured and run with one command."
 tags:
   - "reference"
   - "deployment"
@@ -9,17 +9,18 @@ tags:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Deployment
 
-Foundry ships workspaces to three deployment targets: Arcline Cloud, Vial containers, and Trellis orchestration. Each target is configured in the manifest and executed with a single command.
+Foundry ships <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspaces</Terminology> to three deployment targets: <Terminology title="Deployment target configured via the manifest" to="/docs/terminology#arcline">Arcline</Terminology> Cloud, <Terminology title="Container runtime for a reproducible Foundry environment" to="/docs/terminology#vial">Vial</Terminology> containers, and <Terminology title="Deployment target selected with the --target flag" to="/docs/terminology#trellis">Trellis</Terminology> orchestration. Each target is configured in the manifest and executed with a single command.
 
 ## Deployment Targets
 
 <Tabs>
 <TabItem value="arcline" label="Arcline Cloud" default>
 
-Arcline is a managed cloud platform. Foundry packages your service, provisions infrastructure, and deploys it with zero manual steps.
+<Terminology title="Deployment target configured via the manifest" to="/docs/terminology#arcline">Arcline</Terminology> is a managed cloud platform. Foundry packages your service, provisions infrastructure, and deploys it with zero manual steps.
 
 ```bash title="Deploy to Arcline"
 foundry deploy --target arcline
@@ -38,7 +39,7 @@ foundry deploy --target arcline
 </TabItem>
 <TabItem value="vial" label="Vial Container">
 
-Vial builds a container image from your service package. The image includes the compiled source, runtime dependencies, and a minimal base layer.
+<Terminology title="Container runtime for a reproducible Foundry environment" to="/docs/terminology#vial">Vial</Terminology> builds a container image from your service package. The image includes the compiled source, runtime dependencies, and a minimal base layer.
 
 ```bash title="Build and push a Vial image"
 foundry deploy --target vial
@@ -56,7 +57,7 @@ foundry deploy --target vial
 </TabItem>
 <TabItem value="trellis" label="Trellis Orchestration">
 
-Trellis is a container orchestration platform. Foundry generates the deployment manifest and applies it to your Trellis cluster.
+<Terminology title="Deployment target selected with the --target flag" to="/docs/terminology#trellis">Trellis</Terminology> is a container orchestration platform. Foundry generates the deployment manifest and applies it to your <Terminology title="Deployment target selected with the --target flag" to="/docs/terminology#trellis">Trellis</Terminology> cluster.
 
 ```bash title="Deploy to Trellis"
 foundry deploy --target trellis
@@ -120,7 +121,9 @@ deploy {
 The `secret()` function resolves values from your deployment platform's secret store at deploy time. The manifest never contains raw credentials.
 
 :::danger
-Production deployments require the `--confirm` flag. Running `foundry deploy --target arcline` without `--confirm` will execute a dry run and print what would happen without actually deploying. This is a safety measure to prevent accidental production releases.
+Production deployments require the `--confirm` flag. Running `foundry deploy --target arcline` without `--confirm` will execute a dry run and print what would happen without actually deploying.
+
+This is a safety measure to prevent accidental production releases.
 :::
 
 :::note
@@ -129,7 +132,7 @@ The `--confirm` flag is intentionally not configurable through the manifest. Eve
 
 ## Multi-Package Deployment
 
-When a workspace has multiple service packages, Foundry deploys them in dependency order:
+When a <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> has multiple service packages, Foundry deploys them in dependency order:
 
 ```text title="Deploying a multi-service workspace"
 $ foundry deploy --target arcline --confirm
@@ -170,4 +173,4 @@ foundry deploy --target arcline --rollback api@2.4.1 --confirm
 
 - [CLI Reference](/docs/reference/cli-reference/) — Full flag reference for `foundry deploy`.
 - [Build Pipeline](/docs/pipeline/build-pipeline/) — How Foundry builds artifacts before deployment.
-- [Workspace Management](/docs/guides/workspace-management/) — Managing multi-package workspaces.
+- [Workspace Management](/docs/guides/workspace-management/) — Managing multi-package <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspaces</Terminology>.

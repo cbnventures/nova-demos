@@ -1,15 +1,17 @@
 ---
 title: "Audit Trail"
 sidebar_position: 2
-description: "The audit trail is the docket read end to end. Every stamp, every filing, every override — chronologically, with the clerk's signature."
+description: "Describes the audit trail, the docket read end to end with every stamp, filing, and override recorded chronologically with the clerk's signature."
 tags:
   - "dockets"
   - "audit"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Audit Trail
 
-The audit trail is the docket, read end to end. Every stamp, every filing, every override — in the order they happened, with the clerk's signature attached.
+The <Terminology title="Docket read end to end with the clerk attached" to="/docs/terminology#audit-trail">audit trail</Terminology> is the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>, read end to end. Every <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamp</Terminology>, every <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filing</Terminology>, every <Terminology title="Per-repository exception that supersedes an org-wide policy" to="/docs/terminology#override">override</Terminology> — in the order they happened, with the <Terminology title="Marshal instance that handled a docket entry" to="/docs/terminology#clerk">clerk</Terminology>'s signature attached.
 
 ## Reading the trail
 
@@ -21,14 +23,14 @@ Output is a single chronological column. No summaries, no rollups. The trail is 
 
 ## What the trail captures
 
-| Field       | Description                                           |
-|-------------|-------------------------------------------------------|
-| `timestamp` | When Marshal acted, to the second.                    |
-| `clerk`     | Which Marshal instance handled the entry.             |
-| `action`    | FILED, STAMPED, RECEIVED, ARCHIVED, OVERRIDDEN.       |
-| `policy`    | The policy that authorized the action.                |
-| `subject`   | The repository and thread the action applied to.      |
-| `seal`      | A signed hash linking this entry to the previous one. |
+| Field       | Description                                                                                                                                                                                                                                                                                                                                                                                          |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `timestamp` | When <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> acted, to the second.                                                                                                                                                                                                                              |
+| `clerk`     | Which <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> instance handled the entry.                                                                                                                                                                                                                       |
+| `action`    | <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">FILED</Terminology>, <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">STAMPED</Terminology>, RECEIVED, ARCHIVED, <Terminology title="Per-repository exception that supersedes an org-wide policy" to="/docs/terminology#override">OVERRIDDEN</Terminology>. |
+| `policy`    | The <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> that authorized the action.                                                                                                                                                                                                                                             |
+| `subject`   | The repository and thread the action applied to.                                                                                                                                                                                                                                                                                                                                                     |
+| `seal`      | A signed hash linking this entry to the previous one.                                                                                                                                                                                                                                                                                                                                                |
 
 ## Exporting for review
 
@@ -36,7 +38,7 @@ Output is a single chronological column. No summaries, no rollups. The trail is 
 marshal audit --export quarterly-2026-q1.pdf
 ```
 
-Marshal generates a printable PDF with the seal of office at the top of every page. Suitable for filing.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> generates a printable PDF with the <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">seal</Terminology> of office at the top of every page. Suitable for <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filing</Terminology>.
 
 ## Next Steps
 

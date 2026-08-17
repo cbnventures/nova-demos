@@ -1,6 +1,6 @@
 ---
 title: "Theme Showcase"
-description: "Theme component showcase covering admonitions, tabs, code blocks, tables, details, and every other Docusaurus preset element."
+description: "Showcases theme components — admonitions, tabs, code blocks, tables, details — and every other Docusaurus preset element available."
 sidebar_label: "Theme Showcase"
 sidebar_position: 7
 tags:
@@ -11,6 +11,7 @@ tags:
 import Details from '@theme/Details';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Theme Showcase
 
@@ -49,7 +50,7 @@ Internal links point to other pages within this documentation site:
 
 External links point to resources outside the site:
 
-- [Filament Protocol Reference](https://nova.cbnventures.io) — official Filament documentation.
+- [Filament Protocol Reference](https://nova.cbnventures.io) — official <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> documentation.
 - [Arcline Cloud Marketplace](https://nova.cbnventures.io) — deploy Sentinel from the marketplace.
 
 ---
@@ -58,16 +59,16 @@ External links point to resources outside the site:
 
 ### Unordered List
 
-- Watchtower evaluates device posture every 90 seconds without exception.
-- Drawbridge enforces access decisions in real time based on continuous trust scores.
-- Rampart zones prevent lateral movement between isolated workload segments.
-- Spyglass maintains immutable audit logs with 7-year retention.
+- <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> evaluates device posture every 90 seconds without exception.
+- <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> enforces access decisions in real time based on continuous <Terminology title="Watchtower's composite evaluation of session trustworthiness" to="/docs/terminology#trust-score">trust scores</Terminology>.
+- <Terminology title="Micro-segmentation layer isolating workloads into zones" to="/docs/terminology#rampart">Rampart</Terminology> <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zones</Terminology> prevent lateral movement between isolated workload segments.
+- <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> maintains immutable audit logs with 7-year retention.
 
 ### Ordered List
 
-1. Install the Sentinel agent with Spark.
-2. Register with your control plane using an enrollment token.
-3. Write a `.grain` trust policy defining access conditions.
+1. Install the Sentinel agent with <Terminology title="CLI used to install the Sentinel agent" to="/docs/terminology#spark">Spark</Terminology>.
+2. Register with your <Terminology title="Sentinel service that agents register with and report to" to="/docs/terminology#control-plane">control plane</Terminology> using an enrollment token.
+3. Write a <Terminology title="Declarative file format for trust policies and profiles" to="/docs/terminology#grain-format">`.grain`</Terminology> trust policy defining access conditions.
 4. Run `sentinel policy validate` to verify the policy syntax.
 5. Run `sentinel policy apply` to begin enforcement.
 
@@ -159,7 +160,7 @@ JSON API response:
 }
 ```
 
-Spark commands:
+<Terminology title="CLI used to install the Sentinel agent" to="/docs/terminology#spark">Spark</Terminology> commands:
 
 ```bash
 # Install the Sentinel agent and register
@@ -234,7 +235,7 @@ Info blocks highlight background details that aid understanding. The Sentinel tr
 :::
 
 :::warning
-Warnings flag potential pitfalls. Changing a compliance profile retroactively re-evaluates all devices assigned to that profile. Run a Parapet simulation first to see the impact.
+Warnings flag potential pitfalls. Changing a <Terminology title="Minimum posture requirements a device group must meet" to="/docs/terminology#compliance-profile">compliance profile</Terminology> retroactively re-evaluates all devices assigned to that profile. Run a <Terminology title="Policy simulation sandbox testing rules before enforcement" to="/docs/terminology#parapet">Parapet</Terminology> simulation first to see the impact.
 :::
 
 :::danger
@@ -252,7 +253,7 @@ Admonitions accept a custom title in brackets after the keyword. Use this to mak
 <Details>
 <summary>What Filament protocol versions are supported?</summary>
 
-Sentinel 3.x requires Filament protocol version 2.0 or later. Earlier Filament versions do not support the encrypted posture telemetry channel that Garrison uses for device health reporting. Verify your version with `filament --version`.
+Sentinel 3.x requires <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> protocol version 2.0 or later. Earlier <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> versions do not support the encrypted posture telemetry channel that <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> uses for device health reporting. Verify your version with `filament --version`.
 
 </Details>
 
@@ -341,14 +342,14 @@ zone "api-services" {
 
 ## Tables
 
-| Component  | Evaluation Interval | Data Source       | Description                                |
-|------------|---------------------|-------------------|--------------------------------------------|
-| Watchtower | 90s                 | Garrison, network | Continuous posture and context evaluation. |
-| Drawbridge | Real-time           | Watchtower        | Access grant, narrow, or revoke decisions. |
-| Garrison   | Continuous          | Agent telemetry   | Device health and compliance monitoring.   |
-| Rampart    | On crossing         | Drawbridge        | Zone boundary enforcement and isolation.   |
-| Spyglass   | Append-only         | All components    | Immutable audit log with 7-year retention. |
-| Parapet    | On demand           | Spyglass, traffic | Policy simulation and impact analysis.     |
+| Component                                                                                                                                      | Evaluation Interval | Data Source                                                                                                                                             | Description                                                                                                                                                       |
+|------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> | 90s                 | <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology>, network | Continuous posture and context evaluation.                                                                                                                        |
+| <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology>            | Real-time           | <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology>          | Access grant, narrow, or revoke decisions.                                                                                                                        |
+| <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> | Continuous          | Agent telemetry                                                                                                                                         | Device health and compliance monitoring.                                                                                                                          |
+| <Terminology title="Micro-segmentation layer isolating workloads into zones" to="/docs/terminology#rampart">Rampart</Terminology>              | On crossing         | <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology>                     | <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">Zone</Terminology> boundary enforcement and isolation. |
+| <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology>            | Append-only         | All components                                                                                                                                          | Immutable audit log with 7-year retention.                                                                                                                        |
+| <Terminology title="Policy simulation sandbox testing rules before enforcement" to="/docs/terminology#parapet">Parapet</Terminology>           | On demand           | <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology>, traffic            | Policy simulation and impact analysis.                                                                                                                            |
 
 A minimal two-column table:
 

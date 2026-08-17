@@ -1,5 +1,10 @@
 # nova-demos-tool-testkit
 
+## 2026.8.1
+
+### UPDATED
+- Add index.module.css to expected pages structure parity check
+
 ## 2026.8.0
 
 ### UPDATED

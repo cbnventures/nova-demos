@@ -1,26 +1,28 @@
 ---
 title: "Integrations"
 sidebar_position: 3
-description: "Lantern integrates with HomeKit first, then connects to Threadbare, Spoke, Canary, and anything else already present in the household."
+description: "Integrates with HomeKit first, then connects to Threadbare, Spoke, Canary, and anything else already present in the household."
 tags:
   - "zones"
   - "integrations"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Integrations
 
-Lantern speaks HomeKit first. Beyond that, it speaks softly to the things that already live in the house.
+<Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> speaks HomeKit first. Beyond that, it speaks softly to the things that already live in the house.
 
 ## Built-in integrations
 
-- **HomeKit Home Hub** — the primary hub, paired during setup
+- **<Terminology title="Apple hub Lantern pairs with during setup" to="/docs/terminology#homekit-home-hub">HomeKit Home Hub</Terminology>** — the primary hub, paired during setup
 - **Threadbare** — for repository-driven automations the household maintains
-- **Spoke** — to relay events to internal endpoints
+- **<Terminology title="Small HTTP API Lantern exposes for zones and events" to="/docs/terminology#spoke">Spoke</Terminology>** — to relay events to internal endpoints
 - **Canary** — for notifications that should never be louder than necessary
 
 ## Custom integrations
 
-Any HomeKit-compatible accessory can be added to a zone. Lantern does not require certification — it requires that the device knows how to be quiet.
+Any HomeKit-compatible accessory can be added to a <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology>. <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> does not require certification — it requires that the device knows how to be quiet.
 
 ## Configuring an integration
 
@@ -33,5 +35,5 @@ Each integration receives only the events it asked for. Nothing is broadcast.
 ## Next Steps
 
 - [Events](/docs/events/overview/) — What each integration receives.
-- [API Reference](/docs/reference/api-reference/) — Wire a custom integration to Spoke.
-- [Zones](/docs/zones/overview/) — Limit which zones an integration sees.
+- [API Reference](/docs/reference/api-reference/) — Wire a custom integration to <Terminology title="Small HTTP API Lantern exposes for zones and events" to="/docs/terminology#spoke">Spoke</Terminology>.
+- [Zones](/docs/zones/overview/) — Limit which <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology> an integration sees.

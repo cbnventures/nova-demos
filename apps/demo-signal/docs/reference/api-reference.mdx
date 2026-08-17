@@ -1,17 +1,18 @@
 ---
 title: "API Reference"
 sidebar_position: 1
-description: "Full Spoke API reference for Signal — Beacon links, Prism attribution, Pulse streams, Aperture snapshots, Resonance audiences."
+description: "Documents the full Spoke API reference for Signal — Beacon links, Prism attribution, Pulse streams, Aperture snapshots, Resonance audiences."
 tags:
   - "reference"
   - "api"
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # API Reference
 
-Signal exposes a REST API through Spoke. Every feature available in the CLI is available programmatically. All requests require a Bearer token in the `Authorization` header.
+Signal exposes a REST API through the <Terminology title="Signal's REST API exposing every CLI feature" to="/docs/terminology#spoke-api">Spoke API</Terminology>, making every CLI feature available programmatically. All requests require a Bearer token in the `Authorization` header.
 
 ## Base URL
 
@@ -135,13 +136,13 @@ curl -X DELETE https://api.signal.example/v2/beacons/bcn_01J9K4M7N2P8Q3R5S6T1U0V
 | Path     | `/v2/analytics/clicks`  |
 | Auth     | Bearer token (required) |
 
-| Parameter     | Type   | Default | Description                                |
-|---------------|--------|---------|--------------------------------------------|
-| `beacon`      | string | —       | Filter by Beacon ID.                       |
-| `campaign`    | string | —       | Filter by campaign.                        |
-| `from`        | string | 7d ago  | Start date (ISO 8601).                     |
-| `to`          | string | now     | End date (ISO 8601).                       |
-| `granularity` | string | `day`   | Aggregation period: `hour`, `day`, `week`. |
+| Parameter     | Type   | Default | Description                                                                                                                             |
+|---------------|--------|---------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `beacon`      | string | —       | Filter by <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> ID. |
+| `campaign`    | string | —       | Filter by campaign.                                                                                                                     |
+| `from`        | string | 7d ago  | Start date (ISO 8601).                                                                                                                  |
+| `to`          | string | now     | End date (ISO 8601).                                                                                                                    |
+| `granularity` | string | `day`   | Aggregation period: `hour`, `day`, `week`.                                                                                              |
 
 ```bash title="Query click analytics"
 curl "https://api.signal.example/v2/analytics/clicks?campaign=product-launch&granularity=day" \
@@ -173,11 +174,11 @@ curl "https://api.signal.example/v2/analytics/clicks?campaign=product-launch&gra
 | Path     | `/v2/analytics/paths`   |
 | Auth     | Bearer token (required) |
 
-| Parameter  | Type   | Default  | Description                                                 |
-|------------|--------|----------|-------------------------------------------------------------|
-| `trace`    | string | —        | Specific trace ID.                                          |
-| `campaign` | string | —        | All paths in a campaign.                                    |
-| `model`    | string | `linear` | Attribution model: `linear`, `decay`, `position`, `custom`. |
+| Parameter  | Type   | Default  | Description                                                                                                                          |
+|------------|--------|----------|--------------------------------------------------------------------------------------------------------------------------------------|
+| `trace`    | string | —        | Specific <Terminology title="Unique identifier tying touchpoints into one path" to="/docs/terminology#trace">trace</Terminology> ID. |
+| `campaign` | string | —        | All paths in a campaign.                                                                                                             |
+| `model`    | string | `linear` | Attribution model: `linear`, `decay`, `position`, `custom`.                                                                          |
 
 ```bash title="Query a specific attribution path"
 curl "https://api.signal.example/v2/analytics/paths?trace=trc_8f3a1b2c4d5e6f70&model=decay" \
@@ -289,11 +290,11 @@ curl "https://api.signal.example/v2/campaigns/cmp_01J9L2M8N4P6Q7R3S5T0U1V9/snaps
 
 The Signal CLI supports keyboard shortcuts in interactive mode:
 
-| Shortcut                                          | Action                       |
-|---------------------------------------------------|------------------------------|
-| <kbd>Ctrl</kbd> + <kbd>C</kbd>                    | Cancel current operation.    |
-| <kbd>Ctrl</kbd> + <kbd>L</kbd>                    | Clear the Pulse live stream. |
-| <kbd>Ctrl</kbd> + <kbd>R</kbd>                    | Refresh campaign metrics.    |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> | Export current view to CSV.  |
+| Shortcut                                          | Action                                                                                                                                              |
+|---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| <kbd>Ctrl</kbd> + <kbd>C</kbd>                    | Cancel current operation.                                                                                                                           |
+| <kbd>Ctrl</kbd> + <kbd>L</kbd>                    | Clear the <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> live stream. |
+| <kbd>Ctrl</kbd> + <kbd>R</kbd>                    | Refresh campaign metrics.                                                                                                                           |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> | Export current view to CSV.                                                                                                                         |
 
 On macOS, substitute <kbd>Ctrl</kbd> with <kbd>Cmd</kbd> for most shortcuts.

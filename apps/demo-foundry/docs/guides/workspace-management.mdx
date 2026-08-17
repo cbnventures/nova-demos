@@ -1,19 +1,21 @@
 ---
 title: "Workspace Management"
 sidebar_position: 4
-description: "Tongs resolves the dependency graph across packages, keeping relationships visible and correct as workspaces scale to hundreds of packages."
+description: "Explains how Tongs resolves the dependency graph across packages, keeping relationships visible and correct as workspaces grow to hundreds of packages."
 tags:
   - "guides"
   - "workspaces"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Workspace Management
 
-Foundry workspaces can scale to hundreds of packages. Tongs — the dependency graph resolver — is the tool that keeps the relationships between them visible and correct.
+Foundry <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspaces</Terminology> can scale to hundreds of packages. <Terminology title="Resolves the dependency graph with query tools" to="/docs/terminology#tongs">Tongs</Terminology> — the dependency graph resolver — is the tool that keeps the relationships between them visible and correct.
 
 ## Declaring Dependencies
 
-Every package can depend on other packages in the same workspace. Dependencies are declared in the manifest.
+Every package can depend on other packages in the same <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology>. Dependencies are declared in the manifest.
 
 ```text title="project.grain"
 workspace "platform" {
@@ -30,11 +32,11 @@ workspace "platform" {
 }
 ```
 
-Foundry validates dependencies at parse time. If a package references a name that does not exist in the workspace, the forge fails immediately with a clear error.
+Foundry validates dependencies at parse time. If a package references a name that does not exist in the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology>, the <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology> fails immediately with a clear error.
 
 ## Visualizing the Graph
 
-Tongs can render the full dependency graph for your workspace:
+<Terminology title="Resolves the dependency graph with query tools" to="/docs/terminology#tongs">Tongs</Terminology> can render the full dependency graph for your <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology>:
 
 ```bash title="Render the dependency graph"
 foundry tongs graph
@@ -53,7 +55,7 @@ Longest path: core → auth → api (depth 3)
 No cycles detected.
 ```
 
-For larger workspaces, use the `--format mermaid` flag to generate a diagram you can embed in documentation.
+For larger <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspaces</Terminology>, use the `--format mermaid` flag to generate a diagram you can embed in documentation.
 
 ```mermaid
 graph TD
@@ -68,7 +70,7 @@ graph TD
 
 ## Adding a Package
 
-Add a new package block to the manifest and run the forge:
+Add a new package block to the manifest and run the <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology>:
 
 ```text title="project.grain — adding a gateway package"
 packages {
@@ -85,11 +87,13 @@ packages {
 foundry ignite
 ```
 
-Foundry detects the new package, resolves its position in the dependency graph, and generates all configuration artifacts. Existing packages are untouched — Quench recognizes that their inputs have not changed and skips regeneration.
+Foundry detects the new package, resolves its position in the dependency graph, and generates all configuration artifacts. Existing packages are untouched — <Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology> recognizes that their inputs have not changed and skips regeneration.
 
 ## Removing a Package
 
-Remove the package block from the manifest. Foundry does not delete files automatically — it generates but never destroys. After removing a package from the manifest:
+Remove the package block from the manifest. Foundry does not delete files automatically — it generates but never destroys.
+
+After removing a package from the manifest:
 
 1. Run `foundry ignite` to update the dependency graph.
 2. Run `foundry slag scan` to confirm nothing references the removed package.
@@ -104,11 +108,13 @@ To rename or relocate a package:
 3. Run `foundry ignite` to regenerate configuration artifacts.
 4. Run `foundry tongs verify` to confirm the graph is still valid.
 
-> A workspace is not a folder of packages. It is a graph of relationships. The manifest describes the graph. Foundry builds the rest.
+> A <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> is not a folder of packages. It is a graph of relationships.
+>
+> The manifest describes the graph. Foundry builds the rest.
 
 ## Cross-Package References
 
-When one package depends on another, Foundry generates import aliases automatically. The `api` package can import from `core` using the workspace-scoped identifier:
+When one package depends on another, Foundry generates import aliases automatically. The `api` package can import from `core` using the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology>-scoped identifier:
 
 ```alloy title="packages/api/src/routes/health.al"
 import { validateRequest } from "@platform/core/validate"
@@ -121,11 +127,11 @@ export function healthCheck(request: SpokeRequest): SpokeResponse {
 }
 ```
 
-The `@platform/core` and `@platform/auth` aliases are derived from the workspace name and package names in the manifest. You never configure module resolution manually.
+The `@platform/core` and `@platform/auth` aliases are derived from the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> name and package names in the manifest. You never configure module resolution manually.
 
 ## Workspace Queries
 
-Tongs supports queries against the dependency graph for scripting and Conduit pipeline integration:
+<Terminology title="Resolves the dependency graph with query tools" to="/docs/terminology#tongs">Tongs</Terminology> supports queries against the dependency graph for scripting and <Terminology title="CI environment Foundry integrates with" to="/docs/terminology#conduit">Conduit</Terminology> pipeline integration:
 
 ```bash title="List all packages that depend on core"
 foundry tongs query --depends-on core
@@ -145,10 +151,10 @@ foundry tongs query --build-order api
 3. api
 ```
 
-These queries are useful in Conduit pipelines where you want to build or test only the packages affected by a change.
+These queries are useful in <Terminology title="CI environment Foundry integrates with" to="/docs/terminology#conduit">Conduit</Terminology> pipelines where you want to build or test only the packages affected by a change.
 
 ## Next Steps
 
-- [Build Pipeline](/docs/pipeline/build-pipeline/) — How Quench and Bellows execute builds across the workspace.
+- [Build Pipeline](/docs/pipeline/build-pipeline/) — How <Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology> and <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> execute builds across the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology>.
 - [Manifests](/docs/guides/manifests/) — Full reference for every manifest directive.
-- [CLI Reference](/docs/reference/cli-reference/) — All Tongs commands and flags.
+- [CLI Reference](/docs/reference/cli-reference/) — All <Terminology title="Resolves the dependency graph with query tools" to="/docs/terminology#tongs">Tongs</Terminology> commands and flags.

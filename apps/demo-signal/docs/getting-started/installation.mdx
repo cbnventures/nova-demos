@@ -3,12 +3,13 @@ title: "Installation"
 sidebar_position: 1
 description: "Install the Signal CLI via Spark, Loom Registry, or Vial container and configure your API key for Beacon link minting in under two minutes."
 tags:
-  - "getting started"
+  - "getting-started"
   - "installation"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Installation
 
@@ -16,11 +17,11 @@ Install the Signal CLI and configure your API key. The entire setup takes under 
 
 ## Prerequisites
 
-| Requirement    | Version | Notes                                                   |
-|----------------|---------|---------------------------------------------------------|
-| Spark          | ^3.0    | The CLI runtime for Signal and its sub-tools.           |
-| Alloy          | ^5.0    | Required for custom Prism attribution model scripts.    |
-| Signal API Key | —       | Generate one at your Signal dashboard or via Spoke API. |
+| Requirement                                                                                                                             | Version | Notes                                                                                                                                                                            |
+|-----------------------------------------------------------------------------------------------------------------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **<Terminology title="Runtime used to install the Signal CLI" to="/docs/terminology#spark">Spark</Terminology>**                        | ^3.0    | The CLI runtime for Signal and its sub-tools.                                                                                                                                    |
+| **<Terminology title="Scripting language for custom attribution-weighting functions" to="/docs/terminology#alloy">Alloy</Terminology>** | ^5.0    | Required for custom <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> attribution model scripts. |
+| **Signal API Key**                                                                                                                      | —       | Generate one at your Signal dashboard or via <Terminology title="Signal's REST API exposing every CLI feature" to="/docs/terminology#spoke-api">Spoke API</Terminology>.         |
 
 ## Install
 
@@ -44,7 +45,7 @@ signal --version
 loom add --global signal-cli
 ```
 
-Loom resolves dependencies from the Loom Registry and links the `signal` binary to your path.
+<Terminology title="Alternate package source for installing the Signal CLI" to="/docs/terminology#loom">Loom</Terminology> resolves dependencies from the <Terminology title="Alternate package source for installing the Signal CLI" to="/docs/terminology#loom">Loom Registry</Terminology> and links the `signal` binary to your path.
 
 </TabItem>
 <TabItem value="vial" label="Vial Container">
@@ -54,7 +55,7 @@ vial pull signal/cli:latest
 vial run signal/cli:latest -- signal --version
 ```
 
-The Vial image includes the CLI and all sub-tools. No host dependencies required.
+The <Terminology title="Container runtime for running the Signal CLI" to="/docs/terminology#vial">Vial</Terminology> image includes the CLI and all sub-tools. No host dependencies required.
 
 </TabItem>
 </Tabs>
@@ -67,15 +68,15 @@ After installation, authenticate with your Signal API key:
 signal auth login --key sk_live_your_api_key_here
 ```
 
-Signal stores the key in `~/.signal/credentials.grain`. The key is used for all Spoke API calls, including Beacon link creation and Prism queries.
+Signal stores the key in `~/.signal/credentials.grain`. The key is used for all <Terminology title="Signal's REST API exposing every CLI feature" to="/docs/terminology#spoke-api">Spoke API</Terminology> calls, including <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link creation and <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> queries.
 
 :::tip
-For CI/CD pipelines running through Conduit, set the `SIGNAL_API_KEY` environment variable instead of using the interactive login. The CLI reads the variable automatically when no credentials file is present.
+For CI/CD pipelines running through <Terminology title="CI/CD pipeline environment Signal integrates with" to="/docs/terminology#conduit">Conduit</Terminology>, set the `SIGNAL_API_KEY` environment variable instead of using the interactive login. The CLI reads the variable automatically when no credentials file is present.
 :::
 
 ## Verify
 
-Create a test Beacon link to confirm everything is connected:
+Create a test <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link to confirm everything is connected:
 
 ```bash
 signal beacon create --url "https://example.com" --campaign "install-test"
@@ -85,11 +86,11 @@ If the command returns a short link URL, the installation is complete.
 
 ## Self-Hosted vs Cloud
 
-Signal runs as a managed service by default. All Beacon redirects, Pulse event capture, and Prism attribution processing happen on Signal's infrastructure across 180+ regions.
+Signal runs as a managed service by default. All <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> redirects, <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> event capture, and <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> attribution processing happen on Signal's infrastructure across 180+ regions.
 
-For teams that need to keep attribution data on their own infrastructure, Signal also ships as a self-hosted Vial deployment. See the [Vial installation tab](#install) above and the deployment guide on [Arcline Cloud](https://nova.cbnventures.io) for details.
+For teams that need to keep attribution data on their own infrastructure, Signal also ships as a self-hosted <Terminology title="Container runtime for running the Signal CLI" to="/docs/terminology#vial">Vial</Terminology> deployment on <Terminology title="Deployment platform for a self-hosted Signal instance" to="/docs/terminology#arcline">Arcline</Terminology> Cloud. See the [Vial installation tab](#install) above and the [Arcline deployment guide](https://nova.cbnventures.io) for details.
 
 ## Next Steps
 
-- [Quick Start](/docs/getting-started/quick-start/) — Mint your first Beacon link and watch a click arrive.
-- [Branded Domains](/docs/beacons/branded-domains/) — Set up custom domains for your Beacon links.
+- [Quick Start](/docs/getting-started/quick-start/) — Mint your first <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link and watch a click arrive.
+- [Branded Domains](/docs/beacons/branded-domains/) — Set up custom domains for your <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links.

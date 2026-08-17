@@ -7,9 +7,11 @@ tags:
   - "tutorial"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Your First Watch
 
-A first watch is the smallest possible perimeter: one zone, one device, one quiet evening.
+A first <Terminology title="General term for an active monitoring session" to="/docs/terminology#watch">watch</Terminology> is the smallest possible perimeter: one <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology>, one device, one quiet evening.
 
 ## Step 1: Discover the Hub
 
@@ -17,7 +19,7 @@ A first watch is the smallest possible perimeter: one zone, one device, one quie
 lantern hub discover
 ```
 
-Lantern locates the HomeKit Home Hub on the network and pairs without a fuss.
+<Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> locates the <Terminology title="Apple hub Lantern pairs with during setup" to="/docs/terminology#homekit-home-hub">HomeKit Home Hub</Terminology> on the network and pairs without a fuss.
 
 ## Step 2: Name a Zone
 
@@ -25,7 +27,7 @@ Lantern locates the HomeKit Home Hub on the network and pairs without a fuss.
 lantern zone create perimeter --device front-door
 ```
 
-A zone with one device is still a zone. Lantern treats it the same way it treats the whole house.
+A <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology> with one device is still a <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology>. <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> treats it the same way it treats the whole house.
 
 ## Step 3: Arm It
 
@@ -33,14 +35,14 @@ A zone with one device is still a zone. Lantern treats it the same way it treats
 lantern arm perimeter
 ```
 
-The front door is watched. Lantern says nothing until something happens, and even then, gently.
+The front door is <Terminology title="General term for an active monitoring session" to="/docs/terminology#watch">watched</Terminology>. <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> says nothing until something happens, and even then, gently.
 
 ## What Just Happened
 
-You discovered a hub, named a zone, and armed it. The porch is now part of the watch.
+You discovered a hub, named a <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology>, and <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">armed</Terminology> it. The porch is now part of the <Terminology title="General term for an active monitoring session" to="/docs/terminology#watch">watch</Terminology>.
 
 ## Next Steps
 
-- [Zones](/docs/zones/overview/) — Add more zones beyond the porch.
-- [Events](/docs/events/overview/) — Watch the event stream as the household moves.
-- [Handoffs](/docs/zones/handoffs/) — Hand off arm/disarm to someone you trust.
+- [Zones](/docs/zones/overview/) — Add more <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology> beyond the porch.
+- [Events](/docs/events/overview/) — Watch the <Terminology title="Record every motion and arm/disarm change passes through" to="/docs/terminology#event-stream">event stream</Terminology> as the household moves.
+- [Handoffs](/docs/zones/handoffs/) — <Terminology title="Lets a trusted person disarm without your phone" to="/docs/terminology#handoff">Hand off</Terminology> <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">arm/disarm</Terminology> to someone you trust.

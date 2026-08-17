@@ -1,0 +1,73 @@
+---
+id: "terminology"
+title: "Terminology"
+sidebar_position: 9
+description: "Review the terminology and concepts used throughout the Lantern documentation, from zones and handoffs to travel mode and the HomeKit Home Hub."
+keywords:
+  - "lantern"
+  - "terminology"
+  - "glossary"
+  - "concepts"
+  - "definitions"
+tags:
+  - "reference"
+  - "terminology"
+---
+
+Definitions for the terms and concepts used throughout this documentation.
+
+## Lantern
+
+A whole-house monitoring toolkit for HomeKit hubs that signals with warm light instead of alarms or sirens.
+
+## Zone
+
+A named room, hallway, exterior area, or appliance group that Lantern arms, disarms, and watches as a single unit. The four default zones are Perimeter, Interior, Watch, and Quiet.
+
+## Watch
+
+One of the four default zones, covering sleeping areas monitored after dark. Lantern also uses "watch" generally for any active monitoring session, as in a first watch of one zone and one device.
+
+## Arm / Disarm
+
+Turning a zone's monitoring on or off. Either action can be scoped to a single zone instead of the whole house.
+
+## Handoff
+
+Lets a trusted person disarm a zone without your phone in hand — by name, passphrase, HomeKit Home Hub presence, or a scheduled window of trust.
+
+## HomeKit Home Hub
+
+The Apple HomeKit hub Lantern pairs with during setup. It is the primary hub that handoffs and other integrations trust.
+
+## Travel Mode
+
+A tightened rule set entered for a fixed date range: Quiet zones arm continuously, confidence bands narrow, and handoffs require an explicit passphrase.
+
+## Event Stream
+
+The record every motion, contact, and arm/disarm change passes through. Events in the stream can be replayed, filtered, or handed off to a hub.
+
+## Confidence Band
+
+The directional certainty attached to a motion event. Travel mode narrows this band so that smaller movements are counted.
+
+## Sensor History
+
+The queryable ledger of every motion, contact, and zone change Lantern has recorded, built for unhurried review rather than real-time alerts.
+
+## Spoke
+
+The small HTTP API Lantern exposes for listing zones, arming and disarming, replaying events, and reading sensor history.
+
+## Loom Registry
+
+The package registry Lantern can be installed from, alongside Spark and Vial.
+
+## Spark
+
+The CLI package manager used to install Lantern (`spark install lantern`).
+
+## Vial
+
+The container image format Lantern ships as (`vial pull lantern/cli:latest`).

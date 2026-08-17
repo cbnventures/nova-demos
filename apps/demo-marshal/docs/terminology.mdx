@@ -1,0 +1,77 @@
+---
+id: "terminology"
+title: "Terminology"
+sidebar_position: 9
+description: "Marshal's glossary — dockets, sealed policies, access tiers, and stewardship — every term used throughout this documentation, defined."
+keywords:
+  - "marshal"
+  - "terminology"
+  - "glossary"
+  - "concepts"
+  - "definitions"
+tags:
+  - "reference"
+  - "terminology"
+---
+
+Definitions for the terms and concepts used throughout this documentation.
+
+## Marshal
+
+The automated repository governance system this documentation covers. Marshal files policies, seals stale work, and stamps every action into a public docket.
+
+## Policy
+
+A sealed, written rule that tells Marshal how to handle a class of repository events — stale issues, overdue pull requests, or tiered support requests, for example.
+
+## Filing
+
+The act of submitting a policy, override, or scheduled job to Marshal so it is stamped and added to the docket.
+
+## Docket
+
+The append-only public record of every action Marshal has taken on a repository. Entries are marked FILED, STAMPED, RECEIVED, or ARCHIVED.
+
+## Seal
+
+Marshal's closing mark on a thread or policy, applied once a condition such as 365 days of inactivity is met. A sealed item is archived, not deleted.
+
+## Stamp
+
+The mark Marshal leaves in the docket each time it acts. Every filed policy, tier classification, and override is stamped with the moment it was recorded.
+
+## Access Tier
+
+The Sponsor, Contributor, or Public classification stamped on every incoming request, determining which queue it is routed to.
+
+## Stewardship
+
+Marshal's scheduled maintenance work — cleanups, audits, rollovers, and label sweeps — run on a cron without manual intervention.
+
+## Ledger
+
+The org-wide record formed by joining every supervised repository's docket into a single ordered list.
+
+## Audit Trail
+
+The docket read end to end, in chronological order, with the acting clerk attached to every entry.
+
+## Clerk
+
+The Marshal instance that handled a given docket entry, recorded on the audit trail for traceability.
+
+## Multi-Repository
+
+A single Marshal instance supervising many repositories at once. Each keeps its own docket, and org-wide policies apply to all of them unless a repository files an override.
+
+## Override
+
+A per-repository exception that supersedes an org-wide policy. Overrides are themselves filed and stamped into that repository's docket.
+
+## Spark
+
+The CLI package manager used to install Marshal (`spark install marshal`).
+
+## Vial
+
+The container image format Marshal ships as, arriving with its seal already pressed and ready to file.

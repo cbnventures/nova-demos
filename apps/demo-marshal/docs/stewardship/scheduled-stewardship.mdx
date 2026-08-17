@@ -1,21 +1,23 @@
 ---
 title: "Scheduled Stewardship"
 sidebar_position: 1
-description: "Marshal runs scheduled cleanups, audits, rollovers, and label sweeps on a cron, filing each run as a stamped docket entry at the top of the hour."
+description: "Walks through how Marshal runs scheduled cleanups, audits, rollovers, and label sweeps on a cron, filing each run as a stamped docket entry hourly."
 tags:
   - "stewardship"
   - "scheduled-stewardship"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Scheduled Stewardship
 
-Marshal runs scheduled work on a cron. Cleanups, audits, rollovers, label sweeps — anything that should happen at the top of the hour without anyone being woken up.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology>'s scheduled <Terminology title="Marshal's scheduled maintenance run without manual work" to="/docs/terminology#stewardship">stewardship</Terminology> runs on a cron. Cleanups, audits, rollovers, label sweeps — anything that should happen at the top of the hour without anyone being woken up.
 
 ## What can be scheduled
 
-- **Cleanups** — close and seal threads that meet a policy condition
+- **Cleanups** — close and <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">seal</Terminology> threads that meet a <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> condition
 - **Audits** — verify that every open ticket has been classified
-- **Rollovers** — roll the docket forward into the next quarter
+- **Rollovers** — roll the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> forward into the next quarter
 - **Label sweeps** — apply or remove labels in bulk
 
 ## Filing a scheduled job
@@ -33,10 +35,10 @@ notice: "Rolled forward at the top of the quarter."
 marshal cron list
 ```
 
-Marshal lists every scheduled job, its next run, and the policy that filed it. Nothing runs unsealed.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> lists every scheduled job, its next run, and the <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> that <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filed</Terminology> it. Nothing runs <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">unsealed</Terminology>.
 
 ## Next Steps
 
-- [Policies](/docs/filings/policies/) — Schedule a policy for automatic filing.
+- [Policies](/docs/filings/policies/) — Schedule a <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> for automatic <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filing</Terminology>.
 - [Dockets](/docs/dockets/overview/) — Where each scheduled run leaves its line.
 - [Audit Trail](/docs/dockets/audit-trail/) — Quarterly audits of scheduled work.

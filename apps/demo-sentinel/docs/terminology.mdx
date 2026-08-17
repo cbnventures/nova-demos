@@ -1,0 +1,92 @@
+---
+id: "terminology"
+title: "Terminology"
+sidebar_position: 9
+description: "Defines the Watchtower, Drawbridge, Garrison, and Cipher components plus the trust score, posture score, and zone concepts used throughout these docs."
+keywords:
+  - "sentinel"
+  - "terminology"
+  - "glossary"
+  - "concepts"
+  - "zero-trust"
+  - "access control"
+tags:
+  - "reference"
+  - "terminology"
+---
+
+# Terminology
+
+Definitions for the terms and concepts used throughout this documentation.
+
+## Arcline
+
+Arcline is the cloud marketplace deployment target for the Sentinel agent, provisioning Garrison enrollment and Filament tunnels automatically on deploy.
+
+## Cipher
+
+Cipher is Sentinel's authentication layer. It federates with an external identity provider and translates its assertions into the user-identity signal that Watchtower consumes.
+
+## Compliance Profile
+
+A compliance profile defines the minimum posture requirements — patch age, encryption, firewall, screen lock — that a group of enrolled devices must meet.
+
+## Control Plane
+
+The control plane is the Sentinel service that agents register with, receive policy updates from, and report posture and trust evaluations to.
+
+## Drawbridge
+
+Drawbridge is the adaptive access gateway. It grants, narrows, or revokes access in real time based on the trust score and the applicable policy.
+
+## Filament
+
+Filament is the tunnel protocol that connects an enrolled agent to the control plane. Drawbridge grants or revokes Filament tunnel access based on the evaluation result.
+
+## Garrison
+
+Garrison is the endpoint compliance engine. It enrolls devices, captures the posture baseline, and enforces policy on every connected device before access is granted.
+
+## `.grain` Format
+
+`.grain` is the declarative file format used for trust policies and compliance profiles, written as version-controlled condition blocks.
+
+## Parapet
+
+Parapet is the policy simulation sandbox. It tests proposed access rules against real traffic before they are enforced, so a tightened policy does not lock out active sessions.
+
+## Posture Score
+
+The posture score is Garrison's weighted, composite measure of a device's health — OS integrity, encryption, network, authentication, software, and configuration — expressed 0-100.
+
+## Rampart
+
+Rampart is the micro-segmentation layer. It isolates workloads into zones so lateral movement between them is impossible without an explicit crossing rule.
+
+## Spark
+
+Spark is the CLI used to install the Sentinel agent binary and resolve the correct build for your operating system and architecture.
+
+## Spoke API
+
+The Spoke API is Sentinel's REST API for policy management, device queries, zone operations, and audit export, authenticated with a Cipher bearer token.
+
+## Spyglass
+
+Spyglass is the audit and forensics component. It reconstructs full sessions from the evaluation chain and retains immutable logs for seven years.
+
+## Trust Score
+
+The trust score is Watchtower's composite evaluation of a session, combining device posture, user identity, network context, and behavioral signals into a single value.
+
+## Vial
+
+Vial is the container runtime for running the Sentinel agent as a long-lived container instead of installing it directly on the host.
+
+## Watchtower
+
+Watchtower is the continuous posture assessment engine. It computes the trust score from device, identity, network, and behavioral signals every 90 seconds.
+
+## Zone
+
+A zone is a Rampart-defined workload boundary. Traffic between zones requires an explicit crossing rule, which keeps lateral movement scoped and auditable.

@@ -5,6 +5,6 @@
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "description": "Getting Envoy installed and shipping its first relay — Vial or Spark CLI install, the `.grain` relay manifest reference, and a Threadbare-to-Canary tutorial from zero to first delivery."
+    "description": "Install Envoy and ship your first relay — Vial or Spark CLI install, the `.grain` relay manifest reference, and a Threadbare-to-Canary tutorial from zero to first delivery."
   }
 }

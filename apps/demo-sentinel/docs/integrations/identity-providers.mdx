@@ -9,16 +9,17 @@ tags:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Identity Providers
 
-Cipher is Sentinel's authentication layer. It does not store passwords or issue primary credentials. Instead, Cipher federates with an external identity provider — Okta, Azure AD, Google Workspace, or any conformant OIDC or SAML endpoint — and translates the IdP's assertions into the user-identity signals that Watchtower consumes.
+<Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> is Sentinel's authentication layer. It does not store passwords or issue primary credentials. Instead, <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> federates with an external identity provider — Okta, Azure AD, Google Workspace, or any conformant OIDC or SAML endpoint — and translates the IdP's assertions into the user-identity signals that <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> consumes.
 
-The integration is intentionally narrow. The IdP authoritatively answers who the user is. Cipher authoritatively answers whether that user, on this device, at this moment, should pass through Drawbridge.
+The integration is intentionally narrow. The IdP authoritatively answers who the user is. <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> authoritatively answers whether that user, on this device, at this moment, should pass through <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology>.
 
 ## Federation Model
 
-Every IdP integration follows the same four-stage handshake. The user authenticates against the IdP, the IdP returns a signed assertion, Cipher validates the assertion and extracts identity claims, and Watchtower consumes the claims as the user-identity signal in the trust score.
+Every IdP integration follows the same four-stage handshake. The user authenticates against the IdP, the IdP returns a signed assertion, <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> validates the assertion and extracts identity claims, and <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> consumes the claims as the user-identity signal in the <Terminology title="Watchtower's composite evaluation of session trustworthiness" to="/docs/terminology#trust-score">trust score</Terminology>.
 
 ```mermaid
 graph LR
@@ -28,7 +29,7 @@ graph LR
     W --> TS(["trust score"]):::muted --> D[Drawbridge]
 ```
 
-Cipher never extends the IdP session. When the IdP-issued token expires, the user must re-authenticate against the IdP — not against Cipher. This keeps the source of truth for identity in one place.
+<Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> never extends the IdP session. When the IdP-issued token expires, the user must re-authenticate against the IdP — not against <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology>. This keeps the source of truth for identity in one place.
 
 ## Supported Providers
 
@@ -67,7 +68,7 @@ identity_provider "okta-primary" {
 }
 ```
 
-The `claims` block maps OIDC claim names to Cipher's internal identity fields. Okta emits the `amr` (Authentication Methods References) claim, which Watchtower uses to verify MFA strength.
+The `claims` block maps OIDC claim names to <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology>'s internal identity fields. Okta emits the `amr` (Authentication Methods References) claim, which <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> uses to verify MFA strength.
 
 </TabItem>
 <TabItem value="azure" label="Azure AD">
@@ -97,7 +98,7 @@ identity_provider "azure-ad" {
 }
 ```
 
-Azure AD truncates the `groups` claim when a user is a member of more than 200 groups. The `overage_strategy = "graph_api"` block instructs Cipher to fall back to the Microsoft Graph API to resolve the full group membership.
+Azure AD truncates the `groups` claim when a user is a member of more than 200 groups. The `overage_strategy = "graph_api"` block instructs <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> to fall back to the Microsoft Graph API to resolve the full group membership.
 
 </TabItem>
 <TabItem value="google" label="Google Workspace">
@@ -124,7 +125,7 @@ identity_provider "google-workspace" {
 }
 ```
 
-Google Workspace does not emit groups in the OIDC token. Cipher resolves group membership through the Admin SDK with a delegated service account. The `hd` claim is enforced to reject sign-ins from external Google accounts.
+Google Workspace does not emit groups in the OIDC token. <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> resolves group membership through the Admin SDK with a delegated service account. The `hd` claim is enforced to reject sign-ins from external Google accounts.
 
 </TabItem>
 <TabItem value="generic" label="Generic OIDC">
@@ -160,7 +161,7 @@ Sentinel supports exactly one primary IdP per tenant. Secondary IdPs may be conf
 
 ## Mapping Policies to IdP Groups
 
-Trust policies reference IdP groups directly through the `user.groups` condition. The group name is the value as emitted by the IdP after Cipher's claim mapping:
+Trust policies reference IdP groups directly through the `user.groups` condition. The group name is the value as emitted by the IdP after <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology>'s claim mapping:
 
 ```text title="policies/group-scoped-access.grain"
 policy "platform-team-access" {
@@ -180,15 +181,15 @@ policy "platform-team-access" {
 }
 ```
 
-The condition matches any user whose IdP group claim includes either `platform-engineering` or `sre`. Group membership is re-evaluated at every Watchtower cycle — a user removed from the group in the IdP loses access within 90 seconds without any Sentinel-side action.
+The condition matches any user whose IdP group claim includes either `platform-engineering` or `sre`. Group membership is re-evaluated at every <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> cycle — a user removed from the group in the IdP loses access within 90 seconds without any Sentinel-side action.
 
 :::warning Group Resolution Lag
-The 90-second cycle measures Watchtower's evaluation cadence, not the IdP propagation delay. If the IdP itself takes minutes to propagate group changes, that lag adds on top. For high-risk groups, configure the IdP for immediate group propagation or use the SCIM connector for push-based updates.
+The 90-second cycle measures <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology>'s evaluation cadence, not the IdP propagation delay. If the IdP itself takes minutes to propagate group changes, that lag adds on top. For high-risk groups, configure the IdP for immediate group propagation or use the SCIM connector for push-based updates.
 :::
 
 ## JIT User Provisioning
 
-When a user authenticates for the first time through a federated IdP, Cipher creates a Sentinel-side identity record automatically. No prior account creation is required.
+When a user authenticates for the first time through a federated IdP, <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> creates a Sentinel-side identity record automatically. No prior account creation is required.
 
 ```text title="JIT provisioning event"
 [14:22:03] CIPHER user authentication
@@ -212,7 +213,7 @@ JIT provisioning never grants access on its own. The new identity is still subje
 
 ## Conditional Access Gates
 
-Cipher evaluates IdP-emitted signals as conditional access gates before the user reaches Drawbridge. A failing gate produces an authentication failure, not a revoked tunnel:
+<Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> evaluates IdP-emitted signals as conditional access gates before the user reaches <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology>. A failing gate produces an authentication failure, not a revoked tunnel:
 
 | Gate               | Source claim           | Failure mode             |
 |--------------------|------------------------|--------------------------|
@@ -248,7 +249,7 @@ gates "okta-primary" {
 
 ## SCIM Provisioning
 
-For high-churn environments, SCIM 2.0 push provisioning eliminates the propagation lag inherent in pull-based group resolution. The IdP pushes user and group changes to Cipher's SCIM endpoint as they happen:
+For high-churn environments, SCIM 2.0 push provisioning eliminates the propagation lag inherent in pull-based group resolution. The IdP pushes user and group changes to <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology>'s SCIM endpoint as they happen:
 
 ```bash title="Register the SCIM endpoint"
 sentinel cipher scim register \
@@ -270,11 +271,11 @@ SCIM 2.0 endpoint registered
              urn:ietf:params:scim:schemas:core:2.0:Group
 ```
 
-SCIM events are applied to the Sentinel identity graph within seconds of the IdP push. A user removed from a group through SCIM loses access at the next Watchtower cycle — typically faster than the 90-second pull cadence.
+SCIM events are applied to the Sentinel identity graph within seconds of the IdP push. A user removed from a group through SCIM loses access at the next <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> cycle — typically faster than the 90-second pull cadence.
 
 ## Auditing IdP Events
 
-Every authentication event flows through Spyglass with the originating IdP, the subject identifier, and the resolved group set:
+Every authentication event flows through <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> with the originating IdP, the subject identifier, and the resolved group set:
 
 ```bash title="Audit IdP authentication events"
 sentinel spyglass query \
@@ -283,10 +284,10 @@ sentinel spyglass query \
   --period "2025-06-01..2025-06-30"
 ```
 
-The query returns the full chain — IdP assertion received, claims extracted, JIT provisioning (if applicable), conditional gate evaluation, and the resulting Watchtower trust score. Identity provider integration is not a black box; every assertion is auditable.
+The query returns the full chain — IdP assertion received, claims extracted, JIT provisioning (if applicable), conditional gate evaluation, and the resulting <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> <Terminology title="Watchtower's composite evaluation of session trustworthiness" to="/docs/terminology#trust-score">trust score</Terminology>. Identity provider integration is not a black box; every assertion is auditable.
 
 ## Next Steps
 
-- [EDR Connectors](/docs/integrations/edr-connectors/) — How Watchtower correlates device posture signals from EDR platforms with the identity signals described here.
-- [Access Control](/docs/trust/access-control/) — How Drawbridge translates IdP group membership into concrete access decisions.
-- [API Reference](/docs/reference/api-reference/) — Programmatic management of Cipher IdP configuration and SCIM endpoints.
+- [EDR Connectors](/docs/integrations/edr-connectors/) — How <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> correlates device posture signals from EDR platforms with the identity signals described here.
+- [Access Control](/docs/trust/access-control/) — How <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> translates IdP group membership into concrete access decisions.
+- [API Reference](/docs/reference/api-reference/) — Programmatic management of <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> IdP configuration and SCIM endpoints.

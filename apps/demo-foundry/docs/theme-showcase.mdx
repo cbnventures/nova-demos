@@ -1,6 +1,6 @@
 ---
 title: "Theme Showcase"
-description: "Theme component showcase covering admonitions, tabs, code blocks, tables, details, and every other Docusaurus preset element."
+description: "Showcases every theme component in the Docusaurus preset, including admonitions, tabs, code blocks, tables, and collapsible details."
 sidebar_label: "Theme Showcase"
 sidebar_position: 7
 tags:
@@ -11,6 +11,7 @@ tags:
 import Details from '@theme/Details';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Theme Showcase
 
@@ -18,7 +19,9 @@ This page demonstrates every theme component available in the Docusaurus preset.
 
 ## Headings
 
-The heading hierarchy below shows how each level renders. Use `h2` through `h4` for page structure. Reserve `h5` and `h6` for rare edge cases where deeper nesting is genuinely needed.
+The heading hierarchy below shows how each level renders. Use `h2` through `h4` for page structure.
+
+Reserve `h5` and `h6` for rare edge cases where deeper nesting is genuinely needed.
 
 ### Third-Level Heading
 
@@ -34,7 +37,9 @@ The heading hierarchy below shows how each level renders. Use `h2` through `h4` 
 
 Regular paragraph text renders in the base body font. Keep paragraphs short — two to four sentences is ideal for technical documentation.
 
-**Bold text** draws attention to key terms on first use. *Italic text* is useful for introducing terminology or referencing titles. ~~Strikethrough text~~ marks content that is no longer accurate or has been superseded. You can also combine **_bold and italic_** when emphasis is critical.
+**Bold text** draws attention to key terms on first use. *Italic text* is useful for introducing terminology or referencing titles.
+
+~~Strikethrough text~~ marks content that is no longer accurate or has been superseded. You can also combine **_bold and italic_** when emphasis is critical.
 
 Inline `code` is for referencing function names like `formatDate`, file paths like `project.grain`, or CLI flags like `--dry-run`.
 
@@ -49,8 +54,8 @@ Internal links point to other pages within this documentation site:
 
 External links point to resources outside the site:
 
-- [Alloy Language Reference](https://nova.cbnventures.io) — official Alloy documentation.
-- [Loom Registry](https://nova.cbnventures.io) — the package registry for Alloy and Ferric packages.
+- [Alloy Language Reference](https://nova.cbnventures.io) — official <Terminology title="Primary language declared for a Foundry workspace" to="/docs/terminology#alloy">Alloy</Terminology> documentation.
+- [Loom Registry](https://nova.cbnventures.io) — the package registry for <Terminology title="Primary language declared for a Foundry workspace" to="/docs/terminology#alloy">Alloy</Terminology> and <Terminology title="Optional secondary language runtime for a workspace" to="/docs/terminology#ferric">Ferric</Terminology> packages.
 
 ---
 
@@ -58,30 +63,30 @@ External links point to resources outside the site:
 
 ### Unordered List
 
-- Warden rules enforce consistent code patterns across every package.
-- Alloy settings eliminate config drift between workspaces.
+- <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> rules enforce consistent code patterns across every package.
+- <Terminology title="Primary language declared for a Foundry workspace" to="/docs/terminology#alloy">Alloy</Terminology> settings eliminate config drift between <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspaces</Terminology>.
 - Manifests replace dozens of configuration files with a single source of truth.
-- Crucible scaffolds give new packages a test baseline from day one.
+- <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> scaffolds give new packages a test baseline from day one.
 
 ### Ordered List
 
-1. Install the CLI with Spark.
-2. Write a `.grain` manifest describing your workspace.
-3. Run `foundry ignite` to forge the environment.
+1. Install the CLI with <Terminology title="CLI runtime distributing the Foundry CLI and sub-tools" to="/docs/terminology#spark">Spark</Terminology>.
+2. Write a <Terminology title="Single source of truth for a Foundry workspace" to="/docs/terminology#grain-manifest">`.grain` manifest</Terminology> describing your <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology>.
+3. Run `foundry ignite` to <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology> the environment.
 4. Run `foundry warden check` to verify all rules pass.
 5. Run `foundry crucible run` to execute generated tests.
 
 ### Nested Lists
 
 - **CLI Commands**
-  - Forge
-    - `foundry ignite` — forge the full workspace from the manifest.
+  - <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">Forge</Terminology>
+    - `foundry ignite` — <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology> the full <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> from the manifest.
     - `foundry ignite --dry-run` — preview output without writing files.
     - `foundry ignite --incremental` — rebuild only changed packages.
   - Analysis
     - `foundry slag scan` — detect dead code and unused dependencies.
     - `foundry tongs graph` — render the dependency graph.
-- **Warden Categories**
+- **<Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> Categories**
   - Conventions — naming, exports, and structural rules.
   - Formatting — whitespace, comments, and visual consistency.
   - Patterns — logic flow, assignments, and control structures.
@@ -90,7 +95,7 @@ External links point to resources outside the site:
 
 ## Blockquotes
 
-> A workspace without shared tooling is just a directory of packages pretending to be related.
+> A <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> without shared tooling is just a directory of packages pretending to be related.
 
 Nested blockquotes work for attributions or follow-up commentary:
 
@@ -104,7 +109,7 @@ Nested blockquotes work for attributions or follow-up commentary:
 
 ### Syntax Highlighting
 
-Alloy with a title bar:
+<Terminology title="Primary language declared for a Foundry workspace" to="/docs/terminology#alloy">Alloy</Terminology> with a title bar:
 
 ```alloy title="src/lib/schema.al"
 interface ProjectConfig {
@@ -165,7 +170,7 @@ workspace "my-app" {
 }
 ```
 
-Spark commands:
+<Terminology title="CLI runtime distributing the Foundry CLI and sub-tools" to="/docs/terminology#spark">Spark</Terminology> commands:
 
 ```bash
 # Install Foundry and forge the workspace
@@ -232,11 +237,13 @@ Tips share best practices or shortcuts that save time. For example, run `foundry
 :::
 
 :::info
-Info blocks highlight background details that aid understanding. The Warden preset system uses a layered composition model — each preset is a named collection of rules that you stack in your manifest.
+Info blocks highlight background details that aid understanding. The <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> preset system uses a layered composition model — each preset is a named collection of rules that you stack in your manifest.
 :::
 
 :::warning
-Warnings flag potential pitfalls. Changing the `lang` directive in a manifest after the initial forge will regenerate all configuration files. Run with `--dry-run` first to see the impact.
+Warnings flag potential pitfalls. Changing the `lang` directive in a manifest after the initial <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology> will regenerate all configuration files.
+
+Run with `--dry-run` first to see the impact.
 :::
 
 :::danger
@@ -254,7 +261,9 @@ Admonitions accept a custom title in brackets after the keyword. Use this to mak
 <Details>
 <summary>What Alloy versions are supported?</summary>
 
-Foundry 2.x requires Alloy 5.0 or later. This is enforced during the `foundry ignite` manifest parsing phase. Earlier Alloy versions do not support the type introspection API that Crucible uses to generate test scaffolds.
+Foundry 2.x requires <Terminology title="Primary language declared for a Foundry workspace" to="/docs/terminology#alloy">Alloy</Terminology> 5.0 or later. This is enforced during the `foundry ignite` manifest parsing phase.
+
+Earlier <Terminology title="Primary language declared for a Foundry workspace" to="/docs/terminology#alloy">Alloy</Terminology> versions do not support the type introspection API that <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> uses to generate test scaffolds.
 
 </Details>
 
@@ -397,7 +406,9 @@ flowchart LR
 
 ## Horizontal Rules
 
-Horizontal rules separate major sections. They render as a thin line spanning the content width. The three dashes (`---`) above and below each section on this page are horizontal rules.
+Horizontal rules separate major sections. They render as a thin line spanning the content width.
+
+The three dashes (`---`) above and below each section on this page are horizontal rules.
 
 ---
 
@@ -406,7 +417,7 @@ Horizontal rules separate major sections. They render as a thin line spanning th
 Use `<kbd>` tags to render keyboard keys inline:
 
 - <kbd>Ctrl</kbd> + <kbd>S</kbd> — save the current file.
-- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> — search across the entire workspace.
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> — search across the entire <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology>.
 - <kbd>Ctrl</kbd> + <kbd>`</kbd> — toggle the integrated terminal.
 - <kbd>Alt</kbd> + <kbd>Up</kbd> / <kbd>Down</kbd> — move a line up or down.
 - <kbd>Ctrl</kbd> + <kbd>D</kbd> — select the next occurrence of the current word.

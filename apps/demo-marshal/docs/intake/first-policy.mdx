@@ -7,9 +7,11 @@ tags:
   - "tutorial"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Your First Policy
 
-A first policy is a single sealed document about a single class of events. Start small, file once, watch the docket fill in.
+A first <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> is a single <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">sealed</Terminology> document about a single class of events. Start small, <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">file</Terminology> once, watch the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology> fill in.
 
 ## Step 1: Write the Policy
 
@@ -28,7 +30,7 @@ notice: "Archived after a year of silence. Reopen by request."
 marshal file policies/stale-threads.yml
 ```
 
-Marshal stamps the policy with a filing number and adds it to the docket.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamps</Terminology> the <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> with a <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filing</Terminology> number and adds it to the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>.
 
 ## Step 3: Watch the Stamp
 
@@ -36,14 +38,14 @@ Marshal stamps the policy with a filing number and adds it to the docket.
 marshal docket tail
 ```
 
-The next time a stale thread crosses the threshold, Marshal seals it. Every action is a line in the public ledger.
+The next time a stale thread crosses the threshold, <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">seals</Terminology> it. Every action is a line in the public <Terminology title="Org-wide record joining every repository's docket" to="/docs/terminology#ledger">ledger</Terminology>.
 
 ## What Just Happened
 
-You filed a policy, watched the stamp, and read the docket. Everything that follows is paperwork — but Marshal does the paperwork.
+You <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filed</Terminology> a <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology>, watched the <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamp</Terminology>, and read the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>. Everything that follows is paperwork — but <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> does the paperwork.
 
 ## Next Steps
 
-- [Policies](/docs/filings/policies/) — Built-in policy types and filing patterns.
+- [Policies](/docs/filings/policies/) — Built-in <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> types and <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filing</Terminology> patterns.
 - [Dockets](/docs/dockets/overview/) — How to read the public record.
 - [Scheduled Stewardship](/docs/stewardship/scheduled-stewardship/) — Run cleanups on a cron.

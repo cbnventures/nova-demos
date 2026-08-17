@@ -1,19 +1,21 @@
 ---
 title: "Routing & Dispatch"
 sidebar_position: 2
-description: "Dispatch routes transformed payloads by content, source identity, severity level, or custom manifest rules with topic fanout and escalation."
+description: "Dispatch routes transformed payloads by content, source identity, severity level, or custom manifest rules, with fanout and escalation."
 tags:
   - "core"
   - "routing"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Routing & Dispatch
 
-Dispatch is Envoy's routing engine. After Parcel transforms the payload, Dispatch decides where it goes. Routing decisions are based on content, source identity, severity level, or custom rules declared in the relay manifest.
+<Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> is <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology>'s routing engine. After <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> transforms the payload, <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> decides where it goes. Routing decisions are based on content, source identity, severity level, or custom rules declared in the <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">relay manifest</Terminology>.
 
 ## Content-Based Routing
 
-The simplest routing strategy: inspect the payload and route based on what it contains. Dispatch evaluates the `filter` block of each relay in declaration order. The first match wins.
+The simplest routing strategy: inspect the payload and route based on what it contains. <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> evaluates the `filter` block of each <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> in declaration order. The first match wins.
 
 ```text title="relay.grain — content-based routing"
 relay "critical-alerts" {
@@ -37,11 +39,11 @@ relay "info-alerts" {
 }
 ```
 
-A critical Glassboard alert routes to `oncall-urgent`. A warning routes to `infra-alerts`. Everything else falls through to `infra-log`.
+A critical <Terminology title="Monitoring and dashboarding platform with a built-in translator" to="/docs/terminology#glassboard">Glassboard</Terminology> alert routes to `oncall-urgent`. A warning routes to `infra-alerts`. Everything else falls through to `infra-log`.
 
 ## Severity Escalation
 
-Dispatch can escalate messages based on severity thresholds. When a source fires repeated alerts within a time window, the effective severity increases and the routing changes.
+<Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> can escalate messages based on severity thresholds. When a source fires repeated alerts within a time window, the effective severity increases and the routing changes.
 
 ```text title="Escalation rules"
 escalation {
@@ -54,14 +56,14 @@ escalation {
 }
 ```
 
-| Alert Count (5m window) | Original Severity | Effective Severity | Routed To              |
-|-------------------------|-------------------|--------------------|------------------------|
-| 1                       | info              | info               | canary://infra-log     |
-| 3                       | info              | warning            | canary://infra-alerts  |
-| 10                      | info              | critical           | canary://oncall-urgent |
+| Alert Count (5m window) | Original Severity | Effective Severity | Routed To                |
+|-------------------------|-------------------|--------------------|--------------------------|
+| 1                       | `info`            | `info`             | `canary://infra-log`     |
+| 3                       | `info`            | `warning`          | `canary://infra-alerts`  |
+| 10                      | `info`            | `critical`         | `canary://oncall-urgent` |
 
 :::warning
-Escalation modifies the effective severity for routing purposes only. The original severity in the payload is preserved in Ledger. This ensures audit accuracy while allowing routing flexibility.
+Escalation modifies the effective severity for routing purposes only. The original severity in the payload is preserved in <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology>. This ensures audit accuracy while allowing routing flexibility.
 :::
 
 ## Topic Fanout
@@ -88,7 +90,7 @@ relay "deploy-notifications" {
 }
 ```
 
-Courier delivers to each destination independently. A failure on one does not block the others. Each delivery gets its own retry schedule and Ledger entry.
+<Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> delivers to each destination independently. A failure on one does not block the others. Each delivery gets its own retry schedule and <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> entry.
 
 ## Conditional Delivery
 
@@ -119,16 +121,16 @@ relay "business-hours-critical" {
 
 ## Routing Strategies
 
-| Strategy            | Use Case                         | Configuration                       |
-|---------------------|----------------------------------|-------------------------------------|
-| Content-based       | Route by payload fields          | `filter { field = "value" }`        |
-| Source-based        | Route by origin identity         | `source = "glassboard"`             |
-| Severity escalation | Increase urgency under volume    | `escalation { thresholds { ... } }` |
-| Topic fanout        | Deliver to multiple destinations | `fanout = ["a", "b", "c"]`          |
-| Time-based          | Different routing by schedule    | `filter { schedule = "..." }`       |
-| Fallback            | Catch-all for unmatched messages | Last relay with no filter           |
+| Strategy                                                                                                                              | Use Case                         | Configuration                                                                                                                                    |
+|---------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| Content-based                                                                                                                         | Route by payload fields          | `filter { field = "value" }`                                                                                                                     |
+| Source-based                                                                                                                          | Route by origin identity         | `source = "glassboard"`                                                                                                                          |
+| Severity escalation                                                                                                                   | Increase urgency under volume    | `escalation { thresholds { ... } }`                                                                                                              |
+| Topic <Terminology title="Delivering one message to multiple destinations at once" to="/docs/terminology#fanout">fanout</Terminology> | Deliver to multiple destinations | `fanout = ["a", "b", "c"]`                                                                                                                       |
+| Time-based                                                                                                                            | Different routing by schedule    | `filter { schedule = "..." }`                                                                                                                    |
+| Fallback                                                                                                                              | Catch-all for unmatched messages | Last <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> with no filter |
 
 ## Next Steps
 
-- [Authentication](/docs/core/authentication/) — How Cipher verifies source identity before Dispatch processes the message.
-- [Architecture](/docs/advanced/architecture/) — System-level view of how Dispatch, Courier, and Embassy interact.
+- [Authentication](/docs/core/authentication/) — How <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> verifies source identity before <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> processes the message.
+- [Architecture](/docs/advanced/architecture/) — System-level view of how <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology>, <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology>, and <Terminology title="Envoy's origin-masking reverse proxy exposed publicly" to="/docs/terminology#embassy">Embassy</Terminology> interact.

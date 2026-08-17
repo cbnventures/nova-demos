@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 sidebar_position: 1
-description: "Install Envoy via Vial container, Spark CLI, or Trellis deployment. Includes health check verification and minimal footprint notes."
+description: "Install Envoy via Vial container, Spark CLI, or Trellis deployment, with health check verification and minimal footprint notes."
 tags:
   - "setup"
   - "installation"
@@ -9,18 +9,19 @@ tags:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Installation
 
-Envoy ships as a 3MB Vial image with zero external dependencies. Choose the deployment method that fits your infrastructure.
+<Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> ships as a 3MB <Terminology title="Container image format Envoy ships as" to="/docs/terminology#vial">Vial</Terminology> image with zero external dependencies. Choose the deployment method that fits your infrastructure.
 
 ## Prerequisites
 
-| Requirement | Minimum Version | Notes                                                     |
-|-------------|-----------------|-----------------------------------------------------------|
-| **Vial**    | 4.0             | Recommended for production. Compose v2 for stack deploys. |
-| **Spark**   | 2.1             | Alternative CLI-based deployment.                         |
-| **Trellis** | 1.8             | Orchestrated deployment across clusters.                  |
+| Requirement                                                                                                                    | Minimum Version | Notes                                                     |
+|--------------------------------------------------------------------------------------------------------------------------------|-----------------|-----------------------------------------------------------|
+| **<Terminology title="Container image format Envoy ships as" to="/docs/terminology#vial">Vial</Terminology>**                  | 4.0             | Recommended for production. Compose v2 for stack deploys. |
+| **<Terminology title="CLI used to install and run Envoy" to="/docs/terminology#spark">Spark</Terminology>**                    | 2.1             | Alternative CLI-based deployment.                         |
+| **<Terminology title="Orchestrated cluster deployment target for Envoy" to="/docs/terminology#trellis">Trellis</Terminology>** | 1.8             | Orchestrated deployment across clusters.                  |
 
 ## Install
 
@@ -51,13 +52,13 @@ vial logs envoy
 </TabItem>
 <TabItem value="spark" label="Spark CLI">
 
-Install the Envoy CLI globally:
+Install the <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> CLI globally:
 
 ```bash title="Install with Spark"
 spark install envoy
 ```
 
-Start the relay server:
+Start the <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> server:
 
 ```bash
 envoy start --port 8090
@@ -72,7 +73,7 @@ envoy start --config relay.grain --port 8090
 </TabItem>
 <TabItem value="trellis" label="Trellis">
 
-Deploy to a Trellis cluster using the manifest:
+Deploy to a <Terminology title="Orchestrated cluster deployment target for Envoy" to="/docs/terminology#trellis">Trellis</Terminology> cluster using the <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">manifest</Terminology>:
 
 ```text title="envoy.trellis.grain"
 deployment "envoy" {
@@ -102,12 +103,12 @@ trellis apply envoy.trellis.grain
 </Tabs>
 
 :::tip Minimal Footprint
-The Envoy Vial image is 3MB. That is not a typo. Zero external dependencies means zero bloat. Cold starts complete in under 200ms, and the attack surface is limited to code we wrote and you can audit.
+The <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> <Terminology title="Container image format Envoy ships as" to="/docs/terminology#vial">Vial</Terminology> image is 3MB. That is not a typo. Zero external dependencies means zero bloat. Cold starts complete in under 200ms, and the attack surface is limited to code we wrote and you can audit.
 :::
 
 ## Post-Install Verification
 
-Regardless of deployment method, verify the relay is operational:
+Regardless of deployment method, verify the <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> is operational:
 
 ```bash title="Health check"
 curl http://localhost:8090/health
@@ -132,6 +133,6 @@ Expected response:
 
 ## What Comes Next
 
-- [Your First Relay](/docs/setup/your-first-relay/) — Receive a Threadbare webhook, transform it, deliver it to Canary.
-- [Configuration](/docs/setup/configuration/) — The `.grain` relay manifest in depth.
-- [Integrations](/docs/advanced/integrations/) — Built-in translators for Threadbare, Glassboard, and Canary.
+- [Your First Relay](/docs/setup/your-first-relay/) — Receive a <Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology> webhook, transform it, deliver it to <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology>.
+- [Configuration](/docs/setup/configuration/) — The `.grain` <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">relay manifest</Terminology> in depth.
+- [Integrations](/docs/advanced/integrations/) — Built-in translators for <Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology>, <Terminology title="Monitoring and dashboarding platform with a built-in translator" to="/docs/terminology#glassboard">Glassboard</Terminology>, and <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology>.

@@ -1,21 +1,22 @@
 ---
 title: "Quick Start"
 sidebar_position: 2
-description: "Mint your first Beacon link, open the Pulse live stream, and watch a click arrive in real time. Sixty seconds end-to-end."
+description: "Mint your first Beacon link, open the Pulse live stream, and watch a click arrive in real time, sixty seconds end-to-end."
 tags:
-  - "getting started"
+  - "getting-started"
   - "tutorial"
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Quick Start
 
-Mint your first Beacon link, open the Pulse live stream, and watch a click arrive in real time. The entire walkthrough takes sixty seconds.
+Mint your first <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link, open the <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> live stream, and watch a click arrive in real time. The entire walkthrough takes sixty seconds.
 
 ## Step 1: Mint a Beacon Link
 
-Create a Beacon link with campaign metadata embedded:
+Create a <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link with campaign metadata embedded:
 
 ```bash title="Create a Beacon link"
 signal beacon create \
@@ -49,17 +50,19 @@ The `attribution` object is embedded in the link itself. It does not depend on U
 
 ## Step 2: Open Pulse
 
-In a separate terminal, open the Pulse live stream to watch clicks arrive:
+In a separate terminal, open the <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> live stream to watch clicks arrive:
 
 ```bash title="Start Pulse live stream"
 signal pulse watch --campaign "product-launch"
 ```
 
-Pulse opens a live feed filtered to your campaign. Leave it running.
+<Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> opens a live feed filtered to your campaign. Leave it running.
 
 ## Step 3: Click the Link
 
-Open `https://go.signal.example/a7x9m2` in a browser. Within two milliseconds, the redirect completes. Within one second, the Pulse stream shows:
+Open `https://go.signal.example/a7x9m2` in a browser. Within two milliseconds, the redirect completes.
+
+Within one second, the <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> stream shows:
 
 ```json title="Pulse event"
 {
@@ -82,7 +85,7 @@ That is a fully attributed click — campaign, channel, variant, device, and geo
 
 ## Step 4: Check Attribution
 
-After the click, query Prism for the attribution path:
+After the click, query <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> for the attribution path:
 
 ```bash title="Query Prism"
 signal prism path --trace "trc_8f3a1b2c4d5e6f70"
@@ -109,16 +112,16 @@ signal prism path --trace "trc_8f3a1b2c4d5e6f70"
 }
 ```
 
-With only one touchpoint, the full weight is assigned to the email click. As the user interacts with more Beacon links across channels, Prism builds a richer attribution path.
+With only one <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology>, the full weight is assigned to the email click. As the user interacts with more <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links across channels, <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> builds a richer attribution path.
 
 </Details>
 
 ## What Just Happened
 
-You minted a Beacon link with embedded attribution metadata, watched a click arrive in the Pulse live stream, and queried the attribution path through Prism. No tracking pixels. No page-side scripts. No UTM parameters to strip. The attribution lives in the link.
+You minted a <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link with embedded attribution metadata, watched a click arrive in the <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> live stream, and queried the attribution path through <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology>. No tracking pixels, no page-side scripts, no UTM parameters to strip — the attribution lives in the link.
 
 ## Next Steps
 
-- [Branded Domains](/docs/beacons/branded-domains/) — Run Beacon links on your own domain.
-- [Click Attribution](/docs/attribution/click-attribution/) — Explore Prism's multi-touch attribution model.
-- [Campaign Management](/docs/campaigns/campaign-management/) — Organize links into campaigns with Aperture snapshots.
+- [Branded Domains](/docs/beacons/branded-domains/) — Run <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links on your own domain.
+- [Click Attribution](/docs/attribution/click-attribution/) — Explore <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology>'s <Terminology title="Credits every touchpoint across the full conversion path" to="/docs/terminology#multi-touch-attribution">multi-touch attribution</Terminology> model.
+- [Campaign Management](/docs/campaigns/campaign-management/) — Organize links into campaigns with <Terminology title="Point-in-time campaign performance snapshots over time" to="/docs/terminology#aperture">Aperture</Terminology> snapshots.

@@ -1,16 +1,19 @@
 import {
   AppMarketDownload,
   BlogPreview,
+  Canvas,
   Features,
-  Hero,
   InstallStrip,
   Spotlight,
   Stats,
 } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
+
+import styles from './index.module.css';
 
 /**
  * Pages - Home.
@@ -39,37 +42,78 @@ function Home() {
           })}
         </title>
       </Head>
-      <Hero
-        eyebrow={translate({
-          id: 'home.hero.eyebrow',
-          message: 'Developer Tooling',
-          description: 'Front page hero eyebrow above the heading',
-        })}
-        heading={translate({
-          id: 'home.hero.heading',
-          message: 'Every tool starts as raw metal.',
-          description: 'Front page hero main heading',
-        })}
-        tagline={translate({
-          id: 'home.hero.tagline',
-          message: 'Foundry reads your intent and forges your entire development environment from a single manifest. Stop configuring. Start describing.',
-          description: 'Front page hero tagline beneath the heading',
-        })}
-        ctaLabel={translate({
-          id: 'home.hero.ctaLabel',
-          message: 'Get Started',
-          description: 'Front page hero primary call-to-action button label',
-        })}
-        ctaLink="/docs/overview/"
-        secondaryCtaLabel={translate({
-          id: 'home.hero.secondaryCtaLabel',
-          message: 'View on Threadbare',
-          description: 'Front page hero secondary call-to-action button label',
-        })}
-        secondaryCtaLink="https://nova.cbnventures.io"
-      />
+      <Canvas container="full" surface="default" className={styles['hero']}>
+        <div className={styles['heroInner']}>
+          <p className={styles['heroEyebrow']}>
+            {translate({
+              id: 'home.hero.eyebrow',
+              message: 'Developer Tooling',
+              description: 'Front page hero eyebrow above the heading',
+            })}
+          </p>
+          <h1 className={styles['heroHeading']}>
+            {translate({
+              id: 'home.hero.heading',
+              message: 'Every tool starts as raw metal.',
+              description: 'Front page hero main heading',
+            })}
+          </h1>
+          <p className={styles['heroTagline']}>
+            {translate({
+              id: 'home.hero.tagline',
+              message: 'Foundry reads your intent and forges your entire development environment from a single manifest. Stop configuring. Start describing.',
+              description: 'Front page hero tagline beneath the heading',
+            })}
+          </p>
+          <div className={styles['heroTerminal']}>
+            <div className={styles['heroTerminalChrome']}>
+              <span className={styles['heroTerminalDot']} aria-hidden="true" />
+              <span className={styles['heroTerminalDot']} aria-hidden="true" />
+              <span className={styles['heroTerminalDot']} aria-hidden="true" />
+              <span>
+                {translate({
+                  id: 'home.hero.terminal.label',
+                  message: 'foundry — zsh',
+                  description: 'Front page hero terminal panel window label',
+                })}
+              </span>
+            </div>
+            <pre className={styles['heroTerminalBody']}>
+              {[
+                '$ foundry init my-app',
+                '→ Forged 3 packages from project.grain',
+                '→ Resolved dependency graph in 40ms',
+                '',
+                '$ foundry build',
+                '→ Quench: 0 files changed, using cache',
+                '→ Build complete in 1.2s',
+                '',
+                '$ foundry deploy --target arcline',
+                '→ Bellows: running 3 tasks in parallel',
+                '→ Deployed to arcline. Done in 6.1s',
+              ].join('\n')}
+            </pre>
+          </div>
+          <div className={styles['heroActions']}>
+            <Link className="nova-cta-primary" to="/docs/overview/">
+              {translate({
+                id: 'home.hero.ctaLabel',
+                message: 'Get Started',
+                description: 'Front page hero primary call-to-action button label',
+              })}
+            </Link>
+            <Link className="nova-cta-secondary" to="https://nova.cbnventures.io">
+              {translate({
+                id: 'home.hero.secondaryCtaLabel',
+                message: 'View on Threadbare',
+                description: 'Front page hero secondary call-to-action button label',
+              })}
+            </Link>
+          </div>
+          <InstallStrip command="spark install foundry" copyTarget="block" className={styles['heroInstallStrip']} />
+        </div>
+      </Canvas>
       <main>
-        <InstallStrip command="spark install foundry" copyTarget="block" />
         <Features
           items={[
             {
@@ -197,6 +241,24 @@ function Home() {
             },
           ]}
         />
+        <Canvas container="contained" surface="default">
+          <div className={styles['canvasShowcase']}>
+            <h2>
+              {translate({
+                id: 'home.canvas.heading',
+                message: 'From Intent to Infrastructure',
+                description: 'Front page Canvas section heading',
+              })}
+            </h2>
+            <p className={styles['canvasShowcaseDescription']}>
+              {translate({
+                id: 'home.canvas.description',
+                message: 'Foundry reads a single manifest and produces a complete environment — linters, formatters, test harnesses, deploy targets. One file. Every tool.',
+                description: 'Front page Canvas section description',
+              })}
+            </p>
+          </div>
+        </Canvas>
         <Spotlight
           surface="alt"
           heading={translate({

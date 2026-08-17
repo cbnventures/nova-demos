@@ -3,15 +3,16 @@ title: "Your First Policy"
 sidebar_position: 2
 description: "Write a trust policy in .grain format, validate it, attach it to a resource, and watch Watchtower evaluate it against live device posture."
 tags:
-  - "getting started"
+  - "getting-started"
   - "tutorial"
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Your First Policy
 
-A trust policy defines the conditions under which access is granted, the resource it protects, and what happens when conditions are no longer met. This guide walks through writing a policy from scratch, validating it, and watching Watchtower evaluate it.
+A trust policy defines the conditions under which access is granted, the resource it protects, and what happens when conditions are no longer met. This guide walks through writing a policy from scratch, validating it, and watching <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> evaluate it.
 
 ## Write the Policy
 
@@ -91,11 +92,11 @@ Applying policy: web-application-access
   Spyglass:   logging enabled for this policy
 ```
 
-Watchtower begins evaluating all active sessions against the new policy within 90 seconds. Sessions that do not meet the conditions are revoked automatically.
+<Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> begins evaluating all active sessions against the new policy within 90 seconds. Sessions that do not meet the conditions are revoked automatically.
 
 ## Watch the Evaluation
 
-Monitor Watchtower evaluations in real time:
+Monitor <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> evaluations in real time:
 
 ```bash title="Watch live evaluations"
 sentinel watchtower watch --policy web-application-access
@@ -111,7 +112,7 @@ Watchtower — web-application-access (every 90s)
   [14:31:30] dev_f8e2d4c6 user=m.torres  posture=87 mfa=true  net=vpn     → PASS
 ```
 
-The failed evaluation for `k.patel` triggered an immediate revocation. Drawbridge closed the Filament tunnel. The user must remediate the device posture issue and re-authenticate to regain access.
+The failed evaluation for `k.patel` triggered an immediate revocation. <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> closed the <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> tunnel. The user must remediate the device posture issue and re-authenticate to regain access.
 
 ## Policy Structure Reference
 
@@ -152,5 +153,5 @@ policy "<name>" {
 ## Next Steps
 
 - [Trust Policies](/docs/trust/trust-policies/) — Policy grammar, conditions, composability, and inheritance chains.
-- [Access Control](/docs/trust/access-control/) — Drawbridge rules, time-bound access, and revocation triggers.
+- [Access Control](/docs/trust/access-control/) — <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> rules, time-bound access, and revocation triggers.
 - [Policy Simulation](/docs/operations/policy-simulation/) — Test policies against real traffic before enforcing.

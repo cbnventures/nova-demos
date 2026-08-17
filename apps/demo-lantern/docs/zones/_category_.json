@@ -5,6 +5,6 @@
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "description": "A zone is a named room, hallway, or exterior group that Lantern watches together. Trusted handoffs by name or passphrase, and quiet integrations with HomeKit, Threadbare, Spoke, and Canary."
+    "description": "Grouping devices into named zones so Lantern arms, disarms, and watches them together — trusted handoffs by name or passphrase, quiet HomeKit integrations."
   }
 }

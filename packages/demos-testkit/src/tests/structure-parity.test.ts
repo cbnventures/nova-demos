@@ -36,6 +36,7 @@ const demoNames: Tests_StructureParity_DemoNames = await discoverDemoNames();
  * @since 2026.8.0
  */
 const expectedPages: Tests_StructureParity_ExpectedPages = [
+  'index.module.css',
   'index.tsx',
   'manifesto.mdx',
   'showcase.tsx',

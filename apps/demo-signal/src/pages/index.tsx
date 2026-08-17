@@ -1,16 +1,19 @@
 import {
   AppMarketDownload,
   BlogPreview,
+  Canvas,
   Features,
-  Hero,
   InstallStrip,
   Spotlight,
   Stats,
 } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
+
+import styles from './index.module.css';
 
 /**
  * Pages - Home.
@@ -39,37 +42,61 @@ function Home() {
           })}
         </title>
       </Head>
-      <Hero
-        eyebrow={translate({
-          id: 'home.hero.eyebrow',
-          message: 'Attribution Engine',
-          description: 'Front page hero eyebrow above the heading',
-        })}
-        heading={translate({
-          id: 'home.hero.heading',
-          message: 'Every click tells a story. Most tools miss the plot.',
-          description: 'Front page hero main heading',
-        })}
-        tagline={translate({
-          id: 'home.hero.tagline',
-          message: 'Signal traces how intent travels — from first impression to final action. Not just what was clicked. Why it was clicked. And what almost was.',
-          description: 'Front page hero tagline beneath the heading',
-        })}
-        ctaLabel={translate({
-          id: 'home.hero.ctaLabel',
-          message: 'Get Started',
-          description: 'Front page hero primary call-to-action button label',
-        })}
-        ctaLink="/docs/overview/"
-        secondaryCtaLabel={translate({
-          id: 'home.hero.secondaryCtaLabel',
-          message: 'View on Threadbare',
-          description: 'Front page hero secondary call-to-action button label',
-        })}
-        secondaryCtaLink="https://nova.cbnventures.io"
-      />
+      <Canvas container="full" surface="default" className={styles['hero-section']}>
+        <div className={styles['hero']}>
+          <div className={styles['hero-inner']}>
+            <div className={styles['hero-rings']} aria-hidden="true">
+              <span className={styles['hero-glow']} />
+              <span className={`${styles['hero-ring']} ${styles['hero-ring-one']}`} />
+              <span className={`${styles['hero-ring']} ${styles['hero-ring-two']}`} />
+              <span className={`${styles['hero-ring']} ${styles['hero-ring-three']}`} />
+              <span className={`${styles['hero-ring']} ${styles['hero-ring-four']}`} />
+              <span className={styles['hero-origin']} />
+            </div>
+            <div className={styles['hero-content']}>
+              <p className={styles['hero-eyebrow']}>
+                {translate({
+                  id: 'home.hero.eyebrow',
+                  message: 'Attribution Engine',
+                  description: 'Front page hero eyebrow above the heading',
+                })}
+              </p>
+              <h1 className={styles['hero-heading']}>
+                {translate({
+                  id: 'home.hero.heading',
+                  message: 'Every click tells a story. Most tools miss the plot.',
+                  description: 'Front page hero main heading',
+                })}
+              </h1>
+              <p className={styles['hero-tagline']}>
+                {translate({
+                  id: 'home.hero.tagline',
+                  message: 'Signal traces how intent travels — from first impression to final action. Not just what was clicked. Why it was clicked. And what almost was.',
+                  description: 'Front page hero tagline beneath the heading',
+                })}
+              </p>
+              <div className={styles['hero-actions']}>
+                <Link className="nova-cta-primary" to="/docs/overview/">
+                  {translate({
+                    id: 'home.hero.ctaLabel',
+                    message: 'Get Started',
+                    description: 'Front page hero primary call-to-action button label',
+                  })}
+                </Link>
+                <Link className="nova-cta-secondary" to="https://nova.cbnventures.io">
+                  {translate({
+                    id: 'home.hero.secondaryCtaLabel',
+                    message: 'View on Threadbare',
+                    description: 'Front page hero secondary call-to-action button label',
+                  })}
+                </Link>
+              </div>
+            </div>
+            <InstallStrip command="spark install signal-cli" copyTarget="icon" className={styles['hero-install-strip']} />
+          </div>
+        </div>
+      </Canvas>
       <main>
-        <InstallStrip command="spark install signal-cli" copyTarget="icon" />
         <Features
           items={[
             {
@@ -197,6 +224,24 @@ function Home() {
             },
           ]}
         />
+        <Canvas container="contained" surface="default">
+          <div className={styles['canvas-showcase']}>
+            <h2>
+              {translate({
+                id: 'home.canvas.heading',
+                message: 'One Event. Every Subscriber.',
+                description: 'Front page Canvas section heading',
+              })}
+            </h2>
+            <p className={styles['canvas-showcase-description']}>
+              {translate({
+                id: 'home.canvas.description',
+                message: 'Signal broadcasts events to every subscriber in real time — webhooks, queues, and streams. Fan-out without coupling. Delivery without polling.',
+                description: 'Front page Canvas section description',
+              })}
+            </p>
+          </div>
+        </Canvas>
         <Spotlight
           surface="alt"
           heading={translate({

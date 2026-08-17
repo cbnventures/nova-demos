@@ -7,13 +7,15 @@ tags:
   - "devices"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Device Enrollment
 
-Every device that participates in the Sentinel trust evaluation loop must be enrolled through Garrison. Enrollment establishes a posture baseline — the initial snapshot of device health that all future evaluations are measured against.
+Every device that participates in the Sentinel trust evaluation loop must be enrolled through <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology>. Enrollment establishes a posture baseline — the initial snapshot of device health that all future evaluations are measured against.
 
 ## Enrollment Flow
 
-Enrollment is a three-step process: install the agent, authenticate with the control plane, and capture the posture baseline.
+Enrollment is a three-step process: install the agent, authenticate with the <Terminology title="Sentinel service that agents register with and report to" to="/docs/terminology#control-plane">control plane</Terminology>, and capture the posture baseline.
 
 ```bash title="Enroll a device"
 sentinel-agent enroll \
@@ -43,11 +45,11 @@ Enrolling device with Sentinel control plane...
 Enrollment complete.
 ```
 
-The posture baseline is immutable. It serves as the reference point for Garrison's continuous compliance checks. If a device's posture degrades below the baseline thresholds defined in its compliance profile, Watchtower is notified and Drawbridge adjusts access accordingly.
+The posture baseline is immutable. It serves as the reference point for <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology>'s continuous compliance checks. If a device's posture degrades below the baseline thresholds defined in its <Terminology title="Minimum posture requirements a device group must meet" to="/docs/terminology#compliance-profile">compliance profile</Terminology>, <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> is notified and <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> adjusts access accordingly.
 
 ## Posture Check Categories
 
-Garrison evaluates the following categories during enrollment and on every subsequent check:
+<Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> evaluates the following categories during enrollment and on every subsequent check:
 
 | Category           | Checks                                                           | Weight |
 |--------------------|------------------------------------------------------------------|--------|
@@ -58,15 +60,15 @@ Garrison evaluates the following categories during enrollment and on every subse
 | **Software**       | Antivirus active, definition currency, unauthorized software     | 15%    |
 | **Configuration**  | MDM profile compliance, certificate validity, agent version      | 10%    |
 
-The composite posture score is a weighted sum of all category scores. A score of 100 means every check in every category passes. A score below the policy threshold triggers the `on_failure` handler.
+The composite <Terminology title="Garrison's composite 0-100 measure of device health" to="/docs/terminology#posture-score">posture score</Terminology> is a weighted sum of all category scores. A score of 100 means every check in every category passes. A score below the policy threshold triggers the `on_failure` handler.
 
 :::tip Baseline Drift
-After enrollment, Garrison tracks how each check drifts from the baseline. A device that was enrolled with a posture score of 95 and drops to 82 is flagged differently than a device that was enrolled at 82. Baseline drift is a stronger signal than absolute score in many environments.
+After enrollment, <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> tracks how each check drifts from the baseline. A device that was enrolled with a <Terminology title="Garrison's composite 0-100 measure of device health" to="/docs/terminology#posture-score">posture score</Terminology> of 95 and drops to 82 is flagged differently than a device that was enrolled at 82. Baseline drift is a stronger signal than absolute score in many environments.
 :::
 
 ## Compliance Profiles
 
-Compliance profiles define the minimum posture requirements for a group of devices. Every enrolled device is assigned to one profile:
+<Terminology title="Minimum posture requirements a device group must meet" to="/docs/terminology#compliance-profile">Compliance profiles</Terminology> define the minimum posture requirements for a group of devices. Every enrolled device is assigned to one profile:
 
 ```text title="profiles/standard.grain"
 profile "standard" {
@@ -103,7 +105,7 @@ profile "high-security" {
 ```
 
 :::warning Profile Changes
-Changing a compliance profile retroactively re-evaluates all devices assigned to that profile. Devices that no longer meet the new requirements will fail their next Watchtower evaluation and lose access. Always run a Parapet simulation before tightening profile requirements.
+Changing a <Terminology title="Minimum posture requirements a device group must meet" to="/docs/terminology#compliance-profile">compliance profile</Terminology> retroactively re-evaluates all devices assigned to that profile. Devices that no longer meet the new requirements will fail their next <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> evaluation and lose access. Always run a <Terminology title="Policy simulation sandbox testing rules before enforcement" to="/docs/terminology#parapet">Parapet</Terminology> simulation before tightening profile requirements.
 :::
 
 ## Re-Enrollment
@@ -137,6 +139,6 @@ dev_a9c1e3f5b7d4  macOS 15.1      76       standard       30s ago  (!)
 
 ## Next Steps
 
-- [Trust Policies](/docs/trust/trust-policies/) — How posture scores feed into policy evaluation.
-- [Access Control](/docs/trust/access-control/) — How Drawbridge uses posture data to grant or revoke access.
-- [Micro-Segmentation](/docs/operations/micro-segmentation/) — Zone-level isolation based on device and workload posture.
+- [Trust Policies](/docs/trust/trust-policies/) — How <Terminology title="Garrison's composite 0-100 measure of device health" to="/docs/terminology#posture-score">posture scores</Terminology> feed into policy evaluation.
+- [Access Control](/docs/trust/access-control/) — How <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> uses posture data to grant or revoke access.
+- [Micro-Segmentation](/docs/operations/micro-segmentation/) — <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">Zone</Terminology>-level isolation based on device and workload posture.

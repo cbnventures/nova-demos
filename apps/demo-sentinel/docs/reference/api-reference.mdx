@@ -1,21 +1,22 @@
 ---
 title: "API Reference"
 sidebar_position: 1
-description: "Spoke API reference for Sentinel covering policy management, device queries, zone operations, and audit export with Cipher bearer authentication."
+description: "The Sentinel Spoke API covers policy management, device queries, zone operations, and audit export, authenticated with a Cipher bearer token."
 tags:
   - "reference"
   - "api"
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # API Reference
 
-The Sentinel Spoke API provides programmatic access to all platform operations — policy management, device queries, zone operations, and audit export. All endpoints require a Cipher bearer token for authentication.
+The Sentinel <Terminology title="Sentinel's REST API for policy and device management" to="/docs/terminology#spoke-api">Spoke API</Terminology> provides programmatic access to all platform operations — policy management, device queries, <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology> operations, and audit export. All endpoints require a <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> bearer token for authentication.
 
 ## Authentication
 
-Every request must include a Cipher bearer token in the `Authorization` header:
+Every request must include a <Terminology title="Sentinel's authentication layer federating with an external identity provider" to="/docs/terminology#cipher">Cipher</Terminology> bearer token in the `Authorization` header:
 
 ```bash title="Authenticated request"
 curl -X GET https://sentinel.yourcompany.internal/spoke/v1/policies \
@@ -38,15 +39,15 @@ Tokens are scoped to specific operations. A token with `policies:read` cannot mo
 
 ## Policies
 
-| Method   | Path                              | Description                        |
-|----------|-----------------------------------|------------------------------------|
-| `GET`    | `/spoke/v1/policies`              | List all policies                  |
-| `GET`    | `/spoke/v1/policies/:id`          | Get a specific policy              |
-| `POST`   | `/spoke/v1/policies`              | Create a new policy                |
-| `PUT`    | `/spoke/v1/policies/:id`          | Update an existing policy          |
-| `DELETE` | `/spoke/v1/policies/:id`          | Delete a policy                    |
-| `POST`   | `/spoke/v1/policies/:id/evaluate` | Evaluate a policy against a device |
-| `POST`   | `/spoke/v1/policies/simulate`     | Simulate a policy change (Parapet) |
+| Method   | Path                              | Description                                                                                                                                                     |
+|----------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `GET`    | `/spoke/v1/policies`              | List all policies                                                                                                                                               |
+| `GET`    | `/spoke/v1/policies/:id`          | Get a specific policy                                                                                                                                           |
+| `POST`   | `/spoke/v1/policies`              | Create a new policy                                                                                                                                             |
+| `PUT`    | `/spoke/v1/policies/:id`          | Update an existing policy                                                                                                                                       |
+| `DELETE` | `/spoke/v1/policies/:id`          | Delete a policy                                                                                                                                                 |
+| `POST`   | `/spoke/v1/policies/:id/evaluate` | Evaluate a policy against a device                                                                                                                              |
+| `POST`   | `/spoke/v1/policies/simulate`     | Simulate a policy change (<Terminology title="Policy simulation sandbox testing rules before enforcement" to="/docs/terminology#parapet">Parapet</Terminology>) |
 
 ### Create a Policy
 
@@ -189,23 +190,23 @@ curl -X GET https://sentinel.yourcompany.internal/spoke/v1/devices/dev_a3b7c9d1/
 
 ## Zones
 
-| Method | Path                            | Description                    |
-|--------|---------------------------------|--------------------------------|
-| `GET`  | `/spoke/v1/zones`               | List all Rampart zones         |
-| `GET`  | `/spoke/v1/zones/:id`           | Get zone details and workloads |
-| `POST` | `/spoke/v1/zones`               | Create a new zone              |
-| `PUT`  | `/spoke/v1/zones/:id`           | Update zone configuration      |
-| `GET`  | `/spoke/v1/zones/:id/crossings` | List crossing rules for a zone |
-| `POST` | `/spoke/v1/zones/crossings`     | Create a zone crossing rule    |
+| Method | Path                            | Description                                                                                                                                                                                                                                                               |
+|--------|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `GET`  | `/spoke/v1/zones`               | List all <Terminology title="Micro-segmentation layer isolating workloads into zones" to="/docs/terminology#rampart">Rampart</Terminology> <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zones</Terminology> |
+| `GET`  | `/spoke/v1/zones/:id`           | Get <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology> details and workloads                                                                                                                   |
+| `POST` | `/spoke/v1/zones`               | Create a new <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology>                                                                                                                                |
+| `PUT`  | `/spoke/v1/zones/:id`           | Update <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology> configuration                                                                                                                        |
+| `GET`  | `/spoke/v1/zones/:id/crossings` | List crossing rules for a <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology>                                                                                                                   |
+| `POST` | `/spoke/v1/zones/crossings`     | Create a <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology> crossing rule                                                                                                                      |
 
 ## Audit
 
-| Method | Path                           | Description                        |
-|--------|--------------------------------|------------------------------------|
-| `GET`  | `/spoke/v1/audit/query`        | Query Spyglass events              |
-| `GET`  | `/spoke/v1/audit/sessions/:id` | Reconstruct a specific session     |
-| `POST` | `/spoke/v1/audit/export`       | Export compliance evidence package |
-| `GET`  | `/spoke/v1/audit/export/:id`   | Download a completed export        |
+| Method | Path                           | Description                                                                                                                                      |
+|--------|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `GET`  | `/spoke/v1/audit/query`        | Query <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> events |
+| `GET`  | `/spoke/v1/audit/sessions/:id` | Reconstruct a specific session                                                                                                                   |
+| `POST` | `/spoke/v1/audit/export`       | Export compliance evidence package                                                                                                               |
+| `GET`  | `/spoke/v1/audit/export/:id`   | Download a completed export                                                                                                                      |
 
 ### Query Audit Events
 
@@ -257,7 +258,7 @@ resource=api-cluster-east" \
 
 ## Rate Limits
 
-All Spoke API endpoints are rate-limited per token:
+All <Terminology title="Sentinel's REST API for policy and device management" to="/docs/terminology#spoke-api">Spoke API</Terminology> endpoints are rate-limited per token:
 
 | Scope           | Limit              |
 |-----------------|--------------------|
@@ -271,5 +272,5 @@ Rate limit headers are included in every response: `X-RateLimit-Limit`, `X-RateL
 ## Next Steps
 
 - [Trust Policies](/docs/trust/trust-policies/) — Policy grammar and condition reference.
-- [Audit & Forensics](/docs/operations/audit-forensics/) — CLI query syntax for Spyglass.
+- [Audit & Forensics](/docs/operations/audit-forensics/) — CLI query syntax for <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology>.
 - [Overview](/docs/overview/) — Architecture context for the API.

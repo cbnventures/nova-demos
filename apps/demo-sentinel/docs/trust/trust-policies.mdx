@@ -8,10 +8,11 @@ tags:
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Trust Policies
 
-Trust policies are the fundamental unit of access control in Sentinel. A policy defines what conditions must be true for access to be granted, and what happens when those conditions stop being true. Policies are written in `.grain` format, version-controlled, and evaluated by Watchtower every 90 seconds.
+Trust policies are the fundamental unit of access control in Sentinel. A policy defines what conditions must be true for access to be granted, and what happens when those conditions stop being true. Policies are written in <Terminology title="Declarative file format for trust policies and profiles" to="/docs/terminology#grain-format">`.grain` format</Terminology>, version-controlled, and evaluated by <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> every 90 seconds.
 
 ## Policy Grammar
 
@@ -44,19 +45,19 @@ The `effect` field is either `allow` or `deny`. Deny policies always take preced
 
 ## Condition Types
 
-| Condition           | Operator        | Values                    | Description                                     |
-|---------------------|-----------------|---------------------------|-------------------------------------------------|
-| `device.posture`    | `>=`, `<=`, `=` | 0-100                     | Composite posture score from Garrison.          |
-| `device.encryption` | `=`             | `true`, `false`           | Disk encryption status.                         |
-| `device.os`         | `=`             | Array of OS names         | Allowed operating systems.                      |
-| `user.mfa`          | `=`             | `true`, `false`           | Multi-factor authentication enrollment.         |
-| `user.role`         | `=`             | Array of role names       | Required user roles (any match).                |
-| `user.department`   | `=`             | Array of department names | Required departments (any match).               |
-| `network.location`  | `=`             | Array of location tags    | Allowed network locations.                      |
-| `network.ip_range`  | `=`             | Array of CIDR blocks      | Allowed source IP ranges.                       |
-| `behavior.score`    | `>=`, `<=`, `=` | 0-100                     | Behavioral anomaly score from Watchtower.       |
-| `session.age`       | `<=`            | Seconds                   | Maximum session duration before forced re-auth. |
-| `time.window`       | `=`             | Cron expression           | Time window during which the policy is active.  |
+| Condition           | Operator        | Values                    | Description                                                                                                                                                                                                                                                                                              |
+|---------------------|-----------------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `device.posture`    | `>=`, `<=`, `=` | 0-100                     | Composite <Terminology title="Garrison's composite 0-100 measure of device health" to="/docs/terminology#posture-score">posture score</Terminology> from <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology>. |
+| `device.encryption` | `=`             | `true`, `false`           | Disk encryption status.                                                                                                                                                                                                                                                                                  |
+| `device.os`         | `=`             | Array of OS names         | Allowed operating systems.                                                                                                                                                                                                                                                                               |
+| `user.mfa`          | `=`             | `true`, `false`           | Multi-factor authentication enrollment.                                                                                                                                                                                                                                                                  |
+| `user.role`         | `=`             | Array of role names       | Required user roles (any match).                                                                                                                                                                                                                                                                         |
+| `user.department`   | `=`             | Array of department names | Required departments (any match).                                                                                                                                                                                                                                                                        |
+| `network.location`  | `=`             | Array of location tags    | Allowed network locations.                                                                                                                                                                                                                                                                               |
+| `network.ip_range`  | `=`             | Array of CIDR blocks      | Allowed source IP ranges.                                                                                                                                                                                                                                                                                |
+| `behavior.score`    | `>=`, `<=`, `=` | 0-100                     | Behavioral anomaly score from <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology>.                                                                                                                            |
+| `session.age`       | `<=`            | Seconds                   | Maximum session duration before forced re-auth.                                                                                                                                                                                                                                                          |
+| `time.window`       | `=`             | Cron expression           | Time window during which the policy is active.                                                                                                                                                                                                                                                           |
 
 All conditions in a policy must be satisfied simultaneously. There is no OR logic within a single policy — use policy composition for OR semantics.
 
@@ -101,18 +102,18 @@ The `production-access` policy inherits `user.mfa = true` from `base-access` and
 
 ## Evaluation Cycle
 
-Watchtower evaluates all active sessions against their applicable policies every 90 seconds:
+<Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> evaluates all active sessions against their applicable policies every 90 seconds:
 
-1. Garrison reports current device posture for every enrolled device.
-2. Watchtower collects posture data, user identity, network context, and behavioral signals.
-3. For each active session, Watchtower resolves the applicable policy chain (inheritance + priority).
+1. <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> reports current device posture for every enrolled device.
+2. <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> collects posture data, user identity, network context, and behavioral signals.
+3. For each active session, <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> resolves the applicable policy chain (inheritance + priority).
 4. All conditions are evaluated. If any condition fails, the `on_failure` handler executes.
-5. Spyglass records the full evaluation — pass or fail — with timestamps and signal values.
+5. <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> records the full evaluation — pass or fail — with timestamps and signal values.
 
 <Details>
 <summary>Full condition operator reference</summary>
 
-**Numeric operators** (`>=`, `<=`, `=`): Used for posture scores, behavior scores, and session age. Values are compared as integers.
+**Numeric operators** (`>=`, `<=`, `=`): Used for <Terminology title="Garrison's composite 0-100 measure of device health" to="/docs/terminology#posture-score">posture scores</Terminology>, behavior scores, and session age. Values are compared as integers.
 
 **Equality operator** (`=`): Used for booleans (MFA, encryption), arrays (roles, locations, OS names), and CIDR ranges. Array conditions use "any match" semantics — the condition passes if the actual value matches any element in the array.
 
@@ -124,6 +125,6 @@ Watchtower evaluates all active sessions against their applicable policies every
 
 ## Next Steps
 
-- [Device Enrollment](/docs/trust/device-enrollment/) — How Garrison onboards devices and establishes posture baselines.
-- [Access Control](/docs/trust/access-control/) — Drawbridge rules, time-bound access, and emergency overrides.
+- [Device Enrollment](/docs/trust/device-enrollment/) — How <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> onboards devices and establishes posture baselines.
+- [Access Control](/docs/trust/access-control/) — <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology> rules, time-bound access, and emergency overrides.
 - [Policy Simulation](/docs/operations/policy-simulation/) — Test policies against real traffic before enforcement.

@@ -1,24 +1,26 @@
 ---
 title: "Events"
 sidebar_position: 1
-description: "Every motion, contact, and arm/disarm passes through the event stream, where events can be replayed, filtered, and handed off to a hub."
+description: "Documents how every motion, contact, and arm/disarm passes through the event stream, where events can be replayed, filtered, and handed off to a hub."
 tags:
   - "events"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Events
 
-Every motion, contact, and arm/disarm passes through Lantern's event stream. Replay, filter, hand off to a hub. Nothing is dropped, nothing is shouted.
+Every motion, contact, and <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">arm/disarm</Terminology> passes through <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology>'s <Terminology title="Record every motion and arm/disarm change passes through" to="/docs/terminology#event-stream">event stream</Terminology>. Replay, filter, hand off to a hub. Nothing is dropped, nothing is shouted.
 
 ## Event types
 
-- **Motion** — directional, with an optional confidence band
+- **Motion** — directional, with an optional <Terminology title="Directional certainty attached to a motion event" to="/docs/terminology#confidence-band">confidence band</Terminology>
 - **Contact** — door or window opened, closed, held
-- **Arm / disarm** — by zone, by user, by schedule
-- **Sensor history** — a quiet ledger you can read at noon
+- **<Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">Arm / disarm</Terminology>** — by <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology>, by user, by schedule
+- **<Terminology title="Queryable ledger of every recorded motion and change" to="/docs/terminology#sensor-history">Sensor history</Terminology>** — a quiet ledger you can read at noon
 
 ## Next Steps
 
 - [Sensor History](/docs/events/sensor-history/) — The quiet ledger of every event.
-- [Integrations](/docs/zones/integrations/) — Route events to a hub or a Spoke endpoint.
+- [Integrations](/docs/zones/integrations/) — Route events to a hub or a <Terminology title="Small HTTP API Lantern exposes for zones and events" to="/docs/terminology#spoke">Spoke</Terminology> endpoint.
 - [API Reference](/docs/reference/api-reference/) — Replay events programmatically.

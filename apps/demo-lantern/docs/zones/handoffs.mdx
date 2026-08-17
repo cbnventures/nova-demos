@@ -1,21 +1,23 @@
 ---
 title: "Handoffs"
 sidebar_position: 2
-description: "Handoffs let a trusted person disarm a zone by name, passphrase, or HomeKit Home Hub presence without needing your phone in their hand."
+description: "Lets a trusted person disarm a zone by name, passphrase, or HomeKit Home Hub presence without needing your phone in their hand."
 tags:
   - "zones"
   - "arm-disarm"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Handoffs
 
-A handoff lets a trusted person disarm a zone without your phone in their hand. Lantern accepts the pass, records who held it, and lets the lights stay on.
+A <Terminology title="Lets a trusted person disarm without your phone" to="/docs/terminology#handoff">handoff</Terminology> lets a trusted person <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">disarm</Terminology> a <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zone</Terminology> without your phone in their hand. <Terminology title="Whole-house monitoring toolkit signaling with warm light" to="/docs/terminology#lantern">Lantern</Terminology> accepts the pass, records who held it, and lets the lights stay on.
 
 ## Handoff types
 
 - **By name** — the household roster recognizes the voice
 - **By passphrase** — a soft phrase, set in advance
-- **By Home Hub presence** — the hub already trusts this person
+- **By <Terminology title="Apple hub Lantern pairs with during setup" to="/docs/terminology#homekit-home-hub">Home Hub</Terminology> presence** — the hub already trusts this person
 - **By schedule** — a window of trust that opens and closes itself
 
 ## When the handoff arrives
@@ -24,10 +26,10 @@ A handoff lets a trusted person disarm a zone without your phone in their hand. 
 lantern handoff list
 ```
 
-Every disarm becomes a line in the event stream. The lantern remembers who came home.
+Every <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">disarm</Terminology> becomes a line in the <Terminology title="Record every motion and arm/disarm change passes through" to="/docs/terminology#event-stream">event stream</Terminology>. The lantern remembers who came home.
 
 ## Next Steps
 
-- [Zones](/docs/zones/overview/) — Which zones each handoff can disarm.
-- [Travel Mode](/docs/modes/travel-mode/) — Tighter handoff rules while away.
-- [Events](/docs/events/overview/) — Every handoff is a line in the stream.
+- [Zones](/docs/zones/overview/) — Which <Terminology title="Named area Lantern arms, disarms, and watches together" to="/docs/terminology#zone">zones</Terminology> each <Terminology title="Lets a trusted person disarm without your phone" to="/docs/terminology#handoff">handoff</Terminology> can <Terminology title="Turning a zone's monitoring on or off" to="/docs/terminology#arm--disarm">disarm</Terminology>.
+- [Travel Mode](/docs/modes/travel-mode/) — Tighter <Terminology title="Lets a trusted person disarm without your phone" to="/docs/terminology#handoff">handoff</Terminology> rules while away.
+- [Events](/docs/events/overview/) — Every <Terminology title="Lets a trusted person disarm without your phone" to="/docs/terminology#handoff">handoff</Terminology> is a line in the stream.

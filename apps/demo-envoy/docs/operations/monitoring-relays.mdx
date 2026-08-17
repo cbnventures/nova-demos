@@ -9,28 +9,30 @@ tags:
   - "observability"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Monitoring Relays
 
-A relay that nobody is watching is a relay that has already failed — you just have not noticed yet. Envoy gives you four observability surfaces: the Ledger for transaction-level forensics, the Spoke `/api/health/metrics` endpoint for time-series aggregation, Courier's retry-state stream for tail-end alerting, and Dispatch's per-relay counters for routing-rule health.
+A <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> that nobody is watching is a <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> that has already failed — you just have not noticed yet. <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> gives you four observability surfaces: the <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> for transaction-level forensics, the <Terminology title="HTTP API Envoy exposes for relay management" to="/docs/terminology#spoke">Spoke</Terminology> `/api/health/metrics` endpoint for time-series aggregation, <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology>'s retry-state stream for tail-end alerting, and <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology>'s per-<Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> counters for routing-rule health.
 
 > Visibility is not a feature. It is a precondition. You cannot operate what you cannot see.
 
 ## What to Watch
 
-Every relay has the same four health signals. If any one of them drifts, something is wrong.
+Every <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> has the same four health signals. If any one of them drifts, something is wrong.
 
-| Signal            | Source                      | Healthy Range                         | Alert When                       |
-|-------------------|-----------------------------|---------------------------------------|----------------------------------|
-| Delivery rate     | `delivery_rate` per relay   | `>= 0.99` over rolling 5 minutes      | Drops below `0.95` for 2 minutes |
-| Retry queue depth | Courier `in_retry` counter  | `< 50` messages                       | Above `200` for 5 minutes        |
-| Dead-letter rate  | Ledger `dead_letter` events | `0` per hour, per relay               | Any non-zero count               |
-| p95 end-to-end    | Embassy in to Courier out   | `< 10ms` local, `< 80ms` cross-region | Exceeds budget for 3 minutes     |
+| Signal            | Source                                                                                                                                                                                                                                                                    | Healthy Range                                                                                                                                  | Alert When                       |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
+| Delivery rate     | `delivery_rate` per <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology>                                                                                                                          | `>= 0.99` over rolling 5 minutes                                                                                                               | Drops below `0.95` for 2 minutes |
+| Retry queue depth | <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> `in_retry` counter                                                                                                                        | `< 50` messages                                                                                                                                | Above `200` for 5 minutes        |
+| Dead-letter rate  | <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> `dead_letter` events                                                                                                                               | `0` per hour, per <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> | Any non-zero count               |
+| p95 end-to-end    | <Terminology title="Envoy's origin-masking reverse proxy exposed publicly" to="/docs/terminology#embassy">Embassy</Terminology> in to <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> out | `< 10ms` local, `< 80ms` cross-region                                                                                                          | Exceeds budget for 3 minutes     |
 
 Everything else is decoration.
 
 ## Querying the Ledger
 
-The Ledger is append-only and queryable through Spoke. Every transformation, route, attempt, and delivery is one row. Forensic queries answer the only question that matters during an incident: where did the message go?
+The <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> is append-only and queryable through <Terminology title="HTTP API Envoy exposes for relay management" to="/docs/terminology#spoke">Spoke</Terminology>. Every transformation, route, attempt, and delivery is one row. Forensic queries answer the only question that matters during an incident: where did the message go?
 
 ```bash title="Find every failed delivery in the last hour"
 curl -s "http://localhost:8090/api/ledger?status=dead_letter&since=1h" \
@@ -56,14 +58,14 @@ curl -s "http://localhost:8090/api/ledger?status=dead_letter&since=1h" \
 }
 ```
 
-Filter by source, destination, time window, or relay name. Every column in the Ledger is indexed.
+Filter by source, destination, time window, or <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> name. Every column in the <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> is indexed.
 
 ```bash title="Trace a single message end-to-end"
 curl -s http://localhost:8090/api/ledger/msg_f7a2b8c4/trace \
   -H "Authorization: Bearer ${READ_TOKEN}" | jq
 ```
 
-The trace endpoint returns every Ledger row for that message in chronological order — Cipher verified, Parcel transformed, Dispatch routed, Courier attempted, Courier delivered. No row is implied. No row is reconstructed. What you see is what happened.
+The trace endpoint returns every <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> row for that message in chronological order — <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> verified, <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> transformed, <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> routed, <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> attempted, <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> delivered. No row is implied. No row is reconstructed. What you see is what happened.
 
 ## Building Dashboards
 
@@ -110,12 +112,12 @@ flowchart LR
 Resist the temptation to add a fifth panel. A dashboard with twelve metrics is twelve metrics that nobody glances at.
 
 :::tip
-Track each metric per relay, not per Envoy instance. A single failing relay does not lower the aggregate enough to set off an instance-wide alarm, but it absolutely needs to wake somebody up.
+Track each metric per <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology>, not per <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> instance. A single failing <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> does not lower the aggregate enough to set off an instance-wide alarm, but it absolutely needs to wake somebody up.
 :::
 
 ## Alerting on Retry Exhaustion
 
-Courier emits a Ledger event the moment it gives up on a message. The event arrives before the operator notices, which is the whole point.
+<Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> emits a <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> event the moment it gives up on a message. The event arrives before the operator notices, which is the whole point.
 
 ```bash title=".grain — alert on dead-letter"
 ledger {
@@ -129,7 +131,7 @@ ledger {
 }
 ```
 
-When the trigger fires, Envoy posts a structured alert to the configured Spoke target. That target is, in most deployments, another relay — Envoy is talking to itself, which is the cleanest way to fan an alert out to Canary, a paging service, and an audit log simultaneously.
+When the trigger fires, <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> posts a structured alert to the configured <Terminology title="HTTP API Envoy exposes for relay management" to="/docs/terminology#spoke">Spoke</Terminology> target. That target is, in most deployments, another <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> — <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> is talking to itself, which is the cleanest way to fan an alert out to <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology>, a paging service, and an audit log simultaneously.
 
 ```mermaid
 flowchart LR
@@ -141,12 +143,12 @@ flowchart LR
 ```
 
 :::warning
-A dead-letter is not always a destination failure. It can also mean Parcel cannot transform the payload, or Cipher cannot agree on a signature. Always include the `failure_reason` field in the alert payload, or the on-call engineer will be debugging the wrong layer.
+A <Terminology title="Terminal state after Courier's retries are exhausted" to="/docs/terminology#dead-letter">dead-letter</Terminology> is not always a destination failure. It can also mean <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> cannot transform the payload, or <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> cannot agree on a signature. Always include the `failure_reason` field in the alert payload, or the on-call engineer will be debugging the wrong layer.
 :::
 
 ## Tracking p95 Latency
 
-End-to-end latency for Envoy is the wall-clock time between an Embassy `accept` event and a Courier `delivered` event for the same message. Every Ledger row carries the message ID and a high-resolution timestamp, so the calculation does not require a separate tracing system.
+End-to-end latency for <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> is the wall-clock time between an <Terminology title="Envoy's origin-masking reverse proxy exposed publicly" to="/docs/terminology#embassy">Embassy</Terminology> `accept` event and a <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> `delivered` event for the same message. Every <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> row carries the message ID and a high-resolution timestamp, so the calculation does not require a separate tracing system.
 
 ```bash title="Compute p95 over the last 15 minutes"
 curl -s "http://localhost:8090/api/ledger/latency?since=15m&percentile=95" \
@@ -168,24 +170,24 @@ curl -s "http://localhost:8090/api/ledger/latency?since=15m&percentile=95" \
 }
 ```
 
-Healthy single-region Envoy holds p95 under 10 milliseconds. Cross-region — see [Scaling Relays](/docs/operations/scaling-relays/) — adds the inter-region round-trip and pushes the realistic budget to 60–80 milliseconds depending on geography.
+Healthy single-region <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> holds p95 under 10 milliseconds. Cross-region — see [Scaling Relays](/docs/operations/scaling-relays/) — adds the inter-region round-trip and pushes the realistic budget to 60–80 milliseconds depending on geography.
 
 :::info
-p99 is more informative than p95 for relays that fan out to slow destinations. Set the SLO on whichever percentile actually catches the long tail of the destination you care about.
+p99 is more informative than p95 for <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relays</Terminology> that <Terminology title="Delivering one message to multiple destinations at once" to="/docs/terminology#fanout">fan out</Terminology> to slow destinations. Set the SLO on whichever percentile actually catches the long tail of the destination you care about.
 :::
 
 ## What Not to Monitor
 
 A short list, because the alerting graveyard is full of dashboards that fired on the wrong signal.
 
-- **CPU and memory on the Envoy host.** Envoy idles below 1% CPU and 8MB resident. If the host is busy, the cause is upstream — investigate the destination, not the relay.
-- **TCP connection counts.** Embassy multiplexes aggressively. The number you see is not the number you think you see.
-- **Goroutine counts.** Useful during a profiling session, useless on a dashboard. Spikes are normal during fanout.
+- **CPU and memory on the <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> host.** <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> idles below 1% CPU and 8MB resident. If the host is busy, the cause is upstream — investigate the destination, not the <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology>.
+- **TCP connection counts.** <Terminology title="Envoy's origin-masking reverse proxy exposed publicly" to="/docs/terminology#embassy">Embassy</Terminology> multiplexes aggressively. The number you see is not the number you think you see.
+- **Goroutine counts.** Useful during a profiling session, useless on a dashboard. Spikes are normal during <Terminology title="Delivering one message to multiple destinations at once" to="/docs/terminology#fanout">fanout</Terminology>.
 
 Watch the four signals at the top of this page. Everything else is noise dressed up as information.
 
 ## Next Steps
 
 - [Scaling Relays](/docs/operations/scaling-relays/) — Horizontal scaling, sharding, retry budget tuning, and multi-region failover.
-- [API Reference](/docs/reference/api-reference/) — Full Spoke API including Ledger query endpoints.
-- [Architecture](/docs/advanced/architecture/) — How Ledger, Courier, and Embassy interact under load.
+- [API Reference](/docs/reference/api-reference/) — Full <Terminology title="HTTP API Envoy exposes for relay management" to="/docs/terminology#spoke">Spoke</Terminology> API including <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology> query endpoints.
+- [Architecture](/docs/advanced/architecture/) — How <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology>, <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology>, and <Terminology title="Envoy's origin-masking reverse proxy exposed publicly" to="/docs/terminology#embassy">Embassy</Terminology> interact.

@@ -1,17 +1,20 @@
 ---
 title: "Warden Rules"
 sidebar_position: 2
-description: "Warden ships 380+ linting rules across six categories, all enabled by default when you declare strict mode in your manifest with zero configuration."
+description: "Documents the 380+ linting rules Warden ships across six categories, all enabled by declaring strict mode in your manifest with zero setup."
 tags:
   - "pipeline"
   - "linting"
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Warden Rules
 
-Warden is Foundry's linting engine. It ships 380+ rules across six categories, all enabled by default when you declare `warden = ["strict"]` in your manifest. No configuration file. No decision fatigue. One preset, all rules.
+<Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> is Foundry's linting engine. It ships 380+ rules across six categories, all enabled by default when you declare `warden = ["strict"]` in your manifest.
+
+No configuration file. No decision fatigue. One preset, all rules.
 
 ## Rule Categories
 
@@ -48,11 +51,11 @@ The `strict` preset enables rules that reject implicit `any` and require explici
 
 Every rule has one of three severity levels:
 
-| Severity | Behavior                                        |
-|----------|-------------------------------------------------|
-| `error`  | Fails the forge. Must be fixed before shipping. |
-| `warn`   | Prints a warning. Does not fail the forge.      |
-| `info`   | Informational. Appears in verbose output only.  |
+| Severity | Behavior                                                                                                                                                                       |
+|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `error`  | Fails the <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology>. Must be fixed before shipping. |
+| `warn`   | Prints a warning. Does not fail the <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology>.      |
+| `info`   | Informational. Appears in verbose output only.                                                                                                                                 |
 
 ## Custom Rules
 
@@ -75,7 +78,7 @@ Overrides are explicit, version-controlled, and visible in the manifest. No hidd
 
 ### Catching Violations
 
-Warden reports violations with the rule name, file path, line number, and a one-sentence explanation:
+<Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> reports violations with the rule name, file path, line number, and a one-sentence explanation:
 
 ```text title="Warden output"
 $ foundry warden check
@@ -147,7 +150,7 @@ The `warden/require-explicit-return` rule has an auto-fix that infers the return
 
 ## Running Warden
 
-Warden runs automatically during the verify stage of every forge. You can also run it standalone:
+<Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> runs automatically during the verify stage of every <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology>. You can also run it standalone:
 
 ```bash title="Check the entire workspace"
 foundry warden check
@@ -163,6 +166,6 @@ foundry warden check --only api
 
 ## Next Steps
 
-- [Testing with Crucible](/docs/pipeline/testing-with-crucible/) — Test scaffolding that pairs with Warden rules.
-- [Build Pipeline](/docs/pipeline/build-pipeline/) — Where Warden fits in the forge lifecycle.
+- [Testing with Crucible](/docs/pipeline/testing-with-crucible/) — Test scaffolding that pairs with <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> rules.
+- [Build Pipeline](/docs/pipeline/build-pipeline/) — Where <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> fits in the <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology> lifecycle.
 - [CLI Reference](/docs/reference/cli-reference/) — Full command reference for `foundry warden`.

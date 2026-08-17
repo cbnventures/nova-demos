@@ -1,30 +1,34 @@
 ---
 title: "Overview"
 sidebar_position: 1
-description: "Signal is an attribution engine whose Beacon links carry embedded metadata that survives URL shortening, messaging apps, and cross-device handoffs."
+description: "Introduces Signal, an attribution engine whose Beacon links carry embedded metadata that survives URL shortening, messaging apps, and cross-device handoffs."
 tags:
   - "overview"
   - "signal"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Signal
 
-Signal is an attribution engine for the attention economy. It traces how intent travels — from first encounter to final action. Every link is a sensor. Every redirect is a data point. Signal tells you not just what was clicked, but why, and what almost happened instead.
+Signal is an attribution engine that traces how intent travels — from first encounter to final action. Every link is a sensor, every redirect is a data point — Signal shows you what was clicked, why it was clicked, and what almost happened instead.
 
 > "The shortest distance between a click and an insight is a link that knows where it has been."
 
 ## What Signal Does
 
-Most analytics tools count events after the fact. Signal instruments the path itself. Each link minted through Signal carries embedded attribution metadata that survives URL shortening, messaging apps, private browsing, and cross-device handoffs. When a conversion happens, Signal reconstructs the full journey — every touchpoint, every hesitation, every channel that contributed.
+Most analytics tools count events after the fact. Signal instruments the path itself — each link minted through Signal carries embedded attribution metadata that survives URL shortening, messaging apps, private browsing, and cross-device handoffs.
 
-| Tool          | Purpose                                                                           |
-|---------------|-----------------------------------------------------------------------------------|
-| **Beacon**    | Link minting engine — branded short links with embedded attribution metadata.     |
-| **Prism**     | Multi-touch attribution modeler — traces conversion paths across channels.        |
-| **Pulse**     | Real-time click stream — live feed of interactions, geo, device, and referrer.    |
-| **Aperture**  | Campaign snapshots — point-in-time performance captures with comparison overlays. |
-| **Resonance** | Audience overlap detector — finds where audiences bleed into each other.          |
-| **Flare**     | QR and deep link generator — physical-to-digital bridge with full attribution.    |
+When a conversion happens, Signal reconstructs the full journey — every <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology>, every hesitation, every channel that contributed.
+
+| Tool                                                                                                                                   | Purpose                                                                                                                                                                                                               |
+|----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **<Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology>**          | Link minting engine — branded short links with embedded attribution metadata.                                                                                                                                         |
+| **<Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology>**  | <Terminology title="Credits every touchpoint across the full conversion path" to="/docs/terminology#multi-touch-attribution">Multi-touch attribution</Terminology> modeler — traces conversion paths across channels. |
+| **<Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology>**       | Real-time click stream — live feed of interactions, geo, device, and referrer.                                                                                                                                        |
+| **<Terminology title="Point-in-time campaign performance snapshots over time" to="/docs/terminology#aperture">Aperture</Terminology>** | Campaign snapshots — point-in-time performance captures with comparison overlays.                                                                                                                                     |
+| **<Terminology title="Detects overlap between audience segments" to="/docs/terminology#resonance">Resonance</Terminology>**            | Audience overlap detector — finds where audiences bleed into each other.                                                                                                                                              |
+| **<Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology>**           | QR and deep link generator — physical-to-digital bridge with full attribution.                                                                                                                                        |
 
 :::info
 Signal operates at the link level. Other attribution platforms bolt tracking onto pages. Signal embeds it into the links themselves — so attribution data exists before the page even loads.
@@ -32,7 +36,9 @@ Signal operates at the link level. Other attribution platforms bolt tracking ont
 
 ## How It Works
 
-A Beacon link is not just a redirect. It encodes the campaign, the channel, the variant, and a unique trace identifier. When the link is clicked, Pulse captures the interaction in real time. When the user eventually converts, Prism walks the full attribution path backward and distributes credit across every touchpoint.
+A <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link is not just a redirect. It encodes the campaign, the channel, the variant, and a unique <Terminology title="Unique identifier tying touchpoints into one path" to="/docs/terminology#trace">trace</Terminology> identifier.
+
+When the link is clicked, <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology> captures the interaction in real time. When the user eventually converts, <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> walks the full attribution path backward and distributes credit across every <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology>.
 
 ```text
 Beacon mints link → User clicks → Pulse captures event
@@ -43,15 +49,15 @@ Beacon mints link → User clicks → Pulse captures event
 
 ## When to Use Signal
 
-- **Campaign attribution** — trace which channels, links, and touchpoints drive conversions.
-- **Audience intelligence** — detect overlap between campaigns and segments with Resonance.
-- **Real-time monitoring** — watch click streams arrive live with Pulse.
-- **Physical-to-digital** — bridge print, out-of-home, and events to digital attribution with Flare.
-- **Dark traffic recovery** — recover attribution for clicks that strip referrer and UTM data.
+- **Campaign attribution** — trace which channels, links, and <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology> drive conversions.
+- **Audience intelligence** — detect overlap between campaigns and <Terminology title="Named audience defined by conditions on click data" to="/docs/terminology#segment">segments</Terminology> with <Terminology title="Detects overlap between audience segments" to="/docs/terminology#resonance">Resonance</Terminology>.
+- **Real-time monitoring** — watch click streams arrive live with <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology>.
+- **Physical-to-digital** — bridge print, out-of-home, and events to digital attribution with <Terminology title="Generates QR codes and deep links with attribution" to="/docs/terminology#flare">Flare</Terminology>.
+- **<Terminology title="Clicks arriving with no referrer or UTM data" to="/docs/terminology#dark-traffic">Dark traffic</Terminology> recovery** — recover attribution for clicks that strip referrer and UTM data.
 
 ## Next Steps
 
 - [Installation](/docs/getting-started/installation/) — Install the CLI and configure your API key.
-- [Quick Start](/docs/getting-started/quick-start/) — Mint your first Beacon link and watch a click arrive in Pulse.
-- [Click Attribution](/docs/attribution/click-attribution/) — Deep dive into Prism's multi-touch attribution model.
-- [API Reference](/docs/reference/api-reference/) — Full Spoke API documentation for Signal.
+- [Quick Start](/docs/getting-started/quick-start/) — Mint your first <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link and watch a click arrive in <Terminology title="Signal's real-time click stream capturing interactions" to="/docs/terminology#pulse">Pulse</Terminology>.
+- [Click Attribution](/docs/attribution/click-attribution/) — Explore <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology>'s <Terminology title="Credits every touchpoint across the full conversion path" to="/docs/terminology#multi-touch-attribution">multi-touch attribution</Terminology> model.
+- [API Reference](/docs/reference/api-reference/) — Full <Terminology title="Signal's REST API exposing every CLI feature" to="/docs/terminology#spoke-api">Spoke API</Terminology> documentation for Signal.

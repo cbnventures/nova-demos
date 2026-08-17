@@ -1,40 +1,41 @@
 ---
 title: "Audit & Forensics"
 sidebar_position: 2
-description: "Spyglass records every access decision and zone crossing immutably for seven years, enabling session reconstruction and compliance evidence export."
+description: "Spyglass records every access decision and zone crossing immutably for seven years, enabling reconstruction and compliance evidence export."
 tags:
   - "operations"
   - "audit"
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Audit & Forensics
 
-Spyglass is Sentinel's audit and forensics engine. It records every access decision, every policy evaluation, every zone crossing event, and every Filament tunnel connection — immutably, for seven years. The purpose is not just retention. It is reconstruction. Any session, any incident, any access pattern can be replayed step by step from the log data alone.
+<Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> is Sentinel's audit and forensics engine. It records every access decision, every policy evaluation, every <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology> crossing event, and every <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology> tunnel connection — immutably, for seven years. The purpose is not just retention. It is reconstruction. Any session, any incident, any access pattern can be replayed step by step from the log data alone.
 
 ## What Spyglass Records
 
-Every event in the Sentinel trust loop is captured by Spyglass:
+Every event in the Sentinel trust loop is captured by <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology>:
 
-| Event Type        | Source     | Data Captured                                                     |
-|-------------------|------------|-------------------------------------------------------------------|
-| Policy evaluation | Watchtower | User, device, resource, conditions, score, result, timestamp      |
-| Access decision   | Drawbridge | Grant/narrow/revoke, policy ID, tunnel ID, duration               |
-| Zone crossing     | Rampart    | Source zone, target zone, crossing rule, policy evaluation result |
-| Posture check     | Garrison   | Device ID, all check categories, scores, pass/fail per category   |
-| Tunnel event      | Filament   | Tunnel ID, endpoints, duration, bytes transferred, close reason   |
-| Emergency access  | Admin      | User, justification, scope, duration, reviewer                    |
+| Event Type                                                                                                                             | Source                                                                                                                                         | Data Captured                                                                                                                                                                                                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Policy evaluation                                                                                                                      | <Terminology title="Continuous posture assessment engine computing the trust score" to="/docs/terminology#watchtower">Watchtower</Terminology> | User, device, resource, conditions, score, result, timestamp                                                                                                                                                                                                                                                        |
+| Access decision                                                                                                                        | <Terminology title="Adaptive access gateway granting or revoking access" to="/docs/terminology#drawbridge">Drawbridge</Terminology>            | Grant/narrow/revoke, policy ID, tunnel ID, duration                                                                                                                                                                                                                                                                 |
+| <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">Zone</Terminology> crossing | <Terminology title="Micro-segmentation layer isolating workloads into zones" to="/docs/terminology#rampart">Rampart</Terminology>              | Source <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology>, target <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology>, crossing rule, policy evaluation result |
+| Posture check                                                                                                                          | <Terminology title="Endpoint compliance engine that enrolls and enforces device policy" to="/docs/terminology#garrison">Garrison</Terminology> | Device ID, all check categories, scores, pass/fail per category                                                                                                                                                                                                                                                     |
+| Tunnel event                                                                                                                           | <Terminology title="Tunnel protocol connecting an agent to the control plane" to="/docs/terminology#filament">Filament</Terminology>           | Tunnel ID, endpoints, duration, bytes transferred, close reason                                                                                                                                                                                                                                                     |
+| Emergency access                                                                                                                       | Admin                                                                                                                                          | User, justification, scope, duration, reviewer                                                                                                                                                                                                                                                                      |
 
 All events are cryptographically signed and stored in append-only logs. Records cannot be modified or deleted — even by administrators.
 
 :::info Immutable by Design
-Spyglass logs are written to append-only storage with cryptographic chaining. Each record includes a hash of the previous record, forming a tamper-evident chain. Any modification to a historical record breaks the chain and triggers an integrity alert.
+<Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> logs are written to append-only storage with cryptographic chaining. Each record includes a hash of the previous record, forming a tamper-evident chain. Any modification to a historical record breaks the chain and triggers an integrity alert.
 :::
 
 ## Session Reconstruction
 
-Spyglass can reconstruct an entire access session from its component events. This is the primary forensics tool for incident investigation:
+<Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> can reconstruct an entire access session from its component events. This is the primary forensics tool for incident investigation:
 
 ```bash title="Reconstruct a session"
 sentinel spyglass reconstruct \
@@ -76,7 +77,7 @@ The reconstruction shows the complete lifecycle: initial grant, periodic re-eval
 
 ## Audit Queries
 
-Spyglass supports structured queries for searching across all event types:
+<Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> supports structured queries for searching across all event types:
 
 ```bash title="Query by resource and time range"
 sentinel spyglass query \
@@ -102,24 +103,24 @@ Mean time to remediation: 20m 15s
 <Details>
 <summary>Full query parameter reference</summary>
 
-| Parameter      | Type   | Description                                                                              |
-|----------------|--------|------------------------------------------------------------------------------------------|
-| `--resource`   | String | Filter by resource name (supports wildcards)                                             |
-| `--user`       | String | Filter by user identity                                                                  |
-| `--device`     | String | Filter by device ID                                                                      |
-| `--event-type` | Enum   | `policy-evaluation`, `access-decision`, `zone-crossing`, `posture-check`, `tunnel-event` |
-| `--result`     | Enum   | `pass`, `fail`, `grant`, `narrow`, `revoke`                                              |
-| `--period`     | Range  | ISO 8601 date range (`start..end`)                                                       |
-| `--zone`       | String | Filter by Rampart zone name                                                              |
-| `--policy`     | String | Filter by policy name                                                                    |
-| `--sort`       | Enum   | `time`, `user`, `resource`, `score`                                                      |
-| `--format`     | Enum   | `table`, `json`, `csv`                                                                   |
+| Parameter      | Type   | Description                                                                                                                                                                                                                                                                    |
+|----------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--resource`   | String | Filter by resource name (supports wildcards)                                                                                                                                                                                                                                   |
+| `--user`       | String | Filter by user identity                                                                                                                                                                                                                                                        |
+| `--device`     | String | Filter by device ID                                                                                                                                                                                                                                                            |
+| `--event-type` | Enum   | `policy-evaluation`, `access-decision`, `zone-crossing`, `posture-check`, `tunnel-event`                                                                                                                                                                                       |
+| `--result`     | Enum   | `pass`, `fail`, `grant`, `narrow`, `revoke`                                                                                                                                                                                                                                    |
+| `--period`     | Range  | ISO 8601 date range (`start..end`)                                                                                                                                                                                                                                             |
+| `--zone`       | String | Filter by <Terminology title="Micro-segmentation layer isolating workloads into zones" to="/docs/terminology#rampart">Rampart</Terminology> <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology> name |
+| `--policy`     | String | Filter by policy name                                                                                                                                                                                                                                                          |
+| `--sort`       | Enum   | `time`, `user`, `resource`, `score`                                                                                                                                                                                                                                            |
+| `--format`     | Enum   | `table`, `json`, `csv`                                                                                                                                                                                                                                                         |
 
 </Details>
 
 ## Compliance Export
 
-Spyglass generates compliance evidence packages for standard frameworks:
+<Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> generates compliance evidence packages for standard frameworks:
 
 ```bash title="Export compliance evidence"
 sentinel spyglass export --framework soc2 --period 2025-Q2
@@ -127,10 +128,10 @@ sentinel spyglass export --framework hipaa --period 2025-Q2
 sentinel spyglass export --framework iso27001 --period 2025-Q2
 ```
 
-Each export produces a structured evidence package containing policy evaluation summaries, access decision statistics, posture check distributions, and zone crossing logs — formatted for the specific compliance framework.
+Each export produces a structured evidence package containing policy evaluation summaries, access decision statistics, posture check distributions, and <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">zone</Terminology> crossing logs — formatted for the specific compliance framework.
 
 ## Next Steps
 
 - [Policy Simulation](/docs/operations/policy-simulation/) — Test policy changes against historical audit data.
-- [Micro-Segmentation](/docs/operations/micro-segmentation/) — Zone crossing events recorded by Spyglass.
-- [API Reference](/docs/reference/api-reference/) — Programmatic access to Spyglass query and export endpoints.
+- [Micro-Segmentation](/docs/operations/micro-segmentation/) — <Terminology title="Rampart-defined workload boundary needing a crossing rule" to="/docs/terminology#zone">Zone</Terminology> crossing events recorded by <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology>.
+- [API Reference](/docs/reference/api-reference/) — Programmatic access to <Terminology title="Audit and forensics component with 7-year log retention" to="/docs/terminology#spyglass">Spyglass</Terminology> query and export endpoints.

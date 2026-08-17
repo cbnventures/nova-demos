@@ -1,26 +1,29 @@
 ---
 title: "Click Attribution"
 sidebar_position: 1
-description: "Prism is Signal's multi-touch attribution engine. Traces the full conversion path across channels and assigns weighted credit to every touchpoint."
+description: "Introduces Prism, Signal's multi-touch attribution engine that traces the full conversion path and assigns weighted credit to every touchpoint."
 tags:
   - "attribution"
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Click Attribution
 
-Prism is Signal's multi-touch attribution engine. It traces the full conversion path across channels, assigns weighted credit to every touchpoint, and reconstructs the journey from first encounter to final action.
+<Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> is Signal's <Terminology title="Credits every touchpoint across the full conversion path" to="/docs/terminology#multi-touch-attribution">multi-touch attribution</Terminology> engine. It traces the full conversion path across channels, assigns weighted credit to every <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology>, and reconstructs the journey from first encounter to final action.
 
 ## The Problem with Single-Touch
 
-Most attribution models credit one touchpoint — either the first click or the last click. Both are wrong. A user who sees a social post, clicks an email link, revisits through a search ad, and finally converts from a retargeting banner is not a single-click story. It is a four-chapter narrative, and every chapter contributed.
+Most attribution models credit one <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology> — either the first click or the last click. Both are wrong.
 
-Prism captures all of it.
+A user who sees a social post, clicks an email link, revisits through a search ad, and finally converts from a retargeting banner is not a single-click story. It is a four-chapter narrative, and every chapter contributed.
+
+<Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> captures all of it.
 
 ## Multi-Touch Attribution Path
 
-When a user interacts with multiple Beacon links across channels, Prism builds an attribution path:
+When a user interacts with multiple <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links across channels, <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> builds an attribution path:
 
 ```mermaid
 graph TD
@@ -30,22 +33,22 @@ graph TD
     D --> E["Conversion"]
 ```
 
-Each node is a Beacon link with embedded trace metadata. Prism connects them into a single attribution chain by matching the user's fingerprint across touchpoints.
+Each node is a <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link with embedded <Terminology title="Unique identifier tying touchpoints into one path" to="/docs/terminology#trace">trace</Terminology> metadata. <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> connects them into a single attribution chain by matching the user's fingerprint across <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology>.
 
 ## Attribution Models
 
-Prism supports multiple attribution models. Choose the one that matches your business logic:
+<Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> supports multiple attribution models. Choose the one that matches your business logic:
 
-| Model        | Description                                                       | Best For                       |
-|--------------|-------------------------------------------------------------------|--------------------------------|
-| **Linear**   | Equal credit to every touchpoint.                                 | Simple campaigns, baselines.   |
-| **Decay**    | More credit to recent touchpoints. Configurable half-life.        | Long sales cycles.             |
-| **Position** | 40% to first touch, 40% to last touch, 20% split across the rest. | Brand + conversion campaigns.  |
-| **Custom**   | Write your own weighting function in Alloy.                       | Complex multi-channel funnels. |
+| Model        | Description                                                                                                                                                                           | Best For                       |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| **Linear**   | Equal credit to every <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology>.                          | Simple campaigns, baselines.   |
+| **Decay**    | More credit to recent <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology>. Configurable half-life. | Long sales cycles.             |
+| **Position** | 40% to first touch, 40% to last touch, 20% split across the rest.                                                                                                                     | Brand + conversion campaigns.  |
+| **Custom**   | Write your own weighting function in <Terminology title="Scripting language for custom attribution-weighting functions" to="/docs/terminology#alloy">Alloy</Terminology>.             | Complex multi-channel funnels. |
 
 ## Querying Attribution Paths
 
-Query a specific trace to see the full path:
+Query a specific <Terminology title="Unique identifier tying touchpoints into one path" to="/docs/terminology#trace">trace</Terminology> to see the full path:
 
 ```bash title="Query an attribution path"
 signal prism path --trace "trc_8f3a1b2c4d5e6f70"
@@ -100,13 +103,13 @@ signal prism path --trace "trc_8f3a1b2c4d5e6f70"
 
 ## Decay Curves
 
-The decay model assigns more credit to touchpoints closer to the conversion. The half-life parameter controls how quickly earlier touchpoints lose credit:
+The <Terminology title="Attribution model weighting touchpoints near conversion" to="/docs/terminology#decay-model">decay model</Terminology> assigns more credit to <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology> closer to the conversion. The half-life parameter controls how quickly earlier <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology> lose credit:
 
-| Half-Life | Effect                                                            |
-|-----------|-------------------------------------------------------------------|
-| `1d`      | Aggressive decay. Only the last day or two matter.                |
-| `7d`      | Moderate decay. A full week of touchpoints get meaningful credit. |
-| `30d`     | Gentle decay. Long nurture sequences retain credit.               |
+| Half-Life | Effect                                                                                                                                                                                       |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `1d`      | Aggressive decay. Only the last day or two matter.                                                                                                                                           |
+| `7d`      | Moderate decay. A full week of <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology> get meaningful credit. |
+| `30d`     | Gentle decay. Long nurture sequences retain credit.                                                                                                                                          |
 
 ```bash title="Set a decay model with 7-day half-life"
 signal prism model set --model decay --half-life 7d --campaign "product-launch"
@@ -115,17 +118,17 @@ signal prism model set --model decay --half-life 7d --campaign "product-launch"
 <Details>
 <summary>How the decay algorithm works</summary>
 
-Prism's decay model uses an exponential decay function. For each touchpoint at time `t` before the conversion, the raw weight is:
+<Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology>'s <Terminology title="Attribution model weighting touchpoints near conversion" to="/docs/terminology#decay-model">decay model</Terminology> uses an exponential decay function. For each <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology> at time `t` before the conversion, the raw weight is:
 
 ```text
 weight(t) = e^(-lambda * t)
 ```
 
-Where `lambda = ln(2) / halfLife`. After computing raw weights for all touchpoints, Prism normalizes them so the total sums to 1.0.
+Where `lambda = ln(2) / halfLife`. After computing raw weights for all <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology>, <Terminology title="Signal's multi-touch attribution engine tracing conversions" to="/docs/terminology#prism">Prism</Terminology> normalizes them so the total sums to 1.0.
 
-For a 7-day half-life, a touchpoint from 7 days before conversion receives half the weight of a touchpoint at conversion time. A touchpoint from 14 days before receives one quarter.
+For a 7-day half-life, a <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology> from 7 days before conversion receives half the weight of a <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology> at conversion time. A <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology> from 14 days before receives one quarter.
 
-The custom model lets you replace this function entirely with an Alloy script that receives the touchpoint array and returns a weight array.
+The custom model lets you replace this function entirely with an <Terminology title="Scripting language for custom attribution-weighting functions" to="/docs/terminology#alloy">Alloy</Terminology> script that receives the <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoint</Terminology> array and returns a weight array.
 
 </Details>
 
@@ -142,9 +145,9 @@ signal prism weights set \
   --channel retargeting=0.9
 ```
 
-Channel weights are applied after the base model calculates raw weights. A 1.2 multiplier on email means email touchpoints receive 20% more credit than the base model would assign.
+Channel weights are applied after the base model calculates raw weights. A 1.2 multiplier on email means email <Terminology title="Single tracked interaction within an attribution path" to="/docs/terminology#touchpoint">touchpoints</Terminology> receive 20% more credit than the base model would assign.
 
 ## Next Steps
 
-- [Campaign Management](/docs/campaigns/campaign-management/) — Snapshot campaign performance with Aperture.
-- [Audience Analysis](/docs/attribution/audience-analysis/) — Detect where audiences overlap with Resonance.
+- [Campaign Management](/docs/campaigns/campaign-management/) — Snapshot campaign performance with <Terminology title="Point-in-time campaign performance snapshots over time" to="/docs/terminology#aperture">Aperture</Terminology>.
+- [Audience Analysis](/docs/attribution/audience-analysis/) — Detect where audiences overlap with <Terminology title="Detects overlap between audience segments" to="/docs/terminology#resonance">Resonance</Terminology>.

@@ -1,7 +1,7 @@
 ---
 title: "Release Channels"
 sidebar_position: 1
-description: "Foundry promotes builds through alpha, beta, and stable channels — Quench-pinned versions, promotion gates, and Warden rule enforcement at every step."
+description: "Explains how Foundry promotes builds through alpha, beta, and stable channels — Quench-pinned versions, promotion gates, and Warden enforcement at every step."
 tags:
   - "deployment"
   - "channels"
@@ -11,16 +11,17 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Release Channels
 
-Foundry ships every workspace through three release channels: **alpha**, **beta**, and **stable**. Each channel is a named pointer to a Quench-pinned version, and every promotion between channels passes through a gate defined by the manifest.
+Foundry ships every <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> through three release channels: **alpha**, **beta**, and **stable**. Each channel is a named pointer to a <Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology>-pinned version, and every promotion between channels passes through a gate defined by the manifest.
 
-This document describes how the channels are declared, how Quench pins a version to a channel, what each promotion gate enforces, and how Warden rules apply at every step.
+This document describes how the channels are declared, how <Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology> pins a version to a channel, what each promotion gate enforces, and how <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> rules apply at every step.
 
 ## Channel Declaration
 
-Channels are declared inside the `deploy` block of the workspace manifest.
+Channels are declared inside the `deploy` block of the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> manifest.
 
 ```text title="project.grain"
 workspace "platform" {
@@ -42,7 +43,7 @@ Channels are ordered: a build enters alpha first, advances to beta, and finally 
 
 ## Quench-Pinned Versions
 
-Every release is assigned a Quench version stamp — a deterministic identifier derived from the Anvil hash of the build artifact, the workspace version, and the timestamp. The stamp is permanent once issued.
+Every release is assigned a <Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology> version stamp — a deterministic identifier derived from the <Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology> hash of the build artifact, the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> version, and the timestamp. The stamp is permanent once issued.
 
 ```bash title="Cut a release"
 foundry quench release --channel alpha
@@ -59,23 +60,23 @@ foundry quench release --channel alpha
 → Release complete.
 ```
 
-A channel always points to exactly one Quench stamp. Promoting a release advances the channel pointer; it does not modify the stamp itself.
+A channel always points to exactly one <Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology> stamp. Promoting a release advances the channel pointer; it does not modify the stamp itself.
 
 :::info
-Quench stamps are immutable. The same stamp may appear on multiple channels — for example, after a stable promotion, the stamp is referenced by both `beta` and `stable` until a newer build advances beta.
+<Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology> stamps are immutable. The same stamp may appear on multiple channels — for example, after a stable promotion, the stamp is referenced by both `beta` and `stable` until a newer build advances beta.
 :::
 
 ## Promotion Gates
 
 A gate is a set of checks that must pass before Foundry will advance a stamp to the next channel. Gates are declared in the manifest and enforced by the `foundry quench promote` command.
 
-| Gate Check | Source                                    | Required For  |
-|------------|-------------------------------------------|---------------|
-| `tests`    | Crucible outcome cache.                   | All channels. |
-| `warden`   | Warden run on the artifact.               | All channels. |
-| `age`      | Time since the stamp was issued.          | All channels. |
-| `approval` | Recorded sign-off from a named role.      | Stable only.  |
-| `metrics`  | Bellows telemetry from the lower channel. | Optional.     |
+| Gate Check | Source                                                                                                                                                                  | Required For  |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| `tests`    | <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> outcome cache.                       | All channels. |
+| `warden`   | <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> run on the artifact.                                   | All channels. |
+| `age`      | Time since the stamp was issued.                                                                                                                                        | All channels. |
+| `approval` | Recorded sign-off from a named role.                                                                                                                                    | Stable only.  |
+| `metrics`  | <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> telemetry from the lower channel. | Optional.     |
 
 ```bash title="Promote alpha to beta"
 foundry quench promote --from alpha --to beta
@@ -127,12 +128,12 @@ foundry quench promote --from beta --to stable --waive warden --reason "INC-2026
 </Tabs>
 
 :::warning
-Every waiver is recorded in the Slag audit log with the issuing user, the waived gate, the justification, and the resulting stamp. Slag rejects a second waiver on the same stamp — an override can be used once.
+Every waiver is recorded in the <Terminology title="Scans the workspace for dead code and unused exports" to="/docs/terminology#slag">Slag</Terminology> audit log with the issuing user, the waived gate, the justification, and the resulting stamp. <Terminology title="Scans the workspace for dead code and unused exports" to="/docs/terminology#slag">Slag</Terminology> rejects a second waiver on the same stamp — an override can be used once.
 :::
 
 ## Warden Enforcement Across Channels
 
-Warden runs at every promotion gate, but the rule set applied depends on the channel.
+<Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> runs at every promotion gate, but the rule set applied depends on the channel.
 
 ```mermaid
 flowchart LR
@@ -147,7 +148,9 @@ flowchart LR
 | beta    | `strict`, `conventions`               | `deploy.warden.beta`   |
 | stable  | `strict`, `conventions`, `formatting` | `deploy.warden.stable` |
 
-The progression is intentional. Alpha enforces correctness only — a build needs to compile and pass type checks. Beta layers naming and structural rules so the API surface settles. Stable adds presentation rules so the release-ready code is internally consistent.
+The progression is intentional. Alpha enforces correctness only — a build needs to compile and pass type checks.
+
+Beta layers naming and structural rules so the API surface settles. Stable adds presentation rules so the release-ready code is internally consistent.
 
 ## Channel State Inspection
 
@@ -192,6 +195,6 @@ q-2.4.7-9f2c4e3a
 
 ## Next Steps
 
-- [Rolling Upgrades](/docs/releases/rolling-upgrades/) — How Bellows coordinates the actual fleet rollout once a stamp lands in stable.
+- [Rolling Upgrades](/docs/releases/rolling-upgrades/) — How <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> coordinates the actual fleet rollout once a stamp lands in stable.
 - [Deployment Targets](/docs/reference/deployment/) — The runtime platforms a stamp can be shipped to.
 - [Warden Rules](/docs/pipeline/warden-rules/) — Deep dive into the rule sets that gate every channel.

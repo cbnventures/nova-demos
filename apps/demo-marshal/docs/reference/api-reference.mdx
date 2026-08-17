@@ -1,15 +1,17 @@
 ---
 title: "API Reference"
 sidebar_position: 1
-description: "The Marshal Spoke API — file policies, read the docket, export audit trails. Bearer-token authentication, JSON responses, no surprises."
+description: "Documents the Marshal Spoke API for filing policies, reading the docket, and exporting audit trails, with bearer-token auth and JSON responses."
 tags:
   - "reference"
   - "api"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # API Reference
 
-Marshal exposes a Spoke API for filing policies, reading the docket, and exporting the audit trail. Bearer-token authentication, JSON responses, no surprises.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> exposes a Spoke API for <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filing</Terminology> <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policies</Terminology>, reading the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>, and exporting the <Terminology title="Docket read end to end with the clerk attached" to="/docs/terminology#audit-trail">audit trail</Terminology>. Bearer-token authentication, JSON responses, no surprises.
 
 ## Base URL
 
@@ -19,15 +21,15 @@ https://marshal.your-org.example/api
 
 ## Endpoints
 
-| Method   | Path                 | Description                            |
-|----------|----------------------|----------------------------------------|
-| `GET`    | `/api/policies`      | List every filed policy.               |
-| `POST`   | `/api/policies`      | File a new policy.                     |
-| `DELETE` | `/api/policies/:id`  | Withdraw a policy (filed as override). |
-| `GET`    | `/api/dockets`       | List dockets across repositories.      |
-| `GET`    | `/api/dockets/:repo` | Read one repository's docket.          |
-| `POST`   | `/api/audit/export`  | Generate an audit trail export.        |
-| `GET`    | `/api/cron`          | List scheduled stewardship jobs.       |
+| Method   | Path                 | Description                                                                                                                                                                                                                                                                                                                                                                                             |
+|----------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `GET`    | `/api/policies`      | List every <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filed</Terminology> <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology>.                                                                                                                                              |
+| `POST`   | `/api/policies`      | <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">File</Terminology> a new <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology>.                                                                                                                                                    |
+| `DELETE` | `/api/policies/:id`  | Withdraw a <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> (<Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filed</Terminology> as <Terminology title="Per-repository exception that supersedes an org-wide policy" to="/docs/terminology#override">override</Terminology>). |
+| `GET`    | `/api/dockets`       | List <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">dockets</Terminology> across repositories.                                                                                                                                                                                                                                                    |
+| `GET`    | `/api/dockets/:repo` | Read one repository's <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>.                                                                                                                                                                                                                                                        |
+| `POST`   | `/api/audit/export`  | Generate an <Terminology title="Docket read end to end with the clerk attached" to="/docs/terminology#audit-trail">audit trail</Terminology> export.                                                                                                                                                                                                                                                    |
+| `GET`    | `/api/cron`          | List scheduled <Terminology title="Marshal's scheduled maintenance run without manual work" to="/docs/terminology#stewardship">stewardship</Terminology> jobs.                                                                                                                                                                                                                                          |
 
 ## Example
 
@@ -36,10 +38,10 @@ curl https://marshal.your-org.example/api/dockets/org/api \
   -H "Authorization: Bearer $MARSHAL_TOKEN"
 ```
 
-The response is a chronological list of every action filed against the repository. The seal of office appears in every record.
+The response is a chronological list of every action <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filed</Terminology> against the repository. The <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">seal</Terminology> of office appears in every record.
 
 ## Next Steps
 
-- [Policies](/docs/filings/policies/) — Filing policies via the API.
-- [Dockets](/docs/dockets/overview/) — Reading dockets via the API.
+- [Policies](/docs/filings/policies/) — <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">Filing</Terminology> <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policies</Terminology> via the API.
+- [Dockets](/docs/dockets/overview/) — Reading <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">dockets</Terminology> via the API.
 - [Audit Trail](/docs/dockets/audit-trail/) — Exporting the full trail.

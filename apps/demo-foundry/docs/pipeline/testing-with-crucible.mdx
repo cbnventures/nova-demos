@@ -1,19 +1,23 @@
 ---
 title: "Testing with Crucible"
 sidebar_position: 3
-description: "Crucible generates test scaffolds from your type signatures. If you wrote the types, you already described the test contract."
+description: "Explains how Crucible generates test scaffolds from your type signatures — if you wrote the types, you already described the contract."
 tags:
   - "pipeline"
   - "testing"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Testing with Crucible
 
-Crucible generates test scaffolds from your type signatures. If you wrote the types, you already described the test contract. Crucible reads the contract and writes the boilerplate.
+<Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> generates test scaffolds from your type signatures. If you wrote the types, you already described the test contract.
+
+<Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> reads the contract and writes the boilerplate.
 
 ## How It Works
 
-Crucible scans every exported type signature in your workspace packages. For each exported function, it generates a test file with:
+<Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> scans every exported type signature in your <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> packages. For each exported function, it generates a test file with:
 
 - An assertion template matching the function signature.
 - Fixture data derived from the parameter types.
@@ -29,7 +33,7 @@ export function formatCurrency(amount: Numeric, locale: Text): Text {
 }
 ```
 
-From these two exports, Crucible generates:
+From these two exports, <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> generates:
 
 ```alloy title="tests/format.assay.al — generated scaffold"
 import { formatDate, formatCurrency } from "@my-app/core/utils/format"
@@ -51,10 +55,14 @@ describe("formatCurrency", () => {
 })
 ```
 
-The assertion templates use snapshot testing by default. The first run captures the output. Subsequent runs verify it has not changed.
+The assertion templates use snapshot testing by default. The first run captures the output.
+
+Subsequent runs verify it has not changed.
 
 :::tip
-Override any generated test by editing the file directly. Crucible respects manual changes — it only regenerates tests for functions that have no existing test file. Set `crucible = manual` in your manifest to prevent all regeneration after the first scaffold.
+Override any generated test by editing the file directly. <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> respects manual changes — it only regenerates tests for functions that have no existing test file.
+
+Set `crucible = manual` in your manifest to prevent all regeneration after the first scaffold.
 :::
 
 ## Running Tests
@@ -77,17 +85,19 @@ foundry crucible run
 
 ## Watch Mode
 
-Crucible can watch for file changes and re-run affected tests:
+<Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> can watch for file changes and re-run affected tests:
 
 ```bash title="Watch for changes"
 foundry crucible watch
 ```
 
-In watch mode, Crucible monitors the Tongs dependency graph. When a source file changes, it re-runs tests for that file and all downstream dependents. A change in `core` triggers tests in `core`, `api`, and `web`.
+In watch mode, <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> monitors the <Terminology title="Resolves the dependency graph with query tools" to="/docs/terminology#tongs">Tongs</Terminology> dependency graph. When a source file changes, it re-runs tests for that file and all downstream dependents.
+
+A change in `core` triggers tests in `core`, `api`, and `web`.
 
 ## Snapshot Testing
 
-Crucible's snapshot tests capture the output shape of a function. When the output changes, the test fails with a diff showing what changed.
+<Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology>'s snapshot tests capture the output shape of a function. When the output changes, the test fails with a diff showing what changed.
 
 ```text title="Snapshot failure output"
   ✗ formatDate — snapshot mismatch
@@ -102,12 +112,14 @@ Crucible's snapshot tests capture the output shape of a function. When the outpu
 ```
 
 :::info
-Snapshot files are stored in a `__snapshots__` directory next to each test file. They are plain text and should be committed to version control. Reviewing snapshot diffs during code review catches unintended output changes.
+Snapshot files are stored in a `__snapshots__` directory next to each test file. They are plain text and should be committed to version control.
+
+Reviewing snapshot diffs during code review catches unintended output changes.
 :::
 
 ## Fixture Generation
 
-For functions with complex input types, Crucible generates fixture data automatically:
+For functions with complex input types, <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> generates fixture data automatically:
 
 ```alloy title="src/services/order.al — source"
 export interface OrderRequest {
@@ -138,20 +150,20 @@ describe("processOrder", () => {
 })
 ```
 
-Crucible infers sensible default values for each field type — strings get identifiers, numbers get realistic values, enums get their first variant.
+<Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> infers sensible default values for each field type — strings get identifiers, numbers get realistic values, enums get their first variant.
 
 ## Configuration
 
-Crucible respects the `crucible` directive in your manifest:
+<Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> respects the `crucible` directive in your manifest:
 
-| Value    | Behavior                                                         |
-|----------|------------------------------------------------------------------|
-| `auto`   | Regenerates scaffolds on every forge for new or changed exports. |
-| `manual` | Generates once on first forge. Never overwrites.                 |
-| `off`    | No test scaffolding. You manage tests entirely.                  |
+| Value    | Behavior                                                                                                                                                                                        |
+|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `auto`   | Regenerates scaffolds on every <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology> for new or changed exports. |
+| `manual` | Generates once on first <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology>. Never overwrites.                 |
+| `off`    | No test scaffolding. You manage tests entirely.                                                                                                                                                 |
 
 ## Next Steps
 
-- [Warden Rules](/docs/pipeline/warden-rules/) — Linting rules that pair with Crucible for full code quality coverage.
-- [Build Pipeline](/docs/pipeline/build-pipeline/) — Where Crucible fits in the forge lifecycle.
-- [Your First Forge](/docs/guides/your-first-forge/) — See Crucible in action during initial workspace setup.
+- [Warden Rules](/docs/pipeline/warden-rules/) — Linting rules that pair with <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> for full code quality coverage.
+- [Build Pipeline](/docs/pipeline/build-pipeline/) — Where <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> fits in the <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology> lifecycle.
+- [Your First Forge](/docs/guides/your-first-forge/) — See <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> in action during initial <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> setup.

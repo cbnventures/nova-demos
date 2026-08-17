@@ -1,20 +1,22 @@
 ---
 title: "Access Tiers"
 sidebar_position: 2
-description: "Marshal classifies every incoming request into a tier -- sponsor, contributor, or public -- stamped on receipt and routed through a single queue."
+description: "Explains how Marshal classifies every incoming request into a tier — sponsor, contributor, or public — stamped on receipt and routed accordingly."
 tags:
   - "filings"
   - "access-tiers"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Access Tiers
 
-Marshal classifies every incoming request into a tier. Tiers are not negotiable — they are stamped on receipt and routed accordingly.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> classifies every incoming request into an <Terminology title="Sponsor, Contributor, or Public classification on a request" to="/docs/terminology#access-tier">access tier</Terminology>. <Terminology title="Sponsor, Contributor, or Public classification on a request" to="/docs/terminology#access-tier">Tiers</Terminology> are not negotiable — they are <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamped</Terminology> on receipt and routed accordingly.
 
 ## The three tiers
 
-- **Sponsor** — the queue is short, the clerk responds first
-- **Contributor** — the queue is the working order, by file date
+- **Sponsor** — the queue is short, the <Terminology title="Marshal instance that handled a docket entry" to="/docs/terminology#clerk">clerk</Terminology> responds first
+- **Contributor** — the queue is the working order, by <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">file</Terminology> date
 - **Public** — the queue is patient, but never silent
 
 ## How the stamp is applied
@@ -23,7 +25,7 @@ Marshal classifies every incoming request into a tier. Tiers are not negotiable 
 marshal classify --by github-sponsor,github-org-member
 ```
 
-Marshal reads the requester's status, applies the tier stamp, and routes to the appropriate folder. The stamp itself is filed in the docket.
+<Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> reads the requester's status, applies the tier <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamp</Terminology>, and routes to the appropriate folder. The <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamp</Terminology> itself is <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filed</Terminology> in the <Terminology title="Append-only public record of every Marshal action" to="/docs/terminology#docket">docket</Terminology>.
 
 ## Tier overrides
 
@@ -31,10 +33,10 @@ Marshal reads the requester's status, applies the tier stamp, and routes to the 
 marshal override request-id 4821 --tier contributor --reason "former maintainer"
 ```
 
-Every override is a line in the ledger. Marshal does not forget who asked for the exception, or why.
+Every <Terminology title="Per-repository exception that supersedes an org-wide policy" to="/docs/terminology#override">override</Terminology> is a line in the <Terminology title="Org-wide record joining every repository's docket" to="/docs/terminology#ledger">ledger</Terminology>. <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> does not forget who asked for the exception, or why.
 
 ## Next Steps
 
-- [Policies](/docs/filings/policies/) — How tiers compose with other policies.
-- [Dockets](/docs/dockets/overview/) — Where tier classifications are stamped.
-- [Audit Trail](/docs/dockets/audit-trail/) — Reviewing tier overrides.
+- [Policies](/docs/filings/policies/) — How tiers compose with other <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policies</Terminology>.
+- [Dockets](/docs/dockets/overview/) — Where tier classifications are <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamped</Terminology>.
+- [Audit Trail](/docs/dockets/audit-trail/) — Reviewing tier <Terminology title="Per-repository exception that supersedes an org-wide policy" to="/docs/terminology#override">overrides</Terminology>.

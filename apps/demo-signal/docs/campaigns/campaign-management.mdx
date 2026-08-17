@@ -1,21 +1,22 @@
 ---
 title: "Campaign Management"
 sidebar_position: 1
-description: "Aperture captures point-in-time snapshots of campaign performance. Compare snapshots across time windows. Run A/B link variants."
+description: "Explains how Aperture captures point-in-time snapshots of campaign performance, compares them across time windows, and runs A/B link variants."
 tags:
   - "campaigns"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Campaign Management
 
-Aperture captures point-in-time snapshots of campaign performance. Compare snapshots across time windows. Run A/B link variants. See exactly what changed and when.
+<Terminology title="Point-in-time campaign performance snapshots over time" to="/docs/terminology#aperture">Aperture</Terminology> captures point-in-time snapshots of campaign performance, compares them across time windows, and runs A/B link variants to show exactly what changed and when.
 
 ## Creating Campaigns
 
-Group Beacon links into campaigns for organized tracking:
+Group <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links into campaigns for organized tracking:
 
 ```bash title="Create a campaign"
 signal campaign create \
@@ -40,11 +41,11 @@ signal campaign create \
 }
 ```
 
-Every Beacon link created with `--campaign "product-launch"` is automatically associated with this campaign.
+Every <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link created with `--campaign "product-launch"` is automatically associated with this campaign.
 
 ## Aperture Snapshots
 
-Aperture captures the state of a campaign at a specific moment. Snapshots are immutable — they record metrics as they were, not as they are now.
+<Terminology title="Point-in-time campaign performance snapshots over time" to="/docs/terminology#aperture">Aperture</Terminology> captures the state of a campaign at a specific moment. Snapshots are immutable — they record metrics as they were, not as they are now.
 
 ```bash title="Take a snapshot"
 signal aperture snapshot --campaign "product-launch" --label "week-2"
@@ -91,7 +92,7 @@ signal aperture compare --from "week-1" --to "week-2" --campaign "product-launch
 
 ## A/B Link Variants
 
-Create multiple Beacon link variants for the same destination to test messaging:
+Create multiple <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link variants for the same destination to test messaging:
 
 <Tabs>
 <TabItem value="single" label="Single Campaign" default>
@@ -174,4 +175,4 @@ signal aperture metrics \
 ## Next Steps
 
 - [Audience Analysis](/docs/attribution/audience-analysis/) — Detect where campaign audiences overlap.
-- [Batch Operations](/docs/beacons/batch-operations/) — Create thousands of Beacon links in one call.
+- [Batch Operations](/docs/beacons/batch-operations/) — Create thousands of <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links in one call.

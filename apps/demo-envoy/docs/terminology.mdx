@@ -1,0 +1,89 @@
+---
+id: "terminology"
+title: "Terminology"
+sidebar_position: 9
+description: "Review the terminology and concepts used throughout the Envoy documentation, from Cipher and Parcel to Courier, Ledger, and the relay manifest."
+keywords:
+  - "envoy"
+  - "terminology"
+  - "glossary"
+  - "concepts"
+  - "definitions"
+tags:
+  - "reference"
+  - "terminology"
+---
+
+Defines the terms and concepts used throughout this documentation.
+
+## Envoy
+
+A protocol translator and relay engine that sits between two systems, transforms messages between formats, and delivers them without either side needing to agree on a shared format.
+
+## Relay
+
+A single declared pipeline from one source to one or more destinations. Each relay is defined by a `relay` block in the manifest, with its own cipher mode, transform rules, and retry policy.
+
+## Relay Manifest (.grain)
+
+The `.grain` configuration file that declares every relay Envoy runs: what it listens for, how it authenticates, how it transforms the payload, and where it delivers.
+
+## Cipher
+
+Envoy's authentication gateway. Every request is verified by HMAC-SHA256 signature, bearer token, or IP allowlist before Parcel or Dispatch ever sees it; a rejected request stops the pipeline immediately.
+
+## Parcel
+
+Envoy's payload transformation pipeline. It inspects, normalizes, maps, and serializes an incoming message into the format the destination expects.
+
+## Dispatch
+
+Envoy's routing engine. It decides where a transformed message goes, based on payload content, source identity, severity thresholds, a schedule, or a fanout list.
+
+## Courier
+
+Envoy's guaranteed-delivery engine. It retries a failed delivery with exponential backoff until it succeeds or exhausts its retry budget, at which point the message is dead-lettered.
+
+## Ledger
+
+The append-only audit log that records every state transition — received, transformed, routed, delivered, or dead-lettered — for every message that passes through Envoy.
+
+## Embassy
+
+Envoy's origin-masking reverse proxy. It is the only component exposed to the public internet, so internal services are never visible from outside the network.
+
+## Dead Letter
+
+The terminal state for a message whose Courier retry attempts are exhausted. Dead-lettered messages are held in a queue for manual retry rather than discarded.
+
+## Fanout
+
+Delivering a single incoming message to multiple destinations at once, declared as a `fanout` list instead of a single `destination`.
+
+## Spoke
+
+The HTTP API Envoy exposes for relay management, health metrics, and querying the Ledger.
+
+## Vial
+
+The container image format Envoy ships as — a single 3MB image with zero external dependencies.
+
+## Spark
+
+The CLI used to install Envoy and run it as a process rather than a container (`spark install envoy`).
+
+## Trellis
+
+The orchestrated cluster deployment target for running Envoy across multiple nodes, handling replica lifecycle and topic rebalancing.
+
+## Threadbare
+
+A source code hosting platform. Envoy's built-in Threadbare translator handles push, pull request, release, and issue webhooks.
+
+## Glassboard
+
+A monitoring and dashboarding platform. Envoy's built-in Glassboard translator handles alert and resolved webhooks.
+
+## Canary
+
+An uptime monitoring service, and the destination most examples in this documentation use for delivered notifications.

@@ -1,16 +1,19 @@
 import {
   AppMarketDownload,
   BlogPreview,
+  Canvas,
   Features,
-  Hero,
   InstallStrip,
   Spotlight,
   Stats,
 } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
+
+import styles from './index.module.css';
 
 /**
  * Pages - Home.
@@ -39,37 +42,60 @@ function Home() {
           })}
         </title>
       </Head>
-      <Hero
-        eyebrow={translate({
-          id: 'home.hero.eyebrow',
-          message: 'Repository Stewardship',
-          description: 'Front page hero eyebrow above the heading',
-        })}
-        heading={translate({
-          id: 'home.hero.heading',
-          message: 'Filed, sealed, automated.',
-          description: 'Front page hero main heading',
-        })}
-        tagline={translate({
-          id: 'home.hero.tagline',
-          message: 'Marshal is the Department of Repository Affairs — automated stewardship for projects that prefer paperwork to drama. Every thread, every ticket, every access tier, handled in order.',
-          description: 'Front page hero tagline beneath the heading',
-        })}
-        ctaLabel={translate({
-          id: 'home.hero.ctaLabel',
-          message: 'Get Started',
-          description: 'Front page hero primary call-to-action button label',
-        })}
-        ctaLink="/docs/overview/"
-        secondaryCtaLabel={translate({
-          id: 'home.hero.secondaryCtaLabel',
-          message: 'View on Threadbare',
-          description: 'Front page hero secondary call-to-action button label',
-        })}
-        secondaryCtaLink="https://nova.cbnventures.io"
-      />
+      <Canvas container="full" surface="default" className={styles['heroSection']}>
+        <div className={styles['hero']}>
+          <div className={styles['heroInner']}>
+            <p className={styles['heroEyebrow']}>
+              {translate({
+                id: 'home.hero.eyebrow',
+                message: 'Repository Stewardship',
+                description: 'Front page hero eyebrow above the heading',
+              })}
+            </p>
+            <h1 className={styles['heroHeading']}>
+              {translate({
+                id: 'home.hero.heading',
+                message: 'Filed, sealed, automated.',
+                description: 'Front page hero main heading',
+              })}
+            </h1>
+            <div className={styles['topologyGrid']} aria-hidden="true">
+              <span className={`${styles['topologyLine']} ${styles['topologyLineAb']}`} />
+              <span className={`${styles['topologyLine']} ${styles['topologyLineBc']}`} />
+              <span className={`${styles['topologyLine']} ${styles['topologyLineCd']}`} />
+              <span className={`${styles['topologyNode']} ${styles['topologyNodeA']}`} />
+              <span className={`${styles['topologyNode']} ${styles['topologyNodeB']}`} />
+              <span className={`${styles['topologyNode']} ${styles['topologyNodeC']}`} />
+              <span className={`${styles['topologyNode']} ${styles['topologyNodeD']}`} />
+            </div>
+            <p className={styles['heroTagline']}>
+              {translate({
+                id: 'home.hero.tagline',
+                message: 'Marshal is the Department of Repository Affairs — automated stewardship for projects that prefer paperwork to drama. Every thread, every ticket, every access tier, handled in order.',
+                description: 'Front page hero tagline beneath the heading',
+              })}
+            </p>
+            <div className={styles['heroActions']}>
+              <Link className={styles['heroCtaPrimary'] ?? ''} to="/docs/overview/">
+                {translate({
+                  id: 'home.hero.ctaLabel',
+                  message: 'Get Started',
+                  description: 'Front page hero primary call-to-action button label',
+                })}
+              </Link>
+              <Link className={styles['heroCtaSecondary'] ?? ''} to="https://nova.cbnventures.io">
+                {translate({
+                  id: 'home.hero.secondaryCtaLabel',
+                  message: 'View on Threadbare',
+                  description: 'Front page hero secondary call-to-action button label',
+                })}
+              </Link>
+            </div>
+            <InstallStrip command="spark install marshal" copyTarget="block" className={styles['heroInstallStrip']} />
+          </div>
+        </div>
+      </Canvas>
       <main>
-        <InstallStrip command="spark install marshal" copyTarget="block" />
         <Features
           items={[
             {
@@ -197,6 +223,24 @@ function Home() {
             },
           ]}
         />
+        <Canvas container="contained" surface="default">
+          <div className={styles['canvasShowcase']}>
+            <h2>
+              {translate({
+                id: 'home.canvas.heading',
+                message: 'Order from Any Topology',
+                description: 'Front page Canvas section heading',
+              })}
+            </h2>
+            <p className={styles['canvasShowcaseDescription']}>
+              {translate({
+                id: 'home.canvas.description',
+                message: 'Marshal coordinates distributed services that share nothing — no common clock, no shared state, no agreed protocol. Consensus without compromise.',
+                description: 'Front page Canvas section description',
+              })}
+            </p>
+          </div>
+        </Canvas>
         <Spotlight
           surface="alt"
           heading={translate({

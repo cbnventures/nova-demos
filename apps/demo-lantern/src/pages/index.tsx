@@ -1,16 +1,19 @@
 import {
   AppMarketDownload,
   BlogPreview,
+  Canvas,
   Features,
-  Hero,
   InstallStrip,
   Spotlight,
   Stats,
 } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
+
+import styles from './index.module.css';
 
 /**
  * Pages - Home.
@@ -39,37 +42,76 @@ function Home() {
           })}
         </title>
       </Head>
-      <Hero
-        eyebrow={translate({
-          id: 'home.hero.eyebrow',
-          message: 'Whole-House Monitoring',
-          description: 'Front page hero eyebrow above the heading',
-        })}
-        heading={translate({
-          id: 'home.hero.heading',
-          message: 'Watchful, warm, always home.',
-          description: 'Front page hero main heading',
-        })}
-        tagline={translate({
-          id: 'home.hero.tagline',
-          message: 'Lantern watches your whole house — zones, motion, arm/disarm — without ever raising its voice. Every room, every door, every quiet moment, held gently.',
-          description: 'Front page hero tagline beneath the heading',
-        })}
-        ctaLabel={translate({
-          id: 'home.hero.ctaLabel',
-          message: 'Get Started',
-          description: 'Front page hero primary call-to-action button label',
-        })}
-        ctaLink="/docs/overview/"
-        secondaryCtaLabel={translate({
-          id: 'home.hero.secondaryCtaLabel',
-          message: 'View on Threadbare',
-          description: 'Front page hero secondary call-to-action button label',
-        })}
-        secondaryCtaLink="https://nova.cbnventures.io"
-      />
+      <Canvas container="full" surface="default" className={styles['heroSection']}>
+        <div className={styles['hero']}>
+          <div className={styles['heroInner']}>
+            <p className={styles['heroEyebrow']}>
+              {translate({
+                id: 'home.hero.eyebrow',
+                message: 'Whole-House Monitoring',
+                description: 'Front page hero eyebrow above the heading',
+              })}
+            </p>
+            <div className={styles['heroHeadingWrap']}>
+              <h1 className={styles['heroHeading']}>
+                {translate({
+                  id: 'home.hero.heading',
+                  message: 'Watchful, warm, always home.',
+                  description: 'Front page hero main heading',
+                })}
+              </h1>
+              <div className={styles['heroBadges']}>
+                <span className={`${styles['heroBadge']} ${styles['heroBadgeUptime']}`}>
+                  {translate({
+                    id: 'home.hero.metric.uptime',
+                    message: '99.97% uptime',
+                    description: 'Front page hero floating metric badge for uptime percentage',
+                  })}
+                </span>
+                <span className={`${styles['heroBadge']} ${styles['heroBadgeLatency']}`}>
+                  {translate({
+                    id: 'home.hero.metric.latency',
+                    message: '< 3ms p99',
+                    description: 'Front page hero floating metric badge for p99 latency',
+                  })}
+                </span>
+                <span className={`${styles['heroBadge']} ${styles['heroBadgeBlindSpots']}`}>
+                  {translate({
+                    id: 'home.hero.metric.blindSpots',
+                    message: '0 blind spots',
+                    description: 'Front page hero floating metric badge for blind spot count',
+                  })}
+                </span>
+              </div>
+            </div>
+            <p className={styles['heroTagline']}>
+              {translate({
+                id: 'home.hero.tagline',
+                message: 'Lantern watches your whole house — zones, motion, arm/disarm — without ever raising its voice. Every room, every door, every quiet moment, held gently.',
+                description: 'Front page hero tagline beneath the heading',
+              })}
+            </p>
+            <div className={styles['heroActions']}>
+              <Link className="nova-cta-primary" to="/docs/overview/">
+                {translate({
+                  id: 'home.hero.ctaLabel',
+                  message: 'Get Started',
+                  description: 'Front page hero primary call-to-action button label',
+                })}
+              </Link>
+              <Link className="nova-cta-secondary" to="https://nova.cbnventures.io">
+                {translate({
+                  id: 'home.hero.secondaryCtaLabel',
+                  message: 'View on Threadbare',
+                  description: 'Front page hero secondary call-to-action button label',
+                })}
+              </Link>
+            </div>
+            <InstallStrip command="spark install lantern" copyTarget="block" className={styles['heroInstallStrip']} />
+          </div>
+        </div>
+      </Canvas>
       <main>
-        <InstallStrip command="spark install lantern" copyTarget="block" />
         <Features
           items={[
             {
@@ -197,6 +239,24 @@ function Home() {
             },
           ]}
         />
+        <Canvas container="contained" surface="default">
+          <div className={styles['canvasShowcase']}>
+            <h2>
+              {translate({
+                id: 'home.canvas.heading',
+                message: 'Visibility Without the Noise',
+                description: 'Front page Canvas section heading',
+              })}
+            </h2>
+            <p className={styles['canvasShowcaseDescription']}>
+              {translate({
+                id: 'home.canvas.description',
+                message: 'Lantern surfaces the signals that matter and filters out the rest. Structured logs, contextual alerts, and incident timelines — all from a single collector.',
+                description: 'Front page Canvas section description',
+              })}
+            </p>
+          </div>
+        </Canvas>
         <Spotlight
           surface="alt"
           heading={translate({

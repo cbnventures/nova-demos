@@ -1,16 +1,71 @@
 import {
   AppMarketDownload,
   BlogPreview,
+  Canvas,
   Features,
-  Hero,
   InstallStrip,
   Spotlight,
   Stats,
 } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
+
+import styles from './index.module.css';
+
+/**
+ * Pages - Sentinel Access Log.
+ *
+ * Access log lines rendered inside the hero's scrolling terminal panel. Left
+ * untranslated, like the Spotlight snippet below - it reads as literal log
+ * output, not localizable UI prose.
+ *
+ * @since 2026.8.1
+ */
+const sentinelAccessLog = [
+  {
+    status: 'pass',
+    message: 'identity verified',
+    statusClassName: styles['hero-log-status-pass'],
+  },
+  {
+    status: 'pass',
+    message: 'token valid',
+    statusClassName: styles['hero-log-status-pass'],
+  },
+  {
+    status: 'scan',
+    message: 'payload inspected',
+    statusClassName: styles['hero-log-status-scan'],
+  },
+  {
+    status: 'pass',
+    message: 'posture score 92',
+    statusClassName: styles['hero-log-status-pass'],
+  },
+  {
+    status: 'pass',
+    message: 'mfa enrolled',
+    statusClassName: styles['hero-log-status-pass'],
+  },
+  {
+    status: 'scan',
+    message: 'session evaluated',
+    statusClassName: styles['hero-log-status-scan'],
+  },
+  {
+    status: 'pass',
+    message: 'network trusted',
+    statusClassName: styles['hero-log-status-pass'],
+  },
+  {
+    status: 'pass',
+    message: 'request forwarded',
+    statusClassName: styles['hero-log-status-pass'],
+  },
+];
 
 /**
  * Pages - Home.
@@ -40,35 +95,85 @@ function Home() {
           })}
         </title>
       </Head>
-      <Hero
-        eyebrow={translate({
-          id: 'home.hero.eyebrow',
-          message: 'Security Platform',
-          description: 'Front page hero eyebrow above the heading',
-        })}
-        heading={translate({
-          id: 'home.hero.heading',
-          message: 'Trust is a vulnerability.',
-          description: 'Front page hero main heading',
-        })}
-        tagline={translate({
-          id: 'home.hero.tagline',
-          message: 'Sentinel evaluates every user, every device, every connection — continuously. Access is not a door. It is a conversation that never ends.',
-          description: 'Front page hero tagline beneath the heading',
-        })}
-        ctaLabel={translate({
-          id: 'home.hero.ctaLabel',
-          message: 'Explore the Platform',
-          description: 'Front page hero primary call-to-action button label',
-        })}
-        ctaLink="/docs/overview/"
-        secondaryCtaLabel={translate({
-          id: 'home.hero.secondaryCtaLabel',
-          message: 'View on Threadbare',
-          description: 'Front page hero secondary call-to-action button label',
-        })}
-        secondaryCtaLink="https://nova.cbnventures.io"
-      />
+      <Canvas container="full" surface="default" className={styles['hero-section']}>
+        <div className={styles['hero']}>
+          <div className={styles['hero-inner']}>
+            <div className={styles['hero-grid']}>
+              <div className={styles['hero-content']}>
+                <span className={styles['hero-eyebrow']}>
+                  {translate({
+                    id: 'home.hero.eyebrow',
+                    message: 'Security Platform',
+                    description: 'Front page hero eyebrow above the heading',
+                  })}
+                </span>
+                <h1 className={styles['hero-heading']}>
+                  {translate({
+                    id: 'home.hero.heading',
+                    message: 'Trust is a vulnerability.',
+                    description: 'Front page hero main heading',
+                  })}
+                </h1>
+                <p className={styles['hero-tagline']}>
+                  {translate({
+                    id: 'home.hero.tagline',
+                    message: 'Sentinel evaluates every user, every device, every connection — continuously. Access is not a door. It is a conversation that never ends.',
+                    description: 'Front page hero tagline beneath the heading',
+                  })}
+                </p>
+                <div className={styles['hero-actions']}>
+                  <Link className="nova-cta-primary" to="/docs/overview/">
+                    {translate({
+                      id: 'home.hero.ctaLabel',
+                      message: 'Explore the Platform',
+                      description: 'Front page hero primary call-to-action button label',
+                    })}
+                  </Link>
+                  <Link className="nova-cta-secondary" to="https://nova.cbnventures.io">
+                    {translate({
+                      id: 'home.hero.secondaryCtaLabel',
+                      message: 'View on Threadbare',
+                      description: 'Front page hero secondary call-to-action button label',
+                    })}
+                  </Link>
+                </div>
+              </div>
+              <div className={styles['hero-log']} aria-hidden="true">
+                <div className={styles['hero-log-chrome']}>
+                  <span className={styles['hero-log-dot']} />
+                  <span className={styles['hero-log-dot']} />
+                  <span className={styles['hero-log-dot']} />
+                  <span className={styles['hero-log-label']}>access.log</span>
+                </div>
+                <div className={styles['hero-log-viewport']}>
+                  <div className={styles['hero-log-track']}>
+                    <ul className={styles['hero-log-list']}>
+                      {sentinelAccessLog.map((logLine) => (
+                        <li key={logLine['message']} className={styles['hero-log-line']}>
+                          <span className={`${styles['hero-log-status']} ${logLine['statusClassName']}`}>
+                            {`[${logLine['status'].toUpperCase()}]`}
+                          </span>
+                          <span className={styles['hero-log-message']}>{logLine['message']}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <ul className={styles['hero-log-list']}>
+                      {sentinelAccessLog.map((logLine) => (
+                        <li key={logLine['message']} className={styles['hero-log-line']}>
+                          <span className={`${styles['hero-log-status']} ${logLine['statusClassName']}`}>
+                            {`[${logLine['status'].toUpperCase()}]`}
+                          </span>
+                          <span className={styles['hero-log-message']}>{logLine['message']}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Canvas>
       <main>
         <InstallStrip command="spark install sentinel-agent" copyTarget="block" />
         <Features
@@ -198,6 +303,24 @@ function Home() {
             },
           ]}
         />
+        <Canvas container="contained" surface="default">
+          <div className={styles['canvas-showcase']}>
+            <h2>
+              {translate({
+                id: 'home.canvas.heading',
+                message: 'The Perimeter Watches Itself',
+                description: 'Front page Canvas section heading',
+              })}
+            </h2>
+            <p className={styles['canvas-showcase-description']}>
+              {translate({
+                id: 'home.canvas.description',
+                message: 'Sentinel monitors access patterns, flags anomalies, and enforces policy — continuously, without human review. Every request scored. Every deviation recorded.',
+                description: 'Front page Canvas section description',
+              })}
+            </p>
+          </div>
+        </Canvas>
         <Spotlight
           surface="alt"
           heading={translate({

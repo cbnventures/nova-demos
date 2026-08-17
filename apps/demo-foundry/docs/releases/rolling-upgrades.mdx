@@ -1,7 +1,7 @@
 ---
 title: "Rolling Upgrades"
 sidebar_position: 2
-description: "Bellows coordinates rolling deployments — canary stages, traffic shifting, fleet waves, and Forge-history rollback if a stage fails."
+description: "Explains how Bellows coordinates rolling deployments — canary stages, traffic shifting, fleet waves, and Forge-history rollback if a stage fails."
 tags:
   - "deployment"
   - "rollout"
@@ -11,16 +11,17 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Rolling Upgrades
 
-When a Quench stamp lands in the stable channel, the work of getting it onto every running instance begins. Foundry calls this a **rolling upgrade**, and it is orchestrated by Bellows.
+When a <Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology> stamp lands in the stable channel, the work of getting it onto every running instance begins. Foundry calls this a **rolling upgrade**, and it is orchestrated by <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology>.
 
-Bellows treats a rollout the same way it treats a parallel build: a directed sequence of waves, each with its own gating criteria, and a deterministic order that can be re-run from any checkpoint. The Forge history log keeps every prior stable stamp ready for rollback.
+<Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> treats a rollout the same way it treats a parallel build: a directed sequence of <Terminology title="Group of packages Bellows builds in parallel" to="/docs/terminology#wave">waves</Terminology>, each with its own gating criteria, and a deterministic order that can be re-run from any checkpoint. The <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">Forge</Terminology> history log keeps every prior stable stamp ready for rollback.
 
 ## Rollout Stages
 
-A rolling upgrade always passes through four stages. Each stage is a wave of fleet instances and a set of telemetry checks that must clear before Bellows advances.
+A rolling upgrade always passes through four stages. Each stage is a <Terminology title="Group of packages Bellows builds in parallel" to="/docs/terminology#wave">wave</Terminology> of fleet instances and a set of telemetry checks that must clear before <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> advances.
 
 ```mermaid
 flowchart LR
@@ -38,7 +39,7 @@ flowchart LR
 | ramp   | 50%         | Live, weighted by request  | 60 minutes   |
 | full   | 100%        | Live                       | n/a          |
 
-Holds give Bellows time to collect telemetry before the next stage. Override the defaults per-workspace in the manifest:
+Holds give <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> time to collect telemetry before the next stage. Override the defaults per-<Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> in the manifest:
 
 ```text title="project.grain — rollout configuration"
 workspace "platform" {
@@ -82,7 +83,7 @@ foundry bellows rollout --stamp q-2.4.7-9f2c4e3a
    - Hold: 15m (started 14:22:08 UTC)
 ```
 
-Bellows blocks on each stage until the configured hold elapses and the abort conditions remain clear. The active rollout is observable from any terminal:
+<Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> blocks on each stage until the configured hold elapses and the abort conditions remain clear. The active rollout is observable from any terminal:
 
 ```bash title="Watch a rollout in progress"
 foundry bellows rollout status
@@ -102,15 +103,15 @@ Rollout: r-2026-05-14-001
 
 ## Canary Telemetry
 
-The canary stage exists to catch regressions on a small slice of real traffic. Bellows samples three signals during the hold and compares them against the `abort_on` thresholds.
+The canary stage exists to catch regressions on a small slice of real traffic. <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> samples three signals during the hold and compares them against the `abort_on` thresholds.
 
-| Signal         | Source                 | Default Threshold |
-|----------------|------------------------|-------------------|
-| Error rate     | Spoke request handler. | `> 1%`            |
-| Latency (p95)  | Spoke request handler. | `> 250ms`         |
-| Warden runtime | Warden runtime hooks.  | `any finding`     |
+| Signal                                                                                                                   | Source                                                                                                                          | Default Threshold |
+|--------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| Error rate                                                                                                               | Spoke request handler.                                                                                                          | `> 1%`            |
+| Latency (p95)                                                                                                            | Spoke request handler.                                                                                                          | `> 250ms`         |
+| <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> runtime | <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> runtime hooks. | `any finding`     |
 
-If any signal exceeds its threshold during the hold, Bellows pauses the rollout. The operator decides whether to wait for recovery, abort, or roll back.
+If any signal exceeds its threshold during the hold, <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> pauses the rollout. The operator decides whether to wait for recovery, abort, or roll back.
 
 ```text title="Canary regression"
 → Stage: canary (1%)
@@ -121,12 +122,12 @@ If any signal exceeds its threshold during the hold, Bellows pauses the rollout.
 
 ## Traffic-Shift Coordination
 
-Foundry never moves traffic on its own. Bellows asks the deployment target — Arcline, Vial, or Trellis — to adjust routing weights, and waits for the target to acknowledge before declaring the stage done.
+Foundry never moves traffic on its own. <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> asks the deployment target — <Terminology title="Deployment target configured via the manifest" to="/docs/terminology#arcline">Arcline</Terminology>, <Terminology title="Container runtime for a reproducible Foundry environment" to="/docs/terminology#vial">Vial</Terminology>, or <Terminology title="Deployment target selected with the --target flag" to="/docs/terminology#trellis">Trellis</Terminology> — to adjust routing weights, and waits for the target to acknowledge before declaring the stage done.
 
 <Tabs>
 <TabItem value="arcline" label="Arcline" default>
 
-Arcline accepts a weighted routing table. Bellows submits the new weights at the start of each stage and reads back the applied state.
+<Terminology title="Deployment target configured via the manifest" to="/docs/terminology#arcline">Arcline</Terminology> accepts a weighted routing table. <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> submits the new weights at the start of each stage and reads back the applied state.
 
 ```text title="Arcline traffic shift"
 → Stage: ramp (50%)
@@ -139,7 +140,7 @@ Arcline accepts a weighted routing table. Bellows submits the new weights at the
 </TabItem>
 <TabItem value="vial" label="Vial">
 
-Vial uses image tags as routing labels. Bellows updates the service descriptor, and the Vial control plane drains old containers as new ones come online.
+<Terminology title="Container runtime for a reproducible Foundry environment" to="/docs/terminology#vial">Vial</Terminology> uses image tags as routing labels. <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> updates the service descriptor, and the <Terminology title="Container runtime for a reproducible Foundry environment" to="/docs/terminology#vial">Vial</Terminology> control plane drains old containers as new ones come online.
 
 ```text title="Vial container rollout"
 → Stage: ramp (50%)
@@ -152,7 +153,7 @@ Vial uses image tags as routing labels. Bellows updates the service descriptor, 
 </TabItem>
 <TabItem value="trellis" label="Trellis">
 
-Trellis exposes a fleet manifest. Bellows rewrites the per-zone share and Trellis schedules the cutover.
+<Terminology title="Deployment target selected with the --target flag" to="/docs/terminology#trellis">Trellis</Terminology> exposes a fleet manifest. <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> rewrites the per-zone share and <Terminology title="Deployment target selected with the --target flag" to="/docs/terminology#trellis">Trellis</Terminology> schedules the cutover.
 
 ```text title="Trellis zonal cutover"
 → Stage: ramp (50%)
@@ -167,12 +168,12 @@ Trellis exposes a fleet manifest. Bellows rewrites the per-zone share and Trelli
 </Tabs>
 
 :::info
-Each target reports back the actual applied weights, not the requested weights. Bellows treats the reported state as ground truth and will pause if a target fails to apply within the configured timeout.
+Each target reports back the actual applied weights, not the requested weights. <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> treats the reported state as ground truth and will pause if a target fails to apply within the configured timeout.
 :::
 
 ## Rollback Through Forge History
 
-Forge keeps an append-only history of every promotion and every rollout. Each entry records the stamp, the rollout strategy, the per-stage outcome, and the operator who initiated it.
+<Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">Forge</Terminology> keeps an append-only history of every promotion and every rollout. Each entry records the stamp, the rollout strategy, the per-stage outcome, and the operator who initiated it.
 
 ```bash title="Inspect Forge history"
 foundry forge history --limit 5
@@ -186,16 +187,20 @@ foundry forge history --limit 5
 2026-05-10 10:22  promote q-2.4.4-32b1e905  beta → stable
 ```
 
-To roll back, pick a known-good stamp from the history and ask Bellows to roll forward to it.
+To roll back, pick a known-good stamp from the history and ask <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> to roll forward to it.
 
 ```bash title="Roll back to the previous stable"
 foundry bellows rollout --stamp q-2.4.6-71b0fd2c --reason "INC-2026-05-14"
 ```
 
-Bellows treats a rollback as a normal rolling upgrade, just in the reverse direction. The same stages, the same gates, the same telemetry. The Slag audit log records the rollback alongside its incident reason.
+<Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> treats a rollback as a normal rolling upgrade, just in the reverse direction. The same stages, the same gates, the same telemetry.
+
+The <Terminology title="Scans the workspace for dead code and unused exports" to="/docs/terminology#slag">Slag</Terminology> audit log records the rollback alongside its incident reason.
 
 :::warning
-Rollback is forward motion, not state restoration. If `q-2.4.7` performed a destructive schema migration, a `q-2.4.6` rollout will not undo the migration — that requires a separate Conduit migration step. Always pair migrations with a forward-compatible window before deploying changes that depend on them.
+Rollback is forward motion, not state restoration. If `q-2.4.7` performed a destructive schema migration, a `q-2.4.6` rollout will not undo the migration — that requires a separate <Terminology title="CI environment Foundry integrates with" to="/docs/terminology#conduit">Conduit</Terminology> migration step.
+
+Always pair migrations with a forward-compatible window before deploying changes that depend on them.
 :::
 
 ## Aborting a Rollout
@@ -204,25 +209,27 @@ Rollback is forward motion, not state restoration. If `q-2.4.7` performed a dest
 foundry bellows rollout abort --rollout r-2026-05-14-001 --reason "INC-2026-05-14: customer-visible 5xx spike"
 ```
 
-An abort freezes the rollout at its current stage. Traffic remains at the most recently applied weights, and the rollout is marked terminal in Forge history. Resolve the underlying issue, then either resume from the same stamp or roll forward to a fix.
+An abort freezes the rollout at its current stage. Traffic remains at the most recently applied weights, and the rollout is marked terminal in <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">Forge</Terminology> history.
+
+Resolve the underlying issue, then either resume from the same stamp or roll forward to a fix.
 
 <Details>
 <summary>Rollout directive reference</summary>
 
-| Directive                 | Type       | Default     | Description                            |
-|---------------------------|------------|-------------|----------------------------------------|
-| `strategy`                | `Enum`     | `"rolling"` | `rolling`, `bluegreen`, or `recreate`. |
-| `stages.X.share`          | `Percent`  | Required    | Fleet share for the stage.             |
-| `stages.X.hold`           | `Duration` | `0`         | Minimum hold time before advancing.    |
-| `stages.X.dual_write`     | `Bool`     | `false`     | Mirror writes to the previous stamp.   |
-| `abort_on.error_rate`     | `Text`     | `"> 1%"`    | Comparison expression for error rate.  |
-| `abort_on.p95_latency`    | `Text`     | `"> 250ms"` | Comparison expression for p95 latency. |
-| `abort_on.warden_runtime` | `Enum`     | `"any"`     | Runtime Warden finding policy.         |
+| Directive                 | Type       | Default     | Description                                                                                                                              |
+|---------------------------|------------|-------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `strategy`                | `Enum`     | `"rolling"` | `rolling`, `bluegreen`, or `recreate`.                                                                                                   |
+| `stages.X.share`          | `Percent`  | Required    | Fleet share for the stage.                                                                                                               |
+| `stages.X.hold`           | `Duration` | `0`         | Minimum hold time before advancing.                                                                                                      |
+| `stages.X.dual_write`     | `Bool`     | `false`     | Mirror writes to the previous stamp.                                                                                                     |
+| `abort_on.error_rate`     | `Text`     | `"> 1%"`    | Comparison expression for error rate.                                                                                                    |
+| `abort_on.p95_latency`    | `Text`     | `"> 250ms"` | Comparison expression for p95 latency.                                                                                                   |
+| `abort_on.warden_runtime` | `Enum`     | `"any"`     | Runtime <Terminology title="Foundry's linting engine with 380+ rules" to="/docs/terminology#warden">Warden</Terminology> finding policy. |
 
 </Details>
 
 ## Next Steps
 
 - [Release Channels](/docs/releases/release-channels/) — How a stamp earns the right to be rolled out in the first place.
-- [Deployment Targets](/docs/reference/deployment/) — Arcline, Vial, and Trellis as the runtime platforms behind a rollout.
+- [Deployment Targets](/docs/reference/deployment/) — <Terminology title="Deployment target configured via the manifest" to="/docs/terminology#arcline">Arcline</Terminology>, <Terminology title="Container runtime for a reproducible Foundry environment" to="/docs/terminology#vial">Vial</Terminology>, and <Terminology title="Deployment target selected with the --target flag" to="/docs/terminology#trellis">Trellis</Terminology> as the runtime platforms behind a rollout.
 - [Build Pipeline](/docs/pipeline/build-pipeline/) — How the artifact in the stamp was produced.

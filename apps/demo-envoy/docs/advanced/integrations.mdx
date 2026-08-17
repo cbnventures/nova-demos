@@ -1,7 +1,7 @@
 ---
 title: "Integrations"
 sidebar_position: 1
-description: "Built-in translators for Threadbare, Glassboard, Canary, and custom sources. Payload formats, configuration, and examples."
+description: "Documents built-in translators for Threadbare, Glassboard, Canary, and custom sources, including payload formats, configuration, and examples."
 tags:
   - "advanced"
   - "integrations"
@@ -9,17 +9,18 @@ tags:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Integrations
 
-Envoy ships with built-in translators for common infrastructure sources. Each translator understands the source's payload format, event types, and authentication scheme. Custom sources are supported through the generic translator.
+<Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> ships with built-in translators for common infrastructure sources. Each translator understands the source's payload format, event types, and authentication scheme. Custom sources are supported through the generic translator.
 
 <Tabs>
 <TabItem value="threadbare" label="Threadbare" default>
 
 ## Threadbare
 
-Threadbare is a source code hosting platform that fires webhooks on repository events. Envoy's Threadbare translator handles push events, pull request events, releases, and issue updates.
+<Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology> is a source code hosting platform that fires webhooks on repository events. <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology>'s <Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology> translator handles push events, pull request events, releases, and issue updates.
 
 ### Supported Events
 
@@ -80,7 +81,7 @@ relay "threadbare-pushes" {
 
 ## Glassboard
 
-Glassboard is a monitoring and dashboarding platform that fires webhooks on alert state changes. Envoy's Glassboard translator handles alert notifications and resolved events.
+<Terminology title="Monitoring and dashboarding platform with a built-in translator" to="/docs/terminology#glassboard">Glassboard</Terminology> is a monitoring and dashboarding platform that fires webhooks on alert state changes. <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology>'s <Terminology title="Monitoring and dashboarding platform with a built-in translator" to="/docs/terminology#glassboard">Glassboard</Terminology> translator handles alert notifications and resolved events.
 
 ### Supported Events
 
@@ -123,7 +124,7 @@ relay "glassboard-critical" {
 
 ## Canary
 
-Canary is an uptime monitoring service that fires webhooks when monitored endpoints change state. Envoy's Canary translator handles down and recovery events.
+<Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology> is an uptime monitoring service that fires webhooks when monitored endpoints change state. <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology>'s <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology> translator handles down and recovery events.
 
 ### Supported Events
 
@@ -158,7 +159,7 @@ relay "canary-down" {
 
 ## Custom Sources
 
-Any system that can send an HTTP POST with a JSON, XML, or form-data payload can integrate with Envoy using the generic translator.
+Any system that can send an HTTP POST with a JSON, XML, or form-data payload can integrate with <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> using the generic translator.
 
 ### Example
 
@@ -192,5 +193,5 @@ Custom sources require explicit field mapping in the transform block. Unlike bui
 
 ## Next Steps
 
-- [Protocol Translation](/docs/core/protocol-translation/) — How Parcel handles format conversion between source and destination.
-- [Authentication](/docs/core/authentication/) — Cipher configuration for each integration type.
+- [Protocol Translation](/docs/core/protocol-translation/) — How <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> handles format conversion between source and destination.
+- [Authentication](/docs/core/authentication/) — <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> configuration for each integration type.

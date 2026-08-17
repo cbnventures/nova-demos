@@ -1,6 +1,6 @@
 ---
 title: "Theme Showcase"
-description: "Theme component showcase covering admonitions, tabs, code blocks, tables, details, and every other Docusaurus preset element."
+description: "Showcases theme components covering admonitions, tabs, code blocks, tables, details, and every other Docusaurus preset element available."
 sidebar_label: "Theme Showcase"
 sidebar_position: 7
 tags:
@@ -11,10 +11,11 @@ tags:
 import Details from '@theme/Details';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Theme Showcase
 
-This page demonstrates every theme component available in the Docusaurus preset. Use it as a living style guide when building documentation pages.
+Demonstrates every theme component available in the Docusaurus preset. Use it as a living style guide when building documentation pages.
 
 ## Headings
 
@@ -50,7 +51,7 @@ Internal links point to other pages within this documentation site:
 External links point to resources outside the site:
 
 - [Alloy Language Reference](https://nova.cbnventures.io) — official Alloy documentation.
-- [Spoke Protocol Specification](https://nova.cbnventures.io) — the HTTP framework Envoy exposes its API through.
+- [Spoke Protocol Specification](https://nova.cbnventures.io) — the HTTP framework <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> exposes its API through.
 
 ---
 
@@ -58,33 +59,33 @@ External links point to resources outside the site:
 
 ### Unordered List
 
-- Cipher verifies source identity before any payload reaches the pipeline.
-- Parcel transforms messages between formats without requiring shared schemas.
-- Dispatch routes by content, source, severity, or time-of-day rules.
-- Courier guarantees delivery with exponential backoff and dead-letter queues.
+- <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> verifies source identity before any payload reaches the pipeline.
+- <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> transforms messages between formats without requiring shared schemas.
+- <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> routes by content, source, severity, or time-of-day rules.
+- <Terminology title="Envoy's guaranteed-delivery engine with retry backoff" to="/docs/terminology#courier">Courier</Terminology> guarantees delivery with exponential backoff and <Terminology title="Terminal state after Courier's retries are exhausted" to="/docs/terminology#dead-letter">dead-letter</Terminology> queues.
 
 ### Ordered List
 
-1. Pull the Vial image and start the relay.
-2. Write a `.grain` manifest declaring your relay pipelines.
-3. Configure the source webhook to point at your Envoy endpoint.
-4. Push a test event and verify delivery in Ledger.
-5. Add additional relays as integrations grow.
+1. Pull the <Terminology title="Container image format Envoy ships as" to="/docs/terminology#vial">Vial</Terminology> image and start the <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology>.
+2. Write a `.grain` <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">manifest</Terminology> declaring your <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> pipelines.
+3. Configure the source webhook to point at your <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> endpoint.
+4. Push a test event and verify delivery in <Terminology title="Append-only audit log of every message's state" to="/docs/terminology#ledger">Ledger</Terminology>.
+5. Add additional <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relays</Terminology> as integrations grow.
 
 ### Nested Lists
 
 - **CLI Commands**
-  - Relay Management
-    - `envoy start` — start the relay server with the configured manifest.
-    - `envoy validate` — validate the relay manifest without starting.
-    - `envoy status` — show active relays, delivery rates, and dead-letter counts.
+  - <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">Relay</Terminology> Management
+    - `envoy start` — start the <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> server with the configured <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">manifest</Terminology>.
+    - `envoy validate` — validate the <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">relay manifest</Terminology> without starting.
+    - `envoy status` — show active <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relays</Terminology>, delivery rates, and <Terminology title="Terminal state after Courier's retries are exhausted" to="/docs/terminology#dead-letter">dead-letter</Terminology> counts.
   - Inspection
     - `envoy ledger query` — query the delivery audit log.
-    - `envoy courier retry` — manually retry a dead-lettered message.
+    - `envoy courier retry` — manually retry a <Terminology title="Terminal state after Courier's retries are exhausted" to="/docs/terminology#dead-letter">dead-lettered</Terminology> message.
 - **Pipeline Stages**
-  - Cipher — authentication and source verification.
-  - Parcel — payload transformation and format negotiation.
-  - Dispatch — routing and destination selection.
+  - <Terminology title="Envoy's authentication gateway verifying every request" to="/docs/terminology#cipher">Cipher</Terminology> — authentication and source verification.
+  - <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> — payload transformation and format negotiation.
+  - <Terminology title="Envoy's routing engine deciding message destinations" to="/docs/terminology#dispatch">Dispatch</Terminology> — routing and destination selection.
 
 ---
 
@@ -96,7 +97,7 @@ Nested blockquotes work for attributions or follow-up commentary:
 
 > Integration should not require both sides to agree on a format.
 >
-> > That is why Envoy translates between systems instead of asking them to change — it removes the coordination problem before it starts.
+> > That is why <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> translates between systems instead of asking them to change — it removes the coordination problem before it starts.
 
 ---
 
@@ -160,7 +161,7 @@ relay "glassboard-to-canary" {
 }
 ```
 
-Spark commands:
+<Terminology title="CLI used to install and run Envoy" to="/docs/terminology#spark">Spark</Terminology> commands:
 
 ```bash
 # Install Envoy and start the relay
@@ -227,15 +228,15 @@ Notes provide supplementary context that is helpful but not essential. The reade
 :::
 
 :::tip
-Tips share best practices or shortcuts that save time. For example, run `envoy validate --config relay.grain` to check your manifest for errors before starting the relay.
+Tips share best practices or shortcuts that save time. For example, run `envoy validate --config relay.grain` to check your <Terminology title="Config file declaring every relay Envoy runs" to="/docs/terminology#relay-manifest-grain">manifest</Terminology> for errors before starting the <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology>.
 :::
 
 :::info
-Info blocks highlight background details that aid understanding. Envoy's Parcel pipeline uses a four-stage model — inspect, normalize, map, serialize — regardless of the source and destination formats.
+Info blocks highlight background details that aid understanding. <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology>'s <Terminology title="Envoy's payload transformation pipeline normalizing messages" to="/docs/terminology#parcel">Parcel</Terminology> pipeline uses a four-stage model — inspect, normalize, map, serialize — regardless of the source and destination formats.
 :::
 
 :::warning
-Warnings flag potential pitfalls. Changing the `cipher` directive on a live relay requires restarting the Envoy process. Hot-reload applies to transform and routing rules only.
+Warnings flag potential pitfalls. Changing the `cipher` directive on a live <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> requires restarting the <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> process. Hot-reload applies to transform and routing rules only.
 :::
 
 :::danger
@@ -253,14 +254,14 @@ Admonitions accept a custom title in brackets after the keyword. Use this to mak
 <Details>
 <summary>What Vial versions are supported?</summary>
 
-Envoy 2.x requires Vial 4.0 or later. Earlier Vial versions do not support the minimal base image that Envoy uses to achieve its 3MB footprint. The Trellis deployment path requires Trellis 1.8 or later.
+<Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> 2.x requires <Terminology title="Container image format Envoy ships as" to="/docs/terminology#vial">Vial</Terminology> 4.0 or later. Earlier <Terminology title="Container image format Envoy ships as" to="/docs/terminology#vial">Vial</Terminology> versions do not support the minimal base image that <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> uses to achieve its 3MB footprint. The <Terminology title="Orchestrated cluster deployment target for Envoy" to="/docs/terminology#trellis">Trellis</Terminology> deployment path requires <Terminology title="Orchestrated cluster deployment target for Envoy" to="/docs/terminology#trellis">Trellis</Terminology> 1.8 or later.
 
 </Details>
 
 <Details>
 <summary>How do relay filter rules compose?</summary>
 
-Each relay declares its own filter block. Envoy evaluates relays in declaration order, and the first matching relay handles the message:
+Each <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> declares its own filter block. <Terminology title="Protocol translator and relay engine between systems" to="/docs/terminology#envoy">Envoy</Terminology> evaluates <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relays</Terminology> in declaration order, and the first matching <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology> handles the message:
 
 ```text title="relay.grain"
 relay "critical-only" {
@@ -275,7 +276,7 @@ relay "everything-else" {
 }
 ```
 
-Order matters — place specific relays before catch-all relays so they get first match priority.
+Order matters — place specific <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relays</Terminology> before catch-all <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relays</Terminology> so they get first match priority.
 
 </Details>
 
@@ -332,14 +333,14 @@ fn relay(source: &str, destination: &str) -> DeliveryResult {
 
 ## Tables
 
-| Translator | Events              | Default Auth | Description                                    |
-|------------|---------------------|--------------|------------------------------------------------|
-| Threadbare | push, PR, release   | HMAC-SHA256  | Source code hosting webhooks.                  |
-| Glassboard | alerting, resolved  | HMAC-SHA256  | Monitoring and dashboard alert notifications.  |
-| Canary     | down, up, heartbeat | Bearer       | Uptime monitoring state change webhooks.       |
-| Generic    | any                 | Bearer       | Custom integrations with manual field mapping. |
-| Spoke      | any                 | IP allowlist | Internal service-to-service relay.             |
-| Conduit    | build, deploy       | HMAC-SHA256  | CI/CD pipeline event notifications.            |
+| Translator                                                                                                                                      | Events              | Default Auth | Description                                                                                                                                               |
+|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <Terminology title="Source code hosting platform with a built-in translator" to="/docs/terminology#threadbare">Threadbare</Terminology>         | push, PR, release   | HMAC-SHA256  | Source code hosting webhooks.                                                                                                                             |
+| <Terminology title="Monitoring and dashboarding platform with a built-in translator" to="/docs/terminology#glassboard">Glassboard</Terminology> | alerting, resolved  | HMAC-SHA256  | Monitoring and dashboard alert notifications.                                                                                                             |
+| <Terminology title="Uptime monitoring service used as an example destination" to="/docs/terminology#canary">Canary</Terminology>                | down, up, heartbeat | Bearer       | Uptime monitoring state change webhooks.                                                                                                                  |
+| Generic                                                                                                                                         | any                 | Bearer       | Custom integrations with manual field mapping.                                                                                                            |
+| <Terminology title="HTTP API Envoy exposes for relay management" to="/docs/terminology#spoke">Spoke</Terminology>                               | any                 | IP allowlist | Internal service-to-service <Terminology title="Single declared pipeline from a source to destinations" to="/docs/terminology#relay">relay</Terminology>. |
+| Conduit                                                                                                                                         | build, deploy       | HMAC-SHA256  | CI/CD pipeline event notifications.                                                                                                                       |
 
 A minimal two-column table:
 

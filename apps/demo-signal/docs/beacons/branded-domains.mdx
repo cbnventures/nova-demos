@@ -1,7 +1,7 @@
 ---
 title: "Branded Domains"
 sidebar_position: 1
-description: "Run every Beacon link on your own domain. Custom domains, Ironclad certificate provisioning, and multi-domain routing — managed through the CLI."
+description: "Run every Beacon link on your own domain with custom domains, Ironclad certificate provisioning, and multi-domain routing — all managed through the CLI."
 tags:
   - "beacons"
   - "domains"
@@ -9,21 +9,22 @@ tags:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Branded Domains
 
-Run every Beacon link on your own domain. Custom domains, Ironclad certificate provisioning, and multi-domain routing — all managed through the CLI or Spoke API.
+Run every <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link on your own domain. Custom domains, <Terminology title="Certificate authority provisioning and auto-renewing TLS certificates" to="/docs/terminology#ironclad">Ironclad</Terminology> certificate provisioning, and multi-domain routing — all managed through the CLI or <Terminology title="Signal's REST API exposing every CLI feature" to="/docs/terminology#spoke-api">Spoke API</Terminology>.
 
 ## Why Branded Domains
 
-Generic short link services hide your brand behind someone else's domain. Beacon links on a branded domain are recognizable, trustworthy, and carry higher click-through rates:
+Generic short link services hide your brand behind someone else's domain. <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links on a branded domain are recognizable, trustworthy, and carry higher click-through rates:
 
 ```text
 https://go.yourcompany.com/launch     (branded — your domain, your trust)
 https://sho.rt/x9k2mP7                (generic — whose link is this?)
 ```
 
-Every Beacon link on a branded domain still carries full attribution metadata. The domain is yours; the intelligence is Signal's.
+Every <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link on a branded domain still carries full attribution metadata. The domain is yours; the intelligence is Signal's.
 
 ## DNS Setup
 
@@ -42,7 +43,7 @@ Then register the domain with Signal:
 signal beacon domain add --domain "go.yourcompany.com"
 ```
 
-Signal verifies DNS resolution and provisions an Ironclad certificate automatically.
+Signal verifies DNS resolution and provisions an <Terminology title="Certificate authority provisioning and auto-renewing TLS certificates" to="/docs/terminology#ironclad">Ironclad</Terminology> certificate automatically.
 
 </TabItem>
 <TabItem value="multi" label="Multiple Domains">
@@ -55,7 +56,7 @@ signal beacon domain add --domain "links.brand.io"
 signal beacon domain add --domain "l.campaign.dev"
 ```
 
-Each domain operates as an isolated namespace. A Beacon link created on `go.yourcompany.com` is only accessible on `go.yourcompany.com`.
+Each domain operates as an isolated namespace. A <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> link created on `go.yourcompany.com` is only accessible on `go.yourcompany.com`.
 
 | Domain               | Use Case            | Status  |
 |----------------------|---------------------|---------|
@@ -72,7 +73,7 @@ For organizations with many teams, use a wildcard subdomain:
 |-------|------------------------|---------------------------|
 | CNAME | `*.go.yourcompany.com` | `edge.signal.example.dev` |
 
-Then scope Beacon links to team subdomains:
+Then scope <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links to team subdomains:
 
 ```bash
 signal beacon create --domain "marketing.go.yourcompany.com" --url "https://example.com"
@@ -84,7 +85,7 @@ signal beacon create --domain "eng.go.yourcompany.com" --url "https://example.co
 
 ## Ironclad Certificate Provisioning
 
-Signal provisions Ironclad TLS certificates automatically for every registered domain. No manual certificate management. Certificates auto-renew 30 days before expiration.
+Signal provisions <Terminology title="Certificate authority provisioning and auto-renewing TLS certificates" to="/docs/terminology#ironclad">Ironclad</Terminology> TLS certificates automatically for every registered domain, with no manual certificate management. Certificates auto-renew 30 days before expiration.
 
 ```bash title="Check certificate status"
 signal beacon domain status --domain "go.yourcompany.com"
@@ -105,7 +106,7 @@ signal beacon domain status --domain "go.yourcompany.com"
 ```
 
 :::warning
-DNS changes can take up to 48 hours to propagate globally. During propagation, some regions may see certificate errors. Signal retries Ironclad provisioning every 15 minutes until DNS resolves cleanly across all 180+ regions.
+DNS changes can take up to 48 hours to propagate globally. During propagation, some regions may see certificate errors. Signal retries <Terminology title="Certificate authority provisioning and auto-renewing TLS certificates" to="/docs/terminology#ironclad">Ironclad</Terminology> provisioning every 15 minutes until DNS resolves cleanly across all 180+ regions.
 :::
 
 ## Domain-Specific Defaults
@@ -129,4 +130,4 @@ signal beacon domain config \
 ## Next Steps
 
 - [Click Attribution](/docs/attribution/click-attribution/) — Trace how branded links contribute to conversions.
-- [Campaign Management](/docs/campaigns/campaign-management/) — Organize Beacon links into campaigns.
+- [Campaign Management](/docs/campaigns/campaign-management/) — Organize <Terminology title="Short link carrying embedded attribution metadata" to="/docs/terminology#beacon">Beacon</Terminology> links into campaigns.

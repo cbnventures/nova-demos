@@ -8,10 +8,11 @@ tags:
 ---
 
 import Details from '@theme/Details';
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 # Your First Forge
 
-This guide walks you through creating a workspace from scratch using Foundry. You will write a `.grain` manifest, run your first forge, and inspect the output.
+This guide walks you through creating a <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> from scratch using Foundry. You will write a <Terminology title="Single source of truth for a Foundry workspace" to="/docs/terminology#grain-manifest">`.grain` manifest</Terminology>, run your first <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forge</Terminology>, and inspect the output.
 
 ## Step 1: Create the Project Directory
 
@@ -42,7 +43,9 @@ workspace "my-project" {
 }
 ```
 
-Line 6 is the key directive. Setting `crucible = auto` tells Foundry to generate test scaffolds from your type signatures automatically. You can also set it to `manual` if you prefer to write tests yourself.
+Line 6 is the key directive. Setting `crucible = auto` tells Foundry to generate test scaffolds from your type signatures automatically.
+
+You can also set it to `manual` if you prefer to write tests yourself.
 
 ## Step 3: Run the Forge
 
@@ -74,7 +77,7 @@ Foundry reads your manifest, resolves the dependency graph, generates configurat
 
 ## Step 4: Inspect the Output
 
-After forging, your directory looks like this:
+After <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forging</Terminology>, your directory looks like this:
 
 ```text title="Generated workspace structure"
 my-project/
@@ -105,7 +108,7 @@ my-project/
         errors.assay.al
 ```
 
-Every configuration file is generated from the manifest. The test files in `tests/` are scaffolds created by Crucible based on the type signatures it found in `src/`.
+Every configuration file is generated from the manifest. The test files in `tests/` are scaffolds created by <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> based on the type signatures it found in `src/`.
 
 :::tip
 Run `foundry ignite --dry-run` to preview the full output without writing any files. This is useful for validating a new manifest before committing.
@@ -113,7 +116,7 @@ Run `foundry ignite --dry-run` to preview the full output without writing any fi
 
 ## Step 5: Build and Test
 
-With the workspace forged, you can build and test immediately:
+With the <Terminology title="Foundry project declared in a .grain manifest" to="/docs/terminology#workspace">workspace</Terminology> <Terminology title="Running foundry ignite to generate workspace artifacts" to="/docs/terminology#forge--ignite">forged</Terminology>, you can build and test immediately:
 
 ```bash title="Build all packages"
 foundry bellows build
@@ -123,7 +126,7 @@ foundry bellows build
 foundry crucible run
 ```
 
-Bellows respects the Tongs dependency graph, so `core` builds before `api`. Crucible runs the scaffolded tests — they will pass with placeholder assertions until you fill in the implementation.
+<Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> respects the <Terminology title="Resolves the dependency graph with query tools" to="/docs/terminology#tongs">Tongs</Terminology> dependency graph, so `core` builds before `api`. <Terminology title="Generates test scaffolds from exported type signatures" to="/docs/terminology#crucible">Crucible</Terminology> runs the scaffolded tests — they will pass with placeholder assertions until you fill in the implementation.
 
 <Details>
 <summary>Full forge output with verbose logging</summary>
@@ -159,4 +162,4 @@ $ foundry ignite --verbose
 
 - [Manifests](/docs/guides/manifests/) — Learn every directive available in `.grain` files.
 - [Workspace Management](/docs/guides/workspace-management/) — Manage dependencies across dozens of packages.
-- [Build Pipeline](/docs/pipeline/build-pipeline/) — Understand how Quench caching and Bellows parallelism work.
+- [Build Pipeline](/docs/pipeline/build-pipeline/) — Understand how <Terminology title="Content-addressable build cache skipping unchanged packages" to="/docs/terminology#quench">Quench</Terminology> caching and <Terminology title="Parallel task runner building independent packages together" to="/docs/terminology#bellows">Bellows</Terminology> parallelism work.

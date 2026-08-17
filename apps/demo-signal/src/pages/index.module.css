@@ -1,0 +1,308 @@
+/**
+ * ============================
+ * Hero - Section
+ * ============================
+ */
+
+.hero-section {
+  overflow-x: clip;
+
+  margin-block: 0;
+
+  background-color: var(--nova-signal-bg);
+}
+
+.hero {
+  position: relative;
+
+  padding-block: 3rem 0;
+
+  text-align: center;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+
+  max-width: var(--nova-grid-container-max);
+  margin-inline: auto;
+  padding-inline: var(--nova-grid-padding);
+}
+
+/**
+ * ============================
+ * Hero - Pulse Rings
+ * ============================
+ */
+
+.hero-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+
+  overflow: visible;
+  width: 0;
+  height: 0;
+
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 26rem;
+  height: 26rem;
+
+  background: radial-gradient(circle, var(--nova-signal-chrome-overlay) 0%, transparent 70%);
+
+  transform: translate(-50%, -50%);
+}
+
+.hero-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: 1px solid color-mix(in srgb, var(--nova-color-primary-500), transparent 45%);
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%) scale(0.4);
+  animation: signalRingPulse 3s var(--nova-motion-easing) infinite;
+}
+
+[data-theme="dark"] .hero-ring {
+  border-color: color-mix(in srgb, var(--nova-color-primary-500), transparent 35%);
+}
+
+.hero-ring-one {
+  width: 9rem;
+  height: 9rem;
+  animation-delay: 0s;
+}
+
+.hero-ring-two {
+  width: 12.5rem;
+  height: 12.5rem;
+  border-color: color-mix(in srgb, var(--nova-color-primary-500), transparent 58%);
+  animation-delay: 0.75s;
+}
+
+.hero-ring-three {
+  width: 16rem;
+  height: 16rem;
+  border-color: color-mix(in srgb, var(--nova-color-primary-500), transparent 70%);
+  animation-delay: 1.5s;
+}
+
+.hero-ring-four {
+  width: 19.5rem;
+  height: 19.5rem;
+  border-color: color-mix(in srgb, var(--nova-color-primary-500), transparent 82%);
+  animation-delay: 2.25s;
+}
+
+.hero-origin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 0.75rem;
+  height: 0.75rem;
+
+  background-color: color-mix(in srgb, var(--nova-color-primary-500), transparent 60%);
+  border-radius: var(--nova-signal-radius-sharp);
+
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/**
+ * ============================
+ * Hero - Content
+ * ============================
+ */
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  margin-bottom: 0.625rem;
+
+  font-family: var(--nova-font-code);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nova-color-accent-600);
+}
+
+[data-theme="dark"] .hero-eyebrow {
+  color: var(--nova-color-accent-400);
+}
+
+.hero-heading {
+  max-width: 26rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+
+  font-family: var(--nova-font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--nova-color-text);
+
+  border: none;
+}
+
+.hero-tagline {
+  max-width: 30rem;
+  margin: 0 0 1.5rem;
+
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--nova-color-text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/**
+ * ============================
+ * Hero - Responsive
+ * ============================
+ */
+
+@media (min-width: 480px) {
+  .hero-actions {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: 4.5rem 0;
+  }
+
+  .hero-glow {
+    width: 34rem;
+    height: 34rem;
+  }
+
+  .hero-ring-one {
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .hero-ring-two {
+    width: 15.5rem;
+    height: 15.5rem;
+  }
+
+  .hero-ring-three {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .hero-ring-four {
+    width: 24.5rem;
+    height: 24.5rem;
+  }
+
+  .hero-heading {
+    max-width: 34rem;
+    font-size: 2.5rem;
+  }
+
+  .hero-tagline {
+    max-width: 36rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: 5.5rem 0;
+  }
+
+  .hero-glow {
+    width: 40rem;
+    height: 40rem;
+  }
+
+  .hero-ring-one {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .hero-ring-two {
+    width: 18.5rem;
+    height: 18.5rem;
+  }
+
+  .hero-ring-three {
+    width: 24rem;
+    height: 24rem;
+  }
+
+  .hero-ring-four {
+    width: 29.5rem;
+    height: 29.5rem;
+  }
+
+  .hero-heading {
+    font-size: 3rem;
+  }
+}
+
+/**
+ * ============================
+ * Hero - Keyframes
+ * ============================
+ */
+
+@keyframes signalRingPulse {
+  0% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.hero-install-strip {
+  position: relative;
+  z-index: 1;
+
+  margin-block: 0;
+  padding-top: var(--nova-section-gap);
+}
+
+.canvas-showcase {
+  padding: 3rem 0;
+
+  text-align: center;
+}
+
+.canvas-showcase-description {
+  max-width: 40rem;
+  margin: 1rem auto 0;
+
+  line-height: 1.7;
+}

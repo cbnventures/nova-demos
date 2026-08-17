@@ -1,16 +1,19 @@
 import {
   AppMarketDownload,
   BlogPreview,
+  Canvas,
   Features,
-  Hero,
   InstallStrip,
   Spotlight,
   Stats,
 } from '@cbnventures/docusaurus-preset-nova/blocks';
 
 import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
+
+import styles from './index.module.css';
 
 /**
  * Pages - Home.
@@ -39,37 +42,86 @@ function Home() {
           })}
         </title>
       </Head>
-      <Hero
-        eyebrow={translate({
-          id: 'home.hero.eyebrow',
-          message: 'Integration Infrastructure',
-          description: 'Front page hero eyebrow above the heading',
-        })}
-        heading={translate({
-          id: 'home.hero.heading',
-          message: 'Messages arrive. That is the entire product.',
-          description: 'Front page hero main heading',
-        })}
-        tagline={translate({
-          id: 'home.hero.tagline',
-          message: 'Envoy translates between systems that were never designed to understand each other. No shared format. No shared protocol. Just delivery.',
-          description: 'Front page hero tagline beneath the heading',
-        })}
-        ctaLabel={translate({
-          id: 'home.hero.ctaLabel',
-          message: 'Read the Docs',
-          description: 'Front page hero primary call-to-action button label',
-        })}
-        ctaLink="/docs/overview/"
-        secondaryCtaLabel={translate({
-          id: 'home.hero.secondaryCtaLabel',
-          message: 'View on Threadbare',
-          description: 'Front page hero secondary call-to-action button label',
-        })}
-        secondaryCtaLink="https://nova.cbnventures.io"
-      />
+      <Canvas container="full" surface="default" className={styles['hero']}>
+        <div className={styles['heroInner']}>
+          <div className={styles['heroGrid']}>
+            <div className={styles['heroContent']}>
+              <p className={styles['heroEyebrow']}>
+                {translate({
+                  id: 'home.hero.eyebrow',
+                  message: 'Integration Infrastructure',
+                  description: 'Front page hero eyebrow above the heading',
+                })}
+              </p>
+              <h1 className={styles['heroHeading']}>
+                {translate({
+                  id: 'home.hero.heading',
+                  message: 'Messages arrive. That is the entire product.',
+                  description: 'Front page hero main heading',
+                })}
+              </h1>
+              <p className={styles['heroTagline']}>
+                {translate({
+                  id: 'home.hero.tagline',
+                  message: 'Envoy translates between systems that were never designed to understand each other. No shared format. No shared protocol. Just delivery.',
+                  description: 'Front page hero tagline beneath the heading',
+                })}
+              </p>
+              <div className={styles['heroActions']}>
+                <Link className="nova-cta-primary" to="/docs/overview/">
+                  {translate({
+                    id: 'home.hero.ctaLabel',
+                    message: 'Read the Docs',
+                    description: 'Front page hero primary call-to-action button label',
+                  })}
+                </Link>
+                <Link className="nova-cta-secondary" to="https://nova.cbnventures.io">
+                  {translate({
+                    id: 'home.hero.secondaryCtaLabel',
+                    message: 'View on Threadbare',
+                    description: 'Front page hero secondary call-to-action button label',
+                  })}
+                </Link>
+              </div>
+            </div>
+            <div className={styles['heroPreview']}>
+              <div className={styles['heroPreviewChrome']}>
+                <span className={styles['heroPreviewDot']} aria-hidden="true" />
+                <span className={styles['heroPreviewDot']} aria-hidden="true" />
+                <span className={styles['heroPreviewDot']} aria-hidden="true" />
+                <span>
+                  {translate({
+                    id: 'home.hero.preview.label',
+                    message: 'relay.log',
+                    description: 'Front page hero code preview panel window label',
+                  })}
+                </span>
+              </div>
+              <pre className={styles['heroPreviewCode']}>
+                {[
+                  '# Inbound webhook',
+                  '{',
+                  '  "event": "payment.failed",',
+                  '  "customer": "cus_8fK2mN",',
+                  '  "amount_due": 4800',
+                  '}',
+                  '',
+                  '# Parcel rewrites, Cipher verifies, Dispatch routes',
+                  '{',
+                  '  "channel": "#billing-alerts",',
+                  '  "text": "Payment failed — cus_8fK2mN — $48.00",',
+                  '  "priority": 4',
+                  '}',
+                  '',
+                  '# Delivered in 2.8ms. Courier confirms receipt.',
+                ].join('\n')}
+              </pre>
+            </div>
+          </div>
+          <InstallStrip command="vial pull envoy" copyTarget="block" className={styles['heroInstallStrip']} />
+        </div>
+      </Canvas>
       <main>
-        <InstallStrip command="vial pull envoy" copyTarget="block" />
         <Features
           items={[
             {
@@ -197,6 +249,24 @@ function Home() {
             },
           ]}
         />
+        <Canvas container="contained" surface="default">
+          <div className={styles['canvasShowcase']}>
+            <h2>
+              {translate({
+                id: 'home.canvas.heading',
+                message: 'Built for the Last Mile',
+                description: 'Front page Canvas section heading',
+              })}
+            </h2>
+            <p className={styles['canvasShowcaseDescription']}>
+              {translate({
+                id: 'home.canvas.description',
+                message: 'Envoy handles the part nobody wants to build — the translation layer between systems that refuse to agree on anything. Format, protocol, schema. Envoy negotiates all of it.',
+                description: 'Front page Canvas section description',
+              })}
+            </p>
+          </div>
+        </Canvas>
         <Spotlight
           surface="alt"
           heading={translate({

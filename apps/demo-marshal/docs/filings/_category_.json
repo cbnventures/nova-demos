@@ -5,6 +5,6 @@
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "description": "How Marshal acts on requests — sealed policies for stale issues, overdue PRs, and tier-aware support, with every incoming request classified into sponsor, contributor, or public on receipt."
+    "description": "Filing sealed policies for stale issues, overdue PRs, and tier-aware support — every incoming request classified into sponsor, contributor, or public on receipt."
   }
 }

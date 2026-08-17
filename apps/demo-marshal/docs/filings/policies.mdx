@@ -1,29 +1,31 @@
 ---
 title: "Policies"
 sidebar_position: 1
-description: "Policies are sealed rules that define how Marshal handles a class of repository events, from stale issues and overdue PRs to tiered support."
+description: "Covers policies, the sealed rules that tell Marshal how to handle a class of repository events, from stale issues and overdue PRs to tiered support."
 tags:
   - "filings"
   - "policies"
 ---
 
+import { Terminology } from '@cbnventures/docusaurus-preset-nova/blocks';
+
 # Policies
 
-A policy is a written rule about how Marshal handles a class of events on a repository — stale issues, overdue PRs, support requests by tier, scheduled handovers.
+A <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> is a written rule about how <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> handles a class of events on a repository — stale issues, overdue PRs, support requests by tier, scheduled handovers.
 
 ## Default policies
 
-- **Thread archival** — close and seal threads inactive for N days
-- **Access tiers** — route incoming work by sponsor / contributor / public
-- **Scheduled stewardship** — run cleanups, audits, and rollovers on a cron
-- **Stamp ledger** — every Marshal action records its own line in the public record
+- **Thread archival** — close and <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">seal</Terminology> threads inactive for N days
+- **<Terminology title="Sponsor, Contributor, or Public classification on a request" to="/docs/terminology#access-tier">Access tiers</Terminology>** — route incoming work by sponsor / contributor / public
+- **Scheduled <Terminology title="Marshal's scheduled maintenance run without manual work" to="/docs/terminology#stewardship">stewardship</Terminology>** — run cleanups, audits, and rollovers on a cron
+- **<Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">Stamp</Terminology> <Terminology title="Org-wide record joining every repository's docket" to="/docs/terminology#ledger">ledger</Terminology>** — every <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> action records its own line in the public record
 
 ## Filing a policy
 
-Each policy is a YAML block, signed at the bottom, filed by Marshal at the top of the next hour. Marshal reads only what is filed and stamps only what is sealed.
+Each <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology> is a YAML block, signed at the bottom, <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filed</Terminology> by <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> at the top of the next hour. <Terminology title="Automated repository governance system filing and sealing policies" to="/docs/terminology#marshal">Marshal</Terminology> reads only what is <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filed</Terminology> and <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamps</Terminology> only what is <Terminology title="Marshal's closing mark once a condition is met" to="/docs/terminology#seal">sealed</Terminology>.
 
 ## Next Steps
 
-- [Dockets](/docs/dockets/overview/) — Where filed policies leave their stamps.
-- [Access Tiers](/docs/filings/access-tiers/) — Tier-based routing as a policy.
-- [Multi-Repository](/docs/stewardship/multi-repo/) — Filing policies across many repositories.
+- [Dockets](/docs/dockets/overview/) — Where <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">filed</Terminology> <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policies</Terminology> leave their <Terminology title="Mark Marshal leaves each time it acts" to="/docs/terminology#stamp">stamps</Terminology>.
+- [Access Tiers](/docs/filings/access-tiers/) — Tier-based routing as a <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policy</Terminology>.
+- [Multi-Repository](/docs/stewardship/multi-repo/) — <Terminology title="Submitting a policy or job to Marshal's docket" to="/docs/terminology#filing">Filing</Terminology> <Terminology title="Sealed rule telling Marshal how to handle events" to="/docs/terminology#policy">policies</Terminology> across many repositories.

@@ -5,6 +5,6 @@
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "description": "How Foundry models a build — the `.grain` workspace manifest, the Tongs dependency graph, the Anvil content-addressed cache, and Crucible incremental re-runs."
+    "description": "Modeling a Foundry build — the `.grain` workspace manifest, the Tongs dependency graph, the Quench content-addressed cache, and Crucible incremental re-runs."
   }
 }
