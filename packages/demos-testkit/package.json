@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@cbnventures/docusaurus-preset-nova": "0.25.0",
-    "@cbnventures/nova": "0.24.0",
+    "@cbnventures/nova": "0.25.0",
     "@types/node": "24.9.1",
     "eslint": "9.39.3",
     "glob": "13.0.6",
