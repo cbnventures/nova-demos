@@ -1,5 +1,10 @@
 # demo-foundry
 
+## 2026.8.2
+
+### UPDATED
+- Updated @cbnventures/nova to 0.25.0 and @cbnventures/docusaurus-preset-nova to 0.25.0.
+
 ## 2026.8.1
 
 ### ADDED
