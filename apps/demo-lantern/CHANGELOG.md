@@ -1,5 +1,13 @@
 # demo-lantern
 
+## 2026.8.3
+
+### UPDATED
+- Bumped @cbnventures/nova and @cbnventures/docusaurus-preset-nova from 0.25.0 to 0.25.1
+
+### FIXED
+- Standardized double hyphens to em dashes in the Three modes for three weather patterns blog post description frontmatter
+
 ## 2026.8.2
 
 ### UPDATED

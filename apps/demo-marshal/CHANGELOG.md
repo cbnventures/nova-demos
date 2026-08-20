@@ -1,5 +1,13 @@
 # demo-marshal
 
+## 2026.8.3
+
+### UPDATED
+- Bumped @cbnventures/nova and @cbnventures/docusaurus-preset-nova from 0.25.0 to 0.25.1
+
+### FIXED
+- Standardized double hyphens to em dashes in blog post description frontmatter for The docket that learned to read its own entries, Stamps as commit messages, and Three tiers of support one queue one clerk
+
 ## 2026.8.2
 
 ### UPDATED
