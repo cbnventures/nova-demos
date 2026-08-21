@@ -387,10 +387,6 @@
     "message": "История датчиков",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "Манифест",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (с кодом)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -598,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} мин. чтения|{readingTime} мин. чтения|{readingTime} мин. чтения",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (сначала новые)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Последнее с вахты",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (сначала старые)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Из архива",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (цветной и со ссылкой)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Термин также может нести акцентный цвет и ссылаться прямо на свою справочную страницу. Каждый датчик принадлежит ровно одной ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "именованная комната, коридор или наружная группа",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "зоне",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", поэтому постановка дома на охрану никогда не оставит коридор наблюдать в одиночку.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (альтернативная поверхность)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Почему Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Датчики умного дома создают шум. Lantern превращает этот шум в состояние, учитывающее зоны, которое сохраняется при перезагрузках, циклах питания и обновлениях прошивки.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99,97% времени работы",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 слепых зон",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "Видимость без шума",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern выводит на поверхность важные сигналы и отфильтровывает остальное. Структурированные логи, контекстные оповещения и хронологии инцидентов — всё из одного коллектора.",
+    "description": "Front page Canvas section description"
   }
 }

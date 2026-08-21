@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} منٹ کا مطالعہ",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (تازہ ترین پہلے)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "تازہ ترین دستاویزات",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (پرانے پہلے)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "محفوظات سے",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگین اور مُربوط)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "ایک اصطلاح تاکیدی رنگ بھی لے سکتی ہے اور براہ راست اپنے حوالہ صفحے سے جُڑ سکتی ہے۔ ہر کی گئی کارروائی ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "ہر کی گئی کارروائی کا صرف-اضافہ عوامی ریکارڈ",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "روزنامچہ",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " میں درج ہوتی ہے، تاکہ کسی بھی فیصلے کا ہمیشہ اس پالیسی تک پتہ لگایا جا سکے جس نے اسے مجاز کیا۔",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (متبادل سطح)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Marshal کیوں",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "کمیونٹی گورننس اعتماد اور شفافیت پر چلتی ہے۔ Marshal غیر منظم اعتدال کو ایک پالیسی فائل سے بدلتا ہے جو ہر کارروائی کو صرف-اضافہ روزنامچے میں مہر لگاتا ہے۔",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "کسی بھی ٹوپولوجی سے نظم",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal تقسیم شدہ خدمات کی ہم آہنگی کرتا ہے جو کچھ بھی مشترک نہیں رکھتیں — نہ مشترک گھڑی، نہ مشترک حالت، نہ متفقہ پروٹوکول۔ سمجھوتے کے بغیر اتفاقِ رائے۔",
+    "description": "Front page Canvas section description"
   }
 }

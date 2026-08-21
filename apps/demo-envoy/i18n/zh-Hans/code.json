@@ -515,8 +515,60 @@
     "message": "AppMarketDownload（无标签）",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
   },
-  "theme.footer.copyright": {
-    "message": "版权所有 © 2025-2026 CBN Ventures LLC。保留所有权利。",
-    "description": "Footer copyright text. The {copyright} placeholder receives the consumer's themeConfig.footer.copyright value as the source-locale fallback; per-locale overrides in i18n code.json usually inline their own text."
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} 分钟阅读",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview（最新优先）",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Relay Room 最新消息",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview（最早优先）",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "来自归档",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology（彩色并带链接）",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "术语也可以携带强调色并直接链接到其参考页面。每个 relay 限定于一个",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "命名的交付目标",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "，因此错误路由的负载永远不会离开声明它的管道。",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight（替代表面）",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "为什么选择 Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "每个集成层都以相同的方式开始 — 一个调用端点的脚本。Envoy 用一个版本控制、可审计、可重放的 relay 清单替代了这种模式。不再有不可见的胶水代码。",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "为最后一英里而生",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy 处理没有人想构建的那个部分 — 在拒绝就任何事达成一致的系统之间充当翻译层。格式、协议、模式，Envoy 全部搞定。",
+    "description": "Front page Canvas section description"
   }
 }

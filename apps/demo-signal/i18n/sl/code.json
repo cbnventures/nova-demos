@@ -514,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min branja",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (najnovejši najprej)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Najnovejša poročila",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (najstarejši najprej)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Iz arhiva",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (barvno in povezano)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Izraz lahko nosi tudi poudarjeno barvo in neposredno povezuje na svojo referenčno stran. Vsaka kampanja se meri prek svojega ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "brendiran atribucijski link",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", tako da je klik mogoče izslediti do izvora še dolgo po koncu kampanje.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternativna površina)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Zakaj Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Atribucija odpove, ko je odvisna od poizvedovalnih parametrov, ki se odstranijo, ali glav referrerja, ki izginejo. Signal vgradi metapodatke v samo povezavo — brez sledilnih pikslov, brez skript na strani.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "En dogodek. Vsak naročnik.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal oddaja dogodke vsakemu naročniku v realnem času — webhooki, čakalne vrste in tokovi. Razširjanje brez sklopitve. Dostava brez anketiranja.",
+    "description": "Front page Canvas section description"
   }
 }

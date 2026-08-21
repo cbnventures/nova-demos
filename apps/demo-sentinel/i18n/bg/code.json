@@ -506,5 +506,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} мин четене",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (най-новите първо)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Последни съобщения",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (най-старите първо)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "От архива",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (цветен и с връзка)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Термин може да носи и акцентния цвят и да води директно към справочната си страница. Всяка заявка се оценява спрямо ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "декларация за контрол на достъпа",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "политика за доверие",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", така че нерегистрирано устройство бива отказано, преди изобщо да достигне вътрешна услуга.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (алтернативна повърхност)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Защо Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Периметровата сигурност предполага наличието на граница. Sentinel оценява доверието непрекъснато — всяко устройство, всяка сесия, на всеки 90 секунди — и отнема достъпа в момента, в който нивото на сигурност спадне.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Периметърът наблюдава себе си",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel наблюдава модели на достъп, маркира аномалии и прилага политики — непрекъснато, без човешки преглед. Всяка заявка — оценена. Всяко отклонение — записано.",
+    "description": "Front page Canvas section description"
   }
 }

@@ -519,6 +519,62 @@
     "message": "AppMarketDownload (بدون تسمية)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
   },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "الأحدث من المصهر",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "من الأرشيف",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "يمكن للمصطلح أيضًا أن يحمل لون التمييز ويرتبط مباشرة بصفحته المرجعية. كل بناء يبدأ من ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "عملية توليد الإعداد",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "صياغة",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "، لذا لا يمكن لمساحتي عمل مبنيتين من نفس المانيفست أن تتباعدا أبدًا.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "لماذا Foundry",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "ملفات الإعداد تتكاثر. يستبدلها Foundry بمانيفست واحد يولّد كل مخرج بشكل حتمي. نفس المدخلات، نفس المخرجات، في كل مرة.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "من النية إلى البنية التحتية",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "يقرأ Foundry مانيفست واحدًا وينتج بيئة كاملة — أدوات فحص الكود والتنسيق وأُطر الاختبار وأهداف النشر. ملف واحد. كل أداة.",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (الأحدث أولاً)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (الأقدم أولاً)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (ملوّن ومرتبط)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (سطح بديل)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
   "theme.blog.author.noPosts": {
     "message": "لم يكتب هذا المؤلّف أيّ منشورات بعد.",
     "description": "The text for authors with 0 blog post"
@@ -538,5 +594,9 @@
   "theme.footer.copyright": {
     "message": "حقوق النشر © 2025-2026 CBN Ventures LLC. جميع الحقوق محفوظة.",
     "description": "Footer copyright text. The {copyright} placeholder receives the consumer's themeConfig.footer.copyright value as the source-locale fallback; per-locale overrides in i18n code.json usually inline their own text."
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} دقيقة للقراءة",
+    "description": "The label showing estimated reading time for a blog post"
   }
 }

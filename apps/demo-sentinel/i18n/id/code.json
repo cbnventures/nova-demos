@@ -502,5 +502,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} menit baca",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (terbaru lebih dulu)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Peringatan Terbaru",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (terlama lebih dulu)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Dari Arsip",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (berwarna dan tertaut)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Istilah juga dapat membawa warna aksen dan menautkan langsung ke halaman referensinya. Setiap permintaan dievaluasi terhadap ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "deklarasi kontrol akses",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "kebijakan kepercayaan",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " sehingga perangkat yang tidak terdaftar ditolak sebelum mencapai layanan internal mana pun.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (permukaan alternatif)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Mengapa Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Keamanan perimeter mengasumsikan adanya batas. Sentinel mengevaluasi kepercayaan secara terus-menerus — setiap perangkat, setiap sesi, setiap 90 detik — dan mencabut akses saat tingkat keamanan menurun.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Perimeter Mengawasi Dirinya Sendiri",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel memantau pola akses, menandai anomali, dan menegakkan kebijakan — secara terus-menerus, tanpa tinjauan manusia. Setiap permintaan dinilai. Setiap penyimpangan dicatat.",
+    "description": "Front page Canvas section description"
   }
 }

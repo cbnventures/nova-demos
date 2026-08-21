@@ -638,5 +638,17 @@
   "showcase.spotlightAlt.description": {
     "message": "Every integration layer starts the same way — a script that calls an endpoint. Envoy replaces that pattern with a relay manifest that is version-controlled, auditable, and replayable. No more invisible glue code.",
     "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.preview.label": {
+    "message": "relay.log",
+    "description": "Front page hero code preview panel window label"
+  },
+  "home.canvas.heading": {
+    "message": "Built for the Last Mile",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy handles the part nobody wants to build — the translation layer between systems that refuse to agree on anything. Format, protocol, schema. Envoy negotiates all of it.",
+    "description": "Front page Canvas section description"
   }
 }

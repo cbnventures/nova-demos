@@ -127,6 +127,10 @@
     "message": "Hero（精簡）",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "找到信號。",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal 追蹤意圖如何流動——從初次曝光到最終轉換。不只是點了什麼，更是為什麼點，以及差點成真的那一步。",
     "description": "Showcase Hero (minimal) tagline"
@@ -522,5 +526,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "閱讀時間 {readingTime} 分鐘",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview（最新優先）",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "最新快報",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview（最早優先）",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "歷史存檔",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology（帶顏色和連結）",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "術語也可以帶有強調色並直接連結到其參考頁面。每個行銷活動都透過其",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "品牌歸因連結",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "來衡量，因此即使在行銷活動結束很久之後，點擊仍然可以追溯到其來源。",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight（替代外觀）",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "為何選擇 Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "當歸因依賴被移除的查詢參數或消失的 referrer 標頭時，它就會失效。Signal 將中繼資料嵌入連結本身——不需要追蹤像素，不需要頁面端指令碼。",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "一個事件。每個訂閱者。",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal 即時向每個訂閱者廣播事件——Webhook、佇列和串流。無耦合扇出。無輪詢交付。",
+    "description": "Front page Canvas section description"
   }
 }

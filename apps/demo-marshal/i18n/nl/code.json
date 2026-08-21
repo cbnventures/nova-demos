@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min leestijd",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (nieuwste eerst)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Nieuwste dossiers",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (oudste eerst)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Uit het archief",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (gekleurd en gelinkt)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Een term kan ook de accentkleur dragen en direct linken naar de bijbehorende referentiepagina. Elke uitgevoerde handeling belandt in het ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "uitsluitend aanvullend openbaar register van elke uitgevoerde handeling",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "register",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", zodat elke beslissing altijd kan worden teruggevoerd naar het beleid dat deze heeft geautoriseerd.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatief oppervlak)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Waarom Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Gemeenschapsbestuur draait op vertrouwen en transparantie. Marshal vervangt ad-hocmoderatie door een beleidsbestand dat elke handeling in een uitsluitend aanvullend register stempelt.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Orde uit elke topologie",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal coördineert gedistribueerde diensten die niets delen — geen gemeenschappelijke klok, geen gedeelde toestand, geen overeengekomen protocol. Consensus zonder compromis.",
+    "description": "Front page Canvas section description"
   }
 }

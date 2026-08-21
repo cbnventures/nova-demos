@@ -518,5 +518,65 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (بغیر لیبل)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "بھٹی سے تازہ ترین",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "محفوظات سے",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "ایک اصطلاح ایکسنٹ رنگ بھی لے سکتی ہے اور براہ راست اپنے حوالہ صفحے سے لنک کر سکتی ہے۔ ہر تعمیر ایک واحد ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "کنفیگریشن بنانے کا عمل",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "ڈھلائی",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " سے شروع ہوتی ہے، اس لیے ایک ہی بیان سے بنائے گئے دو ورک اسپیس کبھی الگ نہیں ہو سکتے۔",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Foundry کیوں",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "کنفیگریشن فائلیں بڑھتی جاتی ہیں۔ Foundry انہیں ایک واحد بیان سے بدل دیتا ہے جو ہر نتیجہ یقینی طور پر تیار کرتا ہے۔ وہی ان پٹ، وہی آؤٹ پٹ، ہر بار۔",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "ارادے سے بنیادی ڈھانچے تک",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry ایک واحد بیان پڑھتا ہے اور مکمل ماحول تیار کرتا ہے — لنٹرز، فارمیٹرز، ٹیسٹ فریم ورک، تعیناتی اہداف۔ ایک فائل۔ ہر آلہ۔",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (نئے پہلے)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (پرانے پہلے)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگین اور لنک شدہ)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (متبادل سطح)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} منٹ کی پڑھائی",
+    "description": "The label showing estimated reading time for a blog post"
   }
 }

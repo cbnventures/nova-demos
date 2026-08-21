@@ -646,5 +646,13 @@
   "showcase.spotlightAlt.description": {
     "message": "Attribution breaks when it depends on query parameters that get stripped or referrer headers that disappear. Signal embeds the metadata in the link itself — no tracking pixels, no page-side scripts.",
     "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "One Event. Every Subscriber.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal broadcasts events to every subscriber in real time — webhooks, queues, and streams. Fan-out without coupling. Delivery without polling.",
+    "description": "Front page Canvas section description"
   }
 }

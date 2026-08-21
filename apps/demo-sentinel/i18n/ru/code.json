@@ -506,5 +506,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} мин. чтения|{readingTime} мин. чтения|{readingTime} мин. чтения",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (сначала новые)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Последние уведомления",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (сначала старые)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Из архива",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (цветной и со ссылкой)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Термин также может нести акцентный цвет и ссылаться напрямую на свою справочную страницу. Каждый запрос оценивается на основе ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "декларация управления доступом",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "политика доверия",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", поэтому незарегистрированное устройство отклоняется ещё до того, как оно достигнет внутреннего сервиса.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (альтернативная поверхность)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Почему Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Периметровая безопасность предполагает наличие границы. Sentinel оценивает доверие непрерывно — каждое устройство, каждый сеанс, каждые 90 секунд — и отзывает доступ в тот момент, когда уровень безопасности падает.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Периметр следит за собой",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel отслеживает шаблоны доступа, выявляет аномалии и применяет политики — непрерывно, без участия человека. Каждый запрос оценён. Каждое отклонение зафиксировано.",
+    "description": "Front page Canvas section description"
   }
 }

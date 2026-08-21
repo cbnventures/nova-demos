@@ -147,6 +147,10 @@
     "message": "Se på Threadbare",
     "description": "Showcase Hero (full) secondary CTA button label"
   },
+  "showcase.item.heroMinimal.title": {
+    "message": "Hero (minimalistisk)",
+    "description": "Showcase item title for Hero (minimal variant)"
+  },
   "showcase.heroMinimal.heading": {
     "message": "Arkivert, forseglet, automatisert.",
     "description": "Showcase Hero (minimal) main heading"
@@ -594,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min lesing",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (nyeste først)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Siste innføringer",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (eldste først)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Fra arkivet",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (farget og lenket)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Et begrep kan også bære aksentfargen og lenke direkte til sin referanseside. Enhver utført handling havner i ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "offentlig journal som kun tilføyes, over hver handling som utføres",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "journalen",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", slik at enhver beslutning alltid kan spores tilbake til policyen som autoriserte den.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternativ overflate)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Hvorfor Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Fellesskapsforvaltning bygger på tillit og åpenhet. Marshal erstatter ad hoc-moderering med en policy-fil som stempler enhver handling i en journal som kun tilføyes.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Orden fra enhver topologi",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal koordinerer distribuerte tjenester som ikke deler noe — ingen felles klokke, ingen delt tilstand, ingen avtalt protokoll. Konsensus uten kompromiss.",
+    "description": "Front page Canvas section description"
   }
 }

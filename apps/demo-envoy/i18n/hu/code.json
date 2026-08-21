@@ -502,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (címke nélkül)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} perc olvasás",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (legújabb elöl)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "A legújabb a Relay Room-ból",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (legrégebbi elöl)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Az archívumból",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (színes és linkelt)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Egy kifejezés hordozhatja a kiemelés színét is, és közvetlenül hivatkozhat a referencia oldalára. Minden relay egyetlen ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "elnevezett kézbesítési célpont",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "-ra korlátozódik, így egy tévesen irányított adatcsomag soha nem hagyja el azt a pipeline-t, amelyben deklarálták.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatív felület)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Miért Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Minden integrációs réteg ugyanúgy kezdődik — egy szkript, ami meghív egy végpontot. Envoy ezt a mintát egy relay manifestával váltja fel, ami verziókezelt, auditálható és újrajátszható. Többé nincs láthatatlan ragasztókód.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Az utolsó mérföldre építve",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy azt a részt kezeli, amit senki nem akar megépíteni — a fordítási réteget olyan rendszerek között, amelyek semmiben nem hajlandók megegyezni. Formátum, protokoll, séma. Envoy mindent letárgyal.",
+    "description": "Front page Canvas section description"
   }
 }

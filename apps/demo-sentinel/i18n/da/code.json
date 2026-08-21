@@ -502,5 +502,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min. læsning",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (nyeste først)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Seneste meddelelser",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (ældste først)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Fra arkivet",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (farvet og med link)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Et begreb kan også bære accentfarven og linke direkte til sin referenceside. Hver forespørgsel evalueres mod en ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "adgangskontrolerklæring",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "tillidspolitik",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", så en ikke-registreret enhed afvises, før den nogensinde når en intern tjeneste.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternativ overflade)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Hvorfor Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Perimetersikkerhed forudsætter, at en grænse eksisterer. Sentinel evaluerer tillid kontinuerligt — hver enhed, hver session, hvert 90. sekund — og tilbagekalder adgang i det øjeblik, sikkerhedsniveauet falder.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Perimeteren overvåger sig selv",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel overvåger adgangsmønstre, markerer anomalier og håndhæver politikker — kontinuerligt, uden menneskelig gennemgang. Hver forespørgsel bedømt. Hver afvigelse registreret.",
+    "description": "Front page Canvas section description"
   }
 }

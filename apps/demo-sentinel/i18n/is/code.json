@@ -506,5 +506,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} mín. lestur",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (nýjast fyrst)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Nýjustu tilkynningar",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (elst fyrst)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Úr safninu",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (litað og tengt)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Hugtak getur einnig borið áherslulit og tengt beint á viðmiðunarsíðu sína. Sérhver beiðni er metin gegn ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "aðgangsstýringaryfirlýsing",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "traustsregla",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", þannig að óskráðu tæki er hafnað áður en það nær innri þjónustu.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (önnur yfirborð)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Hvers vegna Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Jaðaröryggi gerir ráð fyrir að mörk séu til staðar. Sentinel metur traust stöðugt — hvert tæki, hverja lotu, á 90 sekúndna fresti — og afturkallar aðgang um leið og öryggisstig lækkar.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Jaðarinn fylgist með sjálfum sér",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel fylgist með aðgangsmynstrum, merkir frávik og framfylgir reglum — stöðugt, án mannlegrar yfirferðar. Sérhver beiðni metin. Sérhvert frávik skráð.",
+    "description": "Front page Canvas section description"
   }
 }

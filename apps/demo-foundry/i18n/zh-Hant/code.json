@@ -531,6 +531,62 @@
     "message": "AppMarketDownload（無標籤）",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
   },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "鍛造廠最新消息",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "從檔案庫中",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "術語也可以帶有強調色並直接連結到其參考頁面。每次建置都從一個",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "設定產生流程",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "鍛造",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "開始，因此從同一宣告檔建置的兩個工作區永遠不會產生差異。",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "為什麼選擇 Foundry",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "設定檔會不斷增多。Foundry 以一份宣告檔取而代之，確定性地產生每個產物。相同的輸入，相同的輸出，每一次。",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "從意圖到基礎設施",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry 讀取一份宣告檔，產生完整的環境——程式碼檢查器、格式化工具、測試框架、部署目標。一個檔案，所有工具。",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview（最新優先）",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview（最舊優先）",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology（彩色且帶連結）",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight（替代外觀）",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} 分鐘閱讀",
     "description": "The label showing estimated reading time for a blog post"

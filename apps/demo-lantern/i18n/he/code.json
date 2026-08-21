@@ -387,10 +387,6 @@
     "message": "היסטוריית חיישנים",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "מניפסט",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (עם קוד)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -598,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} דקות קריאה",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (החדשים ביותר ראשונים)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "החדש ביותר מהמשמרת",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (הישנים ביותר ראשונים)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "מהארכיון",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (צבעוני ומקושר)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "מונח יכול גם לשאת את צבע ההדגשה ולקשר ישירות לדף ההפניה שלו. כל חיישן שייך בדיוק ל",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "חדר, מסדרון או קבוצה חיצונית בעלי שם",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "אזור",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " אחד, כך שהפעלת המערכת לעולם לא משאירה מסדרון משגיח לבדו.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (משטח חלופי)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "למה Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "חיישני בית חכם מייצרים רעש. Lantern הופך את הרעש הזה למצב מודע לאזורים שנשמר לאורך הפעלות מחדש, מחזורי חשמל ועדכוני קושחה.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99.97% זמן פעולה",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 נקודות עיוורות",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "נראות ללא רעש",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern מציף את האותות החשובים ומסנן את השאר. לוגים מובנים, התראות הקשריות וצירי זמן של אירועים — הכל ממאסף יחיד.",
+    "description": "Front page Canvas section description"
   }
 }

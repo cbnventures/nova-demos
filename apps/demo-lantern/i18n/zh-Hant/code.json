@@ -399,10 +399,6 @@
     "message": "感測器紀錄",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "資訊清單",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight（含程式碼）",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -610,5 +606,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} 分鐘閱讀",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview（最新優先）",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "來自守望的最新動態",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview（最舊優先）",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "來自存檔",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology（彩色且帶連結）",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "術語也可以帶有強調色並直接連結到其參考頁面。每個感測器恰好屬於一個",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "已命名的房間、走廊或室外分組",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "區域",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "，因此設防時不會有走廊獨自監控。",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight（替代表面）",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "為什麼選擇 Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "智慧家居感測器會產生雜訊。Lantern 將雜訊轉化為區域感知狀態，在重新啟動、電源循環和韌體更新後依然保留。",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99.97% 正常運行",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 盲區",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "無雜訊的可見性",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern 呈現重要訊號並過濾其餘內容。結構化日誌、情境告警和事件時間線 — 全部來自單一收集器。",
+    "description": "Front page Canvas section description"
   }
 }

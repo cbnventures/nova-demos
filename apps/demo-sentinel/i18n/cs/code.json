@@ -506,5 +506,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min čtení",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (nejnovější první)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Nejnovější upozornění",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (nejstarší první)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Z archivu",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (barevný a s odkazem)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Termín může nést i barevný akcent a odkazovat přímo na svou referenční stránku. Každý požadavek je vyhodnocen oproti ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "deklarace řízení přístupu",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "politika důvěry",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", takže neregistrované zařízení je odmítnuto dříve, než se dostane k interní službě.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternativní povrch)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Proč Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Perimetrové zabezpečení předpokládá existenci hranice. Sentinel vyhodnocuje důvěru průběžně — každé zařízení, každá relace, každých 90 sekund — a odebere přístup v okamžiku, kdy úroveň zabezpečení klesne.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Perimetr hlídá sám sebe",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel sleduje přístupové vzorce, označuje anomálie a prosazuje zásady — průběžně, bez lidské kontroly. Každý požadavek ohodnocen. Každá odchylka zaznamenána.",
+    "description": "Front page Canvas section description"
   }
 }

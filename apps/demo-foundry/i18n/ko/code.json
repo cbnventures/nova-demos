@@ -518,5 +518,65 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (라벨 없음)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "대장간 최신 소식",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "아카이브에서",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "용어에 강조 색상을 적용하고 참조 페이지로 바로 연결할 수도 있습니다. 모든 빌드는 하나의 ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "설정 생성 과정",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "벼리기",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "에서 시작되므로, 같은 매니페스트로 구축된 두 워크스페이스는 절대 어긋날 수 없습니다.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Foundry를 선택하는 이유",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "설정 파일은 계속 늘어납니다. Foundry는 이를 하나의 매니페스트로 대체하여 모든 산출물을 결정론적으로 생성합니다. 같은 입력, 같은 출력, 매번.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "의도에서 인프라까지",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry는 하나의 매니페스트를 읽고 완전한 환경을 생성합니다 — 린터, 포매터, 테스트 하네스, 배포 대상. 하나의 파일. 모든 도구.",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (최신순)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (오래된순)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (색상 및 링크 적용)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (대체 표면)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime}분 분량",
+    "description": "The label showing estimated reading time for a blog post"
   }
 }

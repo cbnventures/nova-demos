@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} мин читања",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (најновије прво)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Најновија подношења",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (најстарије прво)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Из архиве",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (обојен и повезан)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Термин може носити и боју нагласка и водити директно на своју референтну страницу. Свака предузета радња бележи се у ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "јавни записник у који се само уписује, за сваку предузету радњу",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "деловодник",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", тако да се свака одлука увек може пратити уназад до полисе која ју је одобрила.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (алтернативна површина)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Зашто Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Управљање заједницом почива на поверењу и транспарентности. Marshal замењује ad-hoc модерацију датотеком полиса која жигоше сваку радњу у деловодник у који се само уписује.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Ред из сваке топологије",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal координише дистрибуиране сервисе који не деле ништа — без заједничког часовника, без дељеног стања, без договореног протокола. Консензус без компромиса.",
+    "description": "Front page Canvas section description"
   }
 }

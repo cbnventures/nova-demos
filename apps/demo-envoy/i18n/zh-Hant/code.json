@@ -514,5 +514,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload（無標籤）",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} 分鐘閱讀",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview（最新優先）",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Relay Room 最新消息",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview（最早優先）",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "來自歸檔",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology（彩色並帶連結）",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "術語也可以攜帶強調色並直接連結到其參考頁面。每個 relay 限定於一個",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "命名的交付目標",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "，因此錯誤路由的負載永遠不會離開宣告它的管道。",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight（替代表面）",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "為什麼選擇 Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "每個整合層都以相同的方式開始 — 一個呼叫端點的腳本。Envoy 用一個版本控制、可稽核、可重播的 relay 清單取代了這種模式。不再有不可見的膠水程式碼。",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "為最後一哩路而生",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy 處理沒有人想建構的那個部分 — 在拒絕就任何事達成一致的系統之間充當翻譯層。格式、協議、綱要，Envoy 全部搞定。",
+    "description": "Front page Canvas section description"
   }
 }

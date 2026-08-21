@@ -63,6 +63,10 @@
     "message": "Mga link na natunton",
     "description": "Front page Stats label for links traced"
   },
+  "home.stats.uptime.label": {
+    "message": "Oras ng aktibidad",
+    "description": "Front page Stats label for uptime"
+  },
   "home.stats.regions.label": {
     "message": "Mga Rehiyon",
     "description": "Front page Stats label for regions"
@@ -122,6 +126,10 @@
   "showcase.item.heroMinimal.title": {
     "message": "Hero (payak)",
     "description": "Showcase item title for Hero (minimal variant)"
+  },
+  "showcase.heroMinimal.heading": {
+    "message": "Hanapin ang signal.",
+    "description": "Showcase Hero (minimal) main heading"
   },
   "showcase.heroMinimal.tagline": {
     "message": "Tinutunton ng Signal kung paano naglalakbay ang intensyon — mula sa unang impresyon hanggang sa huling aksyon. Hindi lang kung ano ang na-click. Kung bakit ito na-click. At kung ano ang muntik nang mangyari.",
@@ -282,6 +290,10 @@
   "showcase.statsFull.links.label": {
     "message": "Mga link na natunton",
     "description": "Showcase Stats (full) label for links traced"
+  },
+  "showcase.statsFull.uptime.label": {
+    "message": "SLA ng oras ng aktibidad",
+    "description": "Showcase Stats (full) label for uptime SLA"
   },
   "showcase.statsFull.regions.label": {
     "message": "Mga rehiyong sineserbisyuhan",
@@ -502,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} minutong pagbasa",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (pinakabago muna)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Mga Pinakabagong Dispatch",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (pinakaluma muna)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Mula sa Archive",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (may kulay at naka-link)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Ang isang termino ay maaari ring magdala ng accent na kulay at mag-link diretso sa reference page nito. Bawat campaign ay sinusukat sa pamamagitan ng ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "naka-brand na link ng atribusyon",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " nito, kaya ang isang pag-click ay maaaring ma-trace pabalik sa pinagmulan nito matagal na matapos ang campaign.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatibong ibabaw)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Bakit Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Nasisira ang attribution kapag umaasa ito sa mga query parameter na inaalis o referrer header na nawawala. Ini-embed ng Signal ang metadata sa mismong link — walang tracking pixel, walang page-side script.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Isang Event. Bawat Subscriber.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Nagbo-broadcast ang Signal ng mga event sa bawat subscriber sa real time — webhooks, queues, at streams. Fan-out nang walang coupling. Delivery nang walang polling.",
+    "description": "Front page Canvas section description"
   }
 }

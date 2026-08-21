@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min czytania",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (najnowsze najpierw)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Najnowsze wpisy",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (najstarsze najpierw)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Z archiwum",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (kolorowy i z odnośnikiem)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Termin może również nieść kolor akcentu i linkować bezpośrednio do swojej strony referencyjnej. Każde podjęte działanie jest rejestrowane w ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "jawny, wyłącznie dopisywany rejestr każdego podjętego działania",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "rejestrze",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", dzięki czemu każdą decyzję można zawsze prześledzić wstecz do zasad, które ją autoryzowały.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatywna powierzchnia)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Dlaczego Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Zarządzanie społecznością opiera się na zaufaniu i przejrzystości. Marshal zastępuje moderację ad hoc plikiem zasad, który stempluje każde działanie w jawnym rejestrze tylko do dopisywania.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Porządek z dowolnej topologii",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal koordynuje rozproszone usługi, które niczego nie współdzielą — żadnego wspólnego zegara, żadnego wspólnego stanu, żadnego uzgodnionego protokołu. Konsensus bez kompromisów.",
+    "description": "Front page Canvas section description"
   }
 }

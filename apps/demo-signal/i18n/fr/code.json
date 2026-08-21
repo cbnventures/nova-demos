@@ -514,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min de lecture",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (plus récents d'abord)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Dernières dépêches",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (plus anciens d'abord)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Depuis les archives",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (coloré et lié)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Un terme peut aussi porter la couleur d'accentuation et renvoyer directement à sa page de référence. Chaque campagne est mesurée à travers son ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "lien d'attribution de marque",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", de sorte qu'un clic puisse être retracé jusqu'à sa source longtemps après la fin de la campagne.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (surface alternative)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Pourquoi Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "L'attribution échoue quand elle dépend de paramètres de requête supprimés ou d'en-têtes de référent qui disparaissent. Signal intègre les métadonnées dans le lien lui-même — ni pixels de suivi, ni scripts côté page.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Un événement. Chaque abonné.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal diffuse les événements à chaque abonné en temps réel — webhooks, files d'attente et flux. Distribution sans couplage. Livraison sans interrogation.",
+    "description": "Front page Canvas section description"
   }
 }

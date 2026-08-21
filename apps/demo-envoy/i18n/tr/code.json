@@ -502,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (etiketsiz)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} dk okuma",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (en yeni önce)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Relay Room’dan En Yeniler",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (en eski önce)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Arşivden",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (renkli ve bağlantılı)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Bir terim aynı zamanda vurgu rengini taşıyabilir ve doğrudan referans sayfasına bağlanabilir. Her relay tek bir ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "adlandırılmış teslimat hedefi",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " ile sınırlandırılır, böylece yanlış yönlendirilen bir yük, tanımlandığı pipeline’ı asla terk etmez.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatif yüzey)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Neden Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Her entegrasyon katmanı aynı şekilde başlar — bir endpoint’i çağıran bir script. Envoy bu örüntüyü, sürüm kontrollü, denetlenebilir ve yeniden oynatılabilir bir relay manifestiyle değiştirir. Artık görünmez yapıştırıcı kod yok.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Son Adım İçin Üretildi",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy kimsenin inşa etmek istemediği kısmı üstlenir — hiçbir konuda anlaşmayı reddeden sistemler arasındaki çeviri katmanı. Format, protokol, şema. Envoy her şeyi müzakere eder.",
+    "description": "Front page Canvas section description"
   }
 }

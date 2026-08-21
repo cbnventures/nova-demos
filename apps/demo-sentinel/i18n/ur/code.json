@@ -506,5 +506,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} منٹ کا مطالعہ",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (تازہ ترین پہلے)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "تازہ ترین مشاورے",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (پرانے پہلے)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "آرکائیو سے",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگین اور لنک شدہ)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "ایک اصطلاح ایکسنٹ رنگ بھی رکھ سکتی ہے اور براہ راست اپنے حوالہ صفحے سے لنک ہو سکتی ہے۔ ہر درخواست کا جائزہ ایک ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "رسائی کنٹرول اعلامیہ",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "اعتماد کی پالیسی",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " کے خلاف جائزہ لیا جاتا ہے، اس لیے غیر اندراج شدہ ڈیوائس کسی بھی اندرونی سروس تک پہنچنے سے پہلے مسترد کر دی جاتی ہے۔",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (متبادل سطح)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Sentinel کیوں",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "محیطی سلامتی یہ فرض کرتی ہے کہ ایک حد موجود ہے۔ Sentinel مسلسل اعتماد کا جائزہ لیتا ہے — ہر ڈیوائس، ہر سیشن، ہر 90 سیکنڈ — اور سلامتی کی سطح گرنے پر فوراً رسائی منسوخ کر دیتا ہے۔",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "محیط خود اپنی نگرانی کرتا ہے",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel رسائی کے نمونوں کی نگرانی کرتا ہے، غیر معمولی سرگرمیوں کو نشان زد کرتا ہے، اور پالیسیاں نافذ کرتا ہے — مسلسل، بغیر انسانی جائزے کے۔ ہر درخواست کا اسکور کیا گیا۔ ہر انحراف ریکارڈ کیا گیا۔",
+    "description": "Front page Canvas section description"
   }
 }

@@ -147,6 +147,10 @@
     "message": "Visa på Threadbare",
     "description": "Showcase Hero (full) secondary CTA button label"
   },
+  "showcase.item.heroMinimal.title": {
+    "message": "Hero (minimalistisk)",
+    "description": "Showcase item title for Hero (minimal variant)"
+  },
   "showcase.heroMinimal.heading": {
     "message": "Diariefört, förseglat, automatiserat.",
     "description": "Showcase Hero (minimal) main heading"
@@ -594,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min läsning",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (senaste först)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Senaste inlämningar",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (äldsta först)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Från arkivet",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (färgad och länkad)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "En term kan också bära accentfärgen och länka direkt till sin referenssida. Varje vidtagen åtgärd hamnar i ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "offentligt register med enbart tillägg över varje vidtagen åtgärd",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "diariet",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", så att varje beslut alltid kan spåras tillbaka till den policy som auktoriserade det.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternativ yta)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Varför Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Gemenskapsförvaltning bygger på förtroende och transparens. Marshal ersätter ad hoc-moderering med en policyfil som stämplar varje åtgärd i ett register med enbart tillägg.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Ordning ur vilken topologi som helst",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal koordinerar distribuerade tjänster som inte delar något — ingen gemensam klocka, inget delat tillstånd, inget överenskommet protokoll. Konsensus utan kompromiss.",
+    "description": "Front page Canvas section description"
   }
 }

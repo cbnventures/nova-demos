@@ -518,5 +518,65 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (লেবেল ছাড়া)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "ফোর্জ থেকে সর্বশেষ",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "আর্কাইভ থেকে",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "একটি পরিভাষা অ্যাকসেন্ট রঙও বহন করতে পারে এবং সরাসরি তার রেফারেন্স পৃষ্ঠায় লিঙ্ক করতে পারে। প্রতিটি বিল্ড শুরু হয় একটি একক ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "কনফিগারেশন তৈরির প্রক্রিয়া",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "ফোর্জ",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " থেকে, তাই একই ম্যানিফেস্ট থেকে তৈরি দুটি ওয়ার্কস্পেস কখনও আলাদা হতে পারে না।",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "কেন Foundry",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "কনফিগারেশন ফাইল বাড়তে থাকে। Foundry সেগুলোকে একটি একক ম্যানিফেস্ট দিয়ে প্রতিস্থাপন করে যা প্রতিটি আর্টিফ্যাক্ট নির্ধারণমূলকভাবে তৈরি করে। একই ইনপুট, একই আউটপুট, প্রতিবার।",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "অভিপ্রায় থেকে অবকাঠামো",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry একটি একক ম্যানিফেস্ট পড়ে এবং একটি সম্পূর্ণ পরিবেশ তৈরি করে — লিন্টার, ফরম্যাটার, টেস্ট হার্নেস, ডিপ্লয় টার্গেট। একটি ফাইল। প্রতিটি টুল।",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (নতুন প্রথমে)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (পুরাতন প্রথমে)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (রঙিন ও সংযুক্ত)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (বিকল্প পৃষ্ঠতল)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} মিনিটের পড়া",
+    "description": "The label showing estimated reading time for a blog post"
   }
 }

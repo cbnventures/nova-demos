@@ -502,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (belliksiz)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} min okamak",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (iň täzesi öňürti)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Relay Room-dan iň täzeler",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (iň könesi öňürti)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Arhiwden",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (reňkli we bağlanylgy)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Termin hem aksent reňkini göterýip, salgylanma sahypasyna gönü bağlanyp bilýär. Her bir relay diňe bir ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "atlandyrylan eltip beriş nokady",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " bilen çäklendirilendi, şonun üçin ýalňyş ugradylan ükläme hiç haçan yglan edilen konweýerden aýrylmaýar.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatiw ýuzba)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Näme Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Her bir integrasiýa gatlagy şeýle bir usula başlaýar — endpoint çagyrýan skript. Envoy bu nusgany wersiýa dolandyrylýan, barlanylýan we gaýtadan oýnalýan relay manifesti bilen çalyşýar. Indi görünmeýän ýelimleýji kod ýok.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Soňky mil üçin gurlan",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy hiç kimiň gurmak islemeýän bölegini ýerine ýetirýär — hiç zat babatda ylaşmaýan ulgamlaryň arasyndaky terjime gatlagy. Format, protokol, shema. Envoy hemmesini gepleşýär.",
+    "description": "Front page Canvas section description"
   }
 }

@@ -594,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} minutlyk okamak",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (iň täzeleri ilki)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Gözegçilikden iň soňkylar",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (iň köneleri ilki)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Arhiwden",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (reňkli we baglanyşykly)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Adalgany aksent reňki hem-de göni salgylanma sahypasyna baglanyşyk göterip biler. Her datçik diňe bir ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "at berlen otag, koridor ýa-da daşarky topar",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "zona",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " degişlidir, şonuň üçin öýi goramak hiç haçan koridory ýeke gözegçilikde goýmaýar.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatiw ýüz)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Näme üçin Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Akylly öý datçikleri ses döredýär. Lantern bu sesi zona-habarly ýagdaýa öwürýär, ol täzeden açylyşlarda, tok aýlawlarynda we programma üpjünçiligi täzelenmelerinde saklanýar.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99,97% işleýiş wagty",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 kör nokat",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "Sesizsiz görnüklilik",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern möhüm signallary ýüze çykarýar we galanlary süzýär. Gurluşly ýazgylar, kontekstual duýduryşlar we waka wagtlary — hemmesi bir ýygnaýjydan.",
+    "description": "Front page Canvas section description"
   }
 }

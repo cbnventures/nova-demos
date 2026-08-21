@@ -594,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min branja",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (najnovejše najprej)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Najnovejše z opazovanja",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (najstarejše najprej)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Iz arhiva",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (barvno in povezano)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Izraz lahko nosi tudi poudarjeno barvo in neposredno povezuje na svojo referenčno stran. Vsak senzor pripada natanko eni ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "poimenovana soba, hodnik ali zunanja skupina",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "coni",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", zato aktiviranje hiše nikoli ne pusti hodnika, da bi nadzoroval sam.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternativna površina)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Zakaj Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Senzorji pametnega doma ustvarjajo hrup. Lantern ta hrup pretvori v stanje, ki se zaveda con in se ohrani čez ponovne zagone, cikle napajanja in posodobitve vdelane programske opreme.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99,97% čas delovanja",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 slepih točk",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "Vidnost brez hrupa",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern izpostavi pomembne signale in preostalo izloči. Strukturirani dnevniki, kontekstualna opozorila in časovnice incidentov — vse iz enega zbiralnika.",
+    "description": "Front page Canvas section description"
   }
 }

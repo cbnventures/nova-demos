@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} mín. lestur",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (nýjast fyrst)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Nýjustu skráningar",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (elst fyrst)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Úr skjalasafninu",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (litað og tengt)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Hugtak getur einnig borið áherslulitin og tengt beint á viðmiðunarsíðuna sína. Sérhver aðgerð sem gripið er til er skráð í ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "opinbera skrá yfir hverja aðgerð þar sem aðeins er bætt við",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "gerðabókina",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", svo hverja ákvörðun sé alltaf hægt að rekja til baka til stefnunnar sem heimilaði hana.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (varayfirborð)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Af hverju Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Samfélagsstjórnun byggist á trausti og gagnsæi. Marshal kemur í stað tilfallandi umsjónar með stefnuskrá sem stimplar hverja aðgerð í gerðabók þar sem aðeins er bætt við.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Skipulag úr hvaða grindvef sem er",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal samhæfir dreifðar þjónustur sem deila engu — engri sameiginlegri klukku, engu sameiginlegu ástandi, engum samþykktum samskiptareglum. Samstaða án málamiðlunar.",
+    "description": "Front page Canvas section description"
   }
 }

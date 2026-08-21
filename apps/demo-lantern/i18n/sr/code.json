@@ -387,10 +387,6 @@
     "message": "Историја сензора",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "Манифест",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (са кодом)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -598,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} мин читања",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (најновије прво)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Најновије са страже",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (најстарије прво)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Из архиве",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (обојен и повезан)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Термин такође може носити акцентну боју и водити директно до своје референтне странице. Сваки сензор припада тачно једној ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "именована соба, ходник или спољашња група",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "зони",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", тако да активирање куће никада не оставља ходник да надгледа сам.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (алтернативна површина)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Зашто Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Сензори паметног дома стварају шум. Lantern претвара тај шум у стање свесно зона које опстаје кроз рестартовања, циклусе напајања и ажурирања фирмвера.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99,97% време рада",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 слепих тачака",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "Видљивост без шума",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern истиче сигнале који су важни и филтрира остало. Структурирани дневници, контекстуална упозорења и временски оквири инцидената — све из једног колектора.",
+    "description": "Front page Canvas section description"
   }
 }

@@ -147,6 +147,10 @@
     "message": "Auf Threadbare ansehen",
     "description": "Showcase Hero (full) secondary CTA button label"
   },
+  "showcase.item.heroMinimal.title": {
+    "message": "Hero (minimalistisch)",
+    "description": "Showcase item title for Hero (minimal variant)"
+  },
   "showcase.heroMinimal.heading": {
     "message": "Abgelegt, versiegelt, automatisiert.",
     "description": "Showcase Hero (minimal) main heading"
@@ -594,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} Min. Lesezeit",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (neueste zuerst)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Neueste Einträge",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (älteste zuerst)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Aus dem Archiv",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (farbig und verlinkt)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Ein Begriff kann auch die Akzentfarbe tragen und direkt auf seine Referenzseite verlinken. Jede ausgeführte Aktion wird im ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "nur anfügbares öffentliches Register jeder ausgeführten Aktion",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "Register",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " festgehalten, sodass jede Entscheidung stets auf die Richtlinie zurückverfolgt werden kann, die sie autorisiert hat.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternative Oberfläche)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Warum Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Community-Verwaltung basiert auf Vertrauen und Transparenz. Marshal ersetzt Ad-hoc-Moderation durch eine Richtliniendatei, die jede Aktion in ein nur anfügbares Register stempelt.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Ordnung aus jeder Topologie",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal koordiniert verteilte Dienste, die nichts gemeinsam haben — keine gemeinsame Uhr, kein geteilter Zustand, kein vereinbartes Protokoll. Konsens ohne Kompromiss.",
+    "description": "Front page Canvas section description"
   }
 }

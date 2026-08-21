@@ -498,5 +498,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (sin etiqueta)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} min de lectura",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (más reciente primero)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Lo último del Relay Room",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (más antiguo primero)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Del archivo",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (con color y enlace)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Un término también puede llevar el color de acento y enlazar directamente con su página de referencia. Cada relay está delimitado a un ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "destino de entrega con nombre",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", por lo que una carga mal dirigida nunca abandona el pipeline en el que fue declarada.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (superficie alternativa)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Por qué Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Toda capa de integración empieza igual — un script que llama a un endpoint. Envoy reemplaza ese patrón con un manifiesto de relay que se versiona, se puede auditar y reproducir. Se acabó el código pegamento invisible.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Construido para la última milla",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy se encarga de la parte que nadie quiere construir — la capa de traducción entre sistemas que se niegan a ponerse de acuerdo. Formato, protocolo, esquema. Envoy negocia todo.",
+    "description": "Front page Canvas section description"
   }
 }

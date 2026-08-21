@@ -63,6 +63,10 @@
     "message": "Link tracciati",
     "description": "Front page Stats label for links traced"
   },
+  "home.stats.uptime.label": {
+    "message": "Tempo di attività",
+    "description": "Front page Stats label for uptime"
+  },
   "home.stats.regions.label": {
     "message": "Regioni",
     "description": "Front page Stats label for regions"
@@ -122,6 +126,10 @@
   "showcase.item.heroMinimal.title": {
     "message": "Hero (minimale)",
     "description": "Showcase item title for Hero (minimal variant)"
+  },
+  "showcase.heroMinimal.heading": {
+    "message": "Trova il segnale.",
+    "description": "Showcase Hero (minimal) main heading"
   },
   "showcase.heroMinimal.tagline": {
     "message": "Signal traccia come viaggia l'intento — dalla prima impressione all'azione finale. Non solo cosa è stato cliccato. Perché è stato cliccato. E cosa è quasi accaduto.",
@@ -282,6 +290,10 @@
   "showcase.statsFull.links.label": {
     "message": "Link tracciati",
     "description": "Showcase Stats (full) label for links traced"
+  },
+  "showcase.statsFull.uptime.label": {
+    "message": "SLA di uptime",
+    "description": "Showcase Stats (full) label for uptime SLA"
   },
   "showcase.statsFull.regions.label": {
     "message": "Regioni servite",
@@ -502,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min di lettura",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (più recenti per primi)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Ultimi dispacci",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (più vecchi per primi)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Dall'archivio",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (colorato e collegato)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Un termine può portare anche il colore di accento e collegarsi direttamente alla pagina di riferimento. Ogni campagna viene misurata attraverso il proprio ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "link di attribuzione brandizzato",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", così un clic può essere tracciato fino alla sua origine molto tempo dopo la fine della campagna.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (superficie alternativa)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Perché Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "L'attribuzione si interrompe quando dipende da parametri di query che vengono rimossi o da header referrer che scompaiono. Signal incorpora i metadati nel link stesso — nessun pixel di tracciamento, nessuno script lato pagina.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Un evento. Ogni subscriber.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal trasmette eventi a ogni subscriber in tempo reale — webhook, code e stream. Fan-out senza accoppiamento. Consegna senza polling.",
+    "description": "Front page Canvas section description"
   }
 }

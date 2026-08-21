@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} मिनट पढ़ने का समय",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (नवीनतम पहले)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "नवीनतम दाखिले",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (सबसे पुराने पहले)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "अभिलेखागार से",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (रंगीन और लिंक्ड)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "एक शब्द एक्सेंट रंग भी धारण कर सकता है और सीधे अपने संदर्भ पृष्ठ पर लिंक कर सकता है। उठाया गया हर कार्य ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "उठाए गए हर कार्य का केवल-जोड़ने योग्य सार्वजनिक अभिलेख",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "पंजिका",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " में दर्ज होता है, ताकि किसी भी निर्णय को हमेशा उस नीति तक वापस ट्रेस किया जा सके जिसने इसे अधिकृत किया।",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (वैकल्पिक सतह)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Marshal क्यों",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "सामुदायिक शासन विश्वास और पारदर्शिता पर चलता है। Marshal तदर्थ मॉडरेशन को एक नीति फ़ाइल से बदलता है जो हर कार्य को केवल-जोड़ने योग्य पंजिका में मुहर लगाता है।",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "किसी भी टोपोलॉजी से क्रम",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal वितरित सेवाओं का समन्वय करता है जो कुछ भी साझा नहीं करतीं — कोई साझा घड़ी नहीं, कोई साझा स्थिति नहीं, कोई सहमत प्रोटोकॉल नहीं। बिना समझौते के सहमति।",
+    "description": "Front page Canvas section description"
   }
 }

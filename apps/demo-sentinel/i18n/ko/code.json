@@ -502,5 +502,65 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (라벨 없음)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime}분 소요",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview（최신순）",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "최신 보안 공지",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview（오래된순）",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "아카이브에서",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology（색상 및 링크 적용）",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "용어는 강조 색상을 적용하고 참조 페이지로 직접 연결할 수도 있습니다. 모든 요청은 ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "접근 제어 선언",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "신뢰 정책",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "에 따라 평가되므로, 등록되지 않은 장치는 내부 서비스에 도달하기 전에 거부됩니다.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight（대체 서피스）",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "왜 Sentinel인가",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "경계 보안은 경계가 존재한다고 가정합니다. Sentinel은 신뢰를 지속적으로 평가합니다 — 모든 장치, 모든 세션, 90초마다 — 보안 수준이 떨어지는 순간 접근을 취소합니다.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "경계가 스스로를 감시합니다",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel은 접근 패턴을 모니터링하고, 이상을 감지하며, 정책을 시행합니다 — 지속적으로, 사람의 검토 없이. 모든 요청이 평가됩니다. 모든 이탈이 기록됩니다.",
+    "description": "Front page Canvas section description"
   }
 }

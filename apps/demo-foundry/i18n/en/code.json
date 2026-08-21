@@ -654,5 +654,17 @@
   "showcase.spotlightAlt.description": {
     "message": "Configuration files multiply. Foundry replaces them with a single manifest that generates every artifact deterministically. Same input, same output, every time.",
     "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.terminal.label": {
+    "message": "foundry — zsh",
+    "description": "Front page hero terminal panel window label"
+  },
+  "home.canvas.heading": {
+    "message": "From Intent to Infrastructure",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry reads a single manifest and produces a complete environment — linters, formatters, test harnesses, deploy targets. One file. Every tool.",
+    "description": "Front page Canvas section description"
   }
 }

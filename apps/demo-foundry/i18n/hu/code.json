@@ -518,5 +518,65 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (címke nélkül)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Legfrissebb a kohóból",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Az archívumból",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Egy kifejezés hordozhatja a kiemelő színt is, és közvetlenül hivatkozhat a referencia-oldalára. Minden build egyetlen ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "konfigurációgeneráló folyamat",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "kovácsolási",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " folyamatból indul, így két ugyanabból a manifestből épített munkaterület soha nem térhet el egymástól.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Miért Foundry",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "A konfigurációs fájlok szaporodnak. A Foundry egyetlen manifesttel váltja fel őket, amely minden eredményt determinisztikusan generál. Ugyanaz a bemenet, ugyanaz a kimenet, minden alkalommal.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "A szándéktól az infrastruktúráig",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "A Foundry egyetlen manifestet olvas, és teljes környezetet állít elő — linterek, formázók, tesztkeretrendszerek, telepítési célok. Egy fájl. Minden eszköz.",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (legújabb elöl)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (legrégebbi elöl)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (színes és hivatkozott)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatív felület)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} perc olvasás",
+    "description": "The label showing estimated reading time for a blog post"
   }
 }

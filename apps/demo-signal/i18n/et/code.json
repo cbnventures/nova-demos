@@ -127,6 +127,10 @@
     "message": "Hero (minimaalne)",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "Leia signaal.",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal jälgib, kuidas kavatsus liigub — esimesest kuvamisest lõpliku tegevuseni. Mitte ainult seda, millele klõpsati. Vaid miks klõpsati. Ja mis peaaegu juhtus.",
     "description": "Showcase Hero (minimal) tagline"
@@ -510,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min lugemist",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (uusimad enne)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Viimased teated",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (vanimad enne)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Arhiivist",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (värvitud ja lingitud)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Termin võib kanda ka aktsentvärvi ja viidata otse oma viitelehele. Iga kampaaniat mõõdetakse selle ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "bränditud omistuslink",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " kaudu, nii et klõpsu saab jälgida selle allikani kaua pärast kampaania lõppu.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatiivne pind)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Miks Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Omistamine ebaõnnestub, kui see sõltub päringuparameetritest, mis eemaldatakse, või referreri päistest, mis kaovad. Signal manustab metaandmed lingi endasse — jälgimispiksleid ega lehepoolseid skripte pole.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Üks sündmus. Iga tellija.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal edastab sündmusi igale tellijale reaalajas — webhook'id, järjekorrad ja vood. Levitamine ilma sidumiseta. Kohaletoimetamine ilma pollimiseta.",
+    "description": "Front page Canvas section description"
   }
 }

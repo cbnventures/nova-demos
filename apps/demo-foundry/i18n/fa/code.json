@@ -518,5 +518,65 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (بدون برچسب)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "آخرین از کوره",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "از بایگانی",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "یک اصطلاح همچنین می‌تواند رنگ تاکیدی داشته باشد و مستقیماً به صفحه مرجع خود لینک شود. هر ساخت از یک ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "فرایند تولید پیکربندی",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "ساخت",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " شروع می‌شود، بنابراین دو فضای کاری که از یک مانیفست ساخته شده‌اند هرگز نمی‌توانند از هم فاصله بگیرند.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "چرا Foundry",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "فایل‌های پیکربندی تکثیر می‌شوند. Foundry آن‌ها را با یک مانیفست واحد جایگزین می‌کند که هر خروجی را به صورت قطعی تولید می‌کند. ورودی یکسان، خروجی یکسان، هر بار.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "از نیت تا زیرساخت",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry یک مانیفست واحد می‌خواند و یک محیط کامل تولید می‌کند — لینترها، فرمت‌کننده‌ها، چارچوب‌های آزمایش، اهداف استقرار. یک فایل. هر ابزار.",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (جدیدترین ابتدا)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (قدیمی‌ترین ابتدا)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگی و لینک‌دار)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (سطح جایگزین)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} دقیقه مطالعه",
+    "description": "The label showing estimated reading time for a blog post"
   }
 }

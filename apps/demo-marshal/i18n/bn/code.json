@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} মিনিট পড়া",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (নতুন প্রথমে)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "সর্বশেষ নথিভুক্তকরণ",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (পুরনো প্রথমে)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "সংরক্ষণাগার থেকে",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (রঙিন ও সংযুক্ত)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "একটি পরিভাষা উচ্চারণ রঙও বহন করতে পারে এবং সরাসরি তার রেফারেন্স পৃষ্ঠায় লিঙ্ক করতে পারে। নেওয়া প্রতিটি পদক্ষেপ ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "নেওয়া প্রতিটি পদক্ষেপের কেবল-সংযোজনযোগ্য সর্বজনীন নথি",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "নথিপঞ্জি",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "তে নথিবদ্ধ হয়, তাই যেকোনো সিদ্ধান্ত সর্বদা সেই নীতিতে ফিরে চিহ্নিত করা যায় যা এটি অনুমোদন করেছিল।",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (বিকল্প পৃষ্ঠতল)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "কেন Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "সম্প্রদায় পরিচালনা বিশ্বাস ও স্বচ্ছতার ওপর চলে। Marshal অনিয়মিত মডারেশনকে একটি পলিসি ফাইল দিয়ে প্রতিস্থাপন করে যা প্রতিটি পদক্ষেপকে কেবল-সংযোজনযোগ্য নথিতে সিলমোহর করে।",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "যেকোনো টপোলজি থেকে শৃঙ্খলা",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal এমন বিতরণকৃত পরিষেবাগুলি সমন্বয় করে যাদের কিছুই অভিন্ন নয় — কোনো অভিন্ন ঘড়ি নেই, কোনো ভাগ-করা অবস্থা নেই, কোনো সম্মত প্রোটোকল নেই। আপসহীন ঐকমত্য।",
+    "description": "Front page Canvas section description"
   }
 }

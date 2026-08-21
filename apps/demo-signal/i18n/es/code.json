@@ -127,6 +127,10 @@
     "message": "Hero (mínimo)",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "Encuentra la señal.",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal rastrea cómo viaja la intención: de la primera impresión a la acción final. No solo en qué se hizo clic. Por qué se hizo clic. Y lo que estuvo a punto de suceder.",
     "description": "Showcase Hero (minimal) tagline"
@@ -506,5 +510,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min de lectura",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (más recientes primero)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Últimos despachos",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (más antiguos primero)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Desde el archivo",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (coloreado y enlazado)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Un término también puede llevar el color de acento y enlazar directamente a su página de referencia. Cada campaña se mide a través de su ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "enlace de atribución de marca",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", para que un clic pueda rastrearse hasta su origen mucho después de que la campaña haya terminado.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (superficie alternativa)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Por qué Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "La atribución falla cuando depende de parámetros de consulta que se eliminan o cabeceras de referencia que desaparecen. Signal integra los metadatos en el propio enlace — sin píxeles de seguimiento, sin scripts en la página.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Un evento. Cada suscriptor.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal transmite eventos a cada suscriptor en tiempo real — webhooks, colas y flujos. Distribución sin acoplamiento. Entrega sin sondeo.",
+    "description": "Front page Canvas section description"
   }
 }

@@ -123,6 +123,10 @@
     "message": "Visa på Threadbare",
     "description": "Showcase Hero (full) secondary CTA button label"
   },
+  "showcase.item.heroMinimal.title": {
+    "message": "Hero (minimalt)",
+    "description": "Showcase item title for Hero (minimal variant)"
+  },
   "showcase.heroMinimal.heading": {
     "message": "Leverera utan krusiduller.",
     "description": "Showcase Hero (minimal) main heading"
@@ -170,6 +174,10 @@
   "showcase.typewriterSlow.developers": {
     "message": "utvecklare",
     "description": "Showcase Typewriter (slow timing) word 1"
+  },
+  "showcase.typewriterSlow.designers": {
+    "message": "formgivare",
+    "description": "Showcase Typewriter (slow timing) word 2"
   },
   "showcase.item.typewriterNoLoop.title": {
     "message": "Typewriter (ingen loop)",
@@ -494,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (utan etikett)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} min läsning",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (nyast först)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Senaste från Relay Room",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (äldst först)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Från arkivet",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (färgad och länkad)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "En term kan också bära accentfärgen och länka direkt till sin referenssida. Varje relay är avgränsat till en ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "namngiven leveransdestination",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", så en feldirigerad payload lämnar aldrig den pipeline där den deklarerades.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternativ yta)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Varför Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Varje integrationslager börjar på samma sätt — ett skript som anropar en endpoint. Envoy ersätter det mönstret med ett relay-manifest som är versionshanterat, granskningsbart och återspelbart. Ingen mer osynlig limkod.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Byggt för den sista milen",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy hanterar den del som ingen vill bygga — översättningslagret mellan system som vägrar enas om någonting. Format, protokoll, schema. Envoy förhandlar allt.",
+    "description": "Front page Canvas section description"
   }
 }

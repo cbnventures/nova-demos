@@ -506,5 +506,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} মিনিট পড়া",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (নতুন আগে)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "সর্বশেষ পরামর্শ",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (পুরনো আগে)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "আর্কাইভ থেকে",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (রঙিন ও লিঙ্কযুক্ত)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "একটি পরিভাষা অ্যাকসেন্ট রঙ বহন করতে পারে এবং সরাসরি তার রেফারেন্স পৃষ্ঠায় লিঙ্ক করতে পারে। প্রতিটি অনুরোধ একটি ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "অ্যাক্সেস কন্ট্রোল ঘোষণা",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "ট্রাস্ট পলিসি",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", তাই একটি অনিবন্ধিত ডিভাইস কোনো অভ্যন্তরীণ সেবায় পৌঁছানোর আগেই প্রত্যাখ্যাত হয়।",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (বিকল্প পৃষ্ঠ)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "কেন Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "পরিধি নিরাপত্তা ধরে নেয় যে একটি সীমানা বিদ্যমান। Sentinel ক্রমাগত বিশ্বাসের মূল্যায়ন করে — প্রতিটি ডিভাইস, প্রতিটি সেশন, প্রতি 90 সেকেন্ডে — এবং নিরাপত্তা স্তর কমে গেলে সাথে সাথে অ্যাক্সেস প্রত্যাহার করে।",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "পরিধি নিজেকে পর্যবেক্ষণ করে",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel অ্যাক্সেস প্যাটার্ন পর্যবেক্ষণ করে, অসংগতি চিহ্নিত করে এবং নীতি প্রয়োগ করে — ক্রমাগত, মানবিক পর্যালোচনা ছাড়াই। প্রতিটি অনুরোধ স্কোর করা হয়। প্রতিটি বিচ্যুতি রেকর্ড করা হয়।",
+    "description": "Front page Canvas section description"
   }
 }

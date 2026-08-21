@@ -586,5 +586,65 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "Et minuts læsetid|{readingTime} minutters læsetid",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (nyeste først)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Seneste fra vagten",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (ældste først)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Fra arkivet",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (farvet og linket)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Et begreb kan også bære accentfarven og linke direkte til sin referenceside. Hver sensor hører til præcis én ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "navngivet rum, gang eller udendørs gruppe",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", så aktivering af huset aldrig efterlader en gang til at holde øje alene.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternativ overflade)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Hvorfor Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Sensorer i smarte hjem genererer støj. Lantern omdanner den støj til zonetilstand, der bevares på tværs af genstarter, strømcyklusser og firmwareopdateringer.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99,97% oppetid",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 blinde vinkler",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "Synlighed uden støj",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern fremhæver de signaler, der betyder noget, og filtrerer resten fra. Strukturerede logs, kontekstuelle alarmer og hændelsestidslinjer — alt fra én enkelt indsamler.",
+    "description": "Front page Canvas section description"
   }
 }

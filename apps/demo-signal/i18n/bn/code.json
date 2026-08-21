@@ -514,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} মিনিট পড়া",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (নতুন প্রথমে)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "সর্বশেষ প্রেরণ",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (পুরানো প্রথমে)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "আর্কাইভ থেকে",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (রঙিন ও লিঙ্কযুক্ত)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "একটি পরিভাষা অ্যাকসেন্ট রঙও বহন করতে পারে এবং সরাসরি তার রেফারেন্স পৃষ্ঠায় লিঙ্ক করতে পারে। প্রতিটি ক্যাম্পেইন পরিমাপ করা হয় এর ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "ব্র্যান্ডেড অ্যাট্রিবিউশন লিঙ্ক",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " দিয়ে, তাই ক্যাম্পেইন শেষ হওয়ার অনেক পরেও একটি ক্লিক তার উৎস পর্যন্ত ট্রেস করা যায়।",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (বিকল্প সারফেস)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "কেন Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "অ্যাট্রিবিউশন ভেঙে পড়ে যখন এটি query প্যারামিটারের উপর নির্ভর করে যা মুছে ফেলা হয় বা referrer হেডারের উপর যা অদৃশ্য হয়ে যায়। Signal মেটাডেটা লিঙ্কের মধ্যেই এম্বেড করে — কোনো ট্র্যাকিং পিক্সেল নেই, কোনো পৃষ্ঠা-সাইড স্ক্রিপ্ট নেই।",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "একটি ইভেন্ট। প্রতিটি সাবস্ক্রাইবার।",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal প্রতিটি সাবস্ক্রাইবারকে রিয়েল টাইমে ইভেন্ট সম্প্রচার করে — webhooks, কিউ এবং স্ট্রিম। কাপলিং ছাড়া ফ্যান-আউট। পোলিং ছাড়া ডেলিভারি।",
+    "description": "Front page Canvas section description"
   }
 }

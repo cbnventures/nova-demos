@@ -127,6 +127,10 @@
     "message": "Hero (мінімальний)",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "Знайдіть сигнал.",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal простежує, як рухається намір — від першого показу до фінальної дії. Не просто що клікнули. А чому клікнули. І що ледь не стало кліком.",
     "description": "Showcase Hero (minimal) tagline"
@@ -510,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} хв читання",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (найновіші спочатку)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Останні депеші",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (найстаріші спочатку)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "З архіву",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (кольоровий і з посиланням)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Термін також може нести акцентний колір і посилатися безпосередньо на свою довідкову сторінку. Кожна кампанія вимірюється через свій ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "брендоване посилання атрибуції",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", тому клік можна відстежити до його джерела ще довго після закінчення кампанії.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (альтернативна поверхня)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Чому Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Атрибуція руйнується, коли залежить від query-параметрів, які видаляються, або referrer-заголовків, які зникають. Signal вбудовує метадані в саме посилання — жодних пікселів відстеження, жодних скриптів на стороні сторінки.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Одна подія. Кожен підписник.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal транслює події кожному підписнику в реальному часі — вебхуки, черги та потоки. Розсилка без зв'язування. Доставка без опитування.",
+    "description": "Front page Canvas section description"
   }
 }

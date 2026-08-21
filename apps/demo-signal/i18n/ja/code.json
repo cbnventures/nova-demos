@@ -127,6 +127,10 @@
     "message": "Hero（ミニマル）",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "シグナルを見つけよう。",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal は、意図がたどる道のりを追跡します。最初のインプレッションから最終アクションまで。何がクリックされたかではなく、なぜクリックされたのか。そして、あと一歩で何が起こりかけていたのかまで。",
     "description": "Showcase Hero (minimal) tagline"
@@ -522,5 +526,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "約 {readingTime} 分で読めます",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview（最新順）",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "最新ディスパッチ",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview（古い順）",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "アーカイブから",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology（カラー付きリンク付き）",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "用語はアクセントカラーを持ち、リファレンスページに直接リンクすることもできます。すべてのキャンペーンは、その",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "ブランドアトリビューションリンク",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "を通じて測定されるため、キャンペーン終了後も長くクリックをソースまで追跡できます。",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight（代替サーフェス）",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Signal を選ぶ理由",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "アトリビューションは、削除されるクエリパラメータや消えるリファラーヘッダーに依存すると破綻します。Signal はメタデータをリンク自体に埋め込みます。トラッキングピクセルもページサイドスクリプトも不要です。",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "ひとつのイベント。すべてのサブスクライバーへ。",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal は、すべてのサブスクライバーにリアルタイムでイベントをブロードキャストします。Webhook、キュー、ストリームに対応。カップリングなしのファンアウト。ポーリングなしのデリバリー。",
+    "description": "Front page Canvas section description"
   }
 }

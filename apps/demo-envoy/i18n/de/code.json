@@ -123,6 +123,10 @@
     "message": "Auf Threadbare ansehen",
     "description": "Showcase Hero (full) secondary CTA button label"
   },
+  "showcase.item.heroMinimal.title": {
+    "message": "Hero (minimalistisch)",
+    "description": "Showcase item title for Hero (minimal variant)"
+  },
   "showcase.heroMinimal.heading": {
     "message": "Zustellen ohne Umschweife.",
     "description": "Showcase Hero (minimal) main heading"
@@ -498,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (ohne Label)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} Min. Lesezeit",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (neueste zuerst)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Neuestes aus dem Relay Room",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (älteste zuerst)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Aus dem Archiv",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (farbig und verlinkt)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Ein Begriff kann auch die Akzentfarbe tragen und direkt auf seine Referenzseite verlinken. Jedes Relay ist auf einen ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "benanntes Zustellziel",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " beschränkt, sodass eine fehlgeleitete Payload niemals die Pipeline verlässt, in der sie deklariert wurde.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternative Oberfläche)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Warum Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Jede Integrationsschicht beginnt auf die gleiche Weise — ein Skript, das einen Endpunkt aufruft. Envoy ersetzt dieses Muster durch ein Relay-Manifest, das versioniert, auditierbar und wiederholbar ist. Kein unsichtbarer Verbindungscode mehr.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Gebaut für die letzte Meile",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy übernimmt den Teil, den niemand bauen will — die Übersetzungsschicht zwischen Systemen, die sich auf nichts einigen wollen. Format, Protokoll, Schema. Envoy verhandelt alles.",
+    "description": "Front page Canvas section description"
   }
 }

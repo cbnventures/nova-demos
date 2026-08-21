@@ -127,6 +127,10 @@
     "message": "Hero (минимални)",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "Пронађите сигнал.",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal прати како путује намера — од првог утиска до коначне акције. Не само шта је кликнуто. Већ зашто је кликнуто. И шта умало није.",
     "description": "Showcase Hero (minimal) tagline"
@@ -510,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} мин читања",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (најновији прво)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Најновије депеше",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (најстарији прво)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Из архиве",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (обојен и повезан)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Термин може да носи и боју нагласка и да води директно на своју референтну страницу. Свака кампања се мери кроз свој ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "брендирана атрибуциона веза",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", тако да клик може да се прати до свог извора дуго после завршетка кампање.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (алтернативна површина)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Зашто Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Атрибуција пропада када зависи од query параметара који се уклањају или referrer заглавља која нестају. Signal уграђује метаподатке у сам линк — без пиксела за праћење, без скрипти на страни.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Један догађај. Сваки претплатник.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal емитује догађаје сваком претплатнику у реалном времену — webhook-ови, редови и стримови. Дистрибуција без повезивања. Испорука без анкетирања.",
+    "description": "Front page Canvas section description"
   }
 }

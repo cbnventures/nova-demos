@@ -519,6 +519,62 @@
     "message": "AppMarketDownload (без підпису)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
   },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Найновіше з кузні",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "З архіву",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Термін також може нести акцентний колір і посилатися безпосередньо на свою довідкову сторінку. Кожне збирання починається з єдиного ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "процес генерації конфігурації",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "кування",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", тому два робочих простори, побудовані з одного маніфесту, ніколи не можуть розійтися.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Чому Foundry",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Конфігураційні файли множаться. Foundry замінює їх єдиним маніфестом, який генерує кожен артефакт детерміновано. Той самий вхід, той самий вихід, щоразу.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Від наміру до інфраструктури",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry читає єдиний маніфест і створює повноцінне середовище — лінтери, форматери, тестові обв'язки, цілі розгортання. Один файл. Кожен інструмент.",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (спочатку найновіші)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (спочатку найстаріші)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (кольоровий і з посиланням)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (альтернативна поверхня)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} хвилина читання|{readingTime} хвилини читання|{readingTime} хвилин читання",
     "description": "The label showing estimated reading time for a blog post"

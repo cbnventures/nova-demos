@@ -511,6 +511,62 @@
     "message": "AppMarketDownload (بدون تسمية)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} دقيقة قراءة",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (الأحدث أولاً)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "آخر المراسلات",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (الأقدم أولاً)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "من الأرشيف",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (ملوّن ومربوط)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "يمكن للمصطلح أيضًا أن يحمل لون التمييز ويرتبط مباشرة بصفحته المرجعية. تُقاس كل حملة من خلال ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "رابط إسناد مميّز بالعلامة التجارية",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "، بحيث يمكن تتبع النقرة إلى مصدرها بعد فترة طويلة من انتهاء الحملة.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (سطح بديل)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "لماذا Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "تنهار الإسناد عندما تعتمد على معلمات الاستعلام التي تُحذف أو ترويسات الإحالة التي تختفي. يُضمّن Signal البيانات الوصفية في الرابط نفسه — بدون بكسلات تتبع، بدون نصوص برمجية في الصفحة.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "حدث واحد. كل مشترك.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "يبث Signal الأحداث لكل مشترك في الوقت الفعلي — webhooks وقوائم الانتظار والتدفقات. توزيع بدون ربط. تسليم بدون استقصاء.",
+    "description": "Front page Canvas section description"
+  },
   "theme.blog.author.noPosts": {
     "message": "لم يكتب هذا المؤلّف أيّ منشورات بعد.",
     "description": "The text for authors with 0 blog post"

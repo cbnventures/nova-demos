@@ -502,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (بغیر لیبل)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} منٹ پڑھنے کا",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (تازہ ترین پہلے)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Relay Room سے تازہ ترین",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (پرانا پہلے)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "آرکائیو سے",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگین اور لنکڈ)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "ایک اصطلاح ایکسینٹ رنگ بھی رکھ سکتی ہے اور سیدھے اپنے حوالے کے صفحے سے لنک ہو سکتی ہے۔ ہر relay صرف ایک ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "نامزد ترسیلی منزل",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " تک محدود ہے، اس لیے غلط راستے پر بھیجی گئی پیلوڈ کبھی اس پائپ لائن کو نہیں چھوڑتی جس میں اسے بیان کیا گیا تھا۔",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (متبادل سطح)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Envoy کیوں",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "ہر انٹیگریشن پرت ایک ہی طریقے سے شروع ہوتی ہے — ایک اسکرپٹ جو ایک اینڈ پوائنٹ کو کال کرتی ہے۔ Envoy اس پیٹرن کو ایک relay مینیفیسٹ سے بدل دیتا ہے جو ورژن کنٹرولڈ، آڈٹ کے قابل اور دوبارہ چلانے کے قابل ہے۔ اب اور نادیدہ گلو کوڈ نہیں۔",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "آخری میل کے لیے بنایا گیا",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy وہ حصہ سنبھالتا ہے جو کوئی بنانا نہیں چاہتا — ایسے سسٹمز کے درمیان ترجمے کی پرت جو کسی بھی بات پر متفق ہونے سے انکار کرتے ہیں۔ فارمیٹ، پروٹوکول، اسکیما۔ Envoy سب کچھ طے کرتا ہے۔",
+    "description": "Front page Canvas section description"
   }
 }

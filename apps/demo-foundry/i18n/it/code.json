@@ -55,6 +55,10 @@
     "message": "In cifre",
     "description": "Front page Stats section heading"
   },
+  "home.stats.manifest.label": {
+    "message": "Manifesto",
+    "description": "Front page Stats label for manifest count"
+  },
   "home.stats.configFiles.label": {
     "message": "File di configurazione",
     "description": "Front page Stats label for config file count"
@@ -299,6 +303,10 @@
     "message": "Stats (senza titolo)",
     "description": "Showcase item title for Stats (no heading variant)"
   },
+  "showcase.statsNoHeading.manifest.label": {
+    "message": "Manifesto",
+    "description": "Showcase Stats (no heading) label for manifest"
+  },
   "showcase.statsNoHeading.configFiles.label": {
     "message": "File di configurazione",
     "description": "Showcase Stats (no heading) label for config files"
@@ -398,6 +406,10 @@
   "showcase.terminology.manifest.title": {
     "message": "file di configurazione del workspace",
     "description": "Showcase Terminology hover title for manifest"
+  },
+  "showcase.terminology.manifest.label": {
+    "message": "manifesto",
+    "description": "Showcase Terminology displayed text for manifest"
   },
   "showcase.terminology.paragraph1.afterManifest": {
     "message": " per pilotare tutta la generazione di codice e la configurazione. Ogni pacchetto del workspace è gestito dal processo di ",
@@ -506,5 +518,65 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (senza etichetta)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} min di lettura",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (più recenti prima)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Ultime dalla forgia",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (più vecchi prima)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Dall'archivio",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (colorato e collegato)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Un termine può anche portare il colore di accento e collegare direttamente alla sua pagina di riferimento. Ogni build parte da un singolo ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "processo di generazione della configurazione",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "forgia",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", quindi due workspace costruiti dallo stesso manifesto non possono mai divergere.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (superficie alternativa)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Perché Foundry",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "I file di configurazione si moltiplicano. Foundry li sostituisce con un singolo manifesto che genera ogni artefatto in modo deterministico. Stesso input, stesso output, ogni volta.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Dall'intento all'infrastruttura",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry legge un singolo manifesto e produce un ambiente completo — linter, formattatori, framework di test, target di deploy. Un file. Ogni strumento.",
+    "description": "Front page Canvas section description"
   }
 }

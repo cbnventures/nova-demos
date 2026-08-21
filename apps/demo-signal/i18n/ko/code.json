@@ -127,6 +127,10 @@
     "message": "Hero (미니멀)",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "시그널을 찾으세요.",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal은 의도가 이동하는 경로를 추적합니다 — 첫 노출에서 최종 행동까지. 무엇을 클릭했는지만이 아니라, 왜 클릭했는지, 그리고 무엇이 될 뻔했는지까지.",
     "description": "Showcase Hero (minimal) tagline"
@@ -510,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime}분 읽기",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (최신순)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "최신 디스패치",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (오래된 순)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "아카이브에서",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (색상 및 링크 적용)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "용어에 강조 색상을 적용하고 참조 페이지로 직접 링크할 수도 있습니다. 모든 캠페인은 ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "브랜드 어트리뷰션 링크",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "를 통해 측정되므로, 캠페인이 종료된 후에도 클릭을 소스까지 추적할 수 있습니다.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (대체 표면)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "왜 Signal인가",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "어트리뷰션은 제거되는 쿼리 매개변수나 사라지는 리퍼러 헤더에 의존하면 실패합니다. Signal은 메타데이터를 링크 자체에 내장합니다 — 추적 픽셀도, 페이지 사이드 스크립트도 없습니다.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "하나의 이벤트. 모든 구독자에게.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal은 모든 구독자에게 실시간으로 이벤트를 브로드캐스트합니다 — 웹훅, 큐, 스트림. 결합 없는 팬아웃. 폴링 없는 전달.",
+    "description": "Front page Canvas section description"
   }
 }

@@ -658,5 +658,25 @@
   "showcase.spotlightAlt.description": {
     "message": "Smart home sensors generate noise. Lantern turns that noise into zone-aware state that persists across reboots, power cycles, and firmware updates.",
     "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99.97% uptime",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.latency": {
+    "message": "< 3ms p99",
+    "description": "Front page hero floating metric badge for p99 latency"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 blind spots",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "Visibility Without the Noise",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern surfaces the signals that matter and filters out the rest. Structured logs, contextual alerts, and incident timelines — all from a single collector.",
+    "description": "Front page Canvas section description"
   }
 }

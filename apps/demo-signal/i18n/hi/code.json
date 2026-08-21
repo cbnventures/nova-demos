@@ -127,6 +127,10 @@
     "message": "Hero (न्यूनतम)",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "सिग्नल खोजें।",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal इरादे की यात्रा को ट्रैक करता है — पहले इंप्रेशन से आख़िरी एक्शन तक। सिर्फ़ यह नहीं कि क्या क्लिक हुआ। बल्कि क्यों क्लिक हुआ। और क्या लगभग हो ही गया था।",
     "description": "Showcase Hero (minimal) tagline"
@@ -510,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "पढ़ने में {readingTime} मिनट",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (नवीनतम पहले)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "नवीनतम डिस्पैच",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (सबसे पुराने पहले)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "अभिलेखागार से",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (रंगीन और लिंक्ड)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "एक शब्द एक्सेंट रंग भी ले सकता है और सीधे अपने संदर्भ पृष्ठ से लिंक कर सकता है। प्रत्येक अभियान को उसके ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "ब्रांडेड एट्रिब्यूशन लिंक",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " द्वारा मापा जाता है, ताकि अभियान समाप्त होने के बाद भी एक क्लिक को उसके स्रोत तक ट्रेस किया जा सके।",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (वैकल्पिक सतह)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Signal क्यों",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "एट्रिब्यूशन तब विफल हो जाता है जब यह query पैरामीटर्स पर निर्भर करता है जो हटा दिए जाते हैं या referrer हेडर्स जो गायब हो जाते हैं। Signal मेटाडेटा को लिंक में ही एम्बेड करता है — कोई ट्रैकिंग पिक्सेल नहीं, कोई पेज-साइड स्क्रिप्ट नहीं।",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "एक इवेंट। हर सब्सक्राइबर।",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal हर सब्सक्राइबर को रियल टाइम में इवेंट प्रसारित करता है — webhooks, कतारें और स्ट्रीम। बिना कपलिंग के फैन-आउट। बिना पोलिंग के डिलीवरी।",
+    "description": "Front page Canvas section description"
   }
 }

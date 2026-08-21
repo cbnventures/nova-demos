@@ -1,5 +1,10 @@
 # demo-lantern
 
+## 2026.8.5
+
+### UPDATED
+- Translated newly-seeded code.json keys across all 35 non-en locales, fixed half-width CJK parentheses in zh-Hans, and reconciled the i18n tree.
+
 ## 2026.8.4
 
 ### UPDATED

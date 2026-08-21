@@ -127,6 +127,10 @@
     "message": "Hero (einfalt)",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "Finndu merkið.",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal rekur hvernig ásetningur ferðast — frá fyrstu birtingu til lokaaðgerðar. Ekki bara hvað var smellt á. Heldur hvers vegna. Og hvað næstum því varð.",
     "description": "Showcase Hero (minimal) tagline"
@@ -510,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} mín. lestur",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (nýjast fyrst)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Nýjustu fréttir",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (elst fyrst)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Úr safninu",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (litað og tengt)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Hugtak getur einnig borið áherslulit og tengt beint á viðmiðunarsíðu sína. Hver herferð er mæld í gegnum sinn ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "vörumerktur tilskriftartengill",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", þannig að smellur getur verið rakinn til upprunans síns löngu eftir að herferðin er lokið.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (annar flötur)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Hvers vegna Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Tilskrift bregst þegar hún reiðir sig á fyrirspurnarfæribreytur sem eru fjarlægðar eða tilvísunarhausar sem hverfa. Signal fellir lýsigögnin inn í tengilinn sjálfan — engin rakningarpixlar, engin skriftur á síðunni.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Einn atburður. Allir áskrifendur.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal sendir frá sér atburði til allra áskrifenda í rauntíma — webhooks, biðraðir og straumar. Dreifing án tengingar. Afhending án pollingar.",
+    "description": "Front page Canvas section description"
   }
 }

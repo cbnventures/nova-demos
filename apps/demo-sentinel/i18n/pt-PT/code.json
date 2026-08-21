@@ -502,5 +502,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min de leitura",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (mais recentes primeiro)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Últimos avisos",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (mais antigos primeiro)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Do arquivo",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (colorido e com ligação)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Um termo também pode ter a cor de destaque e ligar diretamente à sua página de referência. Cada pedido é avaliado com base numa ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "declaração de controlo de acesso",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "política de confiança",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", pelo que um dispositivo não registado é recusado antes de chegar a qualquer serviço interno.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (superfície alternativa)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Porquê o Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "A segurança de perímetro pressupõe a existência de uma fronteira. O Sentinel avalia a confiança continuamente — cada dispositivo, cada sessão, a cada 90 segundos — e revoga o acesso no momento em que o nível de segurança desce.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "O perímetro vigia-se a si próprio",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "O Sentinel monitoriza padrões de acesso, assinala anomalias e aplica políticas — continuamente, sem revisão humana. Cada pedido avaliado. Cada desvio registado.",
+    "description": "Front page Canvas section description"
   }
 }

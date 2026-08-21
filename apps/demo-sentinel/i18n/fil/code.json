@@ -506,5 +506,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min na pagbasa",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (pinakabago muna)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Pinakabagong Abiso",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (pinakaluma muna)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Mula sa Arkibo",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (may kulay at naka-link)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Maaari ring dalhin ng termino ang accent color at mag-link nang diretso sa reference page nito. Bawat kahilingan ay sinusuri laban sa isang ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "deklarasyon ng access control",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "patakaran ng tiwala",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", kaya ang hindi naka-enroll na device ay tinatanggihan bago pa man ito makarating sa isang internal na serbisyo.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alt na surface)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Bakit Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Ang perimeter security ay inaasahan na may umiiral na hangganan. Patuloy na sinusuri ng Sentinel ang tiwala — bawat device, bawat session, bawat 90 segundo — at binabawi ang access sa sandaling bumaba ang antas ng seguridad.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Ang Perimeter ay Nagbabantay sa Sarili",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sinusubaybayan ng Sentinel ang mga pattern ng access, nagma-flag ng mga anomalya, at nagpapatupad ng patakaran — tuloy-tuloy, walang human review. Bawat kahilingan na-score. Bawat deviation naitala.",
+    "description": "Front page Canvas section description"
   }
 }

@@ -594,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} perc olvasás",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (legújabb elöl)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Legújabbak az őrségből",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (legrégebbi elöl)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Az archívumból",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (színes és hivatkozott)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Egy kifejezés hordozhatja a kiemelő színt is, és közvetlenül hivatkozhat a referencia-oldalára. Minden szenzor pontosan egy ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "megnevezett szoba, folyosó vagy külső csoport",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "zónához",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " tartozik, így a ház élesítése soha nem hagy egy folyosót egyedül figyelni.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatív felület)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Miért Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Az okosotthon szenzorai zajt generálnak. A Lantern ezt a zajt zónatudatos állapottá alakítja, amely megmarad az újraindítások, áramkimaradások és firmware-frissítések során.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99,97% rendelkezésre állás",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 holtpont",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "Átláthatóság zaj nélkül",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "A Lantern felszínre hozza a fontos jeleket, és kiszűri a többit. Strukturált naplók, kontextuális riasztások és incidens-idővonalak — mind egyetlen gyűjtőből.",
+    "description": "Front page Canvas section description"
   }
 }

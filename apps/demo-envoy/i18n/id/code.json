@@ -123,6 +123,10 @@
     "message": "Lihat di Threadbare",
     "description": "Showcase Hero (full) secondary CTA button label"
   },
+  "showcase.item.heroMinimal.title": {
+    "message": "Hero (minimalis)",
+    "description": "Showcase item title for Hero (minimal variant)"
+  },
   "showcase.heroMinimal.heading": {
     "message": "Kirim tanpa basa-basi.",
     "description": "Showcase Hero (minimal) main heading"
@@ -311,6 +315,10 @@
     "message": "Sub-alat",
     "description": "Showcase Stats (no heading) label for sub-tools"
   },
+  "showcase.statsNoHeading.coldStart.label": {
+    "message": "Mulai dingin",
+    "description": "Showcase Stats (no heading) label for cold start"
+  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (dengan kode)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -398,6 +406,10 @@
   "showcase.terminology.relayManifest.title": {
     "message": "berkas deklarasi pipeline relay",
     "description": "Showcase Terminology hover title for relay manifest"
+  },
+  "showcase.terminology.relayManifest.label": {
+    "message": "manifes relay",
+    "description": "Showcase Terminology displayed text for relay manifest"
   },
   "showcase.terminology.paragraph1.afterRelay": {
     "message": " untuk mendefinisikan setiap pipeline integrasi. Setiap pesan masuk diautentikasi oleh gerbang ",
@@ -490,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (tanpa label)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} mnt baca",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (terbaru dahulu)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Terbaru dari Relay Room",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (terlama dahulu)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Dari Arsip",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (berwarna dan bertautan)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Sebuah istilah juga dapat membawa warna aksen dan menautkan langsung ke halaman referensinya. Setiap relay dibatasi pada satu ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "tujuan pengiriman bernama",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", sehingga muatan yang salah arah tidak akan pernah meninggalkan pipeline tempat ia dideklarasikan.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (permukaan alternatif)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Mengapa Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Setiap lapisan integrasi dimulai dengan cara yang sama — sebuah skrip yang memanggil endpoint. Envoy menggantikan pola itu dengan relay manifest yang dikontrol versinya, dapat diaudit, dan dapat diputar ulang. Tidak ada lagi kode perekat yang tak terlihat.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Dibangun untuk Mil Terakhir",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy menangani bagian yang tidak ingin dibangun siapa pun — lapisan penerjemah antara sistem yang menolak sepakat soal apa pun. Format, protokol, skema. Envoy menegosiasikan semuanya.",
+    "description": "Front page Canvas section description"
   }
 }

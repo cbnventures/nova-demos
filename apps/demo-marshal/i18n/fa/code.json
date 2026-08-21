@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} دقیقه مطالعه",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (جدیدترین ابتدا)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "آخرین بایگانی‌ها",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (قدیمی‌ترین ابتدا)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "از بایگانی",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگی و پیوندشده)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "یک اصطلاح می‌تواند رنگ تأکیدی را نیز داشته باشد و مستقیماً به صفحه مرجع خود پیوند بخورد. هر اقدام انجام‌شده در ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "سابقه‌ی عمومی و فقط‌افزودنی از هر اقدام انجام‌شده",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "دفتر ثبت",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " ثبت می‌شود، به‌طوری‌که همیشه بتوان هر تصمیمی را به سیاستی که آن را مجاز کرده ردیابی کرد.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (سطح جایگزین)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "چرا Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "حکمرانی جامعه بر پایه‌ی اعتماد و شفافیت استوار است. Marshal نظارت موقت را با یک فایل سیاست جایگزین می‌کند که هر اقدامی را در یک دفتر ثبت فقط‌افزودنی مهر می‌زند.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "نظم از هر توپولوژی",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal سرویس‌های توزیع‌شده‌ای را هماهنگ می‌کند که هیچ چیز مشترکی ندارند — نه ساعت مشترک، نه حالت مشترک، نه پروتکل توافق‌شده. اجماع بدون سازش.",
+    "description": "Front page Canvas section description"
   }
 }

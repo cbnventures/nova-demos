@@ -387,10 +387,6 @@
     "message": "История на сензорите",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "Манифест",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (с код)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -598,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} мин четене",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (най-нови първо)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Последно от наблюдението",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (най-стари първо)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "От архива",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (цветен и свързан)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Терминът може да носи и акцентния цвят и да води директно към своята справочна страница. Всеки сензор принадлежи точно на една ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "именувана стая, коридор или външна група",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "зона",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", така че въоръжаването на къщата никога не оставя коридор да наблюдава сам.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (алтернативна повърхност)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Защо Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Сензорите за умен дом генерират шум. Lantern превръща този шум в състояние, осъзнато за зоните, което се запазва при рестартиране, цикли на захранване и актуализации на фърмуера.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99,97% време на работа",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 слепи точки",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "Видимост без шум",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern извежда важните сигнали и филтрира останалото. Структурирани логове, контекстуални известия и хронология на инцидентите — всичко от един колектор.",
+    "description": "Front page Canvas section description"
   }
 }

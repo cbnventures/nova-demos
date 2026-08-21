@@ -123,6 +123,14 @@
     "message": "Lihat di Threadbare",
     "description": "Showcase Hero (full) secondary CTA button label"
   },
+  "showcase.item.heroMinimal.title": {
+    "message": "Hero (minimalis)",
+    "description": "Showcase item title for Hero (minimal variant)"
+  },
+  "showcase.heroMinimal.heading": {
+    "message": "Temukan sinyalnya.",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal melacak bagaimana niat bergerak — dari impresi pertama hingga aksi akhir. Bukan sekadar apa yang diklik. Tapi mengapa diklik. Dan apa yang nyaris terjadi.",
     "description": "Showcase Hero (minimal) tagline"
@@ -506,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} menit baca",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (terbaru lebih dulu)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Kiriman Terbaru",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (terlama lebih dulu)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Dari Arsip",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (berwarna dan bertautan)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Istilah juga dapat membawa warna aksen dan menautkan langsung ke halaman referensinya. Setiap kampanye diukur melalui ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "tautan atribusi bermerek",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "-nya, sehingga sebuah klik dapat dilacak ke sumbernya lama setelah kampanye berakhir.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (permukaan alternatif)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Mengapa Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Atribusi gagal ketika bergantung pada parameter kueri yang dihapus atau header referrer yang menghilang. Signal menyematkan metadata ke dalam tautan itu sendiri — tanpa piksel pelacakan, tanpa skrip sisi halaman.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Satu Event. Setiap Subscriber.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal menyiarkan event ke setiap subscriber secara real time — webhook, antrean, dan stream. Fan-out tanpa coupling. Pengiriman tanpa polling.",
+    "description": "Front page Canvas section description"
   }
 }

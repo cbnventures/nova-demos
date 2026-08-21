@@ -387,10 +387,6 @@
     "message": "센서 기록",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "매니페스트",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (코드 포함)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -598,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime}분 읽기",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (최신순)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "감시에서 온 최신 소식",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (오래된 순)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "아카이브에서",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (색상 및 링크)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "용어에 강조 색상을 적용하고 참조 페이지로 바로 연결할 수도 있습니다. 모든 센서는 정확히 하나의 ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "이름이 지정된 방, 복도 또는 외부 그룹",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "구역",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "에 속하므로 집을 경계 모드로 설정해도 복도가 혼자 감시하는 일은 없습니다.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (대체 표면)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "왜 Lantern인가",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "스마트 홈 센서는 노이즈를 생성합니다. Lantern은 그 노이즈를 재부팅, 전원 순환, 펌웨어 업데이트에도 유지되는 구역 인식 상태로 변환합니다.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99.97% 가동률",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "사각지대 0",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "노이즈 없는 가시성",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern은 중요한 신호를 표면화하고 나머지를 필터링합니다. 구조화된 로그, 맥락별 알림, 인시던트 타임라인 — 모두 단일 수집기에서.",
+    "description": "Front page Canvas section description"
   }
 }

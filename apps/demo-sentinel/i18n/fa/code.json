@@ -506,5 +506,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} دقیقه مطالعه",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (جدیدترین ابتدا)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "جدیدترین اطلاعیه‌ها",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (قدیمی‌ترین ابتدا)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "از آرشیو",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگی و لینک‌دار)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "یک اصطلاح همچنین می‌تواند رنگ تأکیدی داشته باشد و مستقیماً به صفحه مرجع خود پیوند داده شود. هر درخواست در برابر یک ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "اعلامیه کنترل دسترسی",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "سیاست اعتماد",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " ارزیابی می‌شود، بنابراین دستگاه ثبت‌نشده قبل از دسترسی به هر سرویس داخلی رد می‌شود.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (سطح جایگزین)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "چرا Sentinel",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "امنیت محیطی فرض می‌کند که مرزی وجود دارد. Sentinel اعتماد را به طور مداوم ارزیابی می‌کند — هر دستگاه، هر نشست، هر 90 ثانیه — و دسترسی را در لحظه‌ای که سطح امنیتی کاهش می‌یابد لغو می‌کند.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "محیط خودش را زیر نظر دارد",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel الگوهای دسترسی را نظارت می‌کند، ناهنجاری‌ها را علامت‌گذاری می‌کند و سیاست‌ها را اعمال می‌کند — به طور مداوم، بدون بررسی انسانی. هر درخواست امتیازدهی شده. هر انحراف ثبت شده.",
+    "description": "Front page Canvas section description"
   }
 }

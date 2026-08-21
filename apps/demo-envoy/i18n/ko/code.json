@@ -502,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (라벨 없음)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime}분 읽기",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (최신순)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Relay Room 최신 소식",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (오래된순)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "아카이브에서",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (색상 및 링크)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "용어에 강조 색상을 적용하고 참조 페이지로 직접 링크할 수도 있습니다. 각 리레이는 하나의 ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "명명된 전송 대상",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "에 범위가 지정되므로, 잘못 라우팅된 페이로드는 선언된 파이프라인을 벗어나지 않습니다.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (대체 서피스)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Envoy를 선택하는 이유",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "모든 통합 계층은 같은 방식으로 시작됩니다 — 엔드포인트를 호출하는 스크립트입니다. Envoy는 그 패턴을 버전 관리되고, 감사 가능하고, 재실행 가능한 리레이 매니페스트로 대체합니다. 보이지 않는 접착 코드는 더 이상 필요 없습니다.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "라스트 마일을 위한 설계",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy는 아무도 구축하고 싶어하지 않는 부분을 처리합니다 — 어떤 것에도 합의하지 않는 시스템 간의 변환 계층입니다. 형식, 프로토콜, 스키마. Envoy가 모든 것을 중재합니다.",
+    "description": "Front page Canvas section description"
   }
 }

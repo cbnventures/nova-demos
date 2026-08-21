@@ -315,6 +315,10 @@
     "message": "Mga Sub-tool",
     "description": "Showcase Stats (no heading) label for sub-tools"
   },
+  "showcase.statsNoHeading.coldStart.label": {
+    "message": "Malamig na simulain",
+    "description": "Showcase Stats (no heading) label for cold start"
+  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (may code)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -498,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (walang label)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} min basahin",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (pinakabago muna)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Pinakabago mula sa Relay Room",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (pinakaluma muna)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Mula sa Archive",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (may kulay at link)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Maaari ring dalhin ng isang termino ang accent color at mag-link nang diretso sa reference page nito. Ang bawat relay ay nakatalaga sa isang ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "pinangalanang delivery destination",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", kaya ang maling na-route na payload ay hindi kailanman aalis sa pipeline kung saan ito idineklara.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatibong surface)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Bakit Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Ang bawat integration layer ay nagsisimula sa parehong paraan — isang script na tumatawag sa isang endpoint. Pinapalitan ng Envoy ang pattern na iyon ng relay manifest na version-controlled, nao-audit, at nare-replay. Wala nang invisible na glue code.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Binuo para sa Huling Milya",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Inaasikaso ng Envoy ang bahaging walang gustong buuin — ang translation layer sa pagitan ng mga system na tumatangging magkasundo. Format, protocol, schema. Inaayos ng Envoy ang lahat.",
+    "description": "Front page Canvas section description"
   }
 }

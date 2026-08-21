@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} phút đọc",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (mới nhất trước)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Hồ sơ mới nhất",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (cũ nhất trước)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Từ kho lưu trữ",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (có màu và liên kết)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Thuật ngữ cũng có thể mang màu nhấn và liên kết thẳng đến trang tham chiếu. Mọi hành động đã thực hiện đều được ghi vào ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "hồ sơ công khai chỉ ghi thêm về mọi hành động đã thực hiện",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "sổ bộ",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", nên mọi quyết định luôn có thể truy ngược về chính sách đã cho phép nó.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (bề mặt thay thế)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Tại sao chọn Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Quản trị cộng đồng dựa trên sự tin cậy và minh bạch. Marshal thay thế kiểm duyệt tùy hứng bằng tệp chính sách đóng dấu mọi hành động vào sổ bộ chỉ ghi thêm.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Trật tự từ mọi cấu trúc liên kết",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal phối hợp các dịch vụ phân tán không chia sẻ bất kỳ điều gì — không đồng hồ chung, không trạng thái chung, không giao thức thỏa thuận. Đồng thuận không thỏa hiệp.",
+    "description": "Front page Canvas section description"
   }
 }

@@ -502,5 +502,61 @@
   "showcase.item.appMarketNoLabel.title": {
     "message": "AppMarketDownload (بدون برچسب)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} دقیقه مطالعه",
+    "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (جدیدترین ابتدا)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "جدیدترین‌ها از Relay Room",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (قدیمی‌ترین ابتدا)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "از آرشیو",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگی و لینک‌دار)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "یک اصطلاح می‌تواند رنگ تأکیدی را نیز داشته باشد و مستقیماً به صفحه مرجع خود لینک شود. هر ریله محدود به یک ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "مقصد تحویل نام‌گذاری‌شده",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " است، بنابراین بار اشتباهی هرگز خط لوله‌ای را که در آن اعلام شده ترک نمی‌کند.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (سطح جایگزین)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "چرا Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "هر لایه یکپارچه‌سازی به یک شکل شروع می‌شود — یک اسکریپت که یک نقطه پایانی را فراخوانی می‌کند. Envoy این الگو را با یک منیفست ریله جایگزین می‌کند که تحت کنترل نسخه، قابل بازرسی و قابل بازپخش است. دیگر کد چسب نامرئی ندارید.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "ساخته شده برای آخرین مرحله",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Envoy بخشی را مدیریت می‌کند که هیچ‌کس نمی‌خواهد بسازد — لایه ترجمه بین سیستم‌هایی که حاضر نیستند روی هیچ چیز توافق کنند. قالب، پروتکل، شِما. Envoy همه‌چیز را مذاکره می‌کند.",
+    "description": "Front page Canvas section description"
   }
 }

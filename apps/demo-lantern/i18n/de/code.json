@@ -147,6 +147,10 @@
     "message": "Auf Threadbare ansehen",
     "description": "Showcase Hero (full) secondary CTA button label"
   },
+  "showcase.item.heroMinimal.title": {
+    "message": "Hero (minimalistisch)",
+    "description": "Showcase item title for Hero (minimal variant)"
+  },
   "showcase.heroMinimal.heading": {
     "message": "Wachsam, warm, immer zuhause.",
     "description": "Showcase Hero (minimal) main heading"
@@ -590,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} Min. Lesezeit",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (neueste zuerst)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Neueste Beiträge von der Wache",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (älteste zuerst)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Aus dem Archiv",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (farbig und verlinkt)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Ein Begriff kann auch die Akzentfarbe tragen und direkt auf seine Referenzseite verlinken. Jeder Sensor gehört genau einer ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "benannter Raum, Flur oder Außenbereich",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "Zone",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " an, sodass die Scharfschaltung des Hauses nie einen Flur allein wachen lässt.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternative Oberfläche)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Warum Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Sensoren im Smart Home erzeugen Rauschen. Lantern verwandelt dieses Rauschen in einen zonenbewussten Zustand, der über Neustarts, Stromzyklen und Firmware-Updates hinweg bestehen bleibt.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99,97% Verfügbarkeit",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 blinde Flecken",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "Sichtbarkeit ohne Rauschen",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern hebt die wichtigen Signale hervor und filtert den Rest heraus. Strukturierte Logs, kontextbezogene Warnungen und Vorfallzeitachsen — alles aus einem einzigen Kollektor.",
+    "description": "Front page Canvas section description"
   }
 }

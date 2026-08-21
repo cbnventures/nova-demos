@@ -387,10 +387,6 @@
     "message": "सेंसर हिस्ट्री",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "मैनिफ़ेस्ट",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (कोड के साथ)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -598,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} मिनट का पठन",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (नवीनतम पहले)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "पहरे से नवीनतम",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (सबसे पुराने पहले)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "संग्रह से",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (रंगीन और लिंक किया गया)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "एक शब्द एक्सेंट रंग भी ले जा सकता है और सीधे अपने संदर्भ पृष्ठ से लिंक कर सकता है। हर सेंसर ठीक एक ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "नामित कमरा, गलियारा या बाहरी समूह",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "ज़ोन",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " से संबंधित है, इसलिए घर को सुरक्षित करने पर कोई गलियारा अकेले निगरानी नहीं करता।",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (वैकल्पिक सतह)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Lantern क्यों",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "स्मार्ट होम सेंसर शोर उत्पन्न करते हैं। Lantern उस शोर को ज़ोन-अवगत स्थिति में बदल देता है जो रीबूट, पावर साइकल और फ़र्मवेयर अपडेट में भी बनी रहती है।",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99.97% अपटाइम",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 ब्लाइंड स्पॉट",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "शोर के बिना दृश्यता",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern महत्वपूर्ण संकेतों को सामने लाता है और बाकी को फ़िल्टर करता है। संरचित लॉग, संदर्भ-आधारित अलर्ट और घटना समयरेखा — सब कुछ एक ही कलेक्टर से।",
+    "description": "Front page Canvas section description"
   }
 }

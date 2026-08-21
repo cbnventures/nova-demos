@@ -638,5 +638,13 @@
   "showcase.spotlightAlt.description": {
     "message": "Perimeter security assumes a boundary exists. Sentinel evaluates trust continuously — every device, every session, every 90 seconds — and revokes access the moment posture drops.",
     "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "The Perimeter Watches Itself",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel monitors access patterns, flags anomalies, and enforces policy — continuously, without human review. Every request scored. Every deviation recorded.",
+    "description": "Front page Canvas section description"
   }
 }

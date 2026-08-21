@@ -658,5 +658,13 @@
   "showcase.spotlightAlt.description": {
     "message": "Community governance runs on trust and transparency. Marshal replaces ad-hoc moderation with a policy file that stamps every action into an append-only docket.",
     "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Order from Any Topology",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal coordinates distributed services that share nothing — no common clock, no shared state, no agreed protocol. Consensus without compromise.",
+    "description": "Front page Canvas section description"
   }
 }

@@ -147,6 +147,10 @@
     "message": "Voir sur Threadbare",
     "description": "Showcase Hero (full) secondary CTA button label"
   },
+  "showcase.item.heroMinimal.title": {
+    "message": "Hero (minimaliste)",
+    "description": "Showcase item title for Hero (minimal variant)"
+  },
   "showcase.heroMinimal.heading": {
     "message": "Classé, scellé, automatisé.",
     "description": "Showcase Hero (minimal) main heading"
@@ -174,6 +178,10 @@
   "showcase.typewriterNoPrefix.fast": {
     "message": "Rapide",
     "description": "Showcase Typewriter (no prefix) word 1"
+  },
+  "showcase.typewriterNoPrefix.flexible": {
+    "message": "Souple",
+    "description": "Showcase Typewriter (no prefix) word 2"
   },
   "showcase.typewriterNoPrefix.free": {
     "message": "Gratuit",
@@ -590,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min de lecture",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (plus récents d'abord)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Derniers dossiers",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (plus anciens d'abord)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Depuis les archives",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (coloré et lié)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Un terme peut également porter la couleur d'accentuation et pointer directement vers sa page de référence. Chaque action réalisée est consignée au ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "registre public à ajout seul de chaque action réalisée",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "registre",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", de sorte qu'une décision puisse toujours être retracée jusqu'à la politique qui l'a autorisée.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (surface alternative)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Pourquoi Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "La gouvernance communautaire repose sur la confiance et la transparence. Marshal remplace la modération ad hoc par un fichier de politiques qui estampille chaque action dans un registre à ajout seul.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "L'ordre dans toute topologie",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal coordonne des services distribués qui ne partagent rien — ni horloge commune, ni état partagé, ni protocole convenu. Le consensus sans compromis.",
+    "description": "Front page Canvas section description"
   }
 }

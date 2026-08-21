@@ -387,10 +387,6 @@
     "message": "تاریخچه‌ی حسگرها",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "مانیفست",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (با کد)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -598,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} دقیقه مطالعه",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (جدیدترین اول)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "آخرین اخبار از نگهبانی",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (قدیمی‌ترین اول)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "از آرشیو",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگی و لینک‌دار)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "یک اصطلاح همچنین می‌تواند رنگ تأکیدی داشته باشد و مستقیماً به صفحه مرجع خود لینک شود. هر حسگر دقیقاً به یک ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "اتاق، راهرو یا گروه بیرونی نام‌گذاری‌شده",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "ناحیه",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " تعلق دارد، بنابراین مسلح کردن خانه هرگز راهرویی را به تنهایی در حال نگهبانی رها نمی‌کند.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (سطح جایگزین)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "چرا Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "حسگرهای خانه هوشمند نویز تولید می‌کنند. Lantern آن نویز را به وضعیتی آگاه از نواحی تبدیل می‌کند که در طول راه‌اندازی‌های مجدد، چرخه‌های برق و به‌روزرسانی‌های فریمور پایدار می‌ماند.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99.97% آپتایم",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 نقطه کور",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "دید بدون نویز",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern سیگنال‌های مهم را نمایان و بقیه را فیلتر می‌کند. لاگ‌های ساختاریافته، هشدارهای متنی و جدول‌های زمانی حوادث — همه از یک جمع‌آوری‌کننده واحد.",
+    "description": "Front page Canvas section description"
   }
 }

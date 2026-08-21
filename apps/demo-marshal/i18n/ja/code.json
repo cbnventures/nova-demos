@@ -610,5 +610,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} 分で読めます",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview（新しい順）",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "最新の登録",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview（古い順）",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "アーカイブから",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology（カラー付きリンクあり）",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "用語はアクセントカラーを帯び、そのリファレンスページに直接リンクすることもできます。すべての操作は",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "実行されたすべての操作の追記専用・公開記録",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "記録簿",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "に記録されるため、あらゆる決定をそれを承認したポリシーまで遡ることができます。",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight（代替サーフェス）",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "なぜ Marshal か",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "コミュニティガバナンスは信頼と透明性の上に成り立ちます。Marshal はアドホックなモデレーションを、すべての操作を追記専用の記録簿にスタンプするポリシーファイルに置き換えます。",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "あらゆるトポロジーからの秩序",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Marshal は何も共有しない分散サービスを調整します — 共通のクロックも、共有の状態も、合意されたプロトコルもありません。妥協なき合意。",
+    "description": "Front page Canvas section description"
   }
 }

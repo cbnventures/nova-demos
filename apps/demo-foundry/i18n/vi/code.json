@@ -519,6 +519,62 @@
     "message": "AppMarketDownload (không có nhãn)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
   },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Mới nhất từ lò rèn",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Từ kho lưu trữ",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Một thuật ngữ cũng có thể mang màu nhấn và liên kết trực tiếp đến trang tham chiếu của nó. Mỗi lần xây dựng bắt đầu từ một ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "quá trình tạo cấu hình",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "rèn",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " duy nhất, vì vậy hai workspace được xây dựng từ cùng một bản kê khai không bao giờ có thể lệch nhau.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Tại sao chọn Foundry",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Các tệp cấu hình ngày càng nhiều. Foundry thay thế chúng bằng một bản kê khai duy nhất tạo ra mọi sản phẩm một cách tất định. Cùng đầu vào, cùng đầu ra, mọi lúc.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Từ ý định đến hạ tầng",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry đọc một bản kê khai duy nhất và tạo ra môi trường hoàn chỉnh — linter, formatter, khung kiểm thử, đích triển khai. Một tệp. Mọi công cụ.",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (mới nhất trước)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (cũ nhất trước)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (có màu và liên kết)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (bề mặt thay thế)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} phút đọc",
     "description": "The label showing estimated reading time for a blog post"

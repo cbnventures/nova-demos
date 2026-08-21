@@ -387,10 +387,6 @@
     "message": "سینسر ہسٹری",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "مینی فیسٹ",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (کوڈ کے ساتھ)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -598,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} منٹ کا مطالعہ",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (نئے پہلے)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "پہرے سے تازہ ترین",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (پرانے پہلے)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "آرکائیو سے",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگین اور لنک شدہ)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "ایک اصطلاح ایکسنٹ رنگ بھی لے جا سکتی ہے اور براہ راست اپنے حوالہ صفحے سے لنک کر سکتی ہے۔ ہر سینسر بالکل ایک ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "نام دیا گیا کمرہ، دالان یا بیرونی گروپ",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "زون",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " سے تعلق رکھتا ہے، اس لیے گھر کو مسلح کرنے سے کوئی دالان اکیلا نگرانی نہیں کرتا۔",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (متبادل سطح)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Lantern کیوں",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "سمارٹ ہوم سینسرز شور پیدا کرتے ہیں۔ Lantern اس شور کو زون سے آگاہ حالت میں تبدیل کرتا ہے جو ری بوٹ، پاور سائیکل اور فرم ویئر اپ ڈیٹس کے بعد بھی برقرار رہتی ہے۔",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99.97% اپ ٹائم",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 بلائنڈ سپاٹ",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "شور کے بغیر نمائش",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern اہم سگنلز کو سامنے لاتا ہے اور باقی کو فلٹر کرتا ہے۔ ساختی لاگز، سیاقی الرٹس اور واقعات کی ٹائم لائنز — سب ایک ہی کلیکٹر سے۔",
+    "description": "Front page Canvas section description"
   }
 }

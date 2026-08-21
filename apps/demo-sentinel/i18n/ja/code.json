@@ -518,5 +518,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} 分で読めます",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview（新しい順）",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "最新のアドバイザリー",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview（古い順）",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "アーカイブから",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology（カラー付きリンク）",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "用語はアクセントカラーを持ち、参照ページに直接リンクすることもできます。すべてのリクエストは",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.trustPolicy.title": {
+    "message": "アクセス制御宣言",
+    "description": "Showcase Terminology hover title for trust policy"
+  },
+  "showcase.terminologyColorLink.trustPolicy.label": {
+    "message": "トラストポリシー",
+    "description": "Showcase Terminology displayed text for trust policy"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "に照らして評価されるため、未登録のデバイスは内部サービスに到達する前に拒否されます。",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight（代替サーフェス）",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "なぜ Sentinel なのか",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "境界型セキュリティは境界の存在を前提とします。Sentinel は信頼を継続的に評価します — すべてのデバイス、すべてのセッション、90秒ごとに — セキュリティレベルが低下した瞬間にアクセスを取り消します。",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "境界線は自らを監視する",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Sentinel はアクセスパターンを監視し、異常を検出し、ポリシーを適用します — 継続的に、人間のレビューなしで。すべてのリクエストがスコアリングされ、すべての逸脱が記録されます。",
+    "description": "Front page Canvas section description"
   }
 }

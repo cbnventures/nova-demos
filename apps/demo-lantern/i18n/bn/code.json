@@ -387,10 +387,6 @@
     "message": "সেন্সরের ইতিহাস",
     "description": "Showcase Stats (no heading) label for sensor history"
   },
-  "showcase.statsNoHeading.manifest.label": {
-    "message": "ম্যানিফেস্ট",
-    "description": "Showcase Stats (no heading) label for manifest"
-  },
   "showcase.item.spotlightCode.title": {
     "message": "Spotlight (কোড সহ)",
     "description": "Showcase item title for Spotlight (with code variant)"
@@ -598,5 +594,69 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} মিনিট পড়া",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (নতুন আগে)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "পাহারা থেকে সর্বশেষ",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (পুরনো আগে)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "আর্কাইভ থেকে",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (রঙিন ও লিঙ্কযুক্ত)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "একটি পরিভাষা অ্যাকসেন্ট রঙও বহন করতে পারে এবং সরাসরি তার রেফারেন্স পৃষ্ঠায় লিঙ্ক করতে পারে। প্রতিটি সেন্সর ঠিক একটি ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.zone.title": {
+    "message": "নামযুক্ত ঘর, হলওয়ে বা বহিরাঙ্গন গ্রুপ",
+    "description": "Showcase Terminology hover title for zone"
+  },
+  "showcase.terminologyColorLink.zone.label": {
+    "message": "জোন",
+    "description": "Showcase Terminology displayed text for zone"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "-এ অন্তর্ভুক্ত, তাই বাড়ি সুরক্ষিত করলে কোনো হলওয়ে একা নজর রাখতে থাকে না।",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (বিকল্প পৃষ্ঠতল)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "কেন Lantern",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "স্মার্ট হোম সেন্সরগুলো শব্দ তৈরি করে। Lantern সেই শব্দকে জোন-সচেতন অবস্থায় রূপান্তরিত করে যা রিবুট, পাওয়ার সাইকেল এবং ফার্মওয়্যার আপডেটের পরেও টিকে থাকে।",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.hero.metric.uptime": {
+    "message": "99.97% আপটাইম",
+    "description": "Front page hero floating metric badge for uptime percentage"
+  },
+  "home.hero.metric.blindSpots": {
+    "message": "0 ব্লাইন্ড স্পট",
+    "description": "Front page hero floating metric badge for blind spot count"
+  },
+  "home.canvas.heading": {
+    "message": "শব্দ ছাড়া দৃশ্যমানতা",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Lantern গুরুত্বপূর্ণ সংকেতগুলো প্রকাশ করে এবং বাকিগুলো ফিল্টার করে। কাঠামোগত লগ, প্রাসঙ্গিক সতর্কতা এবং ঘটনার সময়রেখা — সবকিছু একটি একক সংগ্রাহক থেকে।",
+    "description": "Front page Canvas section description"
   }
 }

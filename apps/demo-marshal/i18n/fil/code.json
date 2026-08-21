@@ -598,5 +598,61 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} minutong pagbasa",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (pinakabago muna)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "Mga Pinakabagong Tala",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (pinakaluma muna)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "Mula sa Arkibo",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (may kulay at naka-link)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "Ang isang termino ay maaari ring magdala ng accent color at mag-link diretso sa reference page nito. Bawat kilos na ginawa ay napupunta sa ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.docket.title": {
+    "message": "pampublikong talaan na dagdag-lamang ng bawat kilos na ginawa",
+    "description": "Showcase Terminology hover title for docket"
+  },
+  "showcase.terminologyColorLink.docket.label": {
+    "message": "talaan",
+    "description": "Showcase Terminology displayed text for docket"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": ", kaya laging masusundan ang anumang desisyon pabalik sa patakarang nag-apruba nito.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (alternatibong ibabaw)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Bakit Marshal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "Ang pamamahala ng komunidad ay umaasa sa tiwala at transparency. Pinapalitan ng Marshal ang ad-hoc na moderasyon ng policy file na sine-seal ang bawat kilos sa isang talaan na dagdag-lamang.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "Kaayusan Mula sa Anumang Topology",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Kino-coordinate ng Marshal ang mga distributed service na walang ibinahagi — walang common clock, walang shared state, walang napagkasunduang protocol. Consensus nang walang kompromiso.",
+    "description": "Front page Canvas section description"
   }
 }

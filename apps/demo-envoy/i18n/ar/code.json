@@ -503,24 +503,60 @@
     "message": "AppMarketDownload (بدون تسمية)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
   },
-  "theme.blog.author.noPosts": {
-    "message": "لم يكتب هذا المؤلّف أيّ منشورات بعد.",
-    "description": "The text for authors with 0 blog post"
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} دقيقة قراءة",
+    "description": "The label showing estimated reading time for a blog post"
   },
-  "theme.blog.authorsList.viewAll": {
-    "message": "عرض جميع المؤلّفين",
-    "description": "The label of the link targeting the blog authors page"
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (الأحدث أولاً)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
   },
-  "theme.blog.post.plurals": {
-    "message": "منشور واحد|{count} منشورات",
-    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  "showcase.blogPreviewNewest.heading": {
+    "message": "الأحدث من غرفة Relay",
+    "description": "Showcase BlogPreview (newest first) section heading"
   },
-  "theme.common.skipToMainContent": {
-    "message": "تخطّى إلى المحتوى الرئيسي",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (الأقدم أولاً)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
   },
-  "theme.footer.copyright": {
-    "message": "حقوق النشر © 2025-2026 CBN Ventures LLC. جميع الحقوق محفوظة.",
-    "description": "Footer copyright text. The {copyright} placeholder receives the consumer's themeConfig.footer.copyright value as the source-locale fallback; per-locale overrides in i18n code.json usually inline their own text."
+  "showcase.blogPreviewOldest.heading": {
+    "message": "من الأرشيف",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (ملوّن ومرتبط)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "يمكن للمصطلح أيضًا أن يحمل لون التمييز ويربط مباشرةً بصفحة المرجع الخاصة به. كل ريليه محدود النطاق بـ ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.spoke.title": {
+    "message": "وجهة تسليم مسماة",
+    "description": "Showcase Terminology hover title for Spoke"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": "، لذلك لن تغادر الحمولة الموجهة خطأً الخط الذي أُعلنت فيه أبدًا.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (سطح بديل)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "لماذا Envoy",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "كل طبقة تكامل تبدأ بنفس الطريقة — سكريبت يستدعي نقطة نهاية. يستبدل Envoy هذا النمط بمانيفست ريليه متحكم بالإصدارات وقابل للتدقيق وإعادة التشغيل. لا مزيد من الكود اللاصق غير المرئي.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "مصمم للمرحلة الأخيرة",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "يتولى Envoy الجزء الذي لا أحد يريد بناءه — طبقة الترجمة بين الأنظمة التي ترفض الاتفاق على أي شيء. الصيغة، البروتوكول، المخطط. يتفاوض Envoy على كل ذلك.",
+    "description": "Front page Canvas section description"
   }
 }

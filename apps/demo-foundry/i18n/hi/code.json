@@ -519,6 +519,62 @@
     "message": "AppMarketDownload (बिना लेबल)",
     "description": "Showcase item title for AppMarketDownload (no label variant)"
   },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "फ़ोर्ज से नवीनतम",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "संग्रह से",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "एक शब्द एक्सेंट रंग भी ले सकता है और सीधे अपने संदर्भ पृष्ठ से लिंक कर सकता है। हर बिल्ड एक एकल ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.forge.title": {
+    "message": "कॉन्फ़िगरेशन जनरेशन प्रक्रिया",
+    "description": "Showcase Terminology hover title for forge"
+  },
+  "showcase.terminologyColorLink.forge.label": {
+    "message": "फ़ोर्ज",
+    "description": "Showcase Terminology displayed text for forge"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " से शुरू होता है, इसलिए एक ही मैनिफ़ेस्ट से बने दो वर्कस्पेस कभी अलग नहीं हो सकते।",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "Foundry क्यों",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "कॉन्फ़िगरेशन फ़ाइलें बढ़ती जाती हैं। Foundry उन्हें एक एकल मैनिफ़ेस्ट से बदल देता है जो हर आर्टिफ़ैक्ट को निर्धारणात्मक रूप से उत्पन्न करता है। वही इनपुट, वही आउटपुट, हर बार।",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "इरादे से बुनियादी ढांचे तक",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Foundry एक एकल मैनिफ़ेस्ट पढ़ता है और एक पूर्ण वातावरण तैयार करता है — लिंटर, फ़ॉर्मेटर, टेस्ट हार्नेस, डिप्लॉय टार्गेट। एक फ़ाइल। हर टूल।",
+    "description": "Front page Canvas section description"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (नवीनतम पहले)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (सबसे पुराने पहले)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (रंगीन और लिंक सहित)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (वैकल्पिक सतह)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} मिनट का पठन",
     "description": "The label showing estimated reading time for a blog post"

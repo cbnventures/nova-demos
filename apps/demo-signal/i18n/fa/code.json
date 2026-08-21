@@ -127,6 +127,10 @@
     "message": "Hero (کمینه)",
     "description": "Showcase item title for Hero (minimal variant)"
   },
+  "showcase.heroMinimal.heading": {
+    "message": "سیگنال را پیدا کنید.",
+    "description": "Showcase Hero (minimal) main heading"
+  },
   "showcase.heroMinimal.tagline": {
     "message": "Signal رد پای نیت را دنبال می‌کند — از نخستین نمایش تا اقدام نهایی. نه فقط اینکه چه چیزی کلیک شد، بلکه چرا کلیک شد. و آنچه نزدیک بود رخ دهد.",
     "description": "Showcase Hero (minimal) tagline"
@@ -510,5 +514,57 @@
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} دقیقه مطالعه",
     "description": "The label showing estimated reading time for a blog post"
+  },
+  "showcase.item.blogPreviewNewest.title": {
+    "message": "BlogPreview (جدیدترین ابتدا)",
+    "description": "Showcase item title for BlogPreview newest-first sort variant"
+  },
+  "showcase.blogPreviewNewest.heading": {
+    "message": "آخرین ارسال‌ها",
+    "description": "Showcase BlogPreview (newest first) section heading"
+  },
+  "showcase.item.blogPreviewOldest.title": {
+    "message": "BlogPreview (قدیمی‌ترین ابتدا)",
+    "description": "Showcase item title for BlogPreview oldest-first sort variant"
+  },
+  "showcase.blogPreviewOldest.heading": {
+    "message": "از آرشیو",
+    "description": "Showcase BlogPreview (oldest first) section heading"
+  },
+  "showcase.item.terminologyColorLink.title": {
+    "message": "Terminology (رنگی و پیوندشده)",
+    "description": "Showcase item title for Terminology color and link variant"
+  },
+  "showcase.terminologyColorLink.paragraph.intro": {
+    "message": "یک اصطلاح همچنین می‌تواند رنگ تأکیدی را داشته باشد و مستقیماً به صفحه مرجع خود پیوند شود. هر کمپین از طریق ",
+    "description": "Showcase Terminology color and link paragraph intro fragment"
+  },
+  "showcase.terminologyColorLink.beacon.title": {
+    "message": "پیوند اسناد برندشده",
+    "description": "Showcase Terminology hover title for Beacon"
+  },
+  "showcase.terminologyColorLink.paragraph.outro": {
+    "message": " خود اندازه‌گیری می‌شود، به طوری که یک کلیک مدت‌ها پس از پایان کمپین قابل ردیابی تا منبعش باشد.",
+    "description": "Showcase Terminology color and link paragraph outro fragment"
+  },
+  "showcase.item.spotlightAlt.title": {
+    "message": "Spotlight (سطح جایگزین)",
+    "description": "Showcase item title for Spotlight (alt surface variant)"
+  },
+  "showcase.spotlightAlt.heading": {
+    "message": "چرا Signal",
+    "description": "Showcase Spotlight (alt surface) section heading"
+  },
+  "showcase.spotlightAlt.description": {
+    "message": "اسناد زمانی از کار می‌افتد که به پارامترهای query که حذف می‌شوند یا هدرهای referrer که ناپدید می‌شوند وابسته باشد. Signal ابرداده‌ها را در خود پیوند جاسازی می‌کند — بدون پیکسل‌های ردیابی، بدون اسکریپت‌های سمت صفحه.",
+    "description": "Showcase Spotlight (alt surface) description paragraph"
+  },
+  "home.canvas.heading": {
+    "message": "یک رویداد. هر مشترک.",
+    "description": "Front page Canvas section heading"
+  },
+  "home.canvas.description": {
+    "message": "Signal رویدادها را به هر مشترک در زمان واقعی ارسال می‌کند — webhookها، صف‌ها و جریان‌ها. توزیع بدون وابستگی. تحویل بدون polling.",
+    "description": "Front page Canvas section description"
   }
 }
