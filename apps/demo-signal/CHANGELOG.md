@@ -1,5 +1,10 @@
 # demo-signal
 
+## 2026.8.4
+
+### UPDATED
+- Updated @cbnventures/nova to 0.25.2 and @cbnventures/docusaurus-preset-nova to 0.25.2.
+
 ## 2026.8.3
 
 ### UPDATED
