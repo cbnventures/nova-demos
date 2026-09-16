@@ -329,7 +329,7 @@ export default [
         'error',
         {
           ignoreFiles: [],
-          sharedFiles: ['shared.d.ts'],
+          sharedFiles: [],
         },
       ],
 
@@ -425,7 +425,7 @@ export default [
           ignoreFiles: [
             './eslint.config.mts',
             './vitest.config.mts',
-            './vitest.setup.mts',
+            './vitest.setup.ts',
           ],
           knownNames: {},
           stripDirectories: ['types'],
@@ -503,7 +503,7 @@ export default [
           ignoreFiles: [
             './eslint.config.mts',
             './vitest.config.mts',
-            './vitest.setup.mts',
+            './vitest.setup.ts',
           ],
         },
       ],

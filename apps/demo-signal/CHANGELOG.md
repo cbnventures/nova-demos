@@ -1,5 +1,13 @@
 # demo-signal
 
+## 2026.9.0
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.27.0 alongside Docusaurus 3.10.2, React 19.2.8, TypeScript 6.0.3, ESLint 9.39.5, and Vitest 4.1.11, and adopted the shared lifecycle-script structure.
+
+### FIXED
+- Corrected the Hebrew reading-time translation to match Docusaurus's supported plural forms.
+
 ## 2026.8.5
 
 ### UPDATED

@@ -1,5 +1,10 @@
 # nova-demos-tool-testkit
 
+## 2026.9.0
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.27.0 alongside TypeScript 6.0.3, ESLint 9.39.5, and Vitest 4.1.11, and standardized the testkit files as `vitest.config.mts` and `vitest.setup.ts`.
+
 ## 2026.8.5
 
 No changes.

@@ -512,7 +512,7 @@
     "description": "Showcase item title for AppMarketDownload (no label variant)"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "דקת קריאה|{readingTime} דקות קריאה|{readingTime} דקות קריאה|{readingTime} דקות קריאה",
+    "message": "דקת קריאה|{readingTime} דקות קריאה|{readingTime} דקות קריאה",
     "description": "The label showing estimated reading time for a blog post"
   },
   "showcase.item.blogPreviewNewest.title": {

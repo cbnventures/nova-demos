@@ -3,7 +3,10 @@ import { defineConfig } from 'vitest/config';
 /**
  * Vitest Configuration.
  *
- * @since UNRELEASED
+ * Wires the root-level test suite that validates dotenv quoting conventions
+ * across the project workspace's generated environment files.
+ *
+ * @since 1.0.0
  */
 export default defineConfig({
   test: {
