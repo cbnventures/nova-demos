@@ -1,5 +1,10 @@
 # nova-demos-tool-testkit
 
+## 2026.9.1
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.27.2.
+
 ## 2026.9.0
 
 ### UPDATED

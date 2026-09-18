@@ -293,7 +293,7 @@ The root is a plain npm-workspaces monorepo (`apps/*`, `packages/*`) with Turbor
 
 ### Framework
 
-- **Framework:** Docusaurus 3.10.2, via `@cbnventures/docusaurus-preset-nova` 0.27.0
+- **Framework:** Docusaurus 3.10.2, via `@cbnventures/docusaurus-preset-nova` 0.27.2
 - **Source directory:** Each demo is its own site — `apps/demo-envoy/`, `apps/demo-foundry/`, `apps/demo-lantern/`, `apps/demo-marshal/`, `apps/demo-sentinel/`, `apps/demo-signal/`. There is no single shared `docs/` directory; this entire repository is the set of documentation sites.
 - **Build output:** `apps/demo-*/build/`
 

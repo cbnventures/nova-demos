@@ -1,6 +1,6 @@
 {
   "name": "nova-demos-tool-testkit",
-  "version": "2026.9.0",
+  "version": "2026.9.1",
   "license": "MIT",
   "type": "module",
   "private": true,
@@ -14,9 +14,11 @@
   "engines": {
     "node": "^22 || ^24"
   },
+  "dependencies": {
+    "@cbnventures/nova": "0.27.2"
+  },
   "devDependencies": {
-    "@cbnventures/docusaurus-preset-nova": "0.27.0",
-    "@cbnventures/nova": "0.27.0",
+    "@cbnventures/docusaurus-preset-nova": "0.27.2",
     "@types/node": "24.9.1",
     "eslint": "9.39.5",
     "glob": "13.0.6",

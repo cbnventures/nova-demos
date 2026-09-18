@@ -4,5 +4,5 @@
  * Centralized regex patterns for root-level scripts. The no-regex-literals
  * ESLint rule redirects inline literals to this barrel.
  *
- * @since UNRELEASED
+ * @since 0.0.0
  */
