@@ -1,5 +1,10 @@
 # demo-signal
 
+## 2026.9.2
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.27.3, granting the generated inactive-thread workflow write access to pull requests.
+
 ## 2026.9.1
 
 ### UPDATED
