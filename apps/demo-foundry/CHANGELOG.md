@@ -1,5 +1,11 @@
 # demo-foundry
 
+## 2026.10.0
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.28.0, including the runtime-only Vitest resolution fix.
+- Assigned explicit child environments to development, production, build, and deployment script groups.
+
 ## 2026.9.2
 
 ### UPDATED
