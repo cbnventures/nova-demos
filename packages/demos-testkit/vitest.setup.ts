@@ -8,7 +8,7 @@ import { afterEach, beforeEach, vi } from 'vitest';
  * Logger output by spying on stdout and stderr, and resets the process
  * exit code so each test starts with a clean slate.
  *
- * @since UNRELEASED
+ * @since 2026.10.1
  */
 VitestSetup.register({
   afterEach,

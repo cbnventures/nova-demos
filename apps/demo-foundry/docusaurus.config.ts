@@ -5,7 +5,7 @@ import type { DocusaurusNovaConfig } from '@cbnventures/docusaurus-preset-nova/t
 /**
  * Identity.
  *
- * @since UNRELEASED
+ * @since 2026.10.1
  */
 const identity = new NovaIdentity().forDocs();
 

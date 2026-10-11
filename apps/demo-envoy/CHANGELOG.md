@@ -1,5 +1,15 @@
 # demo-envoy
 
+## 2026.10.1
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.29.0.
+- Replaced repeated Nova ESLint rule wiring with the shared rule bundle while preserving project-specific overrides.
+- Completed JavaScript and TypeScript preset layering across the root, demo apps, and testkit.
+- Declared the root workspace as ESM and extended type-check coverage to the Vitest configuration and setup file.
+- Declared README badge and Node.js bug-report field settings explicitly in Nova configuration.
+- Approved the optional `fsevents` install script used on supported platforms.
+
 ## 2026.10.0
 
 ### UPDATED

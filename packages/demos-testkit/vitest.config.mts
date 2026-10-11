@@ -3,7 +3,7 @@ import { defineConfig } from 'vitest/config';
 /**
  * Vitest Configuration.
  *
- * @since UNRELEASED
+ * @since 2026.10.1
  */
 export default defineConfig({
   test: {

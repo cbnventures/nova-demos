@@ -2,6 +2,7 @@
   "name": "nova-demos-project",
   "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "nova utility run-scripts --parallel --node-env development 'dev:*'",
@@ -28,6 +29,7 @@
   "allowScripts": {
     "core-js": false,
     "es5-ext": false,
+    "fsevents": true,
     "unrs-resolver": false
   },
   "workspaces": [
@@ -39,7 +41,7 @@
     "node": "^22 || ^24"
   },
   "dependencies": {
-    "@cbnventures/nova": "0.28.0"
+    "@cbnventures/nova": "0.29.0"
   },
   "devDependencies": {
     "@types/node": "24.9.1",
