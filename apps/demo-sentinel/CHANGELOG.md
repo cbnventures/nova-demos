@@ -1,5 +1,13 @@
 # demo-sentinel
 
+## 2026.10.2
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.30.1.
+- Adopted role-based TypeScript preset layers.
+- Standardized root-owned tests under the shared project layout.
+- Regenerated the bug-report template with sentence-aware pronoun capitalization.
+
 ## 2026.10.1
 
 ### UPDATED
