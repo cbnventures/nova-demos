@@ -1,6 +1,6 @@
 {
   "name": "demo-lantern",
-  "version": "2026.10.2",
+  "version": "2026.10.3",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "check:types-config": "nova utility type-check --project tsconfig.config.json",
     "check:types-tests": "nova utility type-check --project tsconfig.tests.json",
     "check:test": "vitest run",
-    "build": "nova utility run-scripts --sequential --node-env production 'build:*'",
+    "build": "node ../../scripts/build.mjs",
     "build:build": "docusaurus build",
     "build:transpile-app": "nova utility transpile --project tsconfig.app.json",
     "clean": "nova utility run-scripts --parallel 'clean:*'",

@@ -148,17 +148,22 @@ packages/demos-testkit/                — The one non-demo workspace; shared cr
 
 Root commands, from the top-level `package.json`:
 
-| Command             | What it does                                                                                                            |
-|---------------------|-------------------------------------------------------------------------------------------------------------------------|
-| `npm install`       | Install all workspace dependencies; postinstall links global @cbnventures packages if present                           |
-| `npm run dev`       | `turbo run dev` — start every demo's Docusaurus dev server in parallel                                                  |
-| `npm run prod`      | `turbo run prod` — check and build, then serve every demo's production build                                            |
-| `npm run build`     | Build every demo through Turborepo                                                                                      |
-| `npm run check`     | `turbo run check --concurrency=2`, then root ESLint, Nova type-check on config/scripts/tests projects, and root Vitest  |
-| `npm run deploy`    | `turbo run deploy --concurrency=2` — check and build for every demo                                                     |
-| `npm run clean`     | `turbo run clean` — remove build output and the Docusaurus cache for every demo                                         |
-| `npm run changelog` | `nova utility changelog` — record or release changelog entries                                                          |
-| `npm run recipes`   | `nova utility run-recipes --replace-file` — refresh Nova-managed files and recipes, including Markdown table formatting |
+| Command                              | What it does                                                                                                            |
+|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `npm install`                        | Install all workspace dependencies; postinstall links global @cbnventures packages if present                           |
+| `npm run dev`                        | `turbo run dev` — start every demo's Docusaurus dev server in parallel                                                  |
+| `npm run prod`                       | `turbo run prod` — check and build, then serve every demo's production build                                            |
+| `npm run build`                      | Build every configured locale after a dynamic cost summary and 10-second safety countdown                               |
+| `npm run build -- --complete`        | Build every configured locale immediately, without the safety countdown                                                 |
+| `npm run build -- --representative`  | Auto-select English plus meaningful RTL and CJK coverage for each preset                                                |
+| `npm run build -- --locale <locale>` | Build one or more explicitly requested locales; repeat `--locale` for additional values                                 |
+| `npm run check`                      | `turbo run check --concurrency=2`, then root ESLint, Nova type-check on config/scripts/tests projects, and root Vitest  |
+| `npm run deploy`                     | `turbo run deploy --concurrency=2` — check and build for every demo                                                     |
+| `npm run clean`                      | `turbo run clean` — remove build output and the Docusaurus cache for every demo                                         |
+| `npm run changelog`                  | `nova utility changelog` — record or release changelog entries                                                          |
+| `npm run recipes`                    | `nova utility run-recipes --replace-file` — refresh Nova-managed files and recipes, including Markdown table formatting |
+
+The complete-build notice is calculated from the demos and locales currently configured in the repository; no preset or locale count is hardcoded. Representative mode always selects an English baseline, then the most complete configured RTL and CJK translations when those categories exist. It never substitutes an unrelated locale merely to reach three builds.
 
 Every demo app exposes the same script structure (with demo-specific portless names). Target one directly with `npm run <script> --workspace=demo-envoy` (or `npx turbo run <task> --filter=demo-envoy`):
 
@@ -166,7 +171,7 @@ Every demo app exposes the same script structure (with demo-specific portless na
 |-----------------------------------------------------------------------|------------------------------------------------------------------|
 | `dev` / `dev:start`                                                   | `portless`-assigned port 3000, `docusaurus start --host 0.0.0.0` |
 | `prod` / `prod:serve`                                                 | `portless`-assigned port 3000, `docusaurus serve --host 0.0.0.0` |
-| `build:build` / `build:transpile-app`                                 | `docusaurus build`, then Nova transpile of `tsconfig.app.json`   |
+| `build` / `build:build` / `build:transpile-app`                       | Select locales, run `docusaurus build`, then transpile the app   |
 | `i18n` / `i18n:sync` / `i18n:check` / `i18n:coverage`                 | Nova script dispatcher runs `theme-nova i18n` commands           |
 | `check:lint` / `check:types-app` / `check:types-tests` / `check:test` | ESLint, Nova type-check (app and tests projects), `vitest run`   |
 | `clean:build` / `clean:clear`                                         | Remove `./build`, then `docusaurus clear`                        |

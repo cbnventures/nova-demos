@@ -16,7 +16,7 @@
     "check:types-scripts": "nova utility type-check --project tsconfig.scripts.json",
     "check:types-tests": "nova utility type-check --project tsconfig.tests.json",
     "check:test": "vitest run",
-    "build": "nova utility run-scripts --sequential --node-env production 'build:*'",
+    "build": "node ./scripts/build.mjs",
     "build:workspaces": "turbo run build --concurrency=2",
     "deploy": "nova utility run-scripts --sequential --node-env production 'deploy:*'",
     "deploy:workspaces": "turbo run deploy --concurrency=2",

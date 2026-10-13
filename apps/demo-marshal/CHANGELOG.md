@@ -1,5 +1,10 @@
 # demo-marshal
 
+## 2026.10.3
+
+### ADDED
+- Added dynamic complete, representative, and locale-targeted builds with calculated cost notices.
+
 ## 2026.10.2
 
 ### UPDATED
