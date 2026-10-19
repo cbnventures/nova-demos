@@ -464,7 +464,7 @@ export function selectRepresentativeLocales(demo) {
  * Build - Create Build Plan.
  *
  * Expands the selected mode into one validated locale list per discovered demo
- * before Turborepo is allowed to start any workspace.
+ * before Nova's workspace runner is allowed to start any workspace.
  *
  * @param {DemoBuildConfiguration[]} demos Demo configurations.
  * @param {BuildArguments} args Parsed build arguments.
@@ -746,7 +746,7 @@ export function serializeLocaleOptions(locales) {
 /**
  * Build - Serialize Build Mode.
  *
- * Passes one unambiguous, explicit mode from the root planner through Turbo to
+ * Passes one unambiguous, explicit mode from the root planner through Nova to
  * each demo, preventing repeated countdowns inside child workspaces.
  *
  * @param {BuildPlan} plan Build plan.
@@ -812,7 +812,7 @@ async function runBuild() {
   }
 
   const plan = createBuildPlan(targetedDemos, args);
-  const isOrchestrated = process.env['TURBO_HASH'] !== undefined;
+  const isOrchestrated = process.env['NOVA_WORKSPACE_RUNNER'] === 'true';
 
   if (isOrchestrated === false) {
     process.stdout.write(`${formatBuildSummary(plan)}\n`);

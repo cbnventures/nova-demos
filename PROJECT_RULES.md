@@ -7,7 +7,7 @@
 - **Project name:** Nova Demos
 - **Description:** Live demonstration sites for the Nova Docusaurus preset family.
 - **Primary language:** TypeScript
-- **Framework / runtime:** Docusaurus 3.10.2 via `@cbnventures/docusaurus-preset-nova`, orchestrated across npm workspaces with Turborepo
+- **Framework / runtime:** Docusaurus via `@cbnventures/docusaurus-preset-nova`, orchestrated across npm workspaces with Nova
 
 ### Repository URL
 
@@ -47,7 +47,6 @@ nova-demos/
 ├── tsconfig.json               — Root TypeScript project references
 ├── tsconfig.config.json        — TypeScript config for eslint.config.mts
 ├── tsconfig.scripts.json       — TypeScript config for scripts/*.mjs
-├── turbo.json                  — Turborepo task graph (dev, prod, build, check, deploy, clean)
 └── VISION.md                   — Purpose, marketing copy, and glossary
 ```
 
@@ -87,7 +86,7 @@ apps/demo-envoy/                       — Representative of all 6 demo apps; id
 │   └── types/
 │       └── tests/                     — Mirrors src/tests/ (currently empty; populated as needed)
 ├── static/                            — Favicons, manifest, logo, OG thumbnail
-├── versioned_docs/version-1.0.0/      — Snapshotted docs for the 1.0.0 version
+├── versioned_docs/version-<snapshot>/ — Snapshotted documentation versions
 ├── versioned_sidebars/                — Sidebars for versioned docs
 ├── docusaurus.config.ts               — Site config, preset selection, theme config
 ├── sidebars.ts                        — Docs sidebar structure
@@ -122,27 +121,26 @@ packages/demos-testkit/                — The one non-demo workspace; shared cr
 
 ## Key Files
 
-| File                                       | Purpose                                                                       | When to modify                                                           |
-|--------------------------------------------|-------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| `nova.config.json`                         | Project identity, workspace registry, environment prefixes, and recipes       | Changing project metadata, adding/removing a workspace, changing recipes |
-| `turbo.json`                               | Task graph (dev, prod, build, check, deploy, clean) shared by every workspace | Adding a turbo task or changing caching/dependency behavior              |
-| `package.json` (root)                      | npm workspace root manifest and orchestration scripts                         | Adding a workspace glob, bumping shared devDependencies                  |
-| `apps/demo-*/docusaurus.config.ts`         | Per-demo site config and Nova preset wiring                                   | Changing which preset a demo showcases, or its metadata/theme config     |
-| `apps/demo-*/sidebars.ts`                  | Docs sidebar structure for a demo                                             | Adding or reorganizing docs categories                                   |
-| `packages/demos-testkit/src/lib/demos.ts`  | Discovers all demo apps and reads their file trees/configs at test time       | Changing how demos are discovered or what demo metadata is read          |
-| `packages/demos-testkit/src/lib/preset.ts` | Reads block names and theme-config leaf paths from the installed preset       | Changing how preset/block coverage is measured                           |
-| `scripts/link-nova.mjs`                    | postinstall: links globally npm-linked @cbnventures packages into workspaces  | Changing local Nova development linking behavior                         |
-| `LICENSE`                                  | MIT license                                                                   | Updating the copyright year (Nova-managed)                               |
+| File                                       | Purpose                                                                      | When to modify                                                           |
+|--------------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| `nova.config.json`                         | Project identity, workspace registry, environment prefixes, and recipes      | Changing project metadata, adding/removing a workspace, changing recipes |
+| `package.json` (root)                      | npm workspace root manifest and orchestration scripts                        | Adding a workspace glob, bumping shared devDependencies                  |
+| `apps/demo-*/docusaurus.config.ts`         | Per-demo site config and Nova preset wiring                                  | Changing which preset a demo showcases, or its metadata/theme config     |
+| `apps/demo-*/sidebars.ts`                  | Docs sidebar structure for a demo                                            | Adding or reorganizing docs categories                                   |
+| `packages/demos-testkit/src/lib/demos.ts`  | Discovers all demo apps and reads their file trees/configs at test time      | Changing how demos are discovered or what demo metadata is read          |
+| `packages/demos-testkit/src/lib/preset.ts` | Reads block names and theme-config leaf paths from the installed preset      | Changing how preset/block coverage is measured                           |
+| `scripts/link-nova.mjs`                    | postinstall: links globally npm-linked @cbnventures packages into workspaces | Changing local Nova development linking behavior                         |
+| `LICENSE`                                  | MIT license                                                                  | Updating the copyright year (Nova-managed)                               |
 
 ## Build and Tooling
 
 ### Prerequisites
 
-| Tool      | Version                                 | Purpose                                                                |
-|-----------|-----------------------------------------|------------------------------------------------------------------------|
-| Node.js   | `^22` or `^24`                          | Runtime for every workspace (per `engines` in each `package.json`)     |
-| npm       | `11.18.0` (pinned via `packageManager`) | Package manager and workspace orchestration                            |
-| Turborepo | `2.10.11`                               | Task graph runner (dev, build, check, deploy, clean) across workspaces |
+| Tool     | Version                   | Purpose                                            |
+|----------|---------------------------|----------------------------------------------------|
+| Node.js  | See root `engines`        | Runtime for every workspace                        |
+| npm      | See root `packageManager` | Package manager and workspace orchestration        |
+| Nova CLI | See root dependency pin   | Project tooling and native workspace orchestration |
 
 ### Commands
 
@@ -151,21 +149,21 @@ Root commands, from the top-level `package.json`:
 | Command                              | What it does                                                                                                            |
 |--------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | `npm install`                        | Install all workspace dependencies; postinstall links global @cbnventures packages if present                           |
-| `npm run dev`                        | `turbo run dev` — start every demo's Docusaurus dev server in parallel                                                  |
-| `npm run prod`                       | `turbo run prod` — check and build, then serve every demo's production build                                            |
+| `npm run dev`                        | Start every demo's Docusaurus dev server in parallel through Nova                                                       |
+| `npm run prod`                       | Check and build, then serve every demo's production build through Nova                                                  |
 | `npm run build`                      | Build every configured locale after a dynamic cost summary and 10-second safety countdown                               |
 | `npm run build -- --complete`        | Build every configured locale immediately, without the safety countdown                                                 |
 | `npm run build -- --representative`  | Auto-select English plus meaningful RTL and CJK coverage for each preset                                                |
 | `npm run build -- --locale <locale>` | Build one or more explicitly requested locales; repeat `--locale` for additional values                                 |
-| `npm run check`                      | `turbo run check --concurrency=2`, then root ESLint, Nova type-check on config/scripts/tests projects, and root Vitest  |
-| `npm run deploy`                     | `turbo run deploy --concurrency=2` — check and build for every demo                                                     |
-| `npm run clean`                      | `turbo run clean` — remove build output and the Docusaurus cache for every demo                                         |
+| `npm run check`                      | Check workspaces with concurrency 2, then run root ESLint, Nova type-checks, and Vitest                                 |
+| `npm run deploy`                     | Check and build every demo before running any workspace deploy script                                                   |
+| `npm run clean`                      | Remove build output and the Docusaurus cache for every demo through Nova                                                |
 | `npm run changelog`                  | `nova utility changelog` — record or release changelog entries                                                          |
 | `npm run recipes`                    | `nova utility run-recipes --replace-file` — refresh Nova-managed files and recipes, including Markdown table formatting |
 
 The complete-build notice is calculated from the demos and locales currently configured in the repository; no preset or locale count is hardcoded. Representative mode always selects an English baseline, then the most complete configured RTL and CJK translations when those categories exist. It never substitutes an unrelated locale merely to reach three builds.
 
-Every demo app exposes the same script structure (with demo-specific portless names). Target one directly with `npm run <script> --workspace=demo-envoy` (or `npx turbo run <task> --filter=demo-envoy`):
+Every demo app exposes the same script structure (with demo-specific portless names). Target one directly with `npm run <script> --workspace=demo-envoy` or `nova utility run-workspaces <script> --workspace demo-envoy`:
 
 | Command                                                               | What it does                                                     |
 |-----------------------------------------------------------------------|------------------------------------------------------------------|
@@ -180,7 +178,7 @@ Every demo app exposes the same script structure (with demo-specific portless na
 
 ### Environment Variables
 
-The root and each of the six demo workspaces define the same base variables in `.env.sample`:
+The root, each demo workspace, and `packages/demos-testkit` define the same base variables in `.env.sample`:
 
 | Variable    | Required | Purpose                                                                                     |
 |-------------|----------|---------------------------------------------------------------------------------------------|
@@ -203,7 +201,7 @@ Beyond those base variables, `nova.config.json` assigns one environment-variable
 | `TESTKIT_`  | `packages/demos-testkit`                                                                 |
 | `SGS_`      | sponsor-check workflow variables (for example `SGS_ISSUE_LABELS`, `SGS_SPONSOR_MINIMUM`) |
 
-`packages/demos-testkit` uses the `TESTKIT_` prefix from `environment.workspaces`. It currently has no `.env.sample` because none of its declared values require a checked-in example.
+`packages/demos-testkit` uses the `TESTKIT_` prefix from `environment.workspaces`; its generated `.env.sample` keeps the same Nova base variables as the other workspaces.
 
 ## Workspace Rules
 
@@ -222,10 +220,10 @@ Per `nova.config.json`, the root is freezable while all six demo apps and the sh
 
 ### Versioning Model
 
-- The root remains at the freezable `0.0.0` sentinel and does not receive releases.
+- The root keeps its freezable sentinel version and does not receive releases.
 - Every trackable workspace uses CalVer (`YYYY.MM.MICRO`) and has its own `CHANGELOG.md`.
 - `settings.lockStepVersioning` keeps the six demos and testkit on one version. Before a release, Nova requires all seven to start at the same valid CalVer version; a mismatch is an error, not an implicit repair.
-- The manual Git tag uses the same unprefixed CalVer value as the released workspaces, for example `2026.8.5`.
+- The manual Git tag uses the same unprefixed CalVer value as the released workspaces.
 
 ### Naming Conventions
 
@@ -263,7 +261,7 @@ Per `nova.config.json`, the root is freezable while all six demo apps and the sh
 nova.config.json (identity, workspaces, recipes)
   |
   v
-npm workspaces (apps/*, packages/*) -- orchestrated by Turborepo (turbo.json)
+npm workspaces (apps/*, packages/*) -- orchestrated by Nova
   |
   +-- apps/demo-<preset>/  (6x, identical structure)
   |     Docusaurus site -> @cbnventures/docusaurus-preset-nova (preset: '<preset>')
@@ -273,7 +271,7 @@ npm workspaces (apps/*, packages/*) -- orchestrated by Turborepo (turbo.json)
         Discovers every apps/demo-* at test time -> asserts structural/preset/block/locale parity
 ```
 
-The root is a plain npm-workspaces monorepo (`apps/*`, `packages/*`) with Turborepo driving the shared task graph. Each demo app is an independent Docusaurus 3 site that installs `@cbnventures/docusaurus-preset-nova` and selects exactly one preset. `demos-testkit` is the only workspace that reaches across app boundaries — it never ships its own site, it only reads the other six.
+The root is a plain npm-workspaces monorepo (`apps/*`, `packages/*`) with Nova driving the shared task graph. Each demo app is an independent Docusaurus site that installs `@cbnventures/docusaurus-preset-nova` and selects exactly one preset. `demos-testkit` is the only workspace that reaches across app boundaries — it never ships its own site, it only reads the other six.
 
 ### Data Flow
 
@@ -281,7 +279,7 @@ The root is a plain npm-workspaces monorepo (`apps/*`, `packages/*`) with Turbor
 2. **Site configuration** — Each demo's `docusaurus.config.ts` selects a preset (envoy, foundry, lantern, marshal, sentinel, or signal) and wires plugins (docs, blog, pages, sitemap), theme config (navbar, footer, announcement bar, error pages), and content directories (`docs/`, `blog/`, `i18n/`). Module: `apps/demo-*/docusaurus.config.ts`.
 3. **Rendering** — Docusaurus resolves docs/blog/pages content through `@cbnventures/docusaurus-preset-nova`, which supplies the theme components and blocks (Hero, Features, Stats, Spotlight, Terminology, Typewriter, and more) used in `src/pages/index.tsx` and `src/pages/showcase.tsx`.
 4. **Cross-demo verification** — `demos-testkit` reads every demo's installed preset (`src/lib/preset.ts`) and every demo's file tree (`src/lib/demos.ts`), then asserts structure parity, preset/block/prop coverage, and locale coverage across all six demos. Module: `packages/demos-testkit/src/tests/*.test.ts`.
-5. **Orchestration** — Turborepo runs `dev` / `build` / `check` / `deploy` / `clean` across every workspace per the task graph in `turbo.json`. Turbo caching is disabled for all tasks.
+5. **Orchestration** — Nova runs `dev` / `build` / `check` / `deploy` / `clean` across every configured workspace with dependency-aware lifecycle prerequisites.
 
 ### Error Strategy
 
@@ -292,13 +290,13 @@ The root is a plain npm-workspaces monorepo (`apps/*`, `packages/*`) with Turbor
 | Type checking         | `nova utility type-check` per tsconfig project (app, tests, config, scripts) — a non-zero exit fails `check`                                                              |
 | Self-check tests      | Shared suites from `@cbnventures/nova/rules/vitest` (frontmatter, link, terminology, type-declarations) run per demo via Vitest; failures fail `check:test`               |
 | Cross-demo tests      | `demos-testkit` asserts equality between demos' structures and preset surfaces (`node:assert/strict`); any mismatch fails the suite with a diff-style message             |
-| Turborepo tasks       | Non-persistent tasks (`build`, `check`, `deploy`, `clean`) propagate non-zero exit codes; `check` depends on dependency builds, and `deploy` depends on checks and builds |
+| Nova workspace tasks  | Non-persistent tasks (`build`, `check`, `deploy`, `clean`) propagate non-zero exit codes; `check` depends on dependency builds, and `deploy` depends on checks and builds |
 
 ## Documentation Site
 
 ### Framework
 
-- **Framework:** Docusaurus 3.10.2, via `@cbnventures/docusaurus-preset-nova` 0.27.2
+- **Framework:** Docusaurus via the workspace's pinned `@cbnventures/docusaurus-preset-nova` dependency
 - **Source directory:** Each demo is its own site — `apps/demo-envoy/`, `apps/demo-foundry/`, `apps/demo-lantern/`, `apps/demo-marshal/`, `apps/demo-sentinel/`, `apps/demo-signal/`. There is no single shared `docs/` directory; this entire repository is the set of documentation sites.
 - **Build output:** `apps/demo-*/build/`
 
@@ -310,7 +308,7 @@ The root is a plain npm-workspaces monorepo (`apps/*`, `packages/*`) with Turbor
 apps/demo-envoy/
 ├── docusaurus.config.ts           — Site configuration, preset selection, theme config
 ├── sidebars.ts                    — Sidebar navigation structure
-├── versions.json                  — Declared doc versions (current, 1.0.0)
+├── versions.json                  — Declared documentation versions
 ├── docs/
 │   ├── overview.mdx                — Docs landing page
 │   ├── setup/                      — configuration.mdx, installation.mdx, your-first-relay.mdx
@@ -322,8 +320,8 @@ apps/demo-envoy/
 │   ├── bare-sample.mdx             — Embed-mode (?docusaurus-data-bare=true) demonstration
 │   ├── draft-sample.mdx            — draft: true demonstration
 │   └── unlisted-sample.mdx         — unlisted: true demonstration
-├── versioned_docs/version-1.0.0/   — Snapshot of docs/theme-showcase.mdx under the 1.0.0 version
-├── versioned_sidebars/             — version-1.0.0-sidebars.json
+├── versioned_docs/version-<snapshot>/ — Versioned documentation snapshots
+├── versioned_sidebars/                — Matching versioned sidebar snapshots
 ├── blog/                           — Dated .mdx posts + authors.yml
 ├── i18n/<locale>/                  — 36 locales, each with code.json (UI strings); ar and zh-Hans additionally carry translated docs/blog/pages content
 └── static/                         — Favicons, manifest, images/logo.svg, thumbnails/brand.png
@@ -338,7 +336,7 @@ apps/demo-envoy/
 | `npm run prod --workspace=demo-envoy`       | Serve one demo's production build locally                                       |
 | `npm run i18n --workspace=demo-envoy`       | Sync i18n JSON files for one demo (`theme-nova i18n sync`)                      |
 | `npm run i18n:check --workspace=demo-envoy` | Check i18n completeness (`theme-nova i18n check`)                               |
-| `npm run dev`                               | Start all six demos' dev servers in parallel (`turbo run dev`)                  |
+| `npm run dev`                               | Start all six demos' dev servers in parallel through Nova                       |
 
 ## Publishing and Deployment
 
@@ -348,9 +346,9 @@ apps/demo-envoy/
 2. Run `npm run recipes` when `nova.config.json` changes, then review every generated diff before keeping it.
 3. Run `npm run changelog -- --release --dry-run`. The preview must show one next CalVer version for all seven trackable workspaces and must not report version drift.
 4. Run `npm run check` and `npm run build` against the same working copy that will be released.
-5. When the batch is final, run `npm run changelog -- --release`. Nova updates all seven workspace versions and changelogs together; the freezable root stays at `0.0.0`.
+5. When the batch is final, run `npm run changelog -- --release`. Nova updates all seven workspace versions and changelogs together; the freezable root keeps its sentinel version.
 6. Run `npm install` to refresh the local, gitignored `package-lock.json` and installed workspace metadata, then run `npm run check` and `npm run build` again against the released versions.
-7. Review the release diff, commit it, and create an annotated tag whose unprefixed name exactly matches the CalVer version (for example, `git tag -a 2026.8.6 -m "Release summary"`). Push the commit and tag only after local verification succeeds.
+7. Review the release diff, commit it, and create an annotated tag whose unprefixed name exactly matches the CalVer version. Push the commit and tag only after local verification succeeds.
 
 This repository has historical releases and changelogs, but no GitHub Actions workflow publishes or deploys a demo automatically. `npm run deploy` only checks and builds; it does not push a build anywhere. Recording entries and running a dry run are safe during development; do not run the non-dry release, commit, tag, or push until the whole batch is intentionally ready.
 

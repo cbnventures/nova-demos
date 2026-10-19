@@ -1,5 +1,17 @@
 # demo-envoy
 
+## 2026.10.4
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.33.0.
+- Replaced Turborepo orchestration with Nova's native workspace runner.
+- Migrated generated ignore-file settings to the configurable ignoreFiles contract.
+- Updated ESLint configuration to load the Nova custom-rule preset from its dedicated preset entry point.
+
+### FIXED
+- Preserved locale-mode argument forwarding while migrating the build planner to Nova's workspace runner.
+- Added the required JSX return documentation to demo landing and showcase pages.
+
 ## 2026.10.3
 
 ### ADDED

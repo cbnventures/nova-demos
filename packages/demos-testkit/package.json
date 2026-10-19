@@ -1,11 +1,11 @@
 {
   "name": "nova-demos-tool-testkit",
-  "version": "2026.10.3",
+  "version": "2026.10.4",
   "license": "MIT",
   "type": "module",
   "private": true,
   "scripts": {
-    "check": "nova utility run-scripts --sequential 'check:*'",
+    "check": "nova utility run-scripts --sequential \"check:*\"",
     "check:lint": "eslint ./ --max-warnings=0",
     "check:types-tests": "nova utility type-check --project tsconfig.tests.json",
     "check:types-config": "nova utility type-check --project tsconfig.config.json",
@@ -15,10 +15,10 @@
     "node": "^22 || ^24"
   },
   "dependencies": {
-    "@cbnventures/nova": "0.30.1"
+    "@cbnventures/nova": "0.33.0"
   },
   "devDependencies": {
-    "@cbnventures/docusaurus-preset-nova": "0.30.1",
+    "@cbnventures/docusaurus-preset-nova": "0.33.0",
     "@types/node": "24.9.1",
     "eslint": "9.39.5",
     "glob": "13.0.6",

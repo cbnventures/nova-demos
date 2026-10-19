@@ -6,7 +6,7 @@
     },
     "description": {
       "short": "Live demonstration sites for the Nova Docusaurus preset family",
-      "long": "Nova Demos is a collection of standalone Docusaurus sites that showcase each visual preset in the Nova family \u2014 envoy, foundry, lantern, marshal, sentinel, and signal. Each demo is a fully wired reference build you can run locally to compare presets, blocks, and theming side by side."
+      "long": "Nova Demos is a collection of standalone Docusaurus sites that showcase each visual preset in the Nova family — envoy, foundry, lantern, marshal, sentinel, and signal. Each demo is a fully wired reference build you can run locally to compare presets, blocks, and theming side by side."
     },
     "keywords": [
       "nova",
@@ -21,7 +21,8 @@
     "legalName": "CBN Ventures LLC",
     "pronouns": "business",
     "platforms": [
-      "nodejs"
+      "nodejs",
+      "web"
     ],
     "startingYear": 2026,
     "license": "MIT"
@@ -91,8 +92,20 @@
     "security": {
       "vulnerabilityAlerts": true,
       "dependabotSecurityUpdates": false,
-      "secretScanning": false,
-      "pushProtection": false
+      "secretScanning": true,
+      "pushProtection": true
+    },
+    "rulesets": {
+      "defaultBranch": {
+        "enforcement": "active",
+        "blockDeletions": true,
+        "blockForcePushes": true,
+        "requireLinearHistory": false,
+        "requireSignedCommits": true,
+        "requirePullRequest": false,
+        "requiredStatusChecks": [],
+        "requireBranchesToBeUpToDate": false
+      }
     },
     "actions": {
       "enabled": true,
@@ -100,7 +113,7 @@
       "shaPinningRequired": false,
       "defaultWorkflowPermissions": "read",
       "canApprovePullRequestReviews": false,
-      "artifactRetentionDays": 90
+      "artifactRetentionDays": 7
     },
     "labels": [
       {
@@ -162,14 +175,18 @@
       "triggers": [
         "issue-comment",
         "issues"
-      ]
+      ],
+      "runsOn": "ubuntu-latest",
+      "timeoutMinutes": 5
     },
     {
       "template": "lock-inactive-issues",
       "name": "lock-inactive",
       "triggers": [
         "schedule-weekly"
-      ]
+      ],
+      "runsOn": "ubuntu-latest",
+      "timeoutMinutes": 5
     }
   ],
   "urls": {
@@ -236,10 +253,15 @@
       "name": "nova-demos-tool-testkit"
     }
   },
-  "gitignore": {
-    "projectExcludes": [
-      "graphify-out/"
-    ]
+  "ignoreFiles": {
+    "./.gitignore": {
+      "bundles": [
+        "nova"
+      ],
+      "patterns": [
+        "graphify-out/"
+      ]
+    }
   },
   "agents": [
     "claude-code",
@@ -263,7 +285,7 @@
         "enabled": true
       },
       "sync-rulesets": {
-        "enabled": false
+        "enabled": true
       },
       "sync-security": {
         "enabled": true
@@ -271,6 +293,31 @@
     },
     "license": {
       "update-copyright": {
+        "enabled": true
+      }
+    },
+    "miscellaneous": {
+      "fix-markdown-tables": {
+        "enabled": true
+      },
+      "remove-operating-system-files": {
+        "enabled": true,
+        "settings": {
+          "linux": {},
+          "macos": {
+            "appleDouble": true,
+            "desktopServicesStore": true
+          },
+          "windows": {
+            "enhancedThumbnailDatabase": true,
+            "enhancedVistaThumbnailDatabase": true,
+            "thumbnailDatabase": true
+          }
+        }
+      }
+    },
+    "nova-config": {
+      "normalize-order": {
         "enabled": true
       }
     },
@@ -652,6 +699,21 @@
   },
   "settings": {
     "lockStepVersioning": true,
+    "runWorkspaces": {
+      "cache": {
+        "directory": "./node_modules/.cache/nova/run-workspaces",
+        "enabled": true,
+        "scripts": [
+          "build",
+          "check"
+        ]
+      },
+      "concurrency": {
+        "build": 2,
+        "check": 2,
+        "deploy": 2
+      }
+    },
     "versionStrategy": "calver"
   }
 }

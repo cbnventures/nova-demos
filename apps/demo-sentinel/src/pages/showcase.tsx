@@ -22,6 +22,8 @@ import Showcase from '@theme/Showcase';
  *
  * @constructor
  *
+ * @returns {React.JSX.Element}
+ *
  * @since 2026.8.0
  */
 function ShowcasePage() {

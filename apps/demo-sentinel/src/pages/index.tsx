@@ -76,6 +76,8 @@ const sentinelAccessLog = [
  *
  * @constructor
  *
+ * @returns {React.JSX.Element}
+ *
  * @since 2026.8.0
  */
 function Home() {
