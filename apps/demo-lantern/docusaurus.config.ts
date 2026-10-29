@@ -17,7 +17,7 @@ const identity = new NovaIdentity().forDocs();
 const config: DocusaurusNovaConfig = {
   // Site Metadata.
   title: 'Lantern',
-  titleDelimiter: ' - ',
+  titleDelimiter: '-',
   tagline: 'Watchful, warm, always home.',
   favicon: './favicon.ico',
 

@@ -17,7 +17,7 @@ const identity = new NovaIdentity().forDocs();
 const config: DocusaurusNovaConfig = {
   // Site Metadata.
   title: 'Signal',
-  titleDelimiter: ' - ',
+  titleDelimiter: '-',
   tagline: 'Find the signal.',
   favicon: './favicon.ico',
 

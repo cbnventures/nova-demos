@@ -17,7 +17,7 @@ const identity = new NovaIdentity().forDocs();
 const config: DocusaurusNovaConfig = {
   // Site Metadata.
   title: 'Sentinel',
-  titleDelimiter: ' - ',
+  titleDelimiter: '-',
   tagline: 'Trust is earned continuously.',
   favicon: './favicon.ico',
 

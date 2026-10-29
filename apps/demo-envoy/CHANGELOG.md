@@ -1,5 +1,17 @@
 # demo-envoy
 
+## 2026.10.5
+
+### UPDATED
+- Adopted the Docusaurus application TypeScript role.
+- Updated Nova and Docusaurus Preset Nova to 0.36.0.
+- Aligned workspace tooling and project guidance with current Nova defaults.
+
+### FIXED
+- Removed redundant application transpilation from production builds.
+- Normalized Docusaurus title delimiters for preset-managed pages.
+- Removed duplicate root dotenv coverage from Envoy.
+
 ## 2026.10.4
 
 ### UPDATED

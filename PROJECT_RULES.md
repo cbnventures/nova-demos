@@ -13,7 +13,9 @@
 
 - **URL:** https://github.com/cbnventures/nova-demos
 
-## Repository Layout
+## Repository Structure
+
+### Repository Layout
 
 ```
 nova-demos/
@@ -52,7 +54,7 @@ nova-demos/
 
 Note: `package-lock.json` is generated locally but is gitignored (not committed); dependency versions are pinned directly in each `package.json` instead.
 
-## Source Structure
+### Source Structure
 
 This repository has two workspace types: six identical demo apps under `apps/`, and one shared test package under `packages/`. `demo-envoy` below is representative — all six demos follow this exact layout.
 
@@ -119,7 +121,7 @@ packages/demos-testkit/                — The one non-demo workspace; shared cr
 └── vitest.config.mts / vitest.setup.ts
 ```
 
-## Key Files
+### Key Files
 
 | File                                       | Purpose                                                                      | When to modify                                                           |
 |--------------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|
@@ -169,7 +171,7 @@ Every demo app exposes the same script structure (with demo-specific portless na
 |-----------------------------------------------------------------------|------------------------------------------------------------------|
 | `dev` / `dev:start`                                                   | `portless`-assigned port 3000, `docusaurus start --host 0.0.0.0` |
 | `prod` / `prod:serve`                                                 | `portless`-assigned port 3000, `docusaurus serve --host 0.0.0.0` |
-| `build` / `build:build` / `build:transpile-app`                       | Select locales, run `docusaurus build`, then transpile the app   |
+| `build` / `build:build`                                               | Select locales, then run `docusaurus build`                      |
 | `i18n` / `i18n:sync` / `i18n:check` / `i18n:coverage`                 | Nova script dispatcher runs `theme-nova i18n` commands           |
 | `check:lint` / `check:types-app` / `check:types-tests` / `check:test` | ESLint, Nova type-check (app and tests projects), `vitest run`   |
 | `clean:build` / `clean:clear`                                         | Remove `./build`, then `docusaurus clear`                        |
@@ -218,7 +220,7 @@ Per `nova.config.json`, the root is freezable while all six demo apps and the sh
 | `./apps/demo-signal`       | template | trackable |
 | `./packages/demos-testkit` | tool     | trackable |
 
-### Versioning Model
+### Versioning and Release Model
 
 - The root keeps its freezable sentinel version and does not receive releases.
 - Every trackable workspace uses CalVer (`YYYY.MM.MICRO`) and has its own `CHANGELOG.md`.
@@ -253,7 +255,7 @@ Per `nova.config.json`, the root is freezable while all six demo apps and the sh
 - Don't commit `.env` or `package-lock.json`; both are gitignored. Only `.env.sample` is tracked.
 - Don't let a demo's docs or blog content reference this repository or Nova itself as its subject matter — each demo's content is an in-universe fictional product used to exercise the preset, not documentation about this repository.
 
-## Project-Specific Patterns
+## Architecture and Data
 
 ### Architecture
 
@@ -273,7 +275,7 @@ npm workspaces (apps/*, packages/*) -- orchestrated by Nova
 
 The root is a plain npm-workspaces monorepo (`apps/*`, `packages/*`) with Nova driving the shared task graph. Each demo app is an independent Docusaurus site that installs `@cbnventures/docusaurus-preset-nova` and selects exactly one preset. `demos-testkit` is the only workspace that reaches across app boundaries — it never ships its own site, it only reads the other six.
 
-### Data Flow
+### Data Flow and Ownership
 
 1. **Configuration** — `nova.config.json` defines the project, its six template workspaces, the trackable testkit, environment prefixes, and generator recipes. Module: `nova.config.json` (read by the `nova` CLI, not by the sites themselves).
 2. **Site configuration** — Each demo's `docusaurus.config.ts` selects a preset (envoy, foundry, lantern, marshal, sentinel, or signal) and wires plugins (docs, blog, pages, sitemap), theme config (navbar, footer, announcement bar, error pages), and content directories (`docs/`, `blog/`, `i18n/`). Module: `apps/demo-*/docusaurus.config.ts`.
@@ -292,15 +294,25 @@ The root is a plain npm-workspaces monorepo (`apps/*`, `packages/*`) with Nova d
 | Cross-demo tests      | `demos-testkit` asserts equality between demos' structures and preset surfaces (`node:assert/strict`); any mismatch fails the suite with a diff-style message             |
 | Nova workspace tasks  | Non-persistent tasks (`build`, `check`, `deploy`, `clean`) propagate non-zero exit codes; `check` depends on dependency builds, and `deploy` depends on checks and builds |
 
-## Documentation Site
+## Project Guardrails
 
-### Framework
+No additional project-specific guardrails are currently documented beyond the workspace rules and shared convention files.
+
+## Testing and Verification
+
+The supported verification commands are documented under Build and Tooling. Changes must pass every check applicable to the affected workspaces and platforms.
+
+## Documentation and Ownership
+
+### Documentation Structure
+
+#### Framework
 
 - **Framework:** Docusaurus via the workspace's pinned `@cbnventures/docusaurus-preset-nova` dependency
 - **Source directory:** Each demo is its own site — `apps/demo-envoy/`, `apps/demo-foundry/`, `apps/demo-lantern/`, `apps/demo-marshal/`, `apps/demo-sentinel/`, `apps/demo-signal/`. There is no single shared `docs/` directory; this entire repository is the set of documentation sites.
 - **Build output:** `apps/demo-*/build/`
 
-### Site Structure
+#### Site Structure
 
 `demo-envoy` shown as representative; all six demos share this layout:
 
@@ -327,7 +339,7 @@ apps/demo-envoy/
 └── static/                         — Favicons, manifest, images/logo.svg, thumbnails/brand.png
 ```
 
-### Commands
+#### Commands
 
 | Command                                     | What it does                                                                    |
 |---------------------------------------------|---------------------------------------------------------------------------------|
@@ -373,3 +385,7 @@ Each demo declares its own production URL in `docusaurus.config.ts` (all current
 | demo-marshal  | https://marshal-demo.nova.cbnventures.io  | Marshal preset reference build  |
 | demo-sentinel | https://sentinel-demo.nova.cbnventures.io | Sentinel preset reference build |
 | demo-signal   | https://signal-demo.nova.cbnventures.io   | Signal preset reference build   |
+
+## Additional Project Rules
+
+No additional project rules are currently documented.

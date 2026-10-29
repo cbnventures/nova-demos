@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -14,6 +15,8 @@ import {
 } from './regex.js';
 
 import type {
+  Lib_Preset_GetPresetRoot_EntryPath,
+  Lib_Preset_GetPresetRoot_Require,
   Lib_Preset_GetPresetRoot_Returns,
   Lib_Preset_GetRepoRoot_CurrentFileDirectory,
   Lib_Preset_GetRepoRoot_CurrentFilePath,
@@ -124,7 +127,10 @@ export function getRepoRoot(): Lib_Preset_GetRepoRoot_Returns {
  * @since 2026.8.0
  */
 export function getPresetRoot(): Lib_Preset_GetPresetRoot_Returns {
-  return resolve(getRepoRoot(), 'node_modules', '@cbnventures', 'docusaurus-preset-nova');
+  const require: Lib_Preset_GetPresetRoot_Require = createRequire(import.meta.url);
+  const entryPath: Lib_Preset_GetPresetRoot_EntryPath = require.resolve('@cbnventures/docusaurus-preset-nova');
+
+  return resolve(dirname(entryPath), '..', '..');
 }
 
 /**

@@ -855,10 +855,6 @@ async function runBuild() {
   }
 
   runCommand(demoPlan.demo.directory, docusaurusArguments);
-  runCommand(demoPlan.demo.directory, [
-    'run',
-    'build:transpile-app',
-  ]);
 
   return;
 }

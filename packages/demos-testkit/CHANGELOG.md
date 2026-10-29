@@ -1,5 +1,14 @@
 # nova-demos-tool-testkit
 
+## 2026.10.5
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.36.0.
+- Aligned workspace tooling and project guidance with current Nova defaults.
+
+### FIXED
+- Resolved Docusaurus Preset Nova from the testkit workspace so local links and published installs use the declared dependency.
+
 ## 2026.10.4
 
 ### UPDATED

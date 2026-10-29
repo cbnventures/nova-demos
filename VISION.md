@@ -16,6 +16,29 @@ Nova ships six distinct Docusaurus presets — envoy, foundry, lantern, marshal,
 
 Nova Demos is six standalone Docusaurus sites, one per Nova preset, each populated with its own fictional product, full docs set, blog, versioned docs, 36-locale i18n bundle, and block showcase page. We built every demo to the same structural pattern, so the only thing that changes between them is the preset — which makes side-by-side comparison meaningful instead of apples-to-oranges. A shared test package enforces that structural parity automatically, so the demos cannot silently drift apart as the presets evolve.
 
+## Product Direction
+
+No additional product-direction constraints are currently documented beyond the project purpose and existing capabilities.
+
+## Product Design
+
+The current capabilities and intended experience are described by the value proposition and key features; domain terminology is defined in the glossary.
+
+## Positioning
+
+### Differentiators
+
+| This project                                                                                                                      | Alternatives                                                                                                                                   |
+|-----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Six fully wired sites, one per preset, sharing an identical structure                                                             | A single demo with a theme switcher, which cannot show navbar, footer, or block layout differences that are structural rather than color-based |
+| Realistic fictional products per demo (relay engine, compiler, home monitor, governance system, trust engine, attribution engine) | Lorem-ipsum or placeholder content that never stress-tests typography, block density, or navigation depth                                      |
+| Machine-enforced parity via `demos-testkit` (structure, preset, block, locale, and prop coverage tests)                           | Manually maintained demo sites that drift from each other silently over time                                                                   |
+| Deployed as independent reference builds anyone can browse or run locally                                                         | Static screenshots or a component storybook that cannot show real routing, search, or versioned-docs behavior                                  |
+
+## Risks and Future
+
+No additional risks, open questions, roadmap commitments, or success criteria are currently documented.
+
 ## Marketing Copy
 
 ### Tagline
@@ -34,15 +57,6 @@ Nova Demos is a collection of six standalone Docusaurus sites, one for each visu
 - **Complete feature surface per demo** — Versioned docs, 36-locale i18n, search, dark mode, blog with RSS/Atom feeds, sitemap, an announcement bar, and custom error pages are wired into every single demo, not just one flagship site.
 - **Machine-enforced parity** — A shared `demos-testkit` workspace runs cross-demo tests for structure, preset coverage, block coverage, locale coverage, and prop coverage, so no demo can quietly fall out of sync with the others.
 
-### Differentiators
-
-| This project                                                                                                                      | Alternatives                                                                                                                                   |
-|-----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Six fully wired sites, one per preset, sharing an identical structure                                                             | A single demo with a theme switcher, which cannot show navbar, footer, or block layout differences that are structural rather than color-based |
-| Realistic fictional products per demo (relay engine, compiler, home monitor, governance system, trust engine, attribution engine) | Lorem-ipsum or placeholder content that never stress-tests typography, block density, or navigation depth                                      |
-| Machine-enforced parity via `demos-testkit` (structure, preset, block, locale, and prop coverage tests)                           | Manually maintained demo sites that drift from each other silently over time                                                                   |
-| Deployed as independent reference builds anyone can browse or run locally                                                         | Static screenshots or a component storybook that cannot show real routing, search, or versioned-docs behavior                                  |
-
 ## Glossary
 
 | Term              | Definition                                                                                                                                                                                                                                                                                     |
@@ -56,3 +70,7 @@ Nova Demos is a collection of six standalone Docusaurus sites, one for each visu
 | Structure parity  | The property, enforced by `demos-testkit`, that every demo has the same docs categories, blog file count, pages, and versioned-docs layout — only the preset and its content differ.                                                                                                           |
 | Bare mode         | A `docusaurus-preset-nova` feature that strips all site chrome (navbar, footer, sidebar, and more) when `?docusaurus-data-bare=true` is appended to a URL, for embedding a page in another surface. Demonstrated on each demo's `docs/bare-sample.mdx`.                                        |
 | Fictional product | The in-universe subject matter each demo is themed around (for example, Envoy's protocol relay or Signal's link-attribution engine) — realistic content written to stress-test a preset, not documentation about this repository or Nova itself.                                               |
+
+## Additional Vision Notes
+
+No additional vision notes are currently documented.

@@ -1,6 +1,6 @@
 {
   "name": "demo-lantern",
-  "version": "2026.10.4",
+  "version": "2026.10.5",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -16,7 +16,6 @@
     "check:test": "vitest run",
     "build": "node ../../scripts/build.mjs",
     "build:build": "docusaurus build",
-    "build:transpile-app": "nova utility transpile --project tsconfig.app.json",
     "clean": "nova utility run-scripts --parallel \"clean:*\"",
     "clean:build": "shx rm -rf ./build",
     "clean:clear": "docusaurus clear",
@@ -26,11 +25,11 @@
     "i18n:coverage": "theme-nova i18n coverage"
   },
   "engines": {
-    "node": "^22 || ^24"
+    "node": "^22 || ^24 || ^26"
   },
   "dependencies": {
-    "@cbnventures/docusaurus-preset-nova": "0.33.0",
-    "@cbnventures/nova": "0.33.0",
+    "@cbnventures/docusaurus-preset-nova": "0.36.0",
+    "@cbnventures/nova": "0.36.0",
     "@docusaurus/core": "3.10.2",
     "react": "19.2.8",
     "react-dom": "19.2.8"

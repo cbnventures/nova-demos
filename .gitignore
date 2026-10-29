@@ -13,6 +13,7 @@ local.properties
 .env
 .env.*
 !.env.sample
+!.env.*.sample
 
 ##################################
 #### Operating System - Linux ####
@@ -184,4 +185,5 @@ firebase-debug.log
 ##########################
 #### Project Excludes ####
 ##########################
+/assets/
 graphify-out/

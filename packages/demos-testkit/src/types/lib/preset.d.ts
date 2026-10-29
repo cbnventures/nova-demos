@@ -25,6 +25,10 @@ export type Lib_Preset_PropDescriptor = {
  */
 export type Lib_Preset_GetPresetRoot_Returns = string;
 
+export type Lib_Preset_GetPresetRoot_Require = NodeJS.Require;
+
+export type Lib_Preset_GetPresetRoot_EntryPath = string;
+
 /**
  * Lib - Preset - Get Repo Root.
  *

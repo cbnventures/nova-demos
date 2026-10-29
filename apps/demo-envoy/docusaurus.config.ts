@@ -17,7 +17,7 @@ const identity = new NovaIdentity().forDocs();
 const config: DocusaurusNovaConfig = {
   // Site Metadata.
   title: 'Envoy',
-  titleDelimiter: ' - ',
+  titleDelimiter: '-',
   tagline: 'Deliver without ceremony.',
   favicon: './favicon.ico',
 

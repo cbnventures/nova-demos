@@ -17,7 +17,7 @@ const identity = new NovaIdentity().forDocs();
 const config: DocusaurusNovaConfig = {
   // Site Metadata.
   title: 'Marshal',
-  titleDelimiter: ' - ',
+  titleDelimiter: '-',
   tagline: 'Filed, sealed, automated.',
   favicon: './favicon.ico',
 

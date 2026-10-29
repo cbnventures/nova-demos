@@ -17,7 +17,7 @@ const identity = new NovaIdentity().forDocs();
 const config: DocusaurusNovaConfig = {
   // Site Metadata.
   title: 'Foundry',
-  titleDelimiter: ' - ',
+  titleDelimiter: '-',
   tagline: 'Shape what ships.',
   favicon: './favicon.ico',
 

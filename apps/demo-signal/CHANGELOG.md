@@ -1,5 +1,16 @@
 # demo-signal
 
+## 2026.10.5
+
+### UPDATED
+- Updated Nova and Docusaurus Preset Nova to 0.36.0.
+- Adopted the Docusaurus application TypeScript role.
+- Aligned workspace tooling and project guidance with current Nova defaults.
+
+### FIXED
+- Normalized Docusaurus title delimiters for preset-managed pages.
+- Removed redundant application transpilation from production builds.
+
 ## 2026.10.4
 
 ### UPDATED
