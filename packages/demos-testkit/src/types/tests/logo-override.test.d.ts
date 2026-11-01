@@ -20,9 +20,7 @@ export type Tests_LogoOverride_LogoOverride_DemoLogoPath = string;
 
 export type Tests_LogoOverride_LogoOverride_PresetStats = Stats;
 
-export type Tests_LogoOverride_LogoOverride_PresetBytes = Buffer;
-
-export type Tests_LogoOverride_LogoOverride_DemoBytes = Buffer;
+export type Tests_LogoOverride_LogoOverride_DemoStats = Stats;
 
 export type Tests_LogoOverride_LogoOverride_Config = Record<string, unknown>;
 

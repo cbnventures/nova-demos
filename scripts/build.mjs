@@ -134,6 +134,29 @@ const countdownSeconds = 10;
 const jiti = createJiti(import.meta.url);
 
 /**
+ * Build - Is Nova Orchestration Invocation.
+ *
+ * Detects workspace and artifact selections emitted by generated workflows so
+ * they can bypass the locale planner and reach Nova's workspace runner intact.
+ *
+ * @param {string[]} commandArguments CLI arguments.
+ *
+ * @returns {boolean}
+ *
+ * @since 2026.10.6
+ */
+export function isNovaOrchestrationInvocation(commandArguments) {
+  return commandArguments.some((argument) => {
+    return argument === '--artifact'
+      || argument.startsWith('--artifact=') === true
+      || argument === '--exclude-workspace'
+      || argument.startsWith('--exclude-workspace=') === true
+      || argument === '--workspace'
+      || argument.startsWith('--workspace=') === true;
+  });
+}
+
+/**
  * Build - Parse Build Arguments.
  *
  * Keeps the npm-facing flags small while rejecting ambiguous combinations
@@ -784,7 +807,22 @@ function serializeBuildMode(plan) {
  * @since 2026.10.3
  */
 async function runBuild() {
-  const args = parseBuildArguments(process.argv.slice(2));
+  const rawArguments = process.argv.slice(2);
+  const packageDirectory = dirname(process.env['npm_package_json'] ?? join(process.cwd(), 'package.json'));
+  const isRepositoryRoot = resolve(packageDirectory) === resolve(repositoryRoot);
+
+  if (isRepositoryRoot === true && isNovaOrchestrationInvocation(rawArguments) === true) {
+    runCommand(repositoryRoot, [
+      'run',
+      'build:workspaces',
+      '--',
+      ...rawArguments,
+    ]);
+
+    return;
+  }
+
+  const args = parseBuildArguments(rawArguments);
 
   if (args.help === true) {
     printHelp();
@@ -793,8 +831,6 @@ async function runBuild() {
   }
 
   const demos = await discoverDemos();
-  const packageDirectory = dirname(process.env['npm_package_json'] ?? join(process.cwd(), 'package.json'));
-  const isRepositoryRoot = resolve(packageDirectory) === resolve(repositoryRoot);
   const activeDemo = demos.find((demo) => resolve(demo.directory) === resolve(packageDirectory));
 
   if (isRepositoryRoot === false && activeDemo === undefined) {
@@ -823,12 +859,35 @@ async function runBuild() {
   }
 
   if (isRepositoryRoot === true) {
+    const demoWorkspaceNames = plan.demos.map((demoPlan) => {
+      const demo = demoPlan.demo;
+
+      return demo.name;
+    });
+    const demoArtifactArguments = plan.demos.flatMap((demoPlan) => {
+      return [
+        '--artifact',
+        demoPlan.demo.name,
+      ];
+    });
+
     runCommand(repositoryRoot, [
       'run',
       'build:workspaces',
       '--',
+      '--workspace',
+      ...demoWorkspaceNames,
+      ...demoArtifactArguments,
       '--',
       ...serializeBuildMode(plan),
+    ]);
+
+    runCommand(repositoryRoot, [
+      'run',
+      'build:workspaces',
+      '--',
+      '--artifact',
+      'website',
     ]);
 
     return;

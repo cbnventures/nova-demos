@@ -8,9 +8,9 @@
 
 <div align="center">
 <!-- nova-region: header -->
-  <a href="https://github.com/cbnventures/nova-demos">
+  <a href="https://nova-demos.cbnventures.io/">
     <picture>
-      <img alt="Nova Demos" src="https://nova.cbnventures.io/images/logo.svg" height="128">
+      <img alt="Nova Demos" src="https://nova-demos.cbnventures.io/images/logo.svg" height="128">
     </picture>
   </a>
   <h1>Nova Demos</h1>

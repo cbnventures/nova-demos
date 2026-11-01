@@ -65,11 +65,14 @@ describe('Locale build helper', () => {
       'const demos = await build.discoverDemos();',
       'const complete = build.createBuildPlan(demos, build.parseBuildArguments([]));',
       'const representative = build.createBuildPlan(demos, build.parseBuildArguments([\'--representative\']));',
+      'const orchestration = build.isNovaOrchestrationInvocation([\'--workspace\', \'nova-demos-app-website\', \'--artifact\', \'website\']);',
       'process.stdout.write(build.formatBuildSummary(complete));',
       'process.stdout.write(String.fromCharCode(10));',
       'process.stdout.write(build.formatBuildSummary(representative));',
       'process.stdout.write(String.fromCharCode(10));',
       'process.stdout.write(build.serializeLocaleOptions([\'en\', \'ar\', \'zh-Hans\']).join(\' \'));',
+      'process.stdout.write(String.fromCharCode(10));',
+      'process.stdout.write(String(orchestration));',
     ].join('\n');
     const result: Build_Result = spawnSync(process.execPath, [
       '--input-type=module',
@@ -88,6 +91,8 @@ describe('Locale build helper', () => {
     expect(result.stdout).toContain('Locales: en, ar, zh-Hans');
 
     expect(result.stdout).toContain('--locale en --locale ar --locale zh-Hans');
+
+    expect(result.stdout).toContain('\ntrue');
 
     return;
   });

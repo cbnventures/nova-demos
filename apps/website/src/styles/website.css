@@ -1,0 +1,152 @@
+/**
+ * ============================
+ * Brand Colors
+ * ============================
+ */
+:root {
+  --website-color-background: #12151b;
+  --website-color-glow-primary: rgb(124 58 237 / 32%);
+  --website-color-glow-secondary: rgb(13 148 136 / 24%);
+  --website-color-surface: rgb(255 255 255 / 4%);
+  --website-color-border: rgb(255 255 255 / 10%);
+  --website-color-text: #f4f5f7;
+  --website-color-text-muted: #a9afbc;
+  --website-color-accent: #7c3aed;
+  --website-color-accent-hover: #6d28d9;
+  --website-color-accent-text: #ffffff;
+  --website-color-focus: #f59e0b;
+
+  color-scheme: dark;
+}
+
+/**
+ * ============================
+ * Page
+ * ============================
+ */
+.website {
+  display: grid;
+  box-sizing: border-box;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 1.5rem;
+  place-items: center;
+
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: var(--website-color-text);
+
+  background:
+    radial-gradient(circle at 15% 10%, var(--website-color-glow-primary), transparent 45%),
+    radial-gradient(circle at 85% 90%, var(--website-color-glow-secondary), transparent 40%),
+    var(--website-color-background);
+}
+
+/**
+ * ============================
+ * Card
+ * ============================
+ */
+.website-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 28rem;
+  padding: 2.5rem 1.5rem;
+
+  text-align: center;
+
+  background: var(--website-color-surface);
+  border: 1px solid var(--website-color-border);
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgb(0 0 0 / 35%);
+
+  animation: website-rise 400ms ease-out;
+}
+
+@media (min-width: 768px) {
+  .website-card {
+    padding: 3rem 2.5rem;
+  }
+}
+
+.website-logo {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 1.5rem;
+
+  border-radius: 22px;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 40%);
+}
+
+.website-title {
+  margin: 0;
+
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.website-description {
+  margin: 0.75rem 0 0;
+
+  font-size: 1.0625rem;
+  color: var(--website-color-text-muted);
+}
+
+/* Primary action that leads to where this address sends visitors. */
+.website-button {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.75rem;
+  padding: 0.75rem 1.5rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--website-color-accent-text);
+  text-decoration: none;
+
+  background: var(--website-color-accent);
+  border-radius: 999px;
+
+  transition: background 150ms ease, transform 150ms ease;
+
+  &:hover {
+    background: var(--website-color-accent-hover);
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--website-color-focus);
+    outline-offset: 3px;
+  }
+}
+
+/**
+ * ============================
+ * Motion
+ * ============================
+ */
+@keyframes website-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .website-card {
+    animation: none;
+  }
+
+  .website-button {
+    transition: none;
+  }
+}

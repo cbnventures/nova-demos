@@ -1,5 +1,5 @@
 import { ok, strictEqual } from 'node:assert/strict';
-import { readFile, stat } from 'node:fs/promises';
+import { stat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 import { describe, it } from 'vitest';
@@ -10,12 +10,11 @@ import { getPresetRoot } from '../lib/preset.js';
 import type {
   Tests_LogoOverride_DemoNames,
   Tests_LogoOverride_LogoOverride_Config,
-  Tests_LogoOverride_LogoOverride_DemoBytes,
   Tests_LogoOverride_LogoOverride_DemoLogoPath,
+  Tests_LogoOverride_LogoOverride_DemoStats,
   Tests_LogoOverride_LogoOverride_Logo,
   Tests_LogoOverride_LogoOverride_LogoSrc,
   Tests_LogoOverride_LogoOverride_LogoSrcLight,
-  Tests_LogoOverride_LogoOverride_PresetBytes,
   Tests_LogoOverride_LogoOverride_PresetLogoPath,
   Tests_LogoOverride_LogoOverride_PresetName,
   Tests_LogoOverride_LogoOverride_PresetStats,
@@ -28,9 +27,8 @@ const demoNames: Tests_LogoOverride_DemoNames = await discoverDemoNames();
 /**
  * Tests - Logo Override - Logo Override.
  *
- * Locks the preset as the source of truth for logo assets: the canonical file
- * must exist and be non-empty, each demo's override must match it byte for byte,
- * and the config must actually wire the override through to a runtime URL.
+ * Locks the asset contract for preset logos and demo overrides: both files must
+ * exist and be non-empty, and the config must wire the override to a runtime URL.
  *
  * @since 2026.8.0
  */
@@ -38,7 +36,7 @@ describe('logo override', () => {
   for (const demoName of demoNames) {
     const presetName: Tests_LogoOverride_LogoOverride_PresetName = demoName.replace('demo-', '');
     const presetLogoPath: Tests_LogoOverride_LogoOverride_PresetLogoPath = resolve(getPresetRoot(), 'assets', 'presets', presetName, 'logo.svg');
-    const demoLogoPath: Tests_LogoOverride_LogoOverride_DemoLogoPath = resolve(getDemoRoot(demoName), 'static', 'images', 'logo.svg');
+    const demoLogoPath: Tests_LogoOverride_LogoOverride_DemoLogoPath = resolve(getDemoRoot(demoName), 'static', 'images', 'navbar.svg');
 
     it(`preset '${presetName}' ships a non-empty canonical logo`, async () => {
       const presetStats: Tests_LogoOverride_LogoOverride_PresetStats = await stat(presetLogoPath);
@@ -49,11 +47,11 @@ describe('logo override', () => {
       return;
     });
 
-    it(`'${demoName}' override logo bytes equal the preset canonical`, async () => {
-      const presetBytes: Tests_LogoOverride_LogoOverride_PresetBytes = await readFile(presetLogoPath);
-      const demoBytes: Tests_LogoOverride_LogoOverride_DemoBytes = await readFile(demoLogoPath);
+    it(`'${demoName}' ships a non-empty navbar override`, async () => {
+      const demoStats: Tests_LogoOverride_LogoOverride_DemoStats = await stat(demoLogoPath);
 
-      ok(presetBytes.equals(demoBytes), `${demoLogoPath} has drifted from the preset canonical.`);
+      ok(demoStats.isFile(), `${demoLogoPath} is not a file.`);
+      ok(demoStats.size > 0, `${demoLogoPath} is empty.`);
 
       return;
     });
@@ -66,7 +64,7 @@ describe('logo override', () => {
       const logoSrc: Tests_LogoOverride_LogoOverride_LogoSrc = logo['src'] as Tests_LogoOverride_LogoOverride_LogoSrc;
       const logoSrcLight: Tests_LogoOverride_LogoOverride_LogoSrcLight = logoSrc['light'];
 
-      strictEqual(logoSrcLight, '/images/logo.svg');
+      strictEqual(logoSrcLight, '/images/navbar.svg');
 
       return;
     });

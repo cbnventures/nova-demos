@@ -16,7 +16,7 @@ const currentFilePath = fileURLToPath(import.meta.url);
  * Stores this module-level value in one named location.
  * Related code reuses it instead of duplicating the definition.
  *
- * @since UNRELEASED
+ * @since 2026.10.6
  */
 const rootDirectory = dirname(currentFilePath);
 

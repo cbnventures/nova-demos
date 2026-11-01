@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "title": "Nova Demos"
+  },
+  "brand": {
+    "name": "Nova Demos",
+    "description": "Live demonstration sites for the Nova Docusaurus preset family.",
+    "logoAlt": "Nova Demos logo"
+  },
+  "redirect": {
+    "link": "Go to the Nova docs"
+  }
+}

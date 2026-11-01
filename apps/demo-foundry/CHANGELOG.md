@@ -1,5 +1,10 @@
 # demo-foundry
 
+## 2026.10.6
+
+### FIXED
+- Fixed locale build modes forwarding Docusaurus-only options to the repository website.
+
 ## 2026.10.5
 
 ### UPDATED

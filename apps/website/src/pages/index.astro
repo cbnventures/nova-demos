@@ -1,0 +1,44 @@
+---
+import messages from '../i18n/en.json';
+import '../styles/website.css';
+
+/**
+ * Website - Index - Destination.
+ *
+ * Sends visitors to the Nova documentation. This site only hosts the repository's
+ * images, so its homepage redirects and asks search engines not to index it. Local
+ * hosts skip the redirect so the site can be previewed.
+ *
+ * @since 2026.10.6
+ */
+const destination = 'https://nova.cbnventures.io/';
+---
+
+<!doctype html>
+<html lang={Astro.currentLocale ?? 'en'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex" />
+    <script is:inline define:vars={{ destination }}>
+      if ([
+        'localhost',
+        '127.0.0.1',
+        '[::1]',
+        '0.0.0.0',
+      ].includes(window.location.hostname) === false && window.location.hostname.endsWith('.localhost') === false) {
+        window.location.replace(destination);
+      }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{messages.metadata.title}</title>
+  </head>
+  <body class="website">
+    <main class="website-card">
+      <img class="website-logo" src="/images/logo.svg" alt={messages.brand.logoAlt} width="96" height="96" />
+      <h1 class="website-title">{messages.brand.name}</h1>
+      <p class="website-description">{messages.brand.description}</p>
+      <a class="website-button" href={destination}>{messages.redirect.link}</a>
+    </main>
+  </body>
+</html>
