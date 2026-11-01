@@ -2,8 +2,12 @@
 
 ## 2026.10.6
 
+### UPDATED
+- Refreshed the site's app icons, favicons, social preview images, and dedicated navbar artwork.
+- Standardized production previews and builds around the workspace's `build/` output and assembled artifacts.
+
 ### FIXED
-- Fixed locale build modes forwarding Docusaurus-only options to the repository website.
+- Prevented locale build modes from forwarding Docusaurus-only options to the repository website.
 
 ## 2026.10.5
 

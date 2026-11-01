@@ -2,7 +2,9 @@
 
 ## 2026.10.6
 
-No changes.
+### UPDATED
+- Updated demo identity coverage to validate distinct, non-empty navbar artwork instead of requiring byte-for-byte copies of preset logos.
+- Pointed the testkit documentation and branding at the official Nova Demos website.
 
 ## 2026.10.5
 
