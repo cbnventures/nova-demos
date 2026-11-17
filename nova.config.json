@@ -176,7 +176,7 @@
         "issue-comment",
         "issues"
       ],
-      "runsOn": "ubuntu-latest",
+      "runsOn": "ubuntu-24.04",
       "timeoutMinutes": 5
     },
     {
@@ -185,7 +185,7 @@
       "triggers": [
         "schedule-weekly"
       ],
-      "runsOn": "ubuntu-latest",
+      "runsOn": "ubuntu-24.04",
       "timeoutMinutes": 5
     },
     {
@@ -199,7 +199,7 @@
           ]
         }
       ],
-      "runsOn": "ubuntu-latest",
+      "runsOn": "ubuntu-24.04",
       "timeoutMinutes": 15,
       "build": [
         "./apps/website"
@@ -237,44 +237,44 @@
   },
   "workspaces": {
     "./": {
+      "name": "nova-demos-project",
       "role": "project",
-      "policy": "freezable",
-      "name": "nova-demos-project"
+      "policy": "freezable"
     },
     "./apps/demo-envoy": {
+      "name": "demo-envoy",
       "role": "template",
-      "policy": "trackable",
-      "name": "demo-envoy"
+      "policy": "trackable"
     },
     "./apps/demo-foundry": {
+      "name": "demo-foundry",
       "role": "template",
-      "policy": "trackable",
-      "name": "demo-foundry"
+      "policy": "trackable"
     },
     "./apps/demo-lantern": {
+      "name": "demo-lantern",
       "role": "template",
-      "policy": "trackable",
-      "name": "demo-lantern"
+      "policy": "trackable"
     },
     "./apps/demo-marshal": {
+      "name": "demo-marshal",
       "role": "template",
-      "policy": "trackable",
-      "name": "demo-marshal"
+      "policy": "trackable"
     },
     "./apps/demo-sentinel": {
+      "name": "demo-sentinel",
       "role": "template",
-      "policy": "trackable",
-      "name": "demo-sentinel"
+      "policy": "trackable"
     },
     "./apps/demo-signal": {
+      "name": "demo-signal",
       "role": "template",
-      "policy": "trackable",
-      "name": "demo-signal"
+      "policy": "trackable"
     },
     "./packages/demos-testkit": {
+      "name": "nova-demos-tool-testkit",
       "role": "tool",
-      "policy": "trackable",
-      "name": "nova-demos-tool-testkit"
+      "policy": "trackable"
     },
     "./apps/website": {
       "name": "nova-demos-app-website",

@@ -1,17 +1,22 @@
 import {
   AppMarketDownload,
   BlogPreview,
+  BrowserFrame,
   Features,
   Frame,
   Hero,
   InstallStrip,
+  ScreenGallery,
+  Showcase,
   Spotlight,
   Stats,
+  TerminalFrame,
   Terminology,
   Typewriter,
+  WorkflowRunFrame,
 } from '@cbnventures/docusaurus-preset-nova/blocks';
 import { translate } from '@docusaurus/Translate';
-import Showcase from '@theme/Showcase';
+import ShowcaseLayout from '@theme/Showcase';
 
 /**
  * Pages - Showcase - Page.
@@ -28,7 +33,7 @@ import Showcase from '@theme/Showcase';
  */
 function ShowcasePage() {
   return (
-    <Showcase
+    <ShowcaseLayout
       layoutDescription={translate({
         id: 'showcase.layout.description',
         message: 'Sentinel block showcase demonstrating every block from docusaurus-preset-nova.',
@@ -40,7 +45,7 @@ function ShowcasePage() {
         description: 'Showcase page sub-description below the title',
       })}
     >
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.heroFull.title',
         message: 'Hero (full)',
         description: 'Showcase item title for Hero (full variant)',
@@ -75,9 +80,9 @@ function ShowcasePage() {
           })}
           secondaryCtaLink="https://nova.cbnventures.io"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.heroMinimal.title',
         message: 'Hero (minimal)',
         description: 'Showcase item title for Hero (minimal variant)',
@@ -101,9 +106,9 @@ function ShowcasePage() {
           })}
           ctaLink="/docs/overview/"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.typewriterDefault.title',
         message: 'Typewriter (default)',
         description: 'Showcase item title for Typewriter (default variant)',
@@ -121,9 +126,9 @@ function ShowcasePage() {
           <Typewriter.Word>TypeScript</Typewriter.Word>
           <Typewriter.Word>Nova</Typewriter.Word>
         </Typewriter>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.typewriterNoPrefix.title',
         message: 'Typewriter (no prefix)',
         description: 'Showcase item title for Typewriter (no prefix variant)',
@@ -152,9 +157,9 @@ function ShowcasePage() {
             })}
           </Typewriter.Word>
         </Typewriter>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.typewriterSlow.title',
         message: 'Typewriter (slow timing)',
         description: 'Showcase item title for Typewriter (slow timing variant)',
@@ -183,9 +188,9 @@ function ShowcasePage() {
             })}
           </Typewriter.Word>
         </Typewriter>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.typewriterNoLoop.title',
         message: 'Typewriter (no loop)',
         description: 'Showcase item title for Typewriter (no loop variant)',
@@ -201,9 +206,9 @@ function ShowcasePage() {
           </Typewriter.Prefix>
           <Typewriter.Word>Nova</Typewriter.Word>
         </Typewriter>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.installStripIcon.title',
         message: 'InstallStrip (copyTarget: icon)',
         description: 'Showcase item title for InstallStrip (icon copyTarget variant)',
@@ -218,9 +223,9 @@ function ShowcasePage() {
           command="spark install sentinel-agent"
           copyTarget="icon"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.installStripBlock.title',
         message: 'InstallStrip (copyTarget: block)',
         description: 'Showcase item title for InstallStrip (block copyTarget variant)',
@@ -235,18 +240,18 @@ function ShowcasePage() {
           command="vial pull sentinel/agent:latest"
           copyTarget="block"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.installStripNoLabel.title',
         message: 'InstallStrip (no label)',
         description: 'Showcase item title for InstallStrip (no label variant)',
       })}
       >
         <InstallStrip command="sentinel parapet dry-run --scope all-devices" />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.installStripText.title',
         message: 'InstallStrip (copyTarget: text)',
         description: 'Showcase item title for InstallStrip (text copyTarget variant)',
@@ -261,9 +266,9 @@ function ShowcasePage() {
           command="spark install sentinel-agent"
           copyTarget="text"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.featuresIcons.title',
         message: 'Features (with icons)',
         description: 'Showcase item title for Features (with icons variant)',
@@ -317,9 +322,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.featuresNoIcons.title',
         message: 'Features (without icons, without heading)',
         description: 'Showcase item title for Features (no icons, no heading variant)',
@@ -365,9 +370,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.featuresSix.title',
         message: 'Features (six items, mixed icons)',
         description: 'Showcase item title for Features (six items variant)',
@@ -458,9 +463,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.statsFull.title',
         message: 'Stats (with heading and description)',
         description: 'Showcase item title for Stats (full variant)',
@@ -516,9 +521,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.statsNoHeading.title',
         message: 'Stats (without heading)',
         description: 'Showcase item title for Stats (no heading variant)',
@@ -560,9 +565,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.spotlightCode.title',
         message: 'Spotlight (with code)',
         description: 'Showcase item title for Spotlight (with code variant)',
@@ -589,9 +594,9 @@ function ShowcasePage() {
             })}
           </p>
         </Spotlight>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.spotlightText.title',
         message: 'Spotlight (with text)',
         description: 'Showcase item title for Spotlight (with text variant)',
@@ -611,9 +616,9 @@ function ShowcasePage() {
             })}
           </p>
         </Spotlight>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.spotlightAlt.title',
         message: 'Spotlight (alt surface)',
         description: 'Showcase item title for Spotlight (alt surface variant)',
@@ -635,9 +640,9 @@ function ShowcasePage() {
             })}
           </p>
         </Spotlight>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.blogPreviewWithDesc.title',
         message: 'BlogPreview (with description)',
         description: 'Showcase item title for BlogPreview (with description variant)',
@@ -699,9 +704,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.blogPreviewNoDesc.title',
         message: 'BlogPreview (without description)',
         description: 'Showcase item title for BlogPreview (no description variant)',
@@ -728,9 +733,9 @@ function ShowcasePage() {
             permalink: '/blog/2025/10/01/parapet-traffic-replay-and-rampart-zone-quarantine/',
           }]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.blogPreviewNewest.title',
         message: 'BlogPreview (newest first)',
         description: 'Showcase item title for BlogPreview newest-first sort variant',
@@ -746,9 +751,9 @@ function ShowcasePage() {
           limit={2}
           sort="newest"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.blogPreviewOldest.title',
         message: 'BlogPreview (oldest first)',
         description: 'Showcase item title for BlogPreview oldest-first sort variant',
@@ -764,9 +769,9 @@ function ShowcasePage() {
           limit={2}
           sort="oldest"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.terminologyColorLink.title',
         message: 'Terminology (colored and linked)',
         description: 'Showcase item title for Terminology color and link variant',
@@ -804,9 +809,9 @@ function ShowcasePage() {
             description: 'Showcase Terminology color and link paragraph outro fragment',
           })}
         </p>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.terminology.title',
         message: 'Terminology (inline usage)',
         description: 'Showcase item title for Terminology inline usage variant',
@@ -922,9 +927,9 @@ function ShowcasePage() {
             description: 'Showcase Terminology paragraph 2 fragment after Spyglass',
           })}
         </p>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.frameWithCaption.title',
         message: 'Frame (with caption)',
         description: 'Showcase item title for Frame (with caption variant)',
@@ -937,7 +942,7 @@ function ShowcasePage() {
         })}
         >
           <img
-            src="/thumbnails/brand.png"
+            src="/images/placeholder-landscape.svg"
             alt={translate({
               id: 'showcase.frame.imageAlt',
               message: 'Sentinel brand thumbnail.',
@@ -945,9 +950,9 @@ function ShowcasePage() {
             })}
           />
         </Frame>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.frameNoCaption.title',
         message: 'Frame (no caption)',
         description: 'Showcase item title for Frame (no caption variant)',
@@ -955,7 +960,7 @@ function ShowcasePage() {
       >
         <Frame>
           <img
-            src="/thumbnails/brand.png"
+            src="/images/placeholder-landscape.svg"
             alt={translate({
               id: 'showcase.frame.imageAlt',
               message: 'Sentinel brand thumbnail.',
@@ -963,9 +968,9 @@ function ShowcasePage() {
             })}
           />
         </Frame>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.appMarketBoth.title',
         message: 'AppMarketDownload (both stores)',
         description: 'Showcase item title for AppMarketDownload (both stores variant)',
@@ -980,9 +985,9 @@ function ShowcasePage() {
           appStoreUrl="#"
           googlePlayUrl="#"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.appMarketAppStore.title',
         message: 'AppMarketDownload (App Store only)',
         description: 'Showcase item title for AppMarketDownload (App Store only variant)',
@@ -996,9 +1001,9 @@ function ShowcasePage() {
           })}
           appStoreUrl="#"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.appMarketGooglePlay.title',
         message: 'AppMarketDownload (Google Play only)',
         description: 'Showcase item title for AppMarketDownload (Google Play only variant)',
@@ -1012,9 +1017,9 @@ function ShowcasePage() {
           })}
           googlePlayUrl="#"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.appMarketNoLabel.title',
         message: 'AppMarketDownload (no label)',
         description: 'Showcase item title for AppMarketDownload (no label variant)',
@@ -1024,8 +1029,484 @@ function ShowcasePage() {
           appStoreUrl="#"
           googlePlayUrl="#"
         />
-      </Showcase.Item>
-    </Showcase>
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.browserFrame.title',
+        message: 'BrowserFrame',
+        description: 'Showcase item title for BrowserFrame',
+      })}
+      >
+        <BrowserFrame
+          title={translate({
+            id: 'showcase.browserFrame.title',
+            message: 'Sentinel Trust Console',
+            description: 'Showcase BrowserFrame tab title',
+          })}
+          url="access.sentinel.test/posture"
+          favicon="/favicon.svg"
+        >
+          <img
+            src="/images/placeholder-landscape.svg"
+            alt={translate({
+              id: 'showcase.browserFrame.imageAlt',
+              message: 'Sentinel trust console showing the current access posture.',
+              description: 'Showcase BrowserFrame image alt text',
+            })}
+            width={1200}
+            height={630}
+          />
+        </BrowserFrame>
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.terminalFrame.title',
+        message: 'TerminalFrame',
+        description: 'Showcase item title for TerminalFrame',
+      })}
+      >
+        <TerminalFrame
+          title={translate({
+            id: 'showcase.terminalFrame.title',
+            message: 'device-lab-04 — sentinel trust inspect — 80×24',
+            description: 'Showcase TerminalFrame window title',
+          })}
+          label={translate({
+            id: 'showcase.terminalFrame.label',
+            message: 'Sentinel device trust inspection output',
+            description: 'Showcase TerminalFrame accessible label',
+          })}
+        >
+          {[
+            translate({
+              id: 'showcase.terminalFrame.line1',
+              message: '$ sentinel trust inspect device-lab-04',
+              description: 'Showcase TerminalFrame output line 1',
+            }),
+            translate({
+              id: 'showcase.terminalFrame.line2',
+              message: '✓ Device posture matches the access policy',
+              description: 'Showcase TerminalFrame output line 2',
+            }),
+            translate({
+              id: 'showcase.terminalFrame.line3',
+              message: '✓ Session risk remains below the review threshold',
+              description: 'Showcase TerminalFrame output line 3',
+            }),
+          ].join('\n')}
+        </TerminalFrame>
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.showcaseBlock.title',
+        message: 'Showcase',
+        description: 'Showcase item title for the Showcase block',
+      })}
+      >
+        <Showcase
+          tabsLabel={translate({
+            id: 'showcase.showcaseBlock.tabsLabel',
+            message: 'Sentinel trust views',
+            description: 'Showcase block accessible tabs label',
+          })}
+          items={[
+            {
+              label: translate({
+                id: 'showcase.showcaseBlock.overview.label',
+                message: 'Access posture',
+                description: 'Showcase block overview tab label',
+              }),
+              heading: translate({
+                id: 'showcase.showcaseBlock.overview.heading',
+                message: 'See why access is allowed',
+                description: 'Showcase block overview heading',
+              }),
+              description: translate({
+                id: 'showcase.showcaseBlock.overview.description',
+                message: 'Review identity, device, and session evidence behind each access decision.',
+                description: 'Showcase block overview description',
+              }),
+              link: {
+                label: translate({
+                  id: 'showcase.showcaseBlock.overview.linkLabel',
+                  message: 'Open the access overview',
+                  description: 'Showcase block overview link label',
+                }),
+                to: '/docs/overview/',
+              },
+              content: (
+                <BrowserFrame
+                  title={translate({
+                    id: 'showcase.browserFrame.title',
+                    message: 'Sentinel Trust Console',
+                    description: 'Showcase BrowserFrame tab title',
+                  })}
+                  url="access.sentinel.test/posture"
+                  favicon="/favicon.svg"
+                >
+                  <img
+                    src="/images/placeholder-landscape.svg"
+                    alt={translate({
+                      id: 'showcase.browserFrame.imageAlt',
+                      message: 'Sentinel trust console showing the current access posture.',
+                      description: 'Showcase BrowserFrame image alt text',
+                    })}
+                    width={1200}
+                    height={630}
+                  />
+                </BrowserFrame>
+              ),
+            },
+            {
+              label: translate({
+                id: 'showcase.showcaseBlock.console.label',
+                message: 'Trust inspection',
+                description: 'Showcase block console tab label',
+              }),
+              heading: translate({
+                id: 'showcase.showcaseBlock.console.heading',
+                message: 'Inspect a decision from the evidence',
+                description: 'Showcase block console heading',
+              }),
+              description: translate({
+                id: 'showcase.showcaseBlock.console.description',
+                message: 'Trace the active policy checks without exposing credentials or session secrets.',
+                description: 'Showcase block console description',
+              }),
+              content: (
+                <TerminalFrame
+                  title={translate({
+                    id: 'showcase.terminalFrame.title',
+                    message: 'device-lab-04 — sentinel trust inspect — 80×24',
+                    description: 'Showcase TerminalFrame window title',
+                  })}
+                  label={translate({
+                    id: 'showcase.terminalFrame.label',
+                    message: 'Sentinel device trust inspection output',
+                    description: 'Showcase TerminalFrame accessible label',
+                  })}
+                >
+                  {[
+                    translate({
+                      id: 'showcase.terminalFrame.line1',
+                      message: '$ sentinel trust inspect device-lab-04',
+                      description: 'Showcase TerminalFrame output line 1',
+                    }),
+                    translate({
+                      id: 'showcase.terminalFrame.line2',
+                      message: '✓ Device posture matches the access policy',
+                      description: 'Showcase TerminalFrame output line 2',
+                    }),
+                    translate({
+                      id: 'showcase.terminalFrame.line3',
+                      message: '✓ Session risk remains below the review threshold',
+                      description: 'Showcase TerminalFrame output line 3',
+                    }),
+                  ].join('\n')}
+                </TerminalFrame>
+              ),
+            },
+          ]}
+        />
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.screenGallery.title',
+        message: 'ScreenGallery',
+        description: 'Showcase item title for ScreenGallery',
+      })}
+      >
+        <ScreenGallery
+          items={[
+            {
+              image: (
+                <img
+                  src="/images/placeholder-screen.svg"
+                  alt={translate({
+                    id: 'showcase.screenGallery.first.imageAlt',
+                    message: 'Sentinel access posture preview.',
+                    description: 'Showcase ScreenGallery first image alt text',
+                  })}
+                  width={1350}
+                  height={2760}
+                />
+              ),
+              heading: translate({
+                id: 'showcase.screenGallery.first.heading',
+                message: 'Access posture',
+                description: 'Showcase ScreenGallery first item heading',
+              }),
+              description: translate({
+                id: 'showcase.screenGallery.first.description',
+                message: 'See the evidence and policy checks behind the current decision.',
+                description: 'Showcase ScreenGallery first item description',
+              }),
+              link: {
+                label: translate({
+                  id: 'showcase.screenGallery.first.linkLabel',
+                  message: 'Review continuous trust',
+                  description: 'Showcase ScreenGallery first item link label',
+                }),
+                to: '/docs/overview/',
+              },
+            },
+            {
+              image: (
+                <img
+                  src="/images/placeholder-screen.svg"
+                  alt={translate({
+                    id: 'showcase.screenGallery.second.imageAlt',
+                    message: 'Sentinel device identity mark.',
+                    description: 'Showcase ScreenGallery second image alt text',
+                  })}
+                  width={1350}
+                  height={2760}
+                />
+              ),
+              heading: translate({
+                id: 'showcase.screenGallery.second.heading',
+                message: 'Device evidence',
+                description: 'Showcase ScreenGallery second item heading',
+              }),
+              description: translate({
+                id: 'showcase.screenGallery.second.description',
+                message: 'Inspect health signals and recent changes for one enrolled device.',
+                description: 'Showcase ScreenGallery second item description',
+              }),
+              link: {
+                label: translate({
+                  id: 'showcase.screenGallery.second.linkLabel',
+                  message: 'Browse device posture',
+                  description: 'Showcase ScreenGallery second item link label',
+                }),
+                to: '/docs/overview/',
+              },
+            },
+          ]}
+        />
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.workflowRunFrameSuccess.title',
+        message: 'WorkflowRunFrame (success)',
+        description: 'Showcase item title for WorkflowRunFrame (success variant)',
+      })}
+      >
+        <WorkflowRunFrame
+          workflow={translate({
+            id: 'showcase.workflowRunFrame.workflow',
+            message: 'Continuous Trust Evaluation',
+            description: 'Showcase WorkflowRunFrame workflow name',
+          })}
+          title={translate({
+            id: 'showcase.workflowRunFrameSuccess.title',
+            message: 'Evaluate device-lab-02 access',
+            description: 'Showcase WorkflowRunFrame (success) run title',
+          })}
+          runNumber={72}
+          label={translate({
+            id: 'showcase.workflowRunFrameSuccess.label',
+            message: 'Sentinel continuous trust workflow run that passed',
+            description: 'Showcase WorkflowRunFrame (success) accessible label',
+          })}
+          jobs={[
+            {
+              name: translate({
+                id: 'showcase.workflowRunFrame.job.name',
+                message: 'evaluate-device-trust',
+                description: 'Showcase WorkflowRunFrame active job name',
+              }),
+              summary: translate({
+                id: 'showcase.workflowRunFrameSuccess.job.summary',
+                message: 'succeeded in 4s',
+                description: 'Showcase WorkflowRunFrame (success) active job summary',
+              }),
+              steps: [
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.setupStep.name',
+                    message: 'Prepare trust evidence',
+                    description: 'Showcase WorkflowRunFrame setup step name',
+                  }),
+                  duration: '1s',
+                },
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.actionStep.name',
+                    message: 'Evaluate access policy',
+                    description: 'Showcase WorkflowRunFrame action step name',
+                  }),
+                  duration: '2s',
+                  log: [
+                    {
+                      title: translate({
+                        id: 'showcase.workflowRunFrame.setupGroup.title',
+                        message: 'Load identity and device posture',
+                        description: 'Showcase WorkflowRunFrame closed log group title',
+                      }),
+                      hiddenLines: 3,
+                    },
+                    {
+                      title: translate({
+                        id: 'showcase.workflowRunFrame.runGroup.title',
+                        message: 'Verify policy decision',
+                        description: 'Showcase WorkflowRunFrame open log group title',
+                      }),
+                      lines: [
+                        translate({
+                          id: 'showcase.workflowRunFrame.log.line1',
+                          message: 'Identity and session evidence passed initial checks',
+                          description: 'Showcase WorkflowRunFrame log line 1',
+                        }),
+                        translate({
+                          id: 'showcase.workflowRunFrameSuccess.log.line2',
+                          message: 'Device posture stayed steady during evaluation',
+                          description: 'Showcase WorkflowRunFrame (success) log line 2',
+                        }),
+                        translate({
+                          id: 'showcase.workflowRunFrameSuccess.log.line3',
+                          message: 'Access granted with a fresh device attestation',
+                          description: 'Showcase WorkflowRunFrame (success) log line 3',
+                        }),
+                      ],
+                    },
+                  ],
+                },
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.finalStep.name',
+                    message: 'Record access decision',
+                    description: 'Showcase WorkflowRunFrame final step name',
+                  }),
+                  duration: '1s',
+                },
+              ],
+            },
+            {
+              name: translate({
+                id: 'showcase.workflowRunFrame.queuedJob.name',
+                message: 'notify-access-reviewer',
+                description: 'Showcase WorkflowRunFrame skipped job name',
+              }),
+            },
+          ]}
+        />
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.workflowRunFrame.title',
+        message: 'WorkflowRunFrame (failure)',
+        description: 'Showcase item title for WorkflowRunFrame (failure variant)',
+      })}
+      >
+        <WorkflowRunFrame
+          workflow={translate({
+            id: 'showcase.workflowRunFrame.workflow',
+            message: 'Continuous Trust Evaluation',
+            description: 'Showcase WorkflowRunFrame workflow name',
+          })}
+          title={translate({
+            id: 'showcase.workflowRunFrame.title',
+            message: 'Evaluate device-lab-04 access',
+            description: 'Showcase WorkflowRunFrame run title',
+          })}
+          runNumber={73}
+          status="failure"
+          label={translate({
+            id: 'showcase.workflowRunFrame.label',
+            message: 'Sentinel continuous trust workflow run',
+            description: 'Showcase WorkflowRunFrame accessible label',
+          })}
+          jobs={[
+            {
+              name: translate({
+                id: 'showcase.workflowRunFrame.job.name',
+                message: 'evaluate-device-trust',
+                description: 'Showcase WorkflowRunFrame active job name',
+              }),
+              status: 'failure',
+              summary: translate({
+                id: 'showcase.workflowRunFrame.job.summary',
+                message: 'failed in 5s',
+                description: 'Showcase WorkflowRunFrame active job summary',
+              }),
+              steps: [
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.setupStep.name',
+                    message: 'Prepare trust evidence',
+                    description: 'Showcase WorkflowRunFrame setup step name',
+                  }),
+                  status: 'success',
+                  duration: '1s',
+                },
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.actionStep.name',
+                    message: 'Evaluate access policy',
+                    description: 'Showcase WorkflowRunFrame action step name',
+                  }),
+                  status: 'failure',
+                  duration: '5s',
+                  log: [
+                    {
+                      title: translate({
+                        id: 'showcase.workflowRunFrame.setupGroup.title',
+                        message: 'Load identity and device posture',
+                        description: 'Showcase WorkflowRunFrame closed log group title',
+                      }),
+                      hiddenLines: 3,
+                    },
+                    {
+                      title: translate({
+                        id: 'showcase.workflowRunFrame.runGroup.title',
+                        message: 'Verify policy decision',
+                        description: 'Showcase WorkflowRunFrame open log group title',
+                      }),
+                      lines: [
+                        translate({
+                          id: 'showcase.workflowRunFrame.log.line1',
+                          message: 'Identity and session evidence passed initial checks',
+                          description: 'Showcase WorkflowRunFrame log line 1',
+                        }),
+                        translate({
+                          id: 'showcase.workflowRunFrame.log.line2',
+                          message: '##[warning]Device posture changed during evaluation',
+                          description: 'Showcase WorkflowRunFrame log line 2',
+                        }),
+                        translate({
+                          id: 'showcase.workflowRunFrame.log.line3',
+                          message: '##[error]Access policy requires a fresh device attestation',
+                          description: 'Showcase WorkflowRunFrame log line 3',
+                        }),
+                      ],
+                    },
+                  ],
+                },
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.finalStep.name',
+                    message: 'Record access decision',
+                    description: 'Showcase WorkflowRunFrame final step name',
+                  }),
+                  status: 'skipped',
+                  duration: '0s',
+                },
+              ],
+            },
+            {
+              name: translate({
+                id: 'showcase.workflowRunFrame.queuedJob.name',
+                message: 'notify-access-reviewer',
+                description: 'Showcase WorkflowRunFrame skipped job name',
+              }),
+              status: 'skipped',
+            },
+          ]}
+        />
+      </ShowcaseLayout.Item>
+
+    </ShowcaseLayout>
   );
 }
 

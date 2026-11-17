@@ -6,11 +6,13 @@
 :root {
   --website-color-background: #12151b;
   --website-color-glow-primary: rgb(124 58 237 / 32%);
-  --website-color-glow-secondary: rgb(13 148 136 / 24%);
-  --website-color-surface: rgb(255 255 255 / 4%);
-  --website-color-border: rgb(255 255 255 / 10%);
-  --website-color-text: #f4f5f7;
-  --website-color-text-muted: #a9afbc;
+  --website-color-glow-secondary: rgb(13 148 136 / 28%);
+  --website-color-surface: rgb(255 255 255 / 5%);
+  --website-color-border: rgb(255 255 255 / 12%);
+  --website-color-text: #f6f3ff;
+  --website-color-text-muted: #cfc9e6;
+  --website-color-status: #e4def7;
+  --website-color-footer: #9a93b8;
   --website-color-accent: #7c3aed;
   --website-color-accent-hover: #6d28d9;
   --website-color-accent-text: #ffffff;
@@ -24,12 +26,16 @@
  * Page
  * ============================
  */
+* {
+  box-sizing: border-box;
+}
+
 .website {
   display: grid;
-  box-sizing: border-box;
+  grid-template-columns: minmax(0, 1fr);
   min-height: 100dvh;
   margin: 0;
-  padding: 1.5rem;
+  padding: 1.375rem;
   place-items: center;
 
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -51,9 +57,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-self: center;
   width: 100%;
+  min-width: 0;
   max-width: 28rem;
-  padding: 2.5rem 1.5rem;
+  padding: 2.25rem 1.5rem 1.25rem;
 
   text-align: center;
 
@@ -65,58 +73,115 @@
   animation: website-rise 400ms ease-out;
 }
 
-@media (min-width: 768px) {
-  .website-card {
-    padding: 3rem 2.5rem;
-  }
-}
-
 .website-logo {
-  width: 96px;
-  height: 96px;
-  margin-bottom: 1.5rem;
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.25rem;
 
-  border-radius: 22px;
+  border-radius: 20px;
   box-shadow: 0 12px 32px rgb(0 0 0 / 40%);
 }
 
 .website-title {
   margin: 0;
 
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.75rem;
   line-height: 1.2;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.4px;
 }
 
 .website-description {
-  margin: 0.75rem 0 0;
+  margin: 0.6rem 0 0;
 
-  font-size: 1.0625rem;
+  font-size: 1rem;
+  line-height: 1.5;
   color: var(--website-color-text-muted);
 }
 
-/* Primary action that leads to where this address sends visitors. */
+/**
+ * ============================
+ * Redirect State
+ * ============================
+ */
+.website-countdown {
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+.website-countdown-text {
+  font-size: 0.875rem;
+  color: var(--website-color-status);
+
+  overflow-wrap: anywhere;
+
+  & strong {
+    color: #ffffff;
+  }
+}
+
+.website-progress {
+  height: 4px;
+  margin-top: 10px;
+
+  background: var(--website-color-border);
+  border-radius: 99px;
+
+  overflow: hidden;
+}
+
+.website-progress-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+
+  background: var(--website-color-accent);
+  border-radius: 99px;
+
+  animation: website-progress var(--website-redirect-delay, 5s) linear forwards;
+}
+
+.website-countdown-cancelled .website-progress-fill,
+.website-countdown-paused .website-progress-fill {
+  animation-play-state: paused;
+}
+
+/**
+ * ============================
+ * Actions
+ * ============================
+ */
+.website-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 1.4rem;
+}
+
 .website-button {
   display: inline-flex;
   align-items: center;
-  margin-top: 1.75rem;
-  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0.65rem 1.25rem;
 
-  font-size: 1rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--website-color-accent-text);
+  line-height: 1.5;
+  text-align: center;
   text-decoration: none;
 
-  background: var(--website-color-accent);
+  border: 1px solid transparent;
   border-radius: 999px;
 
   transition: background 150ms ease, transform 150ms ease;
 
-  &:hover {
-    background: var(--website-color-accent-hover);
-    transform: translateY(-1px);
-  }
+  appearance: none;
+  cursor: pointer;
+  overflow-wrap: anywhere;
 
   &:focus-visible {
     outline: 2px solid var(--website-color-focus);
@@ -124,11 +189,52 @@
   }
 }
 
+.website-button-primary {
+  color: var(--website-color-accent-text);
+
+  background: var(--website-color-accent);
+
+  &:hover {
+    background: var(--website-color-accent-hover);
+    transform: translateY(-1px);
+  }
+}
+
+.website-button-ghost {
+  color: var(--website-color-text);
+
+  background: transparent;
+  border-color: rgb(255 255 255 / 22%);
+
+  &:hover {
+    background: rgb(255 255 255 / 8%);
+    transform: translateY(-1px);
+  }
+}
+
+.website-footer {
+  margin-top: 1.6rem;
+
+  font-size: 0.75rem;
+  color: var(--website-color-footer);
+  letter-spacing: 0.2px;
+}
+
 /**
  * ============================
  * Motion
  * ============================
  */
+@keyframes website-progress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
 @keyframes website-rise {
   from {
     opacity: 0;
@@ -142,8 +248,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .website-card {
+  .website-card,
+  .website-progress-fill {
     animation: none;
+  }
+
+  .website-progress-fill {
+    width: 100%;
   }
 
   .website-button {

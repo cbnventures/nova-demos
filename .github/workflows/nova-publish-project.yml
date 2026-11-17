@@ -33,37 +33,45 @@ env:
 
 jobs:
   build:
-    runs-on: "ubuntu-latest"
+    runs-on: "ubuntu-24.04"
     timeout-minutes: 15
     permissions:
       contents: "read"
     steps:
       - name: "Checkout repository"
         uses: "actions/checkout@v7"
+        timeout-minutes: 5
         with:
           fetch-depth: 0
 
       - name: "Setup Node.js"
         uses: "actions/setup-node@v7"
+        timeout-minutes: 10
         with:
           node-version-file: "${{ env.ROOT_DIR }}/package.json"
           package-manager-cache: false
 
       - name: "Install packages"
+        timeout-minutes: 15
         run: "npm install"
         working-directory: "${{ env.ROOT_DIR }}"
 
       - name: "Check project"
+        timeout-minutes: 15
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: |
-          npm run check -- --workspace nova-demos-app-website
+          npm run check -- --workspace nova-demos-app-website --exclude-workspace ./
         working-directory: "${{ env.ROOT_DIR }}"
 
       - name: "Build project"
+        timeout-minutes: 15
         run: |
           npm run build -- --workspace nova-demos-app-website --artifact website
         working-directory: "${{ env.ROOT_DIR }}"
 
       - name: "Validate build artifacts"
+        timeout-minutes: 15
         run: |
           set -euo pipefail
 
@@ -156,6 +164,7 @@ jobs:
 
       - name: "Upload assembled artifact (website)"
         uses: "actions/upload-artifact@v7"
+        timeout-minutes: 15
         with:
           name: "artifact-website"
           retention-days: 1
@@ -166,28 +175,32 @@ jobs:
 
   publish-cloudflare-pages-apps-website:
     needs: "build"
-    runs-on: "ubuntu-latest"
+    runs-on: "ubuntu-24.04"
     timeout-minutes: 15
     permissions:
       contents: "read"
     steps:
       - name: "Checkout repository"
         uses: "actions/checkout@v7"
+        timeout-minutes: 5
 
       - name: "Setup Node.js"
         uses: "actions/setup-node@v7"
+        timeout-minutes: 10
         with:
           node-version-file: "${{ env.ROOT_DIR }}/package.json"
           package-manager-cache: false
 
       - name: "Download build artifacts"
         uses: "actions/download-artifact@v8"
+        timeout-minutes: 15
         with:
           name: "artifact-website"
           path: "build/website"
 
       - name: "Deploy to Cloudflare Pages"
         if: "${{ env.PUBLISH == 'true' }}"
+        timeout-minutes: 15
         env:
           CLOUDFLARE_API_TOKEN: "${{ secrets.PROJECT_CLOUDFLARE_API_TOKEN }}"
           CLOUDFLARE_ACCOUNT_ID: "${{ vars.PROJECT_CLOUDFLARE_ACCOUNT_ID }}"

@@ -12,6 +12,16 @@ import '../styles/website.css';
  * @since 2026.10.6
  */
 const destination = 'https://nova.cbnventures.io/';
+
+/**
+ * Website - Index - Redirect Delay Seconds.
+ *
+ * Gives visitors time to read the destination and cancel automatic navigation.
+ * The same value drives the visible countdown and the redirect timer.
+ *
+ * @since 2026.11.0
+ */
+const redirectDelaySeconds = 5;
 ---
 
 <!doctype html>
@@ -20,25 +30,108 @@ const destination = 'https://nova.cbnventures.io/';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="robots" content="noindex" />
-    <script is:inline define:vars={{ destination }}>
-      if ([
-        'localhost',
-        '127.0.0.1',
-        '[::1]',
-        '0.0.0.0',
-      ].includes(window.location.hostname) === false && window.location.hostname.endsWith('.localhost') === false) {
-        window.location.replace(destination);
-      }
-    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{messages.metadata.title}</title>
   </head>
   <body class="website">
-    <main class="website-card">
-      <img class="website-logo" src="/images/logo.svg" alt={messages.brand.logoAlt} width="96" height="96" />
+    <main class="website-card" style={`--website-redirect-delay: ${redirectDelaySeconds}s;`}>
+      <img class="website-logo" src="/images/logo.svg" alt={messages.brand.logoAlt} width="80" height="80" />
       <h1 class="website-title">{messages.brand.name}</h1>
       <p class="website-description">{messages.brand.description}</p>
-      <a class="website-button" href={destination}>{messages.redirect.link}</a>
+      <div
+        class="website-countdown"
+        data-countdown
+        data-redirect-delay-seconds={redirectDelaySeconds}
+        role="status"
+        aria-live="polite"
+      >
+        <div class="website-countdown-text" data-countdown-text>
+          {messages.redirect.takingYouTo}{' '}<strong>{new URL(destination).host}</strong>{' '}
+          {messages.redirect.in}{' '}<span data-countdown-seconds>{redirectDelaySeconds}</span>{messages.redirect.secondsAbbreviation}
+        </div>
+        <div class="website-progress" aria-hidden="true">
+          <span class="website-progress-fill"></span>
+        </div>
+      </div>
+      <div class="website-actions">
+        <a class="website-button website-button-primary" href={destination}>{messages.redirect.link}</a>
+        <button
+          class="website-button website-button-ghost"
+          type="button"
+          data-cancelled-message={messages.redirect.cancelled}
+          data-stay-here
+        >
+          {messages.redirect.stayHere}
+        </button>
+      </div>
+      <footer class="website-footer">{messages.footer.project}</footer>
     </main>
+    <script is:inline define:vars={{ destination }}>
+      (() => {
+        const localHostnames = [
+          'localhost',
+          '127.0.0.1',
+          '[::1]',
+          '0.0.0.0',
+        ];
+        const countdown = document.querySelector('[data-countdown]');
+        const countdownText = document.querySelector('[data-countdown-text]');
+        const countdownSeconds = document.querySelector('[data-countdown-seconds]');
+        const stayHereButton = document.querySelector('[data-stay-here]');
+
+        if (
+          countdown !== null
+          && countdownText !== null
+          && countdownSeconds !== null
+          && stayHereButton !== null
+        ) {
+          const redirectDelaySeconds = Number(countdown.getAttribute('data-redirect-delay-seconds'));
+          let secondsRemaining = redirectDelaySeconds;
+          let countdownInterval = 0;
+          let redirectTimeout = 0;
+          const redirectDelayMilliseconds = redirectDelaySeconds * 1000;
+          const currentHostname = window.location.hostname;
+          const isLocalHostname = localHostnames.includes(currentHostname) === true
+            || currentHostname.endsWith('.localhost') === true;
+
+          stayHereButton.addEventListener('click', () => {
+            window.clearInterval(countdownInterval);
+
+            window.clearTimeout(redirectTimeout);
+
+            countdown.classList.add('website-countdown-cancelled');
+
+            const cancelledMessage = stayHereButton.dataset.cancelledMessage;
+
+            if (cancelledMessage !== undefined) {
+              countdownText.textContent = cancelledMessage;
+            }
+
+            return;
+          });
+
+          if (isLocalHostname === false) {
+            countdownInterval = window.setInterval(() => {
+              secondsRemaining -= 1;
+
+              countdownSeconds.textContent = String(secondsRemaining);
+
+              return;
+            }, 1000);
+            redirectTimeout = window.setTimeout(() => {
+              window.clearInterval(countdownInterval);
+
+              window.location.replace(destination);
+
+              return;
+            }, redirectDelayMilliseconds);
+          } else {
+            countdown.classList.add('website-countdown-paused');
+          }
+        }
+
+        return;
+      })();
+    </script>
   </body>
 </html>

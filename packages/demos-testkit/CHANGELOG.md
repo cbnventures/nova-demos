@@ -1,15 +1,20 @@
 # nova-demos-tool-testkit
 
+## 2026.11.0
+
+### UPDATED
+- Nova and Docusaurus Preset Nova are now 0.44.0.
+
 ## 2026.10.6
 
 ### UPDATED
-- Updated demo identity coverage to validate distinct, non-empty navbar artwork instead of requiring byte-for-byte copies of preset logos.
+- Demo identity coverage validates distinct, non-empty navbar artwork instead of requiring byte-for-byte copies of preset logos.
 - Pointed the testkit documentation and branding at the official Nova Demos website.
 
 ## 2026.10.5
 
 ### UPDATED
-- Updated Nova and Docusaurus Preset Nova to 0.36.0.
+- Nova and Docusaurus Preset Nova are now 0.36.0.
 - Aligned workspace tooling and project guidance with current Nova defaults.
 
 ### FIXED
@@ -18,10 +23,10 @@
 ## 2026.10.4
 
 ### UPDATED
-- Updated Nova and Docusaurus Preset Nova to 0.33.0.
+- Nova and Docusaurus Preset Nova are now 0.33.0.
 - Replaced Turborepo orchestration with Nova's native workspace runner.
 - Migrated generated ignore-file settings to the configurable ignoreFiles contract.
-- Updated ESLint configuration to load the Nova custom-rule preset from its dedicated preset entry point.
+- ESLint configuration loads the Nova custom-rule preset from its dedicated preset entry point.
 
 ### FIXED
 - Preserved locale-mode argument forwarding while migrating the build planner to Nova's workspace runner.
@@ -34,7 +39,7 @@ No changes.
 ## 2026.10.2
 
 ### UPDATED
-- Updated Nova and Docusaurus Preset Nova to 0.30.1.
+- Nova and Docusaurus Preset Nova are now 0.30.1.
 - Adopted role-based TypeScript preset layers.
 - Standardized root-owned tests under the shared project layout.
 - Regenerated the bug-report template with sentence-aware pronoun capitalization.
@@ -42,7 +47,7 @@ No changes.
 ## 2026.10.1
 
 ### UPDATED
-- Updated Nova and Docusaurus Preset Nova to 0.29.0.
+- Nova and Docusaurus Preset Nova are now 0.29.0.
 - Replaced repeated Nova ESLint rule wiring with the shared rule bundle while preserving project-specific overrides.
 - Completed JavaScript and TypeScript preset layering across the root, demo apps, and testkit.
 - Declared the root workspace as ESM and extended type-check coverage to the Vitest configuration and setup file.
@@ -52,23 +57,23 @@ No changes.
 ## 2026.10.0
 
 ### UPDATED
-- Updated Nova and Docusaurus Preset Nova to 0.28.0, including the runtime-only Vitest resolution fix.
+- Nova and Docusaurus Preset Nova are now 0.28.0, including the runtime-only Vitest resolution fix.
 - Assigned explicit child environments to development, production, build, and deployment script groups.
 
 ## 2026.9.2
 
 ### UPDATED
-- Updated Nova and Docusaurus Preset Nova to 0.27.3, granting the generated inactive-thread workflow write access to pull requests.
+- Nova and Docusaurus Preset Nova are now 0.27.3, granting the generated inactive-thread workflow write access to pull requests.
 
 ## 2026.9.1
 
 ### UPDATED
-- Updated Nova and Docusaurus Preset Nova to 0.27.2.
+- Nova and Docusaurus Preset Nova are now 0.27.2.
 
 ## 2026.9.0
 
 ### UPDATED
-- Updated Nova and Docusaurus Preset Nova to 0.27.0 alongside TypeScript 6.0.3, ESLint 9.39.5, and Vitest 4.1.11, and standardized the testkit files as `vitest.config.mts` and `vitest.setup.ts`.
+- Nova and Docusaurus Preset Nova are now 0.27.0 alongside TypeScript 6.0.3, ESLint 9.39.5, and Vitest 4.1.11, and the testkit files are standardized as `vitest.config.mts` and `vitest.setup.ts`.
 
 ## 2026.8.5
 
@@ -77,7 +82,7 @@ No changes.
 ## 2026.8.4
 
 ### UPDATED
-- Updated @cbnventures/nova to 0.25.2.
+- The @cbnventures/nova package is now 0.25.2.
 
 ## 2026.8.3
 
@@ -87,7 +92,7 @@ No changes.
 ## 2026.8.2
 
 ### UPDATED
-- Updated @cbnventures/nova to 0.25.0 and @cbnventures/docusaurus-preset-nova to 0.25.0.
+- The @cbnventures/nova package is now 0.25.0 and @cbnventures/docusaurus-preset-nova is now 0.25.0.
 
 ## 2026.8.1
 

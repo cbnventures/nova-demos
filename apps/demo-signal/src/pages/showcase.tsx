@@ -1,17 +1,22 @@
 import {
   AppMarketDownload,
   BlogPreview,
+  BrowserFrame,
   Features,
   Frame,
   Hero,
   InstallStrip,
+  ScreenGallery,
+  Showcase,
   Spotlight,
   Stats,
+  TerminalFrame,
   Terminology,
   Typewriter,
+  WorkflowRunFrame,
 } from '@cbnventures/docusaurus-preset-nova/blocks';
 import { translate } from '@docusaurus/Translate';
-import Showcase from '@theme/Showcase';
+import ShowcaseLayout from '@theme/Showcase';
 
 /**
  * Pages - Showcase - Page.
@@ -27,7 +32,7 @@ import Showcase from '@theme/Showcase';
  */
 function ShowcasePage() {
   return (
-    <Showcase
+    <ShowcaseLayout
       layoutDescription={translate({
         id: 'showcase.layout.description',
         message: 'Signal block showcase demonstrating every block from docusaurus-preset-nova.',
@@ -39,7 +44,7 @@ function ShowcasePage() {
         description: 'Showcase page sub-description below the title',
       })}
     >
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.heroFull.title',
         message: 'Hero (full)',
         description: 'Showcase item title for Hero (full variant)',
@@ -74,9 +79,9 @@ function ShowcasePage() {
           })}
           secondaryCtaLink="https://nova.cbnventures.io"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.heroMinimal.title',
         message: 'Hero (minimal)',
         description: 'Showcase item title for Hero (minimal variant)',
@@ -100,9 +105,9 @@ function ShowcasePage() {
           })}
           ctaLink="/docs/overview/"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.typewriterDefault.title',
         message: 'Typewriter (default)',
         description: 'Showcase item title for Typewriter (default variant)',
@@ -120,9 +125,9 @@ function ShowcasePage() {
           <Typewriter.Word>TypeScript</Typewriter.Word>
           <Typewriter.Word>Nova</Typewriter.Word>
         </Typewriter>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.typewriterNoPrefix.title',
         message: 'Typewriter (no prefix)',
         description: 'Showcase item title for Typewriter (no prefix variant)',
@@ -151,9 +156,9 @@ function ShowcasePage() {
             })}
           </Typewriter.Word>
         </Typewriter>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.typewriterSlow.title',
         message: 'Typewriter (slow timing)',
         description: 'Showcase item title for Typewriter (slow timing variant)',
@@ -182,9 +187,9 @@ function ShowcasePage() {
             })}
           </Typewriter.Word>
         </Typewriter>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.typewriterNoLoop.title',
         message: 'Typewriter (no loop)',
         description: 'Showcase item title for Typewriter (no loop variant)',
@@ -200,9 +205,9 @@ function ShowcasePage() {
           </Typewriter.Prefix>
           <Typewriter.Word>Nova</Typewriter.Word>
         </Typewriter>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.installStripIcon.title',
         message: 'InstallStrip (copyTarget: icon)',
         description: 'Showcase item title for InstallStrip (icon copyTarget variant)',
@@ -217,9 +222,9 @@ function ShowcasePage() {
           command="spark install signal-cli"
           copyTarget="icon"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.installStripBlock.title',
         message: 'InstallStrip (copyTarget: block)',
         description: 'Showcase item title for InstallStrip (block copyTarget variant)',
@@ -234,18 +239,18 @@ function ShowcasePage() {
           command="loom add --global signal-cli"
           copyTarget="block"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.installStripNoLabel.title',
         message: 'InstallStrip (no label)',
         description: 'Showcase item title for InstallStrip (no label variant)',
       })}
       >
         <InstallStrip command="signal beacon create --url https://example.com" />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.installStripText.title',
         message: 'InstallStrip (copyTarget: text)',
         description: 'Showcase item title for InstallStrip (text copyTarget variant)',
@@ -260,9 +265,9 @@ function ShowcasePage() {
           command="spark install signal-cli"
           copyTarget="text"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.featuresIcons.title',
         message: 'Features (with icons)',
         description: 'Showcase item title for Features (with icons variant)',
@@ -316,9 +321,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.featuresNoIcons.title',
         message: 'Features (without icons, without heading)',
         description: 'Showcase item title for Features (no icons, no heading variant)',
@@ -364,9 +369,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.featuresSix.title',
         message: 'Features (six items, mixed icons)',
         description: 'Showcase item title for Features (six items variant)',
@@ -457,9 +462,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.statsFull.title',
         message: 'Stats (with heading and description)',
         description: 'Showcase item title for Stats (full variant)',
@@ -515,9 +520,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.statsNoHeading.title',
         message: 'Stats (without heading)',
         description: 'Showcase item title for Stats (no heading variant)',
@@ -559,9 +564,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.spotlightCode.title',
         message: 'Spotlight (with code)',
         description: 'Showcase item title for Spotlight (with code variant)',
@@ -588,9 +593,9 @@ function ShowcasePage() {
             })}
           </p>
         </Spotlight>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.spotlightText.title',
         message: 'Spotlight (with text)',
         description: 'Showcase item title for Spotlight (with text variant)',
@@ -610,9 +615,9 @@ function ShowcasePage() {
             })}
           </p>
         </Spotlight>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.spotlightAlt.title',
         message: 'Spotlight (alt surface)',
         description: 'Showcase item title for Spotlight (alt surface variant)',
@@ -634,9 +639,9 @@ function ShowcasePage() {
             })}
           </p>
         </Spotlight>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.blogPreviewWithDesc.title',
         message: 'BlogPreview (with description)',
         description: 'Showcase item title for BlogPreview (with description variant)',
@@ -698,9 +703,9 @@ function ShowcasePage() {
             },
           ]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.blogPreviewNoDesc.title',
         message: 'BlogPreview (without description)',
         description: 'Showcase item title for BlogPreview (no description variant)',
@@ -727,9 +732,9 @@ function ShowcasePage() {
             permalink: '/blog/2025/09/15/resonance-overlap-maps-and-flare-bulk-generation/',
           }]}
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.blogPreviewNewest.title',
         message: 'BlogPreview (newest first)',
         description: 'Showcase item title for BlogPreview newest-first sort variant',
@@ -745,9 +750,9 @@ function ShowcasePage() {
           limit={2}
           sort="newest"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.blogPreviewOldest.title',
         message: 'BlogPreview (oldest first)',
         description: 'Showcase item title for BlogPreview oldest-first sort variant',
@@ -763,9 +768,9 @@ function ShowcasePage() {
           limit={2}
           sort="oldest"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.terminologyColorLink.title',
         message: 'Terminology (colored and linked)',
         description: 'Showcase item title for Terminology color and link variant',
@@ -803,9 +808,9 @@ function ShowcasePage() {
             description: 'Showcase Terminology color and link paragraph outro fragment',
           })}
         </p>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.terminology.title',
         message: 'Terminology (inline usage)',
         description: 'Showcase item title for Terminology inline usage variant',
@@ -929,9 +934,9 @@ function ShowcasePage() {
             description: 'Showcase Terminology paragraph 2 fragment after Flare',
           })}
         </p>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.frameWithCaption.title',
         message: 'Frame (with caption)',
         description: 'Showcase item title for Frame (with caption variant)',
@@ -944,7 +949,7 @@ function ShowcasePage() {
         })}
         >
           <img
-            src="/thumbnails/brand.png"
+            src="/images/placeholder-landscape.svg"
             alt={translate({
               id: 'showcase.frame.imageAlt',
               message: 'Signal brand thumbnail.',
@@ -952,9 +957,9 @@ function ShowcasePage() {
             })}
           />
         </Frame>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.frameNoCaption.title',
         message: 'Frame (no caption)',
         description: 'Showcase item title for Frame (no caption variant)',
@@ -962,7 +967,7 @@ function ShowcasePage() {
       >
         <Frame>
           <img
-            src="/thumbnails/brand.png"
+            src="/images/placeholder-landscape.svg"
             alt={translate({
               id: 'showcase.frame.imageAlt',
               message: 'Signal brand thumbnail.',
@@ -970,9 +975,9 @@ function ShowcasePage() {
             })}
           />
         </Frame>
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.appMarketBoth.title',
         message: 'AppMarketDownload (both stores)',
         description: 'Showcase item title for AppMarketDownload (both stores variant)',
@@ -987,9 +992,9 @@ function ShowcasePage() {
           appStoreUrl="#"
           googlePlayUrl="#"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.appMarketAppStore.title',
         message: 'AppMarketDownload (App Store only)',
         description: 'Showcase item title for AppMarketDownload (App Store only variant)',
@@ -1003,9 +1008,9 @@ function ShowcasePage() {
           })}
           appStoreUrl="#"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.appMarketGooglePlay.title',
         message: 'AppMarketDownload (Google Play only)',
         description: 'Showcase item title for AppMarketDownload (Google Play only variant)',
@@ -1019,9 +1024,9 @@ function ShowcasePage() {
           })}
           googlePlayUrl="#"
         />
-      </Showcase.Item>
+      </ShowcaseLayout.Item>
 
-      <Showcase.Item title={translate({
+      <ShowcaseLayout.Item title={translate({
         id: 'showcase.item.appMarketNoLabel.title',
         message: 'AppMarketDownload (no label)',
         description: 'Showcase item title for AppMarketDownload (no label variant)',
@@ -1031,8 +1036,484 @@ function ShowcasePage() {
           appStoreUrl="#"
           googlePlayUrl="#"
         />
-      </Showcase.Item>
-    </Showcase>
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.browserFrame.title',
+        message: 'BrowserFrame',
+        description: 'Showcase item title for BrowserFrame',
+      })}
+      >
+        <BrowserFrame
+          title={translate({
+            id: 'showcase.browserFrame.title',
+            message: 'Signal Attribution Console',
+            description: 'Showcase BrowserFrame tab title',
+          })}
+          url="insights.signal.test/journeys"
+          favicon="/favicon.svg"
+        >
+          <img
+            src="/images/placeholder-landscape.svg"
+            alt={translate({
+              id: 'showcase.browserFrame.imageAlt',
+              message: 'Signal attribution console showing the Autumn Launch journey.',
+              description: 'Showcase BrowserFrame image alt text',
+            })}
+            width={1200}
+            height={630}
+          />
+        </BrowserFrame>
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.terminalFrame.title',
+        message: 'TerminalFrame',
+        description: 'Showcase item title for TerminalFrame',
+      })}
+      >
+        <TerminalFrame
+          title={translate({
+            id: 'showcase.terminalFrame.title',
+            message: 'autumn-launch — signal journey trace — 80×24',
+            description: 'Showcase TerminalFrame window title',
+          })}
+          label={translate({
+            id: 'showcase.terminalFrame.label',
+            message: 'Signal attribution journey trace output',
+            description: 'Showcase TerminalFrame accessible label',
+          })}
+        >
+          {[
+            translate({
+              id: 'showcase.terminalFrame.line1',
+              message: '$ signal journey trace autumn-launch',
+              description: 'Showcase TerminalFrame output line 1',
+            }),
+            translate({
+              id: 'showcase.terminalFrame.line2',
+              message: '✓ First impression matched the newsletter channel',
+              description: 'Showcase TerminalFrame output line 2',
+            }),
+            translate({
+              id: 'showcase.terminalFrame.line3',
+              message: '✓ Final action retained its original campaign context',
+              description: 'Showcase TerminalFrame output line 3',
+            }),
+          ].join('\n')}
+        </TerminalFrame>
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.showcaseBlock.title',
+        message: 'Showcase',
+        description: 'Showcase item title for the Showcase block',
+      })}
+      >
+        <Showcase
+          tabsLabel={translate({
+            id: 'showcase.showcaseBlock.tabsLabel',
+            message: 'Signal attribution views',
+            description: 'Showcase block accessible tabs label',
+          })}
+          items={[
+            {
+              label: translate({
+                id: 'showcase.showcaseBlock.overview.label',
+                message: 'Journey map',
+                description: 'Showcase block overview tab label',
+              }),
+              heading: translate({
+                id: 'showcase.showcaseBlock.overview.heading',
+                message: 'Trace intent from impression to action',
+                description: 'Showcase block overview heading',
+              }),
+              description: translate({
+                id: 'showcase.showcaseBlock.overview.description',
+                message: 'Follow the channel touches and decision points that shaped one attributed journey.',
+                description: 'Showcase block overview description',
+              }),
+              link: {
+                label: translate({
+                  id: 'showcase.showcaseBlock.overview.linkLabel',
+                  message: 'Open the attribution overview',
+                  description: 'Showcase block overview link label',
+                }),
+                to: '/docs/overview/',
+              },
+              content: (
+                <BrowserFrame
+                  title={translate({
+                    id: 'showcase.browserFrame.title',
+                    message: 'Signal Attribution Console',
+                    description: 'Showcase BrowserFrame tab title',
+                  })}
+                  url="insights.signal.test/journeys"
+                  favicon="/favicon.svg"
+                >
+                  <img
+                    src="/images/placeholder-landscape.svg"
+                    alt={translate({
+                      id: 'showcase.browserFrame.imageAlt',
+                      message: 'Signal attribution console showing the Autumn Launch journey.',
+                      description: 'Showcase BrowserFrame image alt text',
+                    })}
+                    width={1200}
+                    height={630}
+                  />
+                </BrowserFrame>
+              ),
+            },
+            {
+              label: translate({
+                id: 'showcase.showcaseBlock.console.label',
+                message: 'Journey trace',
+                description: 'Showcase block console tab label',
+              }),
+              heading: translate({
+                id: 'showcase.showcaseBlock.console.heading',
+                message: 'Inspect the evidence behind a result',
+                description: 'Showcase block console heading',
+              }),
+              description: translate({
+                id: 'showcase.showcaseBlock.console.description',
+                message: 'Read the ordered touchpoints used by the attribution model for one campaign.',
+                description: 'Showcase block console description',
+              }),
+              content: (
+                <TerminalFrame
+                  title={translate({
+                    id: 'showcase.terminalFrame.title',
+                    message: 'autumn-launch — signal journey trace — 80×24',
+                    description: 'Showcase TerminalFrame window title',
+                  })}
+                  label={translate({
+                    id: 'showcase.terminalFrame.label',
+                    message: 'Signal attribution journey trace output',
+                    description: 'Showcase TerminalFrame accessible label',
+                  })}
+                >
+                  {[
+                    translate({
+                      id: 'showcase.terminalFrame.line1',
+                      message: '$ signal journey trace autumn-launch',
+                      description: 'Showcase TerminalFrame output line 1',
+                    }),
+                    translate({
+                      id: 'showcase.terminalFrame.line2',
+                      message: '✓ First impression matched the newsletter channel',
+                      description: 'Showcase TerminalFrame output line 2',
+                    }),
+                    translate({
+                      id: 'showcase.terminalFrame.line3',
+                      message: '✓ Final action retained its original campaign context',
+                      description: 'Showcase TerminalFrame output line 3',
+                    }),
+                  ].join('\n')}
+                </TerminalFrame>
+              ),
+            },
+          ]}
+        />
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.screenGallery.title',
+        message: 'ScreenGallery',
+        description: 'Showcase item title for ScreenGallery',
+      })}
+      >
+        <ScreenGallery
+          items={[
+            {
+              image: (
+                <img
+                  src="/images/placeholder-screen.svg"
+                  alt={translate({
+                    id: 'showcase.screenGallery.first.imageAlt',
+                    message: 'Signal attribution journey preview.',
+                    description: 'Showcase ScreenGallery first image alt text',
+                  })}
+                  width={1350}
+                  height={2760}
+                />
+              ),
+              heading: translate({
+                id: 'showcase.screenGallery.first.heading',
+                message: 'Journey map',
+                description: 'Showcase ScreenGallery first item heading',
+              }),
+              description: translate({
+                id: 'showcase.screenGallery.first.description',
+                message: 'See every attributed touchpoint and the action that followed it.',
+                description: 'Showcase ScreenGallery first item description',
+              }),
+              link: {
+                label: translate({
+                  id: 'showcase.screenGallery.first.linkLabel',
+                  message: 'Review attribution journeys',
+                  description: 'Showcase ScreenGallery first item link label',
+                }),
+                to: '/docs/overview/',
+              },
+            },
+            {
+              image: (
+                <img
+                  src="/images/placeholder-screen.svg"
+                  alt={translate({
+                    id: 'showcase.screenGallery.second.imageAlt',
+                    message: 'Signal campaign identity mark.',
+                    description: 'Showcase ScreenGallery second image alt text',
+                  })}
+                  width={1350}
+                  height={2760}
+                />
+              ),
+              heading: translate({
+                id: 'showcase.screenGallery.second.heading',
+                message: 'Channel detail',
+                description: 'Showcase ScreenGallery second item heading',
+              }),
+              description: translate({
+                id: 'showcase.screenGallery.second.description',
+                message: 'Compare the evidence contributed by each fictional campaign channel.',
+                description: 'Showcase ScreenGallery second item description',
+              }),
+              link: {
+                label: translate({
+                  id: 'showcase.screenGallery.second.linkLabel',
+                  message: 'Browse channel insights',
+                  description: 'Showcase ScreenGallery second item link label',
+                }),
+                to: '/docs/overview/',
+              },
+            },
+          ]}
+        />
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.workflowRunFrameSuccess.title',
+        message: 'WorkflowRunFrame (success)',
+        description: 'Showcase item title for WorkflowRunFrame (success variant)',
+      })}
+      >
+        <WorkflowRunFrame
+          workflow={translate({
+            id: 'showcase.workflowRunFrame.workflow',
+            message: 'Attribution Model Verification',
+            description: 'Showcase WorkflowRunFrame workflow name',
+          })}
+          title={translate({
+            id: 'showcase.workflowRunFrameSuccess.title',
+            message: 'Refresh spring-launch attribution',
+            description: 'Showcase WorkflowRunFrame (success) run title',
+          })}
+          runNumber={57}
+          label={translate({
+            id: 'showcase.workflowRunFrameSuccess.label',
+            message: 'Signal attribution model workflow run that passed',
+            description: 'Showcase WorkflowRunFrame (success) accessible label',
+          })}
+          jobs={[
+            {
+              name: translate({
+                id: 'showcase.workflowRunFrame.job.name',
+                message: 'verify-attribution-refresh',
+                description: 'Showcase WorkflowRunFrame active job name',
+              }),
+              summary: translate({
+                id: 'showcase.workflowRunFrameSuccess.job.summary',
+                message: 'succeeded in 10s',
+                description: 'Showcase WorkflowRunFrame (success) active job summary',
+              }),
+              steps: [
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.setupStep.name',
+                    message: 'Prepare journey evidence',
+                    description: 'Showcase WorkflowRunFrame setup step name',
+                  }),
+                  duration: '1s',
+                },
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.actionStep.name',
+                    message: 'Refresh attribution model',
+                    description: 'Showcase WorkflowRunFrame action step name',
+                  }),
+                  duration: '8s',
+                  log: [
+                    {
+                      title: translate({
+                        id: 'showcase.workflowRunFrame.setupGroup.title',
+                        message: 'Load campaign touchpoints',
+                        description: 'Showcase WorkflowRunFrame closed log group title',
+                      }),
+                      hiddenLines: 3,
+                    },
+                    {
+                      title: translate({
+                        id: 'showcase.workflowRunFrame.runGroup.title',
+                        message: 'Verify attribution results',
+                        description: 'Showcase WorkflowRunFrame open log group title',
+                      }),
+                      lines: [
+                        translate({
+                          id: 'showcase.workflowRunFrame.log.line1',
+                          message: 'Journey evidence contains four ordered touchpoints',
+                          description: 'Showcase WorkflowRunFrame log line 1',
+                        }),
+                        translate({
+                          id: 'showcase.workflowRunFrameSuccess.log.line2',
+                          message: 'Every channel arrived inside the reporting window',
+                          description: 'Showcase WorkflowRunFrame (success) log line 2',
+                        }),
+                        translate({
+                          id: 'showcase.workflowRunFrameSuccess.log.line3',
+                          message: 'Attribution totals match the approved journey snapshot',
+                          description: 'Showcase WorkflowRunFrame (success) log line 3',
+                        }),
+                      ],
+                    },
+                  ],
+                },
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.finalStep.name',
+                    message: 'Publish attribution summary',
+                    description: 'Showcase WorkflowRunFrame final step name',
+                  }),
+                  duration: '1s',
+                },
+              ],
+            },
+            {
+              name: translate({
+                id: 'showcase.workflowRunFrame.queuedJob.name',
+                message: 'notify-insight-owner',
+                description: 'Showcase WorkflowRunFrame skipped job name',
+              }),
+            },
+          ]}
+        />
+      </ShowcaseLayout.Item>
+
+      <ShowcaseLayout.Item title={translate({
+        id: 'showcase.item.workflowRunFrame.title',
+        message: 'WorkflowRunFrame (failure)',
+        description: 'Showcase item title for WorkflowRunFrame (failure variant)',
+      })}
+      >
+        <WorkflowRunFrame
+          workflow={translate({
+            id: 'showcase.workflowRunFrame.workflow',
+            message: 'Attribution Model Verification',
+            description: 'Showcase WorkflowRunFrame workflow name',
+          })}
+          title={translate({
+            id: 'showcase.workflowRunFrame.title',
+            message: 'Refresh autumn-launch attribution',
+            description: 'Showcase WorkflowRunFrame run title',
+          })}
+          runNumber={58}
+          status="failure"
+          label={translate({
+            id: 'showcase.workflowRunFrame.label',
+            message: 'Signal attribution model workflow run',
+            description: 'Showcase WorkflowRunFrame accessible label',
+          })}
+          jobs={[
+            {
+              name: translate({
+                id: 'showcase.workflowRunFrame.job.name',
+                message: 'verify-attribution-refresh',
+                description: 'Showcase WorkflowRunFrame active job name',
+              }),
+              status: 'failure',
+              summary: translate({
+                id: 'showcase.workflowRunFrame.job.summary',
+                message: 'failed in 11s',
+                description: 'Showcase WorkflowRunFrame active job summary',
+              }),
+              steps: [
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.setupStep.name',
+                    message: 'Prepare journey evidence',
+                    description: 'Showcase WorkflowRunFrame setup step name',
+                  }),
+                  status: 'success',
+                  duration: '1s',
+                },
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.actionStep.name',
+                    message: 'Refresh attribution model',
+                    description: 'Showcase WorkflowRunFrame action step name',
+                  }),
+                  status: 'failure',
+                  duration: '5s',
+                  log: [
+                    {
+                      title: translate({
+                        id: 'showcase.workflowRunFrame.setupGroup.title',
+                        message: 'Load campaign touchpoints',
+                        description: 'Showcase WorkflowRunFrame closed log group title',
+                      }),
+                      hiddenLines: 3,
+                    },
+                    {
+                      title: translate({
+                        id: 'showcase.workflowRunFrame.runGroup.title',
+                        message: 'Verify attribution results',
+                        description: 'Showcase WorkflowRunFrame open log group title',
+                      }),
+                      lines: [
+                        translate({
+                          id: 'showcase.workflowRunFrame.log.line1',
+                          message: 'Journey evidence contains four ordered touchpoints',
+                          description: 'Showcase WorkflowRunFrame log line 1',
+                        }),
+                        translate({
+                          id: 'showcase.workflowRunFrame.log.line2',
+                          message: '##[warning]One channel arrived later than the reporting window',
+                          description: 'Showcase WorkflowRunFrame log line 2',
+                        }),
+                        translate({
+                          id: 'showcase.workflowRunFrame.log.line3',
+                          message: '##[error]Attribution totals do not match the approved journey snapshot',
+                          description: 'Showcase WorkflowRunFrame log line 3',
+                        }),
+                      ],
+                    },
+                  ],
+                },
+                {
+                  name: translate({
+                    id: 'showcase.workflowRunFrame.finalStep.name',
+                    message: 'Publish attribution summary',
+                    description: 'Showcase WorkflowRunFrame final step name',
+                  }),
+                  status: 'skipped',
+                  duration: '0s',
+                },
+              ],
+            },
+            {
+              name: translate({
+                id: 'showcase.workflowRunFrame.queuedJob.name',
+                message: 'notify-insight-owner',
+                description: 'Showcase WorkflowRunFrame skipped job name',
+              }),
+              status: 'skipped',
+            },
+          ]}
+        />
+      </ShowcaseLayout.Item>
+
+    </ShowcaseLayout>
   );
 }
 
