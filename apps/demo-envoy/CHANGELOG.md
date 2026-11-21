@@ -1,5 +1,11 @@
 # demo-envoy
 
+## 2026.11.1
+
+### UPDATED
+- Nova 0.49.0 and Docusaurus Preset Nova 0.49.0, which load the preset from its new `build/` file layout and build the X, Facebook, LinkedIn, and Reddit share buttons from one share-targets module, with no site config changes.
+- Local dev and serve scripts, which now set `PORTLESS_PORT` through `nova utility cross-env` so they run on every platform.
+
 ## 2026.11.0
 
 ### UPDATED

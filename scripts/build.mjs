@@ -13,6 +13,8 @@ import { fileURLToPath } from 'node:url';
 
 import { createJiti } from 'jiti';
 
+import { PATTERN_PLAIN_COMMAND_ARGUMENT } from './lib/regex.mjs';
+
 /**
  * @typedef {object} BuildArguments
  * @property {boolean} complete Whether a complete build was explicitly requested.
@@ -713,10 +715,30 @@ function writeCountdown(remaining) {
 }
 
 /**
+ * Build - Quote Windows Argument.
+ *
+ * Wraps one argument in double quotes for the Windows command shell when it
+ * holds anything beyond plain flag and name characters.
+ *
+ * @param {string} arg Command argument.
+ *
+ * @returns {string}
+ *
+ * @since 2026.10.6
+ */
+export function quoteWindowsArgument(arg) {
+  if (PATTERN_PLAIN_COMMAND_ARGUMENT.test(arg) === true) {
+    return arg;
+  }
+
+  return `"${arg.replaceAll('"', '""')}"`;
+}
+
+/**
  * Build - Run Command.
  *
- * Executes each existing nested npm script without introducing shell quoting or
- * platform-specific command composition.
+ * Executes each existing nested npm script directly, going through a shell with
+ * quoted arguments only on Windows, where npm is a command script.
  *
  * @param {string} directory Working directory.
  * @param {string[]} args npm arguments.
@@ -726,14 +748,30 @@ function writeCountdown(remaining) {
  * @since 2026.10.3
  */
 function runCommand(directory, args) {
-  const result = spawnSync('npm', args, {
+  const options = {
     cwd: directory,
     env: {
       ...process.env,
       NODE_ENV: 'production',
     },
-    stdio: 'inherit',
-  });
+    stdio: /** @type {'inherit'} */ ('inherit'),
+  };
+  let result = undefined;
+
+  if (process.platform === 'win32') {
+    // Windows ships npm as "npm.cmd", which only a shell can start, so each argument is quoted into one command line.
+    const commandLine = [
+      'npm',
+      ...args.map((arg) => quoteWindowsArgument(arg)),
+    ].join(' ');
+
+    result = spawnSync(commandLine, {
+      ...options,
+      shell: true,
+    });
+  } else {
+    result = spawnSync('npm', args, options);
+  }
 
   if (result.error !== undefined) {
     throw result.error;

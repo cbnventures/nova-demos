@@ -1,5 +1,14 @@
 # nova-demos-tool-testkit
 
+## 2026.11.1
+
+### UPDATED
+- Nova 0.49.0 and Docusaurus Preset Nova 0.49.0, which ship the preset's compiled files directly under `build/`, the layout the testkit's preset lookups now resolve.
+- README introduction, which now describes the project with its new long description.
+
+### FIXED
+- Preset lookups, which now walk up to the named package.json and read blocks and types beside the compiled entry, so both the `build/src` and `build` layouts resolve.
+
 ## 2026.11.0
 
 ### UPDATED

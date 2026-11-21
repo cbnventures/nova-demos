@@ -5,8 +5,8 @@
       "slug": "nova-demos"
     },
     "description": {
-      "short": "Live demonstration sites for the Nova Docusaurus preset family",
-      "long": "Nova Demos is a collection of standalone Docusaurus sites that showcase each visual preset in the Nova family — envoy, foundry, lantern, marshal, sentinel, and signal. Each demo is a fully wired reference build you can run locally to compare presets, blocks, and theming side by side."
+      "short": "Every Nova Docusaurus preset, live and side by side in its own demonstration site",
+      "long": "Compare Nova's Docusaurus presets side by side, each running as its own standalone site. Run any demo locally as a fully wired reference build of blocks, theming, and layout."
     },
     "keywords": [
       "nova",
@@ -164,8 +164,125 @@
     ],
     "issueTemplate": {
       "bugReportFields": [
-        "nodejs"
-      ]
+        "web",
+        "screenshots"
+      ],
+      "customQuestions": {
+        "bug": [
+          {
+            "type": "dropdown",
+            "id": "demo-preset",
+            "attributes": {
+              "label": "Demo Preset",
+              "description": "Select the affected demo preset.",
+              "options": [
+                "Envoy",
+                "Foundry",
+                "Lantern",
+                "Marshal",
+                "Sentinel",
+                "Signal",
+                "All Demos"
+              ]
+            },
+            "validations": {
+              "required": true
+            }
+          },
+          {
+            "type": "dropdown",
+            "id": "page-type",
+            "attributes": {
+              "label": "Page Type",
+              "description": "Select the affected demo page.",
+              "options": [
+                "Homepage",
+                "Documentation",
+                "Versioned Documentation",
+                "Blog",
+                "Showcase",
+                "Search",
+                "Navigation",
+                "Error Page",
+                "Bare Mode",
+                "Repository Website",
+                "Other"
+              ]
+            },
+            "validations": {
+              "required": false
+            }
+          }
+        ],
+        "feature": [
+          {
+            "type": "dropdown",
+            "id": "demo-preset",
+            "attributes": {
+              "label": "Demo Preset",
+              "description": "Select the affected demo preset.",
+              "options": [
+                "Envoy",
+                "Foundry",
+                "Lantern",
+                "Marshal",
+                "Sentinel",
+                "Signal",
+                "All Demos"
+              ]
+            },
+            "validations": {
+              "required": true
+            }
+          },
+          {
+            "type": "dropdown",
+            "id": "page-type",
+            "attributes": {
+              "label": "Page Type",
+              "description": "Select the affected demo page.",
+              "options": [
+                "Homepage",
+                "Documentation",
+                "Versioned Documentation",
+                "Blog",
+                "Showcase",
+                "Search",
+                "Navigation",
+                "Error Page",
+                "Bare Mode",
+                "Repository Website",
+                "Other"
+              ]
+            },
+            "validations": {
+              "required": false
+            }
+          }
+        ],
+        "support": [
+          {
+            "type": "dropdown",
+            "id": "demo-preset",
+            "attributes": {
+              "label": "Demo Preset",
+              "description": "Select the affected demo preset.",
+              "options": [
+                "Envoy",
+                "Foundry",
+                "Lantern",
+                "Marshal",
+                "Sentinel",
+                "Signal",
+                "All Demos"
+              ]
+            },
+            "validations": {
+              "required": true
+            }
+          }
+        ]
+      }
     }
   },
   "workflows": [
@@ -200,7 +317,7 @@
         }
       ],
       "runsOn": "ubuntu-24.04",
-      "timeoutMinutes": 15,
+      "timeoutMinutes": 30,
       "build": [
         "./apps/website"
       ],
@@ -444,6 +561,11 @@
         "enabled": true
       },
       "update-introduction": {
+        "enabled": true
+      }
+    },
+    "tsconfig": {
+      "sync-references": {
         "enabled": true
       }
     },

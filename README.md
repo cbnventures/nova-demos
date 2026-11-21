@@ -37,7 +37,7 @@
 <!-- nova-region: introduction -->
 ## Introduction
 
-Nova Demos is a collection of standalone Docusaurus sites that showcase each visual preset in the Nova family — envoy, foundry, lantern, marshal, sentinel, and signal. Each demo is a fully wired reference build you can run locally to compare presets, blocks, and theming side by side.
+Compare Nova's Docusaurus presets side by side, each running as its own standalone site. Run any demo locally as a fully wired reference build of blocks, theming, and layout.
 <!-- nova-region-end: introduction -->
 
 <!-- nova-region: documentation -->

@@ -19,15 +19,46 @@ export type Lib_Preset_PropDescriptor = {
 };
 
 /**
+ * Lib - Preset - Find Package Root.
+ *
+ * @since 2026.11.1
+ */
+export type Lib_Preset_FindPackageRoot_StartPath = string;
+
+export type Lib_Preset_FindPackageRoot_PackageName = string;
+
+export type Lib_Preset_FindPackageRoot_Returns = string;
+
+export type Lib_Preset_FindPackageRoot_CurrentDirectory = string;
+
+export type Lib_Preset_FindPackageRoot_PreviousDirectory = string;
+
+export type Lib_Preset_FindPackageRoot_ManifestPath = string;
+
+export type Lib_Preset_FindPackageRoot_Manifest = Record<string, unknown>;
+
+/**
+ * Lib - Preset - Get Preset Build Root.
+ *
+ * @since 2026.11.1
+ */
+export type Lib_Preset_GetPresetBuildRoot_Returns = string;
+
+/**
+ * Lib - Preset - Get Preset Entry Path.
+ *
+ * @since 2026.11.1
+ */
+export type Lib_Preset_GetPresetEntryPath_Returns = string;
+
+export type Lib_Preset_GetPresetEntryPath_Require = NodeJS.Require;
+
+/**
  * Lib - Preset - Get Preset Root.
  *
  * @since 2026.8.0
  */
 export type Lib_Preset_GetPresetRoot_Returns = string;
-
-export type Lib_Preset_GetPresetRoot_Require = NodeJS.Require;
-
-export type Lib_Preset_GetPresetRoot_EntryPath = string;
 
 /**
  * Lib - Preset - Get Repo Root.

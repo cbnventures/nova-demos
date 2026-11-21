@@ -97,5 +97,35 @@ describe('Locale build helper', () => {
     return;
   });
 
+  it('quotes Windows command arguments only when needed', () => {
+    const buildModuleUrl: Build_ModuleUrl = pathToFileURL(resolve('scripts/build.mjs')).href;
+    const evaluation: Build_Evaluation = [
+      `const build = await import(${JSON.stringify(buildModuleUrl)});`,
+      'const plain = [\'run\', \'build:workspaces\', \'--\', \'--locale\', \'zh-Hans\'].map((arg) => build.quoteWindowsArgument(arg));',
+      'process.stdout.write(plain.join(\' \'));',
+      'process.stdout.write(String.fromCharCode(10));',
+      'process.stdout.write(build.quoteWindowsArgument(\'a b\'));',
+      'process.stdout.write(String.fromCharCode(10));',
+      'process.stdout.write(build.quoteWindowsArgument(\'say "hi"\'));',
+    ].join('\n');
+    const result: Build_Result = spawnSync(process.execPath, [
+      '--input-type=module',
+      '--eval',
+      evaluation,
+    ], {
+      encoding: 'utf8',
+    });
+
+    expect(result.status).toBe(0);
+
+    expect(result.stdout).toContain('run build:workspaces -- --locale zh-Hans');
+
+    expect(result.stdout).toContain('\n"a b"');
+
+    expect(result.stdout).toContain('\n"say ""hi"""');
+
+    return;
+  });
+
   return;
 });

@@ -1,6 +1,7 @@
+import { existsSync, readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
-import { dirname, resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import {
@@ -15,8 +16,16 @@ import {
 } from './regex.js';
 
 import type {
-  Lib_Preset_GetPresetRoot_EntryPath,
-  Lib_Preset_GetPresetRoot_Require,
+  Lib_Preset_FindPackageRoot_CurrentDirectory,
+  Lib_Preset_FindPackageRoot_Manifest,
+  Lib_Preset_FindPackageRoot_ManifestPath,
+  Lib_Preset_FindPackageRoot_PackageName,
+  Lib_Preset_FindPackageRoot_PreviousDirectory,
+  Lib_Preset_FindPackageRoot_Returns,
+  Lib_Preset_FindPackageRoot_StartPath,
+  Lib_Preset_GetPresetBuildRoot_Returns,
+  Lib_Preset_GetPresetEntryPath_Require,
+  Lib_Preset_GetPresetEntryPath_Returns,
   Lib_Preset_GetPresetRoot_Returns,
   Lib_Preset_GetRepoRoot_CurrentFileDirectory,
   Lib_Preset_GetRepoRoot_CurrentFilePath,
@@ -117,6 +126,58 @@ export function getRepoRoot(): Lib_Preset_GetRepoRoot_Returns {
 }
 
 /**
+ * Lib - Preset - Find Package Root.
+ *
+ * Walks up from a resolved file until it reaches the package.json whose name
+ * matches. Nested manifests without that name, such as a build folder's
+ * module-type marker, are skipped, so any build layout resolves the same root.
+ *
+ * @param {Lib_Preset_FindPackageRoot_StartPath}   startPath   - Start path.
+ * @param {Lib_Preset_FindPackageRoot_PackageName} packageName - Package name.
+ *
+ * @returns {Lib_Preset_FindPackageRoot_Returns}
+ *
+ * @since 2026.11.1
+ */
+export function findPackageRoot(startPath: Lib_Preset_FindPackageRoot_StartPath, packageName: Lib_Preset_FindPackageRoot_PackageName): Lib_Preset_FindPackageRoot_Returns {
+  let currentDirectory: Lib_Preset_FindPackageRoot_CurrentDirectory = dirname(startPath);
+  let previousDirectory: Lib_Preset_FindPackageRoot_PreviousDirectory = '';
+
+  while (currentDirectory !== previousDirectory) {
+    const manifestPath: Lib_Preset_FindPackageRoot_ManifestPath = join(currentDirectory, 'package.json');
+
+    if (existsSync(manifestPath) === true) {
+      const manifest: Lib_Preset_FindPackageRoot_Manifest = JSON.parse(readFileSync(manifestPath, 'utf-8')) as Lib_Preset_FindPackageRoot_Manifest;
+
+      if (manifest['name'] === packageName) {
+        return currentDirectory;
+      }
+    }
+
+    previousDirectory = currentDirectory;
+    currentDirectory = dirname(currentDirectory);
+  }
+
+  throw new Error(`Could not find the "${packageName}" package root above "${startPath}".`);
+}
+
+/**
+ * Lib - Preset - Get Preset Entry Path.
+ *
+ * Resolves the main entry file of the installed docusaurus-preset-nova package,
+ * the starting point for both the package root and the build root lookups.
+ *
+ * @returns {Lib_Preset_GetPresetEntryPath_Returns}
+ *
+ * @since 2026.11.1
+ */
+export function getPresetEntryPath(): Lib_Preset_GetPresetEntryPath_Returns {
+  const require: Lib_Preset_GetPresetEntryPath_Require = createRequire(import.meta.url);
+
+  return require.resolve('@cbnventures/docusaurus-preset-nova');
+}
+
+/**
  * Lib - Preset - Get Preset Root.
  *
  * Resolves the installed docusaurus-preset-nova package directory. Every
@@ -127,10 +188,22 @@ export function getRepoRoot(): Lib_Preset_GetRepoRoot_Returns {
  * @since 2026.8.0
  */
 export function getPresetRoot(): Lib_Preset_GetPresetRoot_Returns {
-  const require: Lib_Preset_GetPresetRoot_Require = createRequire(import.meta.url);
-  const entryPath: Lib_Preset_GetPresetRoot_EntryPath = require.resolve('@cbnventures/docusaurus-preset-nova');
+  return findPackageRoot(getPresetEntryPath(), '@cbnventures/docusaurus-preset-nova');
+}
 
-  return resolve(dirname(entryPath), '..', '..');
+/**
+ * Lib - Preset - Get Preset Build Root.
+ *
+ * Resolves the folder that holds the preset's compiled entry, which is build/src
+ * in older releases and build in newer ones. Blocks and type declarations sit
+ * beside the entry in both layouts.
+ *
+ * @returns {Lib_Preset_GetPresetBuildRoot_Returns}
+ *
+ * @since 2026.11.1
+ */
+export function getPresetBuildRoot(): Lib_Preset_GetPresetBuildRoot_Returns {
+  return dirname(getPresetEntryPath());
 }
 
 /**
@@ -161,7 +234,7 @@ export function toKebabCase(value: Lib_Preset_ToKebabCase_Value): Lib_Preset_ToK
  * @since 2026.8.0
  */
 export async function readBlockNames(): Lib_Preset_ReadBlockNames_Returns {
-  const barrelPath: Lib_Preset_ReadBlockNames_BarrelPath = resolve(getPresetRoot(), 'build', 'src', 'blocks', 'index.js');
+  const barrelPath: Lib_Preset_ReadBlockNames_BarrelPath = resolve(getPresetBuildRoot(), 'blocks', 'index.js');
   const fileText: Lib_Preset_ReadBlockNames_FileText = await readFile(barrelPath, 'utf-8');
   const pattern: Lib_Preset_ReadBlockNames_Pattern = new RegExp(LIB_REGEX_BLOCK_EXPORT, 'g');
   const names: Lib_Preset_ReadBlockNames_Names = [];
@@ -250,7 +323,7 @@ export function readVariants(expression: Lib_Preset_ReadVariants_Expression, ali
  * @since 2026.8.0
  */
 export async function readBlockPropSurface(blockName: Lib_Preset_ReadBlockPropSurface_BlockName): Lib_Preset_ReadBlockPropSurface_Returns {
-  const typeFilePath: Lib_Preset_ReadBlockPropSurface_TypeFilePath = resolve(getPresetRoot(), 'build', 'src', 'types', 'blocks', toKebabCase(blockName), 'index.d.ts');
+  const typeFilePath: Lib_Preset_ReadBlockPropSurface_TypeFilePath = resolve(getPresetBuildRoot(), 'types', 'blocks', toKebabCase(blockName), 'index.d.ts');
   const fileText: Lib_Preset_ReadBlockPropSurface_FileText = await readFile(typeFilePath, 'utf-8');
   const aliases: Lib_Preset_ReadBlockPropSurface_Aliases = readTypeAliases(fileText);
   const objectMatch: Lib_Preset_ReadBlockPropSurface_ObjectMatch = new RegExp(LIB_REGEX_PROPS_OBJECT).exec(fileText);
@@ -310,10 +383,10 @@ export async function readBlockPropSurface(blockName: Lib_Preset_ReadBlockPropSu
  * @since 2026.8.0
  */
 export async function readBlockVariantValues(blockName: Lib_Preset_ReadBlockVariantValues_BlockName): Lib_Preset_ReadBlockVariantValues_Returns {
-  const typeFilePath: Lib_Preset_ReadBlockVariantValues_TypeFilePath = resolve(getPresetRoot(), 'build', 'src', 'types', 'blocks', toKebabCase(blockName), 'index.d.ts');
+  const typeFilePath: Lib_Preset_ReadBlockVariantValues_TypeFilePath = resolve(getPresetBuildRoot(), 'types', 'blocks', toKebabCase(blockName), 'index.d.ts');
   const fileText: Lib_Preset_ReadBlockVariantValues_FileText = await readFile(typeFilePath, 'utf-8');
   const aliases: Lib_Preset_ReadBlockVariantValues_Aliases = readTypeAliases(fileText);
-  const sharedFilePath: Lib_Preset_ReadBlockVariantValues_SharedFilePath = resolve(getPresetRoot(), 'build', 'src', 'types', 'shared.d.ts');
+  const sharedFilePath: Lib_Preset_ReadBlockVariantValues_SharedFilePath = resolve(getPresetBuildRoot(), 'types', 'shared.d.ts');
   const sharedFileText: Lib_Preset_ReadBlockVariantValues_SharedFileText = await readFile(sharedFilePath, 'utf-8');
   const sharedAliases: Lib_Preset_ReadBlockVariantValues_SharedAliases = readTypeAliases(sharedFileText);
   const values: Lib_Preset_ReadBlockVariantValues_Values = [];

@@ -1,5 +1,11 @@
 # nova-demos-app-website
 
+## 2026.11.1
+
+### UPDATED
+- Nova 0.49.0, which runs the site's linting, type checks, and tests.
+- README introduction, which now describes the project with its new long description.
+
 ## 2026.11.0
 
 ### UPDATED
