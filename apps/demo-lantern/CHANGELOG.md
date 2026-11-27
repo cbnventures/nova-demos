@@ -1,5 +1,10 @@
 # demo-lantern
 
+## 2026.11.2
+
+### UPDATED
+- Nova 0.54.0 and Docusaurus Preset Nova 0.54.0, which add a success color and wrap long inline code instead of letting it run off the page.
+
 ## 2026.11.1
 
 ### UPDATED

@@ -484,7 +484,6 @@
         "nova"
       ],
       "patterns": [
-        "/assets/",
         "graphify-out/"
       ]
     }
@@ -972,6 +971,18 @@
     }
   },
   "settings": {
+    "changelog": {
+      "workspaceOrder": [
+        "nova-demos-app-website",
+        "demo-envoy",
+        "demo-foundry",
+        "demo-lantern",
+        "demo-marshal",
+        "demo-sentinel",
+        "demo-signal",
+        "nova-demos-tool-testkit"
+      ]
+    },
     "lockStepVersioning": true,
     "runWorkspaces": {
       "cache": {

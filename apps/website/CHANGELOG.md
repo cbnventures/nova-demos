@@ -1,5 +1,10 @@
 # nova-demos-app-website
 
+## 2026.11.2
+
+### UPDATED
+- Nova 0.54.0.
+
 ## 2026.11.1
 
 ### UPDATED
